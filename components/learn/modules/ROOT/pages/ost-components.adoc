@@ -1,0 +1,59 @@
+= Ost Tech Stack & Components
+
+Abc
+
+== Heading 2
+
+Abc
+
+=== Heading 3 Code Example
+
+```js
+import React, { useCallback, useState, useEffect } from 'react';
+import { useWeb3 } from '@openzeppelin/network/react';
+
+function App() {
+  // Get web3 context via @openzeppelin/network/react hook
+  const web3Context = useWeb3(`wss://mainnet.infura.io/ws/v3/${PROJECT_ID}`);
+  const { lib: web3, networkId, accounts, providerName } = web3Context;
+
+  // Methods for requesting accounts access
+  const requestAuth = (web3Context) => web3Context.requestAuth();
+  const requestAccess = useCallback(() => requestAuth(web3Context), []);
+
+  // Querying account balance
+  const [balance, setBalance] = useState(0);
+  const getBalance = useCallback(async () => {
+    setBalance(
+      accounts && accounts.length > 0
+      ? (await web3.eth.getBalance(accounts[0]))
+      : 'Unknown')
+  }, [accounts, web3.eth, web3.utils]);
+  useEffect(() => {
+    getBalance();
+  }, [accounts, getBalance, networkId]);
+
+  // Show all information to the user
+  return (
+    <div>
+      <div>Network: {networkId || 'No connection'}</div>
+      <div>Your address: {accounts ? accounts[0] : 'Unknown'}</div>
+
+      {accounts && accounts.length ? (
+        <div>Accounts access granted</div>
+      ) : !!networkId && providerName !== 'infura' ? (
+        <button onClick={requestAccess}>Request Access</button>
+      ) : (
+        <div>No accounts access</div>
+      )}
+    </div>
+  );
+}
+```
+
+== Next Steps
+
+Abc
+
+  * xref:.adoc[]
+  * xref:.adoc[]

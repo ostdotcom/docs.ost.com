@@ -1,0 +1,83 @@
+site:
+  title: Ost Docs
+  url: https://dev.ost.com
+  start_page: ost::index.adoc
+  # keys:
+  #   google_analytics: ''
+content:
+  sources:
+    - url: .
+      branches: HEAD
+      start_path: components/home
+
+    - url: .
+      branches: HEAD
+      start_path: components/learn
+
+    - url: .
+      branches: HEAD
+      start_path: components/server-sdks
+
+    - url: .
+      branches: HEAD
+      start_path: components/client-sdks
+  
+    - url: .
+      branches: HEAD
+      start_path: components/browser-sdks
+
+    - url: .
+      branches: HEAD
+      start_path: components/quick-start-guides
+
+    - url: https://github.com/ostdotcom/ost-sdk-js
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/ost-sdk-java
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/ost-sdk-php
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/ost-sdk-ruby
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/ost-wallet-sdk-react-native
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/ost-wallet-sdk-android
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/ost-wallet-sdk-ios
+      branches: antora-docs
+      start_path: docs
+
+    # - url: https://github.com/ostdotcom/ost-wallet-sdk-browser
+    #   branches: antora-docs
+    #   start_path: docs
+
+    - url: https://github.com/ostdotcom/demo-server
+      branches: antora-docs
+      start_path: docs
+
+    - url: https://github.com/ostdotcom/react-native-demo-app
+      branches: antora-docs
+      start_path: docs
+
+ui:
+  bundle:
+    url: ./ui/build/oz-docs-ui.zip
+    # url: https://github.com/couchbase/docs-ui/releases/download/v239/ui-bundle.zip
+    # url: https://github.com/mulesoft/docs-site-ui/releases/download/sandbox-6/ui-bundle.zip
+    # url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    # snapshot: true
+
+asciidoc:
+  attributes:
+    idprefix: ''

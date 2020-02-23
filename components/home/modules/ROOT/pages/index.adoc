@@ -1,0 +1,75 @@
+= Ost Documentation
+
+Abc
+
+== Why Ost?
+
+Abc
+
+== Learn
+
+Comprehensive guides to Ost.
+
+include::learn::partial$cards.adoc[]
+
+== Tools
+
+All the open source tools built and maintained by the Ost team:
+
+[.card.card-primary.card-sdk]
+--
+xref:server-sdks::index.adoc[[.card-title]#Server SDKs# [.card-body]#A guide to Ost Server SDKs# [.card-cta]#Get started >#]
+--
+
+[.card.card-primary.card-sdk]
+--
+xref:client-sdks::index.adoc[[.card-title]#Client SDKs# [.card-body]#A guide to Ost Client SDKs# [.card-cta]#Get started >#]
+--
+
+[.card.card-primary.card-sdk]
+--
+xref:browser-sdks::index.adoc[[.card-title]#Browser SDKs# [.card-body]#A guide to Ost Browser SDKs# [.card-cta]#Get started >#]
+--
+
+[.card.card-primary.card-starter-kits]
+--
+xref:quick-start-guides::index.adoc[[.card-title]#Quick Start Guides# [.card-body]#Quick Start Guides For Developers!# [.card-cta]#Get Started >#]
+--
+
+=== Additional topics to be included
+
+* Sandbox environment
+* User interface (UI) components
+* Custom Rules Framework
+* APIs
+* Webhooks
+* Block Explorer
+
+
+== More from Ost
+
+=== Audits
+
+Abc
+
+
+=== Careers
+
+Abc
+
+=== Social
+
+Abc
+
+== Questions?
+
+Abc
+
+== Share the Love!
+
+Abc
+
+
+// ```markdown
+// [![built-with openzeppelin](https://img.shields.io/badge/built%20with-OpenZeppelin-3677FF)](https://docs.openzeppelin.com/)
+// ```

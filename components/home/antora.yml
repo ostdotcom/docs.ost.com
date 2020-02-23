@@ -1,0 +1,5 @@
+name: ost
+title: Ost
+version: master
+nav:
+  - modules/ROOT/nav.adoc
