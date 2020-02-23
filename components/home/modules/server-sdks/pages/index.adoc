@@ -1,7 +1,7 @@
-= Client SDKs
+= Server SDKs
 
 Comprehensive guides to Ost Server SDKs
 
-include::server-sdks::partial$cards.adoc[]
+include::partial$cards.adoc[]
 
 //Include demo app(s)

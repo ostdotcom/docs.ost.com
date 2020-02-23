@@ -1,0 +1,14 @@
+[.card.card-learn]
+--
+xref:client-sdk-android::index.adoc[[.card-title]#Android# [.card-body]#.....#]
+--
+
+[.card.card-learn]
+--
+xref:client-sdk-ios::index.adoc[[.card-title]#iOS# [.card-body]#.....#]
+--
+
+[.card.card-learn]
+--
+xref:client-sdk-react-native::index.adoc[[.card-title]#React Natve# [.card-body]#.....#]
+--

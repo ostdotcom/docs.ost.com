@@ -1,4 +1,4 @@
-= Quick Start Guides (For Developers)
+= Quick Start Guides
 
 NOTE: Coming soon!
 

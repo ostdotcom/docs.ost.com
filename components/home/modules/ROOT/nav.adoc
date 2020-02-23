@@ -2,3 +2,10 @@
 // * xref:gsn/getting-started.adoc[Getting started]
 // * xref:gsn/what-is-the-gsn.adoc[What is the GSN?]
 // * xref:gsn/faq.adoc[FAQ]
+
+* xref:index.adoc[Welcome]
+// * xref:quick-start-guides::index.adoc[Quick Start Guides]
+// * xref:server-sdks::index.adoc[Server SDKs]
+// * xref:client-sdks::index.adoc[Client SDKs]
+// * xref:browser-sdks::index.adoc[Browser SDKs]
+* xref:learn::index.adoc[Learn]

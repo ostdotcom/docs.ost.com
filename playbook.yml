@@ -14,22 +14,6 @@ content:
       branches: HEAD
       start_path: components/learn
 
-    - url: .
-      branches: HEAD
-      start_path: components/server-sdks
-
-    - url: .
-      branches: HEAD
-      start_path: components/client-sdks
-  
-    - url: .
-      branches: HEAD
-      start_path: components/browser-sdks
-
-    - url: .
-      branches: HEAD
-      start_path: components/quick-start-guides
-
     - url: https://github.com/ostdotcom/ost-sdk-js
       branches: antora-docs
       start_path: docs

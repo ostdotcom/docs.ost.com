@@ -1,5 +1,0 @@
-name: client-sdks
-title: Ost Client (Mobile Wallet) SDKs
-version: master
-nav:
-  - modules/ROOT/nav.adoc

@@ -2,6 +2,6 @@
 
 Comprehensive guides to Ost Client (Mobile Wallet) SDKs
 
-include::client-sdks::partial$cards.adoc[]
+include::partial$cards.adoc[]
 
 //Include demo app(s)

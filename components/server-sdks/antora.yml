@@ -1,5 +1,0 @@
-name: server-sdks
-title: Ost Server SDKs
-version: master
-nav:
-  - modules/ROOT/nav.adoc

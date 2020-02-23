@@ -1,0 +1,6 @@
+[.card.card-learn]
+--
+xref:browser-sdk-javascript::index.adoc[[.card-title]#JavaScript# [.card-body]#.....#]
+
+#I don't have access to this repo yet !#
+--

@@ -1,11 +1,6 @@
 [.card.card-learn]
 --
-xref:learn::introduction.adoc[[.card-title]#Introduction to Ost# [.card-body]#...# ]
---
-
-[.card.card-learn]
---
-xref:learn::ost-components.adoc[[.card-title]#Ost Components# [.card-body]#...# ]
+xref:learn::ost-tech-stack.adoc[[.card-title]#Ost Tech Stack# [.card-body]#...# ]
 --
 
 [.card.card-learn]

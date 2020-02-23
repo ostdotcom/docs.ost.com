@@ -1,4 +1,4 @@
-= Ost Documentation
+= Welcome
 
 Abc
 
@@ -6,35 +6,35 @@ Abc
 
 Abc
 
+== Tools
+
+All the open source tools built and maintained by the Ost team:
+
+[.card.card-primary.card-starter-kits]
+--
+xref:quick-start-guides[[.card-title]#Quick Start Guides# [.card-body]#Quick Start Guides For Developers!# [.card-cta]#Get Started >#]
+--
+
+[.card.card-primary.card-sdk]
+--
+xref:server-sdks[[.card-title]#Server SDKs# [.card-body]#A guide to Ost Server SDKs# [.card-cta]#Get started >#]
+--
+
+[.card.card-primary.card-sdk]
+--
+xref:client-sdks[[.card-title]#Client SDKs# [.card-body]#A guide to Ost Client SDKs# [.card-cta]#Get started >#]
+--
+
+[.card.card-primary.card-sdk]
+--
+xref:browser-sdks[[.card-title]#Browser SDKs# [.card-body]#A guide to Ost Browser SDKs# [.card-cta]#Get started >#]
+--
+
 == Learn
 
 Comprehensive guides to Ost.
 
 include::learn::partial$cards.adoc[]
-
-== Tools
-
-All the open source tools built and maintained by the Ost team:
-
-[.card.card-primary.card-sdk]
---
-xref:server-sdks::index.adoc[[.card-title]#Server SDKs# [.card-body]#A guide to Ost Server SDKs# [.card-cta]#Get started >#]
---
-
-[.card.card-primary.card-sdk]
---
-xref:client-sdks::index.adoc[[.card-title]#Client SDKs# [.card-body]#A guide to Ost Client SDKs# [.card-cta]#Get started >#]
---
-
-[.card.card-primary.card-sdk]
---
-xref:browser-sdks::index.adoc[[.card-title]#Browser SDKs# [.card-body]#A guide to Ost Browser SDKs# [.card-cta]#Get started >#]
---
-
-[.card.card-primary.card-starter-kits]
---
-xref:quick-start-guides::index.adoc[[.card-title]#Quick Start Guides# [.card-body]#Quick Start Guides For Developers!# [.card-cta]#Get Started >#]
---
 
 === Additional topics to be included
 

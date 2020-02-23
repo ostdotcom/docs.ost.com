@@ -1,5 +1,9 @@
 name: ost
-title: Ost
+title: Ost Docs
 version: master
 nav:
   - modules/ROOT/nav.adoc
+  - modules/quick-start-guides/nav.adoc  
+  - modules/server-sdks/nav.adoc
+  - modules/client-sdks/nav.adoc
+  - modules/browser-sdks/nav.adoc

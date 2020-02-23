@@ -1,4 +1,4 @@
-= Ost Tech Stack & Components
+= Ost Tech Stack & Integration Components
 
 Abc
 

@@ -1,0 +1,19 @@
+[.card.card-learn]
+--
+xref:server-sdk-java::index.adoc[[.card-title]#Java# [.card-body]#.....#]
+--
+
+[.card.card-learn]
+--
+xref:server-sdk-javascript::index.adoc[[.card-title]#JavaScript# [.card-body]#.....#]
+--
+
+[.card.card-learn]
+--
+xref:server-sdk-php::index.adoc[[.card-title]#PHP# [.card-body]#.....#]
+--
+
+[.card.card-learn]
+--
+xref:server-sdk-ruby::index.adoc[[.card-title]#Ruby# [.card-body]#.....#]
+--

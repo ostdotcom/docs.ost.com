@@ -1,6 +1,5 @@
 * xref:index.adoc[Overview]
-* xref:introduction.adoc[Introduction to Ost]
-* xref:ost-components.adoc[Ost Components]
+* xref:ost-tech-stack.adoc[Ost Tech Stack]
 * xref:smart-contracts.adoc[Smart Contracts]
 * xref:self-custodial-user-wallets.adoc[Self-Custodial User Wallet]
 * xref:session-keys.adoc[Ephmeral Session Keys]
