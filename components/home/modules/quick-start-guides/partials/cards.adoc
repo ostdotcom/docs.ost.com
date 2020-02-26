@@ -1,0 +1,4 @@
+[.card.card-learn]
+--
+xref:metacartel-hackathon.adoc[[.card-title]#Metacartel Hackathon (March 2020)# [.card-body]#Specific guide for Metacartel Hackathon projects using Ost layer-2 tools.#]
+--

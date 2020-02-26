@@ -1,0 +1,72 @@
+= Create Session Guide
+:id: create-session
+:sidebar_label: Create Session
+
+Session keys are used to sign transactions in mobile applications that have incorporated OST Wallet SDK.
+They have an expiry time and a per transaction spending limit.
+Developers will have to create session keys when session keys expire or are not present.
+To create a new session key and authorize it, you need to use link:/platform/docs/sdk/mobile-wallet-sdks/android/latest/methods/#4-addsession[addSession] workflow available in Wallet SDK (link:/platform/docs/sdk/mobile-wallet-sdks/android/[Android], link:/platform/docs/sdk/mobile-wallet-sdks/iOS[iOS], link:/platform/docs/sdk/mobile-wallet-sdks/react-native[React Native]).
+
+== Steps to Create a New Session Key
+
+. Call addSession Workflow
+. Check Workflow Status
+
+=== 1. Call addSession Workflow
+
+You can call the `addSession` workflow (available in link:/platform/docs/sdk/mobile-wallet-sdks/android/[Android], link:/platform/docs/sdk/mobile-wallet-sdks/iOS[iOS] and link:/platform/docs/sdk/mobile-wallet-sdks/react-native/[React Native] Wallet SDK) to create and authorize the newly created session key.
+
+==== Sample Android Wallet SDK Code
+
+[source,java]
+----
+OstSdk.addSession(
+    mUserId,
+    spendingLimit,
+    expiryAfterSecs,
+    this);
+----
+
+Above shown sample code is a part of https://github.com/ostdotcom/ost-wallet-sdk-android/blob/a719237a461d938c57ed93abce649ba35b284836/app/src/main/java/ost/com/sampleostsdkapplication/fragments/CreateSessionFragment.java#L75[Android sample application]
+
+=== 2. Check Workflow Status
+
+==== Receiving `addSession` workflow status callbacks
+
+There is a list of methods available as link:/platform/docs/sdk/mobile-wallet-sdks/android/latest/interfaces/[interface] (in link:/platform/docs/sdk/mobile-wallet-sdks/android/[Android Wallet SDK]) and as link:/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/[protocol] (in link:/platform/docs/sdk/mobile-wallet-sdks/iOS[iOS Wallet SDK]) for communication between mobile app and Wallet SDK.
+
+To show you an example, we will just implement 2 functions to get the workflow status.
+
+. *flowComplete*:  This callback function will be called if the workflow is completed successfully.
+The workflow details and the updated entity will be received in the arguments.
+When the transaction is complete, this function will receive the transaction entity.
+
+Sample code (Android Wallet SDK)
+
+[source,java]
+----
+public void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity) {
+        String completeString = String.format("Workflow %s complete entity %s ",
+                ostWorkflowContext.getWorkflow_type(), null == ostContextEntity ? "null": ostContextEntity.getEntityType());
+
+        Toast.makeText(OstWalletSdk.getContext(), "Work Flow Successful", Toast.LENGTH_SHORT).show();
+        ....
+        ....
+    }
+----
+
+. *flowInterrupt*: The workflow details and OstError object will be received in the arguments.
+The error details will be available in OstError object.
+
+Sample code (Android Wallet SDK)
+
+[source,java]
+----
+@Override
+    public void flowInterrupt(OstWorkflowContext ostWorkflowContext, OstError ostError) {
+        String errorString = String.format("Work Flow %s Error: %s", ostWorkflowContext.getWorkflow_type(), ostError.getMessage());
+        Toast.makeText(OstWalletSdk.getContext(), errorString, Toast.LENGTH_SHORT).show();
+        ...
+        ...
+    }
+----

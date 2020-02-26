@@ -32,6 +32,7 @@ content:
 
     - url: https://github.com/ostdotcom/ost-wallet-sdk-react-native
       branches: antora-docs
+      tags: 
       start_path: docs
 
     - url: https://github.com/ostdotcom/ost-wallet-sdk-android

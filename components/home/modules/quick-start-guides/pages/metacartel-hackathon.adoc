@@ -1,0 +1,19 @@
+= Metacartel Hackathon (March-2020)
+
+[NOTE]
+====
+For Metacartel Hackathon, Ost is interested in teams building projects with the *new Ost Browswer wallet SDK.* To facilitate this, Ost is making available a demo server app and a starter wallet app that can be configured to work with your layer-2 token. 
+
+_These apps prevent you from having to integreate Ost server SDK and Ost client (mobile wallet) SDK into your application(s)._
+====
+
+== Steps to Get Started
+. Set-up your token
+. Retrieve API keys and implement authentication
+. Clone the Ost demo server application and configure
+. Clone the Ost starter wallet app and configure
+. Build your web product and integrate the Ost Browser wallet SDK!
+
+== We're here to help!
+Connect with Ost developers and the community at larger in the
+https://email.ost.com/t?entity_type=2&entity_id=27311&email_pref_id=44821608&sent_id=1579614932&service_id=22436&redirect_url=https%3A%2F%2Fjoin.slack.com%2Ft%2Ftryost%2Fshared_invite%2FenQtNjk5MTI4NDY5MjIyLTFlZWYyODNhMjA0YmNmM2ZmMTJkZDM4MDU0NGJlNDc3ZWEwMjY5ZWNiNjNiZDcyOTIyZTljNGFmN2E2NzY2MDk[Ost Public Slack space]
