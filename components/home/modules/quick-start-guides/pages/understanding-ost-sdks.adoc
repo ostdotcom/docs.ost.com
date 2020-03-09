@@ -1,8 +1,32 @@
-= High Level Understanding of OST Platform SDKs
-:id: the-basics
-:sidebar_label: The Baiscs
+= Ost Server SDKs
 
+Ost server SDKs provide various methods that can be used to design and manage token economies. In addition to our SDKs, Ost RESTful APIs can be used.
+
+include::partial$cards.adoc[]
+
+== Advantages
+[cols="1,4", options="header"]
+// .Advantages of Ost Server SDKs
+|===
+|Advantage 
+|Description
+
+|Simplicity and end-user experience
+|The SDKs reduce the complexity of integration by handling multiple authentication scenarios automatically, allowing for a more seamless user experience.
+
+|Performance
+|Caching, key management and nonce management ensure that the end-user overall experience is smooth.
+
+|Higest Security	Standards
+|Within an app with Ost client SDK where client reqeusts the user to authenticate before authorizing sessions or new devices.|
+|===
+
+// == Integration Components
+// image::platform-integrations.jpg[Integration Components Overview]
+
+== High Level Understanding of Ost Server SDKs
 To integrate with OST Platform you must integrate both our Server Side SDK (SS-SDK) and Mobile Wallet SDK (MW-SDK) into your application.
+
 This page describes, at a high-level, the actions that can be performed and how you would go about retrieving your token details, registering your users, and setting-up users with a wallet so that they can hold and interact with your tokens (sign, send, receieve).
 
 == Actions Enabled Through SDKs

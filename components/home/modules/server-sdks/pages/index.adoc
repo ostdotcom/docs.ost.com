@@ -1,25 +1,10 @@
 = Ost Server SDKs
 
-Ost server SDKs provide various methods that can be used to design and manage token economies. In addition to our SDKs, Ost RESTful APIs can be used.
+Ost server SDKs provide various methods that can be used to design and manage token economies. The SDKs handle multiple authentication scenarios allowing and caching, key management, and nonce management ensure that the overall end-user experience is smooth.
+
+Ost robust RESTful APIs can also be used.
 
 include::partial$cards.adoc[]
-
-== Advantages
-[cols="1,4", options="header"]
-// .Advantages of Ost Server SDKs
-|===
-|Advantage 
-|Description
-
-|Simplicity and end-user experience
-|The SDKs reduce the complexity of integration by handling multiple authentication scenarios automatically, allowing for a more seamless user experience.
-
-|Performance
-|Caching, key management and nonce management ensure that the end-user overall experience is smooth.
-
-|Higest Security	Standards
-|Within an app with Ost client SDK where client reqeusts the user to authenticate before authorizing sessions or new devices.|
-|===
 
 // == Integration Components
 // image::platform-integrations.jpg[Integration Components Overview]
