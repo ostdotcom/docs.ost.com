@@ -1,17 +1,23 @@
 = Metacartel Hackathon (March-2020)
 
-[NOTE]
-====
-For Metacartel Hackathon, Ost is interested in teams building projects with the *new Ost Browswer wallet SDK.* To facilitate this, Ost is making available a demo server app and a starter wallet app that can be configured to work with your layer-2 token. 
+For Metacartel Hackathon, Ost is interested in teams building with the Ost React Native Client (mobile wallet) SDK and / or the *new Ost Browswer wallet SDK.* In each case, a full server-side integration should be done.
 
-_These apps prevent you from having to integreate Ost server SDK and Ost client (mobile wallet) SDK into your application(s)._
-====
+To facilitate 'browser-first' projects, Ost is making available a starter wallet app that can be configured to work with your layer-2 token.
 
-== Steps to Get Started
-. Set-up your token
+== Get Started
+. Set-up token and do stake and mint
 . Retrieve API keys and implement authentication
-. Clone the Ost demo server application and configure
-. Clone the Ost starter wallet app and configure
+. Optional: Check-out the Ost demo server application
+. Set-up own app server and user auth service and integrate the Ost Server SDK
+
+NOTE: At this point, you should be able to retrieve token details and rule addresses, create your end-users in Ost Platform, and create an (encrypted) salt for each user. 
+
+=== Mobile App Projects
+. Build your app product and integrate the Ost React Native Client SDK
+. Optional: Check-out the Ost React Native Wallet App
+
+=== Browser Projects
+. Clone the Ost React Native Wallet App and and configure
 . Build your web product and integrate the Ost Browser wallet SDK!
 
 == We're here to help!

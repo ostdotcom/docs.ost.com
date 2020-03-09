@@ -1,0 +1,48 @@
+= Authentication
+doctype:: book
+
+Ost servers authenticate API requests using your Ost Platform account API keys.
+
+* Your API public key identifies your account with Ost, it isn't secret and can be safely published in an Android or iOS app
+* Your API private/secret key should be kept confidential and only stored on your own servers. This key can be used to perform any API request to Ost. 
+* Every account is provided with separate keys for Sandbox and Production. Entities in one environment: users, devices, sessions, and so forth cannot be manipulated by entities in the other.
+
+== Authentication Methods
+
+[cols="1,4", options="header"]
+.Authentication Methods
+|===
+|Authentication Method 
+|Description
+
+|Hash-based message authentication (HMAC)
+|Every API request on Ost Platform API endpoint requires hash-based message authentication. When using the Ost server SDKs, authentication is handled for you. In other languages you have to implement the signature generation by computing the HMAC sha256 digest of the API secret.
+
+|Personal Signing	
+|Ost client SDKs provide secure authentication by signing data from user's mobile device. The SDK ensures a high-level of privacy and trust, since the private keys with which it signs data never have to leave the device.
+
+|Smartphone Application	
+|Within an app with Ost client SDK where client reqeusts the user to authenticate before authorizing sessions or new devices.|
+|===
+
+If you do not include your key when making an API request or use a key that is incorrect or outdated, Ost Platform API will return an error.
+
+[NOTE]
+====
+Ost client SDKs use personal sign authentication to communicate with Ost Platform servers. Below is a brief explanation on how this works.
+
+. Your app will receive a token created by Ost client SDK which we call API Signer.
+. Your app can then send that token to an endpoint on your server, where it can be used to register a device on Ost Platform server. Once the API Signer token is registered on your server, the client SDK can start communicating with Ost APIs e.g. setup device, activate user, etc.
+. Client SDK personal signs API requests using API Signer
+. Ost Platform validates personal signed API calls by recovering the API key address
+====
+
+== Accessing API Keys
+
+API keys are available in the Developers page in https://platform.Ost.com/developers[Ost Platform]
+
+image::dev_page.png[Developers Page]
+
+=== Rolling Keys
+
+If an API key is compromised, you can roll the key in Ost Platform to block it and generate a new one. When rolling an API key, you can choose to delete the old key immediately or allow it to work for 24 hours, providing you with time to make the transition. In either case, the new key can be used immediately.

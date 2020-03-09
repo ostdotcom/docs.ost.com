@@ -2,3 +2,8 @@
 --
 xref:metacartel-hackathon.adoc[[.card-title]#Metacartel Hackathon (March 2020)# [.card-body]#Specific guide for Metacartel Hackathon projects using Ost layer-2 tools.#]
 --
+
+[.card.card-learn]
+--
+xref:authentication.adoc[[.card-title]#Authentication# [.card-body]#Specific guide to authentication API request to Ost Platform.#]
+--

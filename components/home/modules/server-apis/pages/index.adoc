@@ -1,0 +1,3 @@
+= Ost Server APIs
+
+Ost server APIs provide various endpoints that can be used to design and manage token economies.
