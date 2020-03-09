@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/upgrades/2.7/api">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>API Reference - OpenZeppelin Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85043059-1"></script>
+<script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-85043059-1')</script>
+    <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="upgrades" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Upgrades</span>
+      <div class="component-version">
+        <button class="flex align-center shrink btn btn-version" onclick="this.focus()">
+          2.7
+        </button>
+        <div class="popover-container">
+          <div class="popover">
+            <p>Current version</p>
+            <ul>
+              <li>
+                  <a href="/upgrades/2.7/index.html">2.7</a>
+              </li>
+            </ul>
+            <p>Previous versions</p>
+            <ul>
+                  <li>
+                    <a href="/upgrades/2.6/index.html">2.6</a>
+                  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.7/index.html">
+    Overview
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.7/writing-upgradeable.html">
+    Writing Upgradeable Contracts
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.7/creating-upgradeable-from-solidity.html">
+    Creating Upgradeable Contracts From Solidity
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.7/proxies.html">
+    Proxies
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link nav-link-active" href="/upgrades/2.7/api.html">
+    API Reference
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://docs.openzeppelin.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/OpenZeppelin">GitHub</a>
+        <a class="navbar-item" href="https://forum.openzeppelin.com">Forum</a>
+        <a class="navbar-item" href="https://blog.openzeppelin.com">Blog</a>
+        <a class="navbar-item" href="https://openzeppelin.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>API Reference</h1>
+		<div class="sect1">
+<h2 id="proxies"><a class="anchor" href="#proxies"></a>Proxies</h2>
+<div class="sectionbody">
+<div class="sect2 contract">
+<h3 id="Proxy"><a class="anchor" href="#Proxy"></a><code>Proxy</code></h3>
+<div class="paragraph">
+<p>Implements delegation of calls to other contracts, with proper
+forwarding of return values and bubbling of failures.
+It defines a fallback function that delegates all calls to the address
+returned by the abstract _implementation() internal function.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Proxy-fallback--"><a class="anchor" href="#Proxy-fallback--"></a><code>fallback()</code> <span class="item-kind">external</span></h4>
+<div class="paragraph">
+<p>Fallback function.
+Implemented entirely in <code>_fallback</code>.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Proxy-_implementation--"><a class="anchor" href="#Proxy-_implementation--"></a><code>_implementation() → <span class="var-type">address</span></code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="Proxy-_delegate-address-"><a class="anchor" href="#Proxy-_delegate-address-"></a><code>_delegate(<span class="var-type">address</span> <span class="var-name">implementation</span>)</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Delegates execution to an implementation contract.
+This is a low level function that doesn&#8217;t return to its internal call site.
+It will return to the external caller whatever the implementation returns.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Proxy-_willFallback--"><a class="anchor" href="#Proxy-_willFallback--"></a><code>_willFallback()</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Function that is run as the first thing in the fallback function.
+Can be redefined in derived contracts to add functionality.
+Redefinitions must call super._willFallback().</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Proxy-_fallback--"><a class="anchor" href="#Proxy-_fallback--"></a><code>_fallback()</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>fallback implementation.
+Extracted to enable manual triggering.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="UpgradeabilityProxy"><a class="anchor" href="#UpgradeabilityProxy"></a><code>UpgradeabilityProxy</code></h3>
+<div class="paragraph">
+<p>Extends BaseUpgradeabilityProxy with a constructor for initializing
+implementation and init data.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#UpgradeabilityProxy-constructor-address-bytes-"><code>constructor(_logic, _data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_upgradeTo-address-"><code>_upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_setImplementation-address-"><code>_setImplementation(newImplementation)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">Proxy</div>
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-Upgraded-address-"><code>Upgraded(implementation)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="UpgradeabilityProxy-constructor-address-bytes-"><a class="anchor" href="#UpgradeabilityProxy-constructor-address-bytes-"></a><code>constructor(<span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Contract constructor.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="AdminUpgradeabilityProxy"><a class="anchor" href="#AdminUpgradeabilityProxy"></a><code>AdminUpgradeabilityProxy</code></h3>
+<div class="paragraph">
+<p>Extends from BaseAdminUpgradeabilityProxy with a constructor for
+initializing the implementation, admin, and init data.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited contract-subindex-inherited">
+<div class="title">BaseAdminUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-ifAdmin--"><code>ifAdmin()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#AdminUpgradeabilityProxy-constructor-address-address-bytes-"><code>constructor(_logic, _admin, _data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">UpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#UpgradeabilityProxy-constructor-address-bytes-"><code>constructor(_logic, _data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseAdminUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-admin--"><code>admin()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-implementation--"><code>implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-changeAdmin-address-"><code>changeAdmin(newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-upgradeTo-address-"><code>upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-upgradeToAndCall-address-bytes-"><code>upgradeToAndCall(newImplementation, data)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_admin--"><code>_admin()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_setAdmin-address-"><code>_setAdmin(newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_upgradeTo-address-"><code>_upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_setImplementation-address-"><code>_setImplementation(newImplementation)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">Proxy</div>
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited contract-subindex-inherited">
+<div class="title">BaseAdminUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-AdminChanged-address-address-"><code>AdminChanged(previousAdmin, newAdmin)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-Upgraded-address-"><code>Upgraded(implementation)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="AdminUpgradeabilityProxy-constructor-address-address-bytes-"><a class="anchor" href="#AdminUpgradeabilityProxy-constructor-address-address-bytes-"></a><code>constructor(<span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">address</span> <span class="var-name">_admin</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>)</code> <span class="item-kind">public</span></h4>
+
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="BaseAdminUpgradeabilityProxy"><a class="anchor" href="#BaseAdminUpgradeabilityProxy"></a><code>BaseAdminUpgradeabilityProxy</code></h3>
+<div class="paragraph">
+<p>This contract combines an upgradeability proxy with an authorization
+mechanism for administrative tasks.
+All external functions in this contract must be guarded by the
+<code>ifAdmin</code> modifier. See ethereum/solidity#3864 for a Solidity
+feature proposal that would enable this to be done automatically.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-ifAdmin--"><code>ifAdmin()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-admin--"><code>admin()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-implementation--"><code>implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-changeAdmin-address-"><code>changeAdmin(newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-upgradeTo-address-"><code>upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-upgradeToAndCall-address-bytes-"><code>upgradeToAndCall(newImplementation, data)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_admin--"><code>_admin()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_setAdmin-address-"><code>_setAdmin(newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_upgradeTo-address-"><code>_upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_setImplementation-address-"><code>_setImplementation(newImplementation)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">Proxy</div>
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-AdminChanged-address-address-"><code>AdminChanged(previousAdmin, newAdmin)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-Upgraded-address-"><code>Upgraded(implementation)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-ifAdmin--"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-ifAdmin--"></a><code>ifAdmin()</code> <span class="item-kind">modifier</span></h4>
+<div class="paragraph">
+<p>Modifier to check whether the <code>msg.sender</code> is the admin.
+If it is, it will run the function. Otherwise, it will delegate the call
+to the implementation.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-admin--"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-admin--"></a><code>admin() → <span class="var-type">address</span></code> <span class="item-kind">external</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-implementation--"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-implementation--"></a><code>implementation() → <span class="var-type">address</span></code> <span class="item-kind">external</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-changeAdmin-address-"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-changeAdmin-address-"></a><code>changeAdmin(<span class="var-type">address</span> <span class="var-name">newAdmin</span>)</code> <span class="item-kind">external</span></h4>
+<div class="paragraph">
+<p>Changes the admin of the proxy.
+Only the current admin can call this function.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-upgradeTo-address-"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-upgradeTo-address-"></a><code>upgradeTo(<span class="var-type">address</span> <span class="var-name">newImplementation</span>)</code> <span class="item-kind">external</span></h4>
+<div class="paragraph">
+<p>Upgrade the backing implementation of the proxy.
+Only the admin can call this function.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-upgradeToAndCall-address-bytes-"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-upgradeToAndCall-address-bytes-"></a><code>upgradeToAndCall(<span class="var-type">address</span> <span class="var-name">newImplementation</span>, <span class="var-type">bytes</span> <span class="var-name">data</span>)</code> <span class="item-kind">external</span></h4>
+<div class="paragraph">
+<p>Upgrade the backing implementation of the proxy and call a function
+on the new implementation.
+This is useful to initialize the proxied contract.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-_admin--"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-_admin--"></a><code>_admin() → <span class="var-type">address</span> <span class="var-name">adm</span></code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-_setAdmin-address-"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-_setAdmin-address-"></a><code>_setAdmin(<span class="var-type">address</span> <span class="var-name">newAdmin</span>)</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Sets the address of the proxy admin.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-_willFallback--"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-_willFallback--"></a><code>_willFallback()</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Only fall back when the sender is not the admin.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseAdminUpgradeabilityProxy-AdminChanged-address-address-"><a class="anchor" href="#BaseAdminUpgradeabilityProxy-AdminChanged-address-address-"></a><code>AdminChanged(<span class="var-type">address</span> <span class="var-name">previousAdmin</span>, <span class="var-type">address</span> <span class="var-name">newAdmin</span>)</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when the administration has been transferred.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="BaseUpgradeabilityProxy"><a class="anchor" href="#BaseUpgradeabilityProxy"></a><code>BaseUpgradeabilityProxy</code></h3>
+<div class="paragraph">
+<p>This contract implements a proxy that allows to change the
+implementation address to which it will delegate.
+Such a change is called an implementation upgrade.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_upgradeTo-address-"><code>_upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_setImplementation-address-"><code>_setImplementation(newImplementation)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">Proxy</div>
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-Upgraded-address-"><code>Upgraded(implementation)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseUpgradeabilityProxy-_implementation--"><a class="anchor" href="#BaseUpgradeabilityProxy-_implementation--"></a><code>_implementation() → <span class="var-type">address</span> <span class="var-name">impl</span></code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Returns the current implementation.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseUpgradeabilityProxy-_upgradeTo-address-"><a class="anchor" href="#BaseUpgradeabilityProxy-_upgradeTo-address-"></a><code>_upgradeTo(<span class="var-type">address</span> <span class="var-name">newImplementation</span>)</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Upgrades the proxy to a new implementation.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseUpgradeabilityProxy-_setImplementation-address-"><a class="anchor" href="#BaseUpgradeabilityProxy-_setImplementation-address-"></a><code>_setImplementation(<span class="var-type">address</span> <span class="var-name">newImplementation</span>)</code> <span class="item-kind">internal</span></h4>
+<div class="paragraph">
+<p>Sets the implementation address of the proxy.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="BaseUpgradeabilityProxy-Upgraded-address-"><a class="anchor" href="#BaseUpgradeabilityProxy-Upgraded-address-"></a><code>Upgraded(<span class="var-type">address</span> <span class="var-name">implementation</span>)</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when the implementation is upgraded.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="InitializableAdminUpgradeabilityProxy"><a class="anchor" href="#InitializableAdminUpgradeabilityProxy"></a><code>InitializableAdminUpgradeabilityProxy</code></h3>
+<div class="paragraph">
+<p>Extends from BaseAdminUpgradeabilityProxy with an initializer for
+initializing the implementation, admin, and init data.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited contract-subindex-inherited">
+<div class="title">BaseAdminUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-ifAdmin--"><code>ifAdmin()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#InitializableAdminUpgradeabilityProxy-initialize-address-address-bytes-"><code>initialize(_logic, _admin, _data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">InitializableUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#InitializableUpgradeabilityProxy-initialize-address-bytes-"><code>initialize(_logic, _data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseAdminUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-admin--"><code>admin()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-implementation--"><code>implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-changeAdmin-address-"><code>changeAdmin(newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-upgradeTo-address-"><code>upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-upgradeToAndCall-address-bytes-"><code>upgradeToAndCall(newImplementation, data)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_admin--"><code>_admin()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_setAdmin-address-"><code>_setAdmin(newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_upgradeTo-address-"><code>_upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_setImplementation-address-"><code>_setImplementation(newImplementation)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">Proxy</div>
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited contract-subindex-inherited">
+<div class="title">BaseAdminUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseAdminUpgradeabilityProxy-AdminChanged-address-address-"><code>AdminChanged(previousAdmin, newAdmin)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-Upgraded-address-"><code>Upgraded(implementation)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="InitializableAdminUpgradeabilityProxy-initialize-address-address-bytes-"><a class="anchor" href="#InitializableAdminUpgradeabilityProxy-initialize-address-address-bytes-"></a><code>initialize(<span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">address</span> <span class="var-name">_admin</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>)</code> <span class="item-kind">public</span></h4>
+
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="InitializableUpgradeabilityProxy"><a class="anchor" href="#InitializableUpgradeabilityProxy"></a><code>InitializableUpgradeabilityProxy</code></h3>
+<div class="paragraph">
+<p>Extends BaseUpgradeabilityProxy with an initializer for initializing
+implementation and init data.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#InitializableUpgradeabilityProxy-initialize-address-bytes-"><code>initialize(_logic, _data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_implementation--"><code>_implementation()</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_upgradeTo-address-"><code>_upgradeTo(newImplementation)</code></a></p>
+</li>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-_setImplementation-address-"><code>_setImplementation(newImplementation)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">Proxy</div>
+<ul>
+<li>
+<p><a href="#Proxy-fallback--"><code>fallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_delegate-address-"><code>_delegate(implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_willFallback--"><code>_willFallback()</code></a></p>
+</li>
+<li>
+<p><a href="#Proxy-_fallback--"><code>_fallback()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited">
+<div class="title">BaseUpgradeabilityProxy</div>
+<ul>
+<li>
+<p><a href="#BaseUpgradeabilityProxy-Upgraded-address-"><code>Upgraded(implementation)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="InitializableUpgradeabilityProxy-initialize-address-bytes-"><a class="anchor" href="#InitializableUpgradeabilityProxy-initialize-address-bytes-"></a><code>initialize(<span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Contract initializer.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="ProxyAdmin"><a class="anchor" href="#ProxyAdmin"></a><code>ProxyAdmin</code></h3>
+<div class="paragraph">
+<p>This contract is the admin of a proxy, and is in charge
+of upgrading it as well as transferring it to another admin.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-onlyOwner--"><code>onlyOwner()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ProxyAdmin-getProxyImplementation-contract-AdminUpgradeabilityProxy-"><code>getProxyImplementation(proxy)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyAdmin-getProxyAdmin-contract-AdminUpgradeabilityProxy-"><code>getProxyAdmin(proxy)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyAdmin-changeProxyAdmin-contract-AdminUpgradeabilityProxy-address-"><code>changeProxyAdmin(proxy, newAdmin)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyAdmin-upgrade-contract-AdminUpgradeabilityProxy-address-"><code>upgrade(proxy, implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyAdmin-upgradeAndCall-contract-AdminUpgradeabilityProxy-address-bytes-"><code>upgradeAndCall(proxy, implementation, data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-constructor--"><code>constructor()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-owner--"><code>owner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-isOwner--"><code>isOwner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-renounceOwnership--"><code>renounceOwnership()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-transferOwnership-address-"><code>transferOwnership(newOwner)</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-_transferOwnership-address-"><code>_transferOwnership(newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-OwnershipTransferred-address-address-"><code>OwnershipTransferred(previousOwner, newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyAdmin-getProxyImplementation-contract-AdminUpgradeabilityProxy-"><a class="anchor" href="#ProxyAdmin-getProxyImplementation-contract-AdminUpgradeabilityProxy-"></a><code>getProxyImplementation(<span class="var-type">contract AdminUpgradeabilityProxy</span> <span class="var-name">proxy</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the current implementation of a proxy.
+This is needed because only the proxy admin can query it.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyAdmin-getProxyAdmin-contract-AdminUpgradeabilityProxy-"><a class="anchor" href="#ProxyAdmin-getProxyAdmin-contract-AdminUpgradeabilityProxy-"></a><code>getProxyAdmin(<span class="var-type">contract AdminUpgradeabilityProxy</span> <span class="var-name">proxy</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the admin of a proxy. Only the admin can query it.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyAdmin-changeProxyAdmin-contract-AdminUpgradeabilityProxy-address-"><a class="anchor" href="#ProxyAdmin-changeProxyAdmin-contract-AdminUpgradeabilityProxy-address-"></a><code>changeProxyAdmin(<span class="var-type">contract AdminUpgradeabilityProxy</span> <span class="var-name">proxy</span>, <span class="var-type">address</span> <span class="var-name">newAdmin</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Changes the admin of a proxy.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyAdmin-upgrade-contract-AdminUpgradeabilityProxy-address-"><a class="anchor" href="#ProxyAdmin-upgrade-contract-AdminUpgradeabilityProxy-address-"></a><code>upgrade(<span class="var-type">contract AdminUpgradeabilityProxy</span> <span class="var-name">proxy</span>, <span class="var-type">address</span> <span class="var-name">implementation</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Upgrades a proxy to the newest implementation of a contract.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyAdmin-upgradeAndCall-contract-AdminUpgradeabilityProxy-address-bytes-"><a class="anchor" href="#ProxyAdmin-upgradeAndCall-contract-AdminUpgradeabilityProxy-address-bytes-"></a><code>upgradeAndCall(<span class="var-type">contract AdminUpgradeabilityProxy</span> <span class="var-name">proxy</span>, <span class="var-type">address</span> <span class="var-name">implementation</span>, <span class="var-type">bytes</span> <span class="var-name">data</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Upgrades a proxy to the newest implementation of a contract and forwards a function call to it.
+This is useful to initialize the proxied contract.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="ProxyFactory"><a class="anchor" href="#ProxyFactory"></a><code>ProxyFactory</code></h3>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ProxyFactory-constructor--"><code>constructor()</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-deployMinimal-address-bytes-"><code>deployMinimal(_logic, _data)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-deploy-uint256-address-address-bytes-"><code>deploy(_salt, _logic, _admin, _data)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-deploySigned-uint256-address-address-bytes-bytes-"><code>deploySigned(_salt, _logic, _admin, _data, _signature)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-getDeploymentAddress-uint256-address-"><code>getDeploymentAddress(_salt, _sender)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-getSigner-uint256-address-address-bytes-bytes-"><code>getSigner(_salt, _logic, _admin, _data, _signature)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-_deployProxy-uint256-address-address-bytes-address-"><code>_deployProxy(_salt, _logic, _admin, _data, _sender)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-_createProxy-uint256-address-"><code>_createProxy(_salt, _sender)</code></a></p>
+</li>
+<li>
+<p><a href="#ProxyFactory-_getSalt-uint256-address-"><code>_getSalt(_salt, _sender)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ProxyFactory-ProxyCreated-address-"><code>ProxyCreated(proxy)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-constructor--"><a class="anchor" href="#ProxyFactory-constructor--"></a><code>constructor()</code> <span class="item-kind">public</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-deployMinimal-address-bytes-"><a class="anchor" href="#ProxyFactory-deployMinimal-address-bytes-"></a><code>deployMinimal(<span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>) → <span class="var-type">address</span> <span class="var-name">proxy</span></code> <span class="item-kind">public</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-deploy-uint256-address-address-bytes-"><a class="anchor" href="#ProxyFactory-deploy-uint256-address-address-bytes-"></a><code>deploy(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">address</span> <span class="var-name">_admin</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-deploySigned-uint256-address-address-bytes-bytes-"><a class="anchor" href="#ProxyFactory-deploySigned-uint256-address-address-bytes-bytes-"></a><code>deploySigned(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">address</span> <span class="var-name">_admin</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>, <span class="var-type">bytes</span> <span class="var-name">_signature</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-getDeploymentAddress-uint256-address-"><a class="anchor" href="#ProxyFactory-getDeploymentAddress-uint256-address-"></a><code>getDeploymentAddress(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_sender</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-getSigner-uint256-address-address-bytes-bytes-"><a class="anchor" href="#ProxyFactory-getSigner-uint256-address-address-bytes-bytes-"></a><code>getSigner(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">address</span> <span class="var-name">_admin</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>, <span class="var-type">bytes</span> <span class="var-name">_signature</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-_deployProxy-uint256-address-address-bytes-address-"><a class="anchor" href="#ProxyFactory-_deployProxy-uint256-address-address-bytes-address-"></a><code>_deployProxy(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_logic</span>, <span class="var-type">address</span> <span class="var-name">_admin</span>, <span class="var-type">bytes</span> <span class="var-name">_data</span>, <span class="var-type">address</span> <span class="var-name">_sender</span>) → <span class="var-type">address</span></code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-_createProxy-uint256-address-"><a class="anchor" href="#ProxyFactory-_createProxy-uint256-address-"></a><code>_createProxy(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_sender</span>) → <span class="var-type">contract InitializableAdminUpgradeabilityProxy</span></code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-_getSalt-uint256-address-"><a class="anchor" href="#ProxyFactory-_getSalt-uint256-address-"></a><code>_getSalt(<span class="var-type">uint256</span> <span class="var-name">_salt</span>, <span class="var-type">address</span> <span class="var-name">_sender</span>) → <span class="var-type">bytes32</span></code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="ProxyFactory-ProxyCreated-address-"><a class="anchor" href="#ProxyFactory-ProxyCreated-address-"></a><code>ProxyCreated(<span class="var-type">address</span> <span class="var-name">proxy</span>)</code> <span class="item-kind">event</span></h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="application"><a class="anchor" href="#application"></a>Application</h2>
+<div class="sectionbody">
+<div class="sect2 contract">
+<h3 id="App"><a class="anchor" href="#App"></a><code>App</code></h3>
+<div class="paragraph">
+<p>Contract for upgradeable applications.
+It handles the creation of proxies.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-onlyOwner--"><code>onlyOwner()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#App-constructor--"><code>constructor()</code></a></p>
+</li>
+<li>
+<p><a href="#App-getProvider-string-"><code>getProvider(packageName)</code></a></p>
+</li>
+<li>
+<p><a href="#App-getPackage-string-"><code>getPackage(packageName)</code></a></p>
+</li>
+<li>
+<p><a href="#App-setPackage-string-contract-Package-uint64-3--"><code>setPackage(packageName, package, version)</code></a></p>
+</li>
+<li>
+<p><a href="#App-unsetPackage-string-"><code>unsetPackage(packageName)</code></a></p>
+</li>
+<li>
+<p><a href="#App-getImplementation-string-string-"><code>getImplementation(packageName, contractName)</code></a></p>
+</li>
+<li>
+<p><a href="#App-create-string-string-address-bytes-"><code>create(packageName, contractName, admin, data)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-owner--"><code>owner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-isOwner--"><code>isOwner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-renounceOwnership--"><code>renounceOwnership()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-transferOwnership-address-"><code>transferOwnership(newOwner)</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-_transferOwnership-address-"><code>_transferOwnership(newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#App-ProxyCreated-address-"><code>ProxyCreated(proxy)</code></a></p>
+</li>
+<li>
+<p><a href="#App-PackageChanged-string-address-uint64-3--"><code>PackageChanged(providerName, package, version)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-OwnershipTransferred-address-address-"><code>OwnershipTransferred(previousOwner, newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-constructor--"><a class="anchor" href="#App-constructor--"></a><code>constructor()</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Constructor function.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-getProvider-string-"><a class="anchor" href="#App-getProvider-string-"></a><code>getProvider(<span class="var-type">string</span> <span class="var-name">packageName</span>) → <span class="var-type">contract ImplementationProvider</span> <span class="var-name">provider</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the provider for a given package name, or zero if not set.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-getPackage-string-"><a class="anchor" href="#App-getPackage-string-"></a><code>getPackage(<span class="var-type">string</span> <span class="var-name">packageName</span>) → <span class="var-type">contract Package</span>, [.var-type]#uint64[3<mark>]</code> [.item-kind]#public</mark></h4>
+<div class="paragraph">
+<p>Returns information on a package given its name.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-setPackage-string-contract-Package-uint64-3--"><a class="anchor" href="#App-setPackage-string-contract-Package-uint64-3--"></a><code>setPackage(<span class="var-type">string</span> <span class="var-name">packageName</span>, <span class="var-type">contract Package</span> <span class="var-name">package</span>, [.var-type]#uint64[3# <span class="var-name\">version</span>)]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Sets a package in a specific version as a dependency for this application.
+Requires the version to be present in the package.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-unsetPackage-string-"><a class="anchor" href="#App-unsetPackage-string-"></a><code>unsetPackage(<span class="var-type">string</span> <span class="var-name">packageName</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Unsets a package given its name.
+Reverts if the package is not set in the application.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-getImplementation-string-string-"><a class="anchor" href="#App-getImplementation-string-string-"></a><code>getImplementation(<span class="var-type">string</span> <span class="var-name">packageName</span>, <span class="var-type">string</span> <span class="var-name">contractName</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the implementation address for a given contract name, provided by the <code>ImplementationProvider</code>.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-create-string-string-address-bytes-"><a class="anchor" href="#App-create-string-string-address-bytes-"></a><code>create(<span class="var-type">string</span> <span class="var-name">packageName</span>, <span class="var-type">string</span> <span class="var-name">contractName</span>, <span class="var-type">address</span> <span class="var-name">admin</span>, <span class="var-type">bytes</span> <span class="var-name">data</span>) → <span class="var-type">contract AdminUpgradeabilityProxy</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Creates a new proxy for the given contract and forwards a function call to it.
+This is useful to initialize the proxied contract.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-ProxyCreated-address-"><a class="anchor" href="#App-ProxyCreated-address-"></a><code>ProxyCreated(<span class="var-type">address</span> <span class="var-name">proxy</span>)</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when a new proxy is created.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="App-PackageChanged-string-address-uint64-3--"><a class="anchor" href="#App-PackageChanged-string-address-uint64-3--"></a><code>PackageChanged(<span class="var-type">string</span> <span class="var-name">providerName</span>, <span class="var-type">address</span> <span class="var-name">package</span>, [.var-type]#uint64[3# <span class="var-name\">version</span>)]</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when a package dependency is changed in the application.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="ImplementationDirectory"><a class="anchor" href="#ImplementationDirectory"></a><code>ImplementationDirectory</code></h3>
+<div class="paragraph">
+<p>Implementation provider that stores contract implementations in a mapping.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ImplementationDirectory-whenNotFrozen--"><code>whenNotFrozen()</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-onlyOwner--"><code>onlyOwner()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ImplementationDirectory-freeze--"><code>freeze()</code></a></p>
+</li>
+<li>
+<p><a href="#ImplementationDirectory-getImplementation-string-"><code>getImplementation(contractName)</code></a></p>
+</li>
+<li>
+<p><a href="#ImplementationDirectory-setImplementation-string-address-"><code>setImplementation(contractName, implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#ImplementationDirectory-unsetImplementation-string-"><code>unsetImplementation(contractName)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-constructor--"><code>constructor()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-owner--"><code>owner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-isOwner--"><code>isOwner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-renounceOwnership--"><code>renounceOwnership()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-transferOwnership-address-"><code>transferOwnership(newOwner)</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-_transferOwnership-address-"><code>_transferOwnership(newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ImplementationDirectory-ImplementationChanged-string-address-"><code>ImplementationChanged(contractName, implementation)</code></a></p>
+</li>
+<li>
+<p><a href="#ImplementationDirectory-Frozen--"><code>Frozen()</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-OwnershipTransferred-address-address-"><code>OwnershipTransferred(previousOwner, newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-whenNotFrozen--"><a class="anchor" href="#ImplementationDirectory-whenNotFrozen--"></a><code>whenNotFrozen()</code> <span class="item-kind">modifier</span></h4>
+<div class="paragraph">
+<p>Modifier that allows functions to be called only before the contract is frozen.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-freeze--"><a class="anchor" href="#ImplementationDirectory-freeze--"></a><code>freeze()</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Makes the directory irreversibly immutable.
+It can only be called once, by the owner.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-getImplementation-string-"><a class="anchor" href="#ImplementationDirectory-getImplementation-string-"></a><code>getImplementation(<span class="var-type">string</span> <span class="var-name">contractName</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the implementation address of a contract.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-setImplementation-string-address-"><a class="anchor" href="#ImplementationDirectory-setImplementation-string-address-"></a><code>setImplementation(<span class="var-type">string</span> <span class="var-name">contractName</span>, <span class="var-type">address</span> <span class="var-name">implementation</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Sets the address of the implementation of a contract in the directory.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-unsetImplementation-string-"><a class="anchor" href="#ImplementationDirectory-unsetImplementation-string-"></a><code>unsetImplementation(<span class="var-type">string</span> <span class="var-name">contractName</span>)</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Removes the address of a contract implementation from the directory.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-ImplementationChanged-string-address-"><a class="anchor" href="#ImplementationDirectory-ImplementationChanged-string-address-"></a><code>ImplementationChanged(<span class="var-type">string</span> <span class="var-name">contractName</span>, <span class="var-type">address</span> <span class="var-name">implementation</span>)</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when the implementation of a contract is changed.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationDirectory-Frozen--"><a class="anchor" href="#ImplementationDirectory-Frozen--"></a><code>Frozen()</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when the implementation directory is frozen.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="ImplementationProvider"><a class="anchor" href="#ImplementationProvider"></a><code>ImplementationProvider</code></h3>
+<div class="paragraph">
+<p>Abstract contract for providing implementation addresses for other contracts by name.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ImplementationProvider-getImplementation-string-"><code>getImplementation(contractName)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="ImplementationProvider-getImplementation-string-"><a class="anchor" href="#ImplementationProvider-getImplementation-string-"></a><code>getImplementation(<span class="var-type">string</span> <span class="var-name">contractName</span>) → <span class="var-type">address</span></code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Abstract function to return the implementation address of a contract.</p>
+</div>
+</div>
+</div>
+<div class="sect2 contract">
+<h3 id="Package"><a class="anchor" href="#Package"></a><code>Package</code></h3>
+<div class="paragraph">
+<p>A package is composed by a set of versions, identified via semantic versioning,
+where each version has a contract address that refers to a reusable implementation,
+plus an optional content URI with metadata. Note that the semver identifier is restricted
+to major, minor, and patch, as prerelease tags are not supported.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-onlyOwner--"><code>onlyOwner()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Functions</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Package-getVersion-uint64-3--"><code>getVersion(semanticVersion)</code></a></p>
+</li>
+<li>
+<p><a href="#Package-getContract-uint64-3--"><code>getContract(semanticVersion)</code></a></p>
+</li>
+<li>
+<p><a href="#Package-addVersion-uint64-3&#8212;&#8203;address-bytes-"><code>addVersion(semanticVersion, contractAddress, contentURI)</code></a></p>
+</li>
+<li>
+<p><a href="#Package-hasVersion-uint64-3--"><code>hasVersion(semanticVersion)</code></a></p>
+</li>
+<li>
+<p><a href="#Package-getLatest--"><code>getLatest()</code></a></p>
+</li>
+<li>
+<p><a href="#Package-getLatestByMajor-uint64-"><code>getLatestByMajor(major)</code></a></p>
+</li>
+<li>
+<p><a href="#Package-semanticVersionHash-uint64-3--"><code>semanticVersionHash(version)</code></a></p>
+</li>
+<li>
+<p><a href="#Package-semanticVersionIsZero-uint64-3--"><code>semanticVersionIsZero(version)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-constructor--"><code>constructor()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-owner--"><code>owner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-isOwner--"><code>isOwner()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-renounceOwnership--"><code>renounceOwnership()</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-transferOwnership-address-"><code>transferOwnership(newOwner)</code></a></p>
+</li>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-_transferOwnership-address-"><code>_transferOwnership(newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock contract-index">
+<div class="title">Events</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Package-VersionAdded-uint64-3&#8212;&#8203;address-bytes-"><code>VersionAdded(semanticVersion, contractAddress, contentURI)</code></a></p>
+</li>
+</ul>
+</div>
+<div class="ulist contract-subindex-inherited">
+<div class="title">OpenZeppelinUpgradesOwnable</div>
+<ul>
+<li>
+<p><a href="#OpenZeppelinUpgradesOwnable-OwnershipTransferred-address-address-"><code>OwnershipTransferred(previousOwner, newOwner)</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-getVersion-uint64-3--"><a class="anchor" href="#Package-getVersion-uint64-3--"></a><code>getVersion([.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>) → <span class="var-type\">address</span> <span class="var-name\">contractAddress</span>, <span class="var-type\">bytes</span> <span class="var-name\">contentURI</span>]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns a version given its semver identifier.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-getContract-uint64-3--"><a class="anchor" href="#Package-getContract-uint64-3--"></a><code>getContract([.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>) → <span class="var-type\">address</span> <span class="var-name\">contractAddress</span>]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns a contract for a version given its semver identifier.
+This method is equivalent to <code>getVersion</code>, but returns only the contract address.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-addVersion-uint64-3--address-bytes-"><a class="anchor" href="#Package-addVersion-uint64-3--address-bytes-"></a><code>addVersion([.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>, <span class="var-type\">address</span> <span class="var-name\">contractAddress</span>, <span class="var-type\">bytes</span> <span class="var-name\">contentURI</span>)]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Adds a new version to the package. Only the Owner can add new versions.
+Reverts if the specified semver identifier already exists.
+Emits a <code>VersionAdded</code> event if successful.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-hasVersion-uint64-3--"><a class="anchor" href="#Package-hasVersion-uint64-3--"></a><code>hasVersion([.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>) → <span class="var-type\">bool</span>]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Checks whether a version is present in the package.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-getLatest--"><a class="anchor" href="#Package-getLatest--"></a><code>getLatest() → [.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>, <span class="var-type\">address</span> <span class="var-name\">contractAddress</span>, <span class="var-type\">bytes</span> <span class="var-name\">contentURI</span>]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the version with the highest semver identifier registered in the package.
+For instance, if <code>1.2.0</code>, <code>1.3.0</code>, and <code>2.0.0</code> are present, will always return <code>2.0.0</code>, regardless
+of the order in which they were registered. Returns zero if no versions are registered.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-getLatestByMajor-uint64-"><a class="anchor" href="#Package-getLatestByMajor-uint64-"></a><code>getLatestByMajor(<span class="var-type">uint64</span> <span class="var-name">major</span>) → [.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>, <span class="var-type\">address</span> <span class="var-name\">contractAddress</span>, <span class="var-type\">bytes</span> <span class="var-name\">contentURI</span>]</code> <span class="item-kind">public</span></h4>
+<div class="paragraph">
+<p>Returns the version with the highest semver identifier for the given major.
+For instance, if <code>1.2.0</code>, <code>1.3.0</code>, and <code>2.0.0</code> are present, will return <code>1.3.0</code> for major <code>1</code>,
+regardless of the order in which they were registered. Returns zero if no versions are registered
+for the specified major.</p>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-semanticVersionHash-uint64-3--"><a class="anchor" href="#Package-semanticVersionHash-uint64-3--"></a><code>semanticVersionHash([.var-type]#uint64[3# <span class="var-name\">version</span>) → <span class="var-type\">bytes32</span>]</code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-semanticVersionIsZero-uint64-3--"><a class="anchor" href="#Package-semanticVersionIsZero-uint64-3--"></a><code>semanticVersionIsZero([.var-type]#uint64[3# <span class="var-name\">version</span>) → <span class="var-type\">bool</span>]</code> <span class="item-kind">internal</span></h4>
+
+</div>
+<div class="sect3 contract-item">
+<h4 id="Package-VersionAdded-uint64-3--address-bytes-"><a class="anchor" href="#Package-VersionAdded-uint64-3--address-bytes-"></a><code>VersionAdded([.var-type]#uint64[3# <span class="var-name\">semanticVersion</span>, <span class="var-type\">address</span> <span class="var-name\">contractAddress</span>, <span class="var-type\">bytes</span> <span class="var-name\">contentURI</span>)]</code> <span class="item-kind">event</span></h4>
+<div class="paragraph">
+<p>Emitted when a version is added to the package.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utility"><a class="anchor" href="#utility"></a>Utility</h2>
+<div class="sectionbody">
+<div class="sect2 contract">
+<h3 id="Initializable"><a class="anchor" href="#Initializable"></a><code>Initializable</code></h3>
+<div class="paragraph">
+<p>Helper contract to support initializer functions. To use it, replace
+the constructor with a function that has the <code>initializer</code> modifier.
+WARNING: Unlike constructors, initializer functions must be manually
+invoked. This applies both to deploying an Initializable contract, as well
+as extending an Initializable contract via inheritance.
+WARNING: When used with inheritance, manual care must be taken to not invoke
+a parent initializer twice, or ensure that all initializers are idempotent,
+because this is not dealt with automatically as with constructors.</p>
+</div>
+<div class="openblock contract-index">
+<div class="title">Modifiers</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Initializable-initializer--"><code>initializer()</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3 contract-item">
+<h4 id="Initializable-initializer--"><a class="anchor" href="#Initializable-initializer--"></a><code>initializer()</code> <span class="item-kind">modifier</span></h4>
+<div class="paragraph">
+<p>Modifier to use in the initializer function of a contract.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                 	<div class="btn-previous"><a href="/upgrades/2.7/proxies.html">&larr; Proxies</a></div>
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© OpenZeppelin 2017-2019 </span>
+		<a class="terms" href="https://openzeppelin.com/privacy">Privacy</a>
+		<a class="terms" href="https://openzeppelin.com/tos">Terms of Use</a>
+	</div>
+</footer>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>

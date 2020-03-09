@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://dev.ost.com/sitemap-client-sdk-android.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-client-sdk-demo.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-client-sdk-ios.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-client-sdk-react-native.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-learn.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-ost.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-server-sdk-demo.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-server-sdk-java.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-server-sdk-javascript.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-server-sdk-php.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://dev.ost.com/sitemap-server-sdk-ruby.xml</loc>
+</sitemap>
+</sitemapindex>

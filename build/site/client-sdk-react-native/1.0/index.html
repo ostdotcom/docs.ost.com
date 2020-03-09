@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/client-sdk-react-native/1.0">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>Ost Wallet SDK React Native - Ost Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+        <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="client-sdk-react-native" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Ost Client (Mobile Wallet) SDK React Native</span>
+      <div class="component-version">
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link nav-link-active" href="/client-sdk-react-native/1.0/index.html">
+    Overview
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/android-setup.html">
+    Android Setup
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/ios-setup.html">
+    iOS Setup
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstCoreWorkflows.html">
+    Ost Core Workflows
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletSettings.html">
+    Ost Wallet Settings
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletSettingsConfig.html">
+    Ost Wallet Settings Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletUI.html">
+    Ost Wallet UI
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstTransactionHelper.html">
+    Ost Transaction Helper
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstTransactionConfig.html">
+    Ost Transaction Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletSdkGetMethods.html">
+    Ost Wallet SDK Get Methods
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="#">
+    OstJsonAPI.adoc
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://dev.ost.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/ostdotcom">GitHub</a>
+        <a class="navbar-item" href="https://ost.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>Ost Wallet SDK React Native</h1>
+		<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ost React Native Wallet SDK is the official Ost Wallet SDK for react-native platform.
+The SDK is a mobile application development SDK that enables developers to integrate the functionality of a non-custodial crypto-wallet into consumer applications.</p>
+</div>
+<div class="paragraph">
+<p>Ost React Native Wallet SDK&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Safely generates and stores keys on the user&#8217;s mobile device</p>
+</li>
+<li>
+<p>Signs ethereum transactions and data as defined by contracts using EIP-1077</p>
+</li>
+<li>
+<p>Enables users to recover access to their Brand Tokens in case the user loses their authorized device</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="table_of_contents"><a class="anchor" href="#table_of_contents"></a>Table of Contents</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#installing-react-native-sdk">Installing React-native SDK</a></p>
+</li>
+<li>
+<p><a href="#migrating-to-another-version">Migrating to another version</a></p>
+</li>
+<li>
+<p><a href="#sdk-usage">SDK Usage</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#initializing-the-sdk">Initializing the SDK</a></p>
+</li>
+<li>
+<p><a href="#initializing-sdk-with-config">Initializing SDK With Config</a></p>
+</li>
+<li>
+<p><a href="#">subscribe-to&.adoc#8212;&#8203;ostwalletsdkevents&#8212;&#8203;in-your-top-most-level-component</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#getter-methods">Getter Methods</a></p>
+</li>
+<li>
+<p><a href="#ost-json-apis">Ost JSON APIs</a></p>
+</li>
+<li>
+<p><a href="#quick-start-guide---ost-macro-workflows">Quick Start Guide - Ost Macro Workflows</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#setup-device-core-workflow">Setup Device Core Workflow</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#workflow-details">Workflow Details</a></p>
+</li>
+<li>
+<p><a href="#notes">Notes</a></p>
+</li>
+<li>
+<p><a href="#implementation">Implementation</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#activate-user-ui-workflow">Activate User UI Workflow</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#blockchain-transactions-performed-during-activate-user-workflow">Blockchain Transactions Performed During Activate User Workflow</a></p>
+</li>
+<li>
+<p><a href="#recovery-key-generation-using-6-digit-pin">Recovery Key Generation Using 6 Digit Pin</a></p>
+</li>
+<li>
+<p><a href="#implementation-1">Implementation</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#wallet-settings-ui-component">Wallet Settings UI Component</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#implementation-2">Implementation</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#osttransactionhelper---transaction-and-session-integrated-workflow">OstTransactionHelper - Transaction and Session Integrated Workflow</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#implementation-3">Implementation</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#intermediate-usage---ost-wallet-sdk-ui">Intermediate Usage - Ost Wallet SDK UI</a></p>
+</li>
+<li>
+<p><a href="#advance-usage---ost-wallet-core-workflow-apis">Advance Usage - Ost Wallet Core Workflow APIs</a></p>
+</li>
+<li>
+<p><a href="#known-issues">Known Issues</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#sdk-initialization-fails-on-android-9-api-level-28">Sdk Initialization Fails on Android 9</a></p>
+</li>
+<li>
+<p><a href="#setup-device-workflow-fails-on-ios-13-simulator">Setup Device Workflow Fails on iOS-13 Simulator</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing_react_native_sdk"><a class="anchor" href="#installing_react_native_sdk"></a>Installing React-native SDK</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install React Native and create a react-native project</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Follow this <a href="https://facebook.github.io/react-native/docs/0.59/getting-started">official react-native getting started guide</a> to install react native and create a react-native project</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install Ost React Native SDK in your project The sdk needs following peer dependencies:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.npmjs.com/package/eventemitter3">eventemitter3</a></p>
+</li>
+<li>
+<p><a href="https://www.npmjs.com/package/lodash.merge">lodash.merge</a></p>
+</li>
+<li>
+<p><a href="https://www.npmjs.com/package/bignumber.js">bignumber.js</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">  npm install --save lodash.merge
+  npm install --save eventemitter3
+  npm install --save bignumber.js</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run following command in your react-native project root</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> npm install --save @ostdotcom/ost-wallet-sdk-react-native</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Linking the Ost React Native SDK with your project</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> react-native link @ostdotcom/ost-wallet-sdk-react-native</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#">./documentation/android_setup.adoc</a></p>
+</li>
+<li>
+<p><a href="#">./documentation/ios_setup.adoc</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="migrating_to_another_version"><a class="anchor" href="#migrating_to_another_version"></a>Migrating to another version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you decide to change the SDK version, please make sure to update the downsteam native SDKs.</p>
+</div>
+<div class="paragraph">
+<p>For Android, please run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">react-native link
+react-native run-android</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For iOS, please update the <code>ios/Cartfile</code> with desired version and run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">carthage update --cache-builds --platform ios</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After updating the SDK, please delete <code>ostwalletrnsdk</code> using the <strong>Remove References</strong> option and add it back by following <a href="./documentation/ios_setup.md#5-add-additional-sdk-files">this step</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sdk_usage"><a class="anchor" href="#sdk_usage"></a>SDK Usage</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize the SDK</p>
+</li>
+<li>
+<p>Subscribe to events</p>
+</li>
+<li>
+<p>Implement <code>OstWalletWorkFlowCallback</code> for a workflow</p>
+</li>
+<li>
+<p>Execute workflow</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="initializing_the_sdk"><a class="anchor" href="#initializing_the_sdk"></a>Initializing the SDK</h3>
+<div class="paragraph">
+<p>You must initialize the SDK before using it.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Initialize the SDK in using BASE_URL (Ost Platform endpoint) inside App.js <code>constructor()</code> method.</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">/**
+   * Initialize wallet sdk
+   * @param {String} endpoint - Ost Platform endpoint
+   * @param {function} Callback function with error and success status.
+   * @public
+   */
+  OstWalletSdk.initialize( endpoint,
+            (error, success) =&gt; {})</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="initializing_sdk_with_config"><a class="anchor" href="#initializing_sdk_with_config"></a>Initializing SDK With Config</h3>
+<div class="paragraph">
+<p>Starting version <code>2.3.1</code> application can also pass SDK config in the initialize method</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If config is passed in <code>initialize</code> method, the configs specified in <code>OstWalletSdk.plist</code> and <code>ost-mobilesdk.json</code> are ignored.
+It is no longer mandatory to define <code>ost-mobilesdk.json</code> and <code>OstWalletSdk.plist</code> files.</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">  let sdkConfig = {
+    "BLOCK_GENERATION_TIME": 3,
+    "PIN_MAX_RETRY_COUNT": 3,
+    "REQUEST_TIMEOUT_DURATION": 60,
+    "SESSION_BUFFER_TIME": 3600,
+    "PRICE_POINT_CURRENCY_SYMBOL": "USD",
+    "USE_SEED_PASSWORD": false,
+    "NO_OF_SESSIONS_ON_ACTIVATE_USER": 1,
+    "ENABLE_IOS_DEVICE_RESTORE": false
+  };
+
+  /**
+  * Initialize wallet sdk
+  * @param {String} endpoint - Ost Platform endpoint
+  * @param {Object} config (optional) - SDK Config. Supported from version 2.3.1
+  * @param {function} callback -   A typical node-style, error-first callback.
+  * @callback params {Object}error , {Boolean} success
+  * @public
+  */
+  OstWalletSdk.initialize( endpoint, sdkConfig, (error, success) =&gt; {
+
+  });</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="subscribe_to_ostwalletsdkevents_in_your_top_most_level_component"><a class="anchor" href="#subscribe_to_ostwalletsdkevents_in_your_top_most_level_component"></a>Subscribe to <code>OstWalletSdkEvents</code> in your top most level component</h3>
+<div class="paragraph">
+<p>In the most top level component (mostly <code>App.js</code>) import like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import { OstWalletSdkEvents, OstWalletSdk, OstWalletSdkUI, OstJsonApi } from '@ostdotcom/ost-wallet-sdk-react-native';</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In <code>componentDidMount()</code> subscribe to OstWalletSdkEvents and in <code>componentWillUnmount()</code> unsubscribe to OstWalletSdkEvents.
+Also initialize the SDK in using BASE_URL (Ost Platform endpoint) <code>constructor()</code> method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">class App extends Component {
+
+  constructor() {
+    super();
+    OstWalletSdk.initialize(BASE_URL, (error, success) =&gt; {
+      if(error) {
+        console.warn(error);
+      }
+      else {
+        console.warn(success);
+      }
+
+    });
+  }
+
+  componentDidMount() {
+    OstWalletSdkEvents.subscribeEvent();
+  }
+
+  componentWillUnmount() {
+    OstWalletSdkEvents.unsubscribeEvent();
+  }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getter_methods"><a class="anchor" href="#getter_methods"></a>Getter Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SDK provides getter methods that applications can use for various purposes.
+These methods provide the application with data as available in the device&#8217;s database.
+Please refer to <a href="#">./documentation/OstWalletSdkGetMethods.adoc</a> for documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_json_apis"><a class="anchor" href="#ost_json_apis"></a>Ost JSON APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While the getter methods provide application with data stored in device&#8217;s database, the JSON API methods make API calls to Ost Platform servers.
+Please refer to <a href="#">./documentation/OstJsonApi.adoc</a> for documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick_start_guide_ost_macro_workflows"><a class="anchor" href="#quick_start_guide_ost_macro_workflows"></a>Quick Start Guide - Ost Macro Workflows</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starting version 2.3.12-beta.1, developers can enable all the Ost wallet features implementing the Ost Macro Workflows.</p>
+</div>
+<div class="sect2">
+<h3 id="1_setup_device_core_workflow"><a class="anchor" href="#1_setup_device_core_workflow"></a>1. Setup Device Core Workflow</h3>
+<hr>
+<div class="paragraph">
+<p>The setup device workflow establishes trust between the device and Ost Platform.
+As application is responsible for user authentication, application servers must facilitate this workflow using the server side sdk.</p>
+</div>
+<div class="sect3">
+<h4 id="workflow_details"><a class="anchor" href="#workflow_details"></a>Workflow Details</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>When this workflow is initiated by the application, the Sdk creates the following keys:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>API key - the key used to sign API requests sent to Ost Platform from the sdk.</p>
+</li>
+<li>
+<p>Device key - the user&#8217;s wallet device key.
+All device manager operations shall be performed using this key.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The Sdk asks the application to register the device entity with Ost Platform.</p>
+</li>
+<li>
+<p>The application must send the device entity to the application server.</p>
+</li>
+<li>
+<p>The application server must then use the server side sdk to register the device with Ost Plaform by using device service&#8217;s create device Api.</p>
+</li>
+<li>
+<p>Once the device is registered by the Ost Platform, the application server must send the response to the mobile application.</p>
+</li>
+<li>
+<p>The mobile application must then use the <code>deviceRegistered</code> callbacks to provide the response to the Sdk.</p>
+</li>
+<li>
+<p>The sdk validates the registration by making Api calls to the Ost Plaform.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/documentation/images/setup_device_workflow.svg" alt="setup device workflow">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="notes"><a class="anchor" href="#notes"></a>Notes</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup device workflow must be initiated <strong>on every app launch</strong>.</p>
+</li>
+<li>
+<p>Setup device workflow must be initiated only <strong>after the user has been autheniticated</strong> by the application, including cookie based authentication for already logged-in users.</p>
+</li>
+<li>
+<p>Each of user&#8217;s device creates its own API key and device key.</p>
+</li>
+<li>
+<p>User&#8217;s Device and API keys are not shared across devices.</p>
+</li>
+<li>
+<p>User&#8217;s API key &amp; device key are stored in persistent storage on the device and created only if needed.</p>
+</li>
+<li>
+<p>The Sdk shall request for device registration only when needed.
+<code>registerDevice</code> shall not be invoked if device is already authorized and sdk is able to make Api calls to Ost Platform.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="anchor" href="#implementation"></a>Implementation</h4>
+<div class="paragraph">
+<p>Please refer to <a href="./documentation/OstCoreWorkflows.md#setupdevice"><code>setupDevice</code> core workflow documentation</a> for implementation details.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2_activate_user_ui_workflow"><a class="anchor" href="#2_activate_user_ui_workflow"></a>2. Activate User UI Workflow</h3>
+<hr>
+<div class="paragraph">
+<p>Activate User workflow deploys user&#8217;s wallet on the blockchain and whitelists the user&#8217;s wallet and enables it to take part in application&#8217;s brand token economy.</p>
+</div>
+<div class="sect3">
+<h4 id="blockchain_transactions_performed_during_activate_user_workflow"><a class="anchor" href="#blockchain_transactions_performed_during_activate_user_workflow"></a>Blockchain Transactions Performed During Activate User Workflow</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Deploys user&#8217;s contracts</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Device-manager and token-holder contracts</p>
+</li>
+<li>
+<p>Set user&#8217;s recovery key address, device key address in device-manager contract</p>
+</li>
+<li>
+<p>Authorizes session key(s) in token-holder contract</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Whitelists user&#8217;s contract in UBT (Utility Brand Token Contract).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="recovery_key_generation_using_6_digit_pin"><a class="anchor" href="#recovery_key_generation_using_6_digit_pin"></a>Recovery Key Generation Using 6 Digit Pin</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>User&#8217;s recovery key is generated using <a href="https://en.bitcoinwiki.org/wiki/Scrypt">SCrypt</a>, a password-based key derivation function.</p>
+</li>
+<li>
+<p>The &#8216;password&#8217; provided to this function is a string created by concatenating:</p>
+</li>
+<li>
+<p>A prefix provided by application server.</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Application server must generate and store prefix for each user, treat it as sensitive and immutable information.</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>User&#8217;s PIN</p>
+</li>
+<li>
+<p>User&#8217;s Ost-id</p>
+</li>
+<li>
+<p>The salt required for SCrypt is provided by Ost Platform</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation_2"><a class="anchor" href="#implementation_2"></a>Implementation</h4>
+<div class="paragraph">
+<p>Please refer to <a href="./documentation/OstWalletUI.md#activate-user">Activate User UI Workflow Documentation</a> for implementation details.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3_wallet_settings_ui_component"><a class="anchor" href="#3_wallet_settings_ui_component"></a>3. Wallet Settings UI Component</h3>
+<hr>
+<div class="paragraph">
+<p>OstWallet Settings is a pre-built UI component available exclusively available in <code>ost-wallet-sdk-react-native</code> SDK.
+It is a wallet settings page that can be used by end-users to perfrom 12 different wallet operations and view their wallet details.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>IMPORTANT:</strong> This feature requires application to use <a href="https://reactnavigation.org/docs/en/getting-started.html">React Navigation</a> package.</p>
+</div>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="implementation_3"><a class="anchor" href="#implementation_3"></a>Implementation</h4>
+<div class="paragraph">
+<p>Please refer to <a href="#">./documentation/OstWalletSettings.adoc</a> for implementation details.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4_ostvtransaction_helper_transaction_and_add_session_integrated_workflow"><a class="anchor" href="#4_ostvtransaction_helper_transaction_and_add_session_integrated_workflow"></a>4. OstvTransaction Helper - Transaction and Add Session Integrated Workflow</h3>
+<hr>
+<div class="paragraph">
+<p><code>OstTransactionHelper</code> is a transaction helper provided by the SDK that creates session keys before performing a transaction if needed.
+App developers can configure the session creation parameters (session buckets) as per application&#8217;s need.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation_4"><a class="anchor" href="#implementation_4"></a>Implementation</h4>
+<div class="paragraph">
+<p>Please refer to <a href="#">./documentation/OstTransactionHelper.adoc</a> for implementation details.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intermediate_usage_ost_wallet_sdk_ui"><a class="anchor" href="#intermediate_usage_ost_wallet_sdk_ui"></a>Intermediate Usage - Ost Wallet SDK UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For quick and easy integration with SDK, developers can use built-in user-interface components which are configurable and support content and theme customization.</p>
+</div>
+<div class="paragraph">
+<p>Please refer to <a href="#">./documentation/OstWalletUI.adoc</a> for documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advance_usage_ost_wallet_core_workflow_apis"><a class="anchor" href="#advance_usage_ost_wallet_core_workflow_apis"></a>Advance Usage - Ost Wallet Core Workflow APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ost core workflows API do not use any UI components, thereby giving complete ux control to the developers.
+The <a href="#">./documentation/OstWalletUI.adoc</a> also uses Ost core workflows.</p>
+</div>
+<div class="paragraph">
+<p>Please refer to <a href="#">./documentation/OstCoreWorkflows.adoc</a> for documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="known_issues"><a class="anchor" href="#known_issues"></a>Known Issues</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sdk_initialization_fails_on_android_9_api_level_28"><a class="anchor" href="#sdk_initialization_fails_on_android_9_api_level_28"></a>Sdk Initialization Fails on Android 9 (API level 28)</h3>
+<div class="paragraph">
+<p>Starting with Android 9 (API level 28), <a href="https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted">cleartext support</a> is disabled by default.
+On the other hand, Ost Wallet Android Sdk leverages on <strong>Public Key Pinning</strong> to ensure the authenticity of a Ost Platform server&#8217;s public key used in TLS sessions using <a href="https://github.com/datatheorem/TrustKit-Android">TrustKit</a>.
+As TrustKit can only be inititialized with application&#8217;s <a href="https://developer.android.com/training/articles/security-config">network security configuration</a>, sdk initialization fails.
+To work-around this issues, application needs to have TrustKit as a dependency and initialize it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setup_device_workflow_fails_on_ios_13_simulator"><a class="anchor" href="#setup_device_workflow_fails_on_ios_13_simulator"></a>Setup Device Workflow Fails on iOS-13 Simulator</h3>
+<div class="paragraph">
+<p>Ost Wallet Sdk uses iOS&#8217;s <a href="https://developer.apple.com/documentation/security/certificate_key_and_trust_services/keys/storing_keys_in_the_keychain">Keychain</a> to store user&#8217;s cryptographic keys.
+Unfortunately, Keychain doesn&#8217;t work as expected on iOS-13 Simulators.
+We request you to kindly test your application on actual iOS-13 device while we continue to look for a workaround.</p>
+</div>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                	<div class="btn-next"><a href="/client-sdk-react-native/1.0/android-setup.html">Android Setup &rarr;</a></div>
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© Ost.com 2020 </span>
+		<a class="terms" href="https://ost.com/privacy">Privacy</a>
+	</div>
+</footer>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>

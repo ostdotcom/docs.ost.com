@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/client-sdk-react-native/1.0/OstWalletUI.md">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>OST Wallet React Native SDK UI - Ost Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+        <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="client-sdk-react-native" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Ost Client (Mobile Wallet) SDK React Native</span>
+      <div class="component-version">
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/index.html">
+    OverviewX
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/android_setup.md.html">
+    Android Setup
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://dev.ost.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/ostdotcom">GitHub</a>
+        <a class="navbar-item" href="https://ost.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>OST Wallet React Native SDK UI</h1>
+		<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For quick and easy integration with SDK, developers can use built-in user interface components which are configurable and support content and theme customization.
+All OstWalletSdkUI workflows return <code>workflow-id</code>.
+The application can subscribe to the events of the workflow using the <code>workflow-id</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>OstWalletSdkUI</code> is packaged along with OstWalletSdk.
+There are no additional steps for using <code>OstWalletSdkUI</code>.
+To setup OstWalletSdk, please refer to <a href="../README.md#installing-react-native-sdk">setup</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="before_we_begin"><a class="anchor" href="#before_we_begin"></a>Before We Begin</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>App must <a href="../README.md#initializing-the-sdk">initialize</a> the sdk <em>*before*</em> initiating any UI workflows.</p>
+</li>
+<li>
+<p>App must perform <a href="../README.md#setupdevice">setupDevice</a> workflow <em>*before*</em> initiating any UI workflows.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ostwalletsdkui_sdk_apis"><a class="anchor" href="#ostwalletsdkui_sdk_apis"></a>OstWalletSdkUI SDK APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use OstWalletSdkUI</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>import {OstWalletSdkUI} from '@ostdotcom/ost-wallet-sdk-react-native';</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set_theme_config"><a class="anchor" href="#set_theme_config"></a>Set Theme Config</h3>
+<div class="paragraph">
+<p>Theme for OstWalletSdkUI can be initialized by calling <code>setThemeConfig</code> API which setup OstWalletSdkUI theme config.
+To define custom theme config, please refer to <a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.3/documentation/ThemeConfig.md">Theme Config Android</a>/https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/documentation/ThemeConfig.md[Theme Config iOS] documentation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">    // Define the content config
+    const theme_config = {
+        "nav_bar_logo_image": {
+            "asset_name": "YOUR_LOGO_ASSET_NAME"
+        }
+    };
+
+    /**
+    * Set theme config for UI
+    * config: Config to use for UI
+    */
+    OstWalletSdkUI.setThemeConfig(theme_config);</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>In the above example, <code>asset_name</code> is name of asset which is present in the respective assets folder for iOS/android.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set_content_config"><a class="anchor" href="#set_content_config"></a>Set Content Config</h3>
+<div class="paragraph">
+<p>Content for OstWalletSdkUI can be initialized by calling <code>setContentConfig</code> API which set-up OstWalletSdkUI content config.
+To define custom content config, please refer to <a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.3/documentation/ContentConfig.md">Content Config Android</a>/https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/documentation/ContentConfig.md[Content Config iOS] documentation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">    // Please update terms_and_condition.url as per your needs.
+    const content_config = {
+        "activate_user": {
+            "create_pin": {
+                "placeholders": {
+                    "terms_and_condition": {
+                        "url": "https://YOUR-WEB-SITE.com/terms-page"
+                    }
+                }
+            },
+            "confirm_pin": {
+                "placeholders": {
+                    "terms_and_condition": {
+                        "url": "https://YOUR-WEB-SITE.com/terms-page"
+                    }
+                }
+            }
+        }
+    };
+
+    /**
+    * Set content config for UI
+    * config: Config to use for UI
+    */
+    OstWalletSdkUI.setContentConfig(content_config);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set_loader_manager"><a class="anchor" href="#set_loader_manager"></a>Set Loader Manager</h3>
+<div class="paragraph">
+<p>Application loader for OstWalletUI can be initialized by calling <code>setLoaderManager</code> API.
+This API is available in native SDK.
++  + Custom loader is supported from OstWalletSdk-native version Android v<code>2.3.6</code> Or iOS v<code>2.3.5</code> + Please, verify OstWalletSdk version in <code>Cartfile</code>.
++  + Custom loader needs to be written in native code (java, swift/Objective-C).
++ Sample code for custom loader is available in respective platform directory.
+For <a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/Samples/CustomLoader/OstMockCustomLoader.md">iOS</a> and <a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/Samples/customloader/OstCustomLoader.md">Android</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setup_your_passphrase_prefix_delegate"><a class="anchor" href="#setup_your_passphrase_prefix_delegate"></a>Setup your Passphrase Prefix Delegate</h3>
+<div class="paragraph">
+<p><code>Passphrase Prefix</code> is a salt provided by your application that assists in generation of User&#8217;s recovery key using user&#8217;s PIN.
+This salt should be <em>unique</em> for each user, is immutable and needs to be associated with the user.
+The salt should not be stored in memory or on deivce unencrypted.
+When the UI workflow need&#8217;s to ask for user&#8217;s PIN, delegate&#8217;s getPassphrase method is invoked.</p>
+</div>
+<div class="paragraph">
+<p>The delegate must be derived from <code>OstWalletUIWorkflowCallback</code> class.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import { OstWalletUIWorkflowCallback } from '@ostdotcom/ost-wallet-sdk-react-native';
+class UserPassphrasePrefixDelegate extends OstWalletUIWorkflowCallback {
+  constructor() {
+    super();
+  }
+
+  getPassphrase(userId, ostWorkflowContext, OstPassphrasePrefixAccept) {
+    let fetchPromise = new Promise((resolve,reject) =&gt; {
+        //Write code here to validate userId.
+        //If it is not the same as that of the logged-in user, reject the promise.
+
+        //Write code here to fetch the salt from your server.
+        //Read the passphrasePrefix from response and resolve the Promise.
+    });
+    fetchPromise
+      .then((passphrasePrefix) =&gt; {
+        OstPassphrasePrefixAccept.setPassphrase(passphrasePrefix, userId, (error) =&gt; {
+          console.warn(error);
+        });
+      })
+      .catch((err) =&gt; {
+          // Cancel the workflow.
+          OstPassphrasePrefixAccept.cancelFlow();
+      });
+  }
+
+  /**
+   *  Optional Callback Implementation
+   *  --------------------------------
+   *
+   *  Application can also define and use following callback methods:
+   *  - requestAcknowledged(ostWorkflowContext , ostContextEntity )
+   *  - flowComplete(ostWorkflowContext , ostContextEntity )
+   *  - flowInterrupt(ostWorkflowContext , ostError)
+   *
+   *  Note:
+   *  These methods can be helpful for debugging.
+   *  Defining these methods does NOT impact ui workflow event subscription in any way.
+   *  If application subscribes to events and also defines these callbacks, both shall be invoked.
+   */
+
+  requestAcknowledged(ostWorkflowContext , ostContextEntity ) {
+      console.log("Received requestAcknowledged callback");
+
+      let contextWorkflowId = ostWorkflowContext.WORKFLOW_ID;
+      let workflowType = ostWorkflowContext.WORKFLOW_TYPE;
+      let entityType = ostContextEntity.entityType;
+      let entityData = ostContextEntity.entity;
+
+      console.log("- Workflow Id:", contextWorkflowId);
+      console.log("- Workflow Type:", workflowType);
+      console.log("- OstContextEntity type:", entityType)
+      console.log("- OstContextEntity entityData:", entityData);
+  }
+
+  flowComplete(ostWorkflowContext , ostContextEntity ) {
+      console.log("Received flowComplete callback");
+
+      let contextWorkflowId = ostWorkflowContext.WORKFLOW_ID;
+      let workflowType = ostWorkflowContext.WORKFLOW_TYPE;
+      let entityType = ostContextEntity.entityType;
+      let entityData = ostContextEntity.entity;
+
+      console.log("- Workflow Id:", contextWorkflowId);
+      console.log("- Workflow Type:", workflowType);
+      console.log("- OstContextEntity type:", entityType)
+      console.log("- OstContextEntity entityData:", entityData);
+  }
+
+  flowInterrupt(ostWorkflowContext , ostError) {
+      console.log("Received flowInterrupt callback");
+
+      let contextWorkflowId = ostWorkflowContext.WORKFLOW_ID;
+      let workflowType = ostWorkflowContext.WORKFLOW_TYPE;
+      let errorData = ostError.error;
+      let errorCode = ostError.getErrorCode();
+
+      // If you would like to reach out to Ost Devs for support,
+      // we request you to collect internalErrorCode
+      let internalErrorCode = ostError.getInternalErrorCode();
+      let isApiError = ostError.isApiError();
+
+      console.log("- Workflow Id:", contextWorkflowId);
+      console.log("- Workflow Type:", workflowType);
+      console.log("- Error");
+      console.log("  - Error Code:", errorCode);
+      console.log("  - Is Api Error:", isApiError);
+      console.log("  - Sdk Internal Error Code", internalErrorCode);
+      console.log("  - error data", errorData);
+
+      if ( isApiError &amp;&amp; ostError.isApiSignerUnauthorized() ) {
+          console.log("- This device has either been revoked or not yet registered.");
+      } else if ("WORKFLOW_CANCELED" === errorCode.toUpperCase() ) {
+          console.log("- This error can be ignored. The workflow has been canceled by the user or application");
+      }
+  }
+}
+export default UserPassphrasePrefixDelegate;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ost_wallet_settings"><a class="anchor" href="#ost_wallet_settings"></a>Ost Wallet Settings</h3>
+<div class="paragraph">
+<p>OstWallet Settings is a pre-built UI Component available exclusively available in <code>ost-wallet-sdk-react-native</code> Sdk.
+It is a wallet settings page that can be used by end-users to perfrom different wallet operations(Ost Wallet UI Workflows).
+For details <a href="#">./OstWalletSettings.adoc</a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note</strong> + <code>OstWalletSettings</code> is available from <code>ost-wallet-sdk-react-native</code> SKD version v2.3.12-beta.1</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ost_wallet_ui_workflows"><a class="anchor" href="#ost_wallet_ui_workflows"></a>Ost Wallet UI Workflows</h3>
+<div class="sect3">
+<h4 id="activate_user"><a class="anchor" href="#activate_user"></a>Activate User</h4>
+<div class="paragraph">
+<p>User activation refers to the deployment of smart-contracts that form the user&#8217;s token wallet.
+An activated user can engage with a token.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">let uiCallback = new UserPassphrasePrefixDelegate()
+
+/**
+* Activate user
+* @param {String} userId - Ost User id
+* @param {String} expiresAfterInSecs - session key expiry time.
+* @param {String} spendingLimit - spending limit once in a transaction of session
+* @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+* @public
+*/
+let workflowId = OstWalletSdkUI.activateUser(
+    userId,
+    expiresAfterInSecs,
+    spendingLimit,
+    uiCallback
+);
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+  // User is being activated. At this point, user can neither receive or send tokens.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // User has been activated. User can now start receiving tokens.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow. The user has NOT been activated.
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add_session"><a class="anchor" href="#add_session"></a>Add Session</h4>
+<div class="paragraph">
+<p>A session is a period of time during which a sessionKey is authorized to sign transactions under a pre-set limit per transaction on behalf of the user.
+The device manager, which controls the tokens, authorizes sessions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let uiCallback = new UserPassphrasePrefixDelegate()
+
+/**
+   * Add user session
+   * @param {String} userId - Ost User id
+   * @param {String} expiresAfterInSecs - session key expiry time.
+   * @param {String} spendingLimit - spending limit once in a transaction of session
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+let workflowId = OstWalletSdkUI.addSession(
+    userId,
+    expiresAfterInSecs,
+    spendingLimit,
+    uiCallback
+)
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+  // Session is being added.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // Session has been added.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow. The Session has NOT been added.
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="get_mnemonic_phrase"><a class="anchor" href="#get_mnemonic_phrase"></a>Get Mnemonic Phrase</h4>
+<div class="paragraph">
+<p>The mnemonic phrase represents a human-readable way to authorize a new device.
+This phrase is 12 words long.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let uiCallback = new UserPassphrasePrefixDelegate()
+
+/**
+   * Get device mnemonics
+   * @param {String} userId - Ost User id
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+let workflowId = OstWalletSdkUI.getDeviceMnemonics(
+    userId,
+    uiCallback
+)
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // User has seen the mnemonics
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow.
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="reset_a_users_pin"><a class="anchor" href="#reset_a_users_pin"></a>Reset a User&#8217;s PIN</h4>
+<div class="paragraph">
+<p>The user&#8217;s PIN is set when activating the user.
+This method supports re-setting a PIN and re-creating the recoveryOwner as part of that.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let uiCallback = new UserPassphrasePrefixDelegate()
+
+/**
+   * Reset pin
+   *
+   * @param {String} userId - Ost User id
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   */
+let workflowId = OstWalletSdkUI.resetPin(
+    userId,
+    uiCallback
+)
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+  // Pin is being reset.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // Workflow completed successfully.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow.
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="initiate_recovery"><a class="anchor" href="#initiate_recovery"></a>Initiate Recovery</h4>
+<div class="paragraph">
+<p>A user can control their tokens using their authorized device(s).
+If the user loses their authorized device, she can recover access to their tokens by authorizing a new device via the recovery process.</p>
+</div>
+<div class="paragraph">
+<p>If application set <code>recoverDeviceAddress</code> then OstWalletUI ask for <code>pin</code> to initiate device recovery.
+Else it displays authorized device list for given <code>userId</code> to select device from.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">let uiCallback = new UserPassphrasePrefixDelegate();
+
+/**
+* Initiate device recovery
+* @param {String} userId - Ost User id
+* @param {String} recoverDeviceAddress - Device address which wants to recover
+* @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+* @public
+*/
+let workflowId = OstWalletSdkUI.initiateDeviceRecovery(
+    userId,
+    recoverDeviceAddress,
+    uiCallback
+)
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+  // Device recovery has been initiated.
+  // The device will be recovered after 12 hours.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // Device recovery has been initiated.
+  // The device will be recovered after 12 hours.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow.
+});</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><code>recoverDeviceAddress</code> can be <code>null</code>.
++ If you have your own UI to select the device to revoke, set <code>recoverDeviceAddress</code> to the selected device address.
++ When <code>null</code> is passed, the Sdk will ask user to choose the device using built-in device list UI.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="abort_device_recovery"><a class="anchor" href="#abort_device_recovery"></a>Abort Device Recovery</h4>
+<div class="paragraph">
+<p>To abort initiated device recovery.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">  let uiCallback = new UserPassphrasePrefixDelegate();
+
+  /**
+  * Abort device recovery
+  * @param {String} userId - Ost User id
+  * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+  * @public
+  */
+  OstWalletSdkUI.abortDeviceRecovery(
+      userId,
+      uiCallback
+  )
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Request has been acknowledged by OST Platform.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Device recovery has been aborted.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="revoke_device"><a class="anchor" href="#revoke_device"></a>Revoke Device</h4>
+<div class="paragraph">
+<p>To revoke device access.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+
+  /**
+   * Revoke device
+   * @param {String} userId - Ost User id
+   * @param {String} deviceAddressToRevoke - Device address which wants to recover
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+  let workflowId = OstWalletSdkUI.revokeDevice(userId, deviceAddressToRevoke, uiCallback );
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Request has been acknowledged by OST Platform.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Device has been revoked.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><code>deviceAddressToRevoke</code> can be <code>null</code>.
++ If you have your own UI to select the device to revoke, set <code>deviceAddressToRevoke</code> to the selected device address.
++ When <code>null</code> is passed, the Sdk will ask user to choose the device using built-in device list UI.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update_biometric_preference"><a class="anchor" href="#update_biometric_preference"></a>Update Biometric Preference</h4>
+<div class="paragraph">
+<p>To enable or disable the biometric.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+  let shouldEnable = true;
+
+  /**
+   * Update biometric preference
+   * @param {String} userId - Ost User id
+   * @param {boolean} shouldEnable - pass true to enable biometic preference, false to disable.
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+  let workflowId = OstWalletSdkUI.updateBiometricPreference( userId, shouldEnable, uiCallback );
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Preference has been updated.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="authorize_current_device_with_mnemonics"><a class="anchor" href="#authorize_current_device_with_mnemonics"></a>Authorize Current Device With Mnemonics</h4>
+<div class="paragraph">
+<p>To add a new device using 12 words recovery phrase.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+  /**
+   * Authorize user device with mnemonics
+   * @param {String} userId - Ost User id
+   * @param {OstWalletWorkFlowCallback} workflow - callback implementation instances for application communication
+   * @public
+   */
+  let workflowId = OstWalletSdkUI.authorizeCurrentDeviceWithMnemonics(userId, uiCallback);
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Request has been acknowledged by OST Platform.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Device has been authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="get_add_device_qr_code"><a class="anchor" href="#get_add_device_qr_code"></a>Get Add Device QR-Code</h4>
+<div class="paragraph">
+<p>To show QR-Code to scan from another authorized device</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+
+  /**
+   * Get add device QR code
+   *
+   * @param {String} userId - Ost User id
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+   let workflowId = OstWalletSdkUI.getAddDeviceQRCode(userId, uiCallback);
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Current Device is being authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Current Device has been authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scan_qr_code_to_authorize_device"><a class="anchor" href="#scan_qr_code_to_authorize_device"></a>Scan QR-Code to Authorize Device</h3>
+<div class="paragraph">
+<p>To authorize device by scanning device QR-Code.</p>
+</div>
+<div class="paragraph">
+<p>QR-Code Sample:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "dd":"AD",
+    "ddv":"1.1.0",
+    "d":{
+        "da": "0x7701af46018fc57c443b63e839eb24872755a2f8"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+
+  /**
+   * Scan QR-Code to authorize device
+   * @param {String} userId - Ost User id
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+   let workflowId = OstWalletSdkUI.scanQRCodeToAuthorizeDevice(userId, uiCallback);
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Device is being authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Device has been authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="execute_transaction"><a class="anchor" href="#execute_transaction"></a>Execute Transaction</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><b>By Scanning QR-Code </b> + To execute transaction via device by scanning device QR-Code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>QR-Code Sample:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "dd":"TX",
+    "ddv":"1.1.0",
+    "d":{
+        "rn":"direct transfer",
+        "ads":[
+            "0x7701af46018fc57c443b63e839eb24872755a2f8",
+            "0xed09dc167a72d939ecf3d3854ad0978fb13a8fe9"
+        ],
+        "ams":[
+            "1000000000000000000",
+            "1000000000000000000"
+        ],
+        "tid": 1140,
+        "o":{
+                "cs":"USD",
+                "s": "$"
+        }
+    },
+    "m":{
+        "tn":"comment",
+        "tt":"user_to_user",
+        "td":"Thanks for comment"
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+
+  /**
+   * Scan QR-Code to execute transaction
+   *
+   * @param {String} userId - Ost User id
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+   let workflowId = OstWalletSdkUI.scanQRCodeToExecuteTransaction(userId, uiCallback);
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Transaction is being executed.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Transaction has been executed successfully.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>By Calling function</strong> + Helper method creates session if active sessoin for transction amount is not available.
+To execute transaction via helper method, <a href="#">./OstTransactionHelper.adoc</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_wallet_ui_events_and_listeners"><a class="anchor" href="#ost_wallet_ui_events_and_listeners"></a>Ost Wallet UI Events and Listeners</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="subscribe"><a class="anchor" href="#subscribe"></a>Subscribe</h3>
+<div class="paragraph">
+<p>Subscribe to specified event of UI Workflow</p>
+</div>
+<div class="paragraph">
+<p>Supported <code>EventName</code> are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>requestAcknowledged</p>
+</li>
+<li>
+<p>flowComplete</p>
+</li>
+<li>
+<p>flowInterrupt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can retrive event names from Sdk:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">OstWalletSdkUI.EVENTS.requestAcknowledged
+OstWalletSdkUI.EVENTS.flowComplete
+OstWalletSdkUI.EVENTS.flowInterrupt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">/**
+* Subscribes to specified event of UI Workflow.
+* @param {String} workflowId - Id of the workflow as returned by methods of OstWalletSdkUI
+* @param {String} eventName - Name of the event to subscribe to.
+* @param {Function} listener - The listener function.
+* @param {*} context - The context to invoke the listener with.
+* @returns {Boolean} - false if failed to subscribe.
+* @public
+*/
+OstWalletSdkUI.subscribe(
+    workflowId,
+    eventName,
+    listener,
+    context
+)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">/**
+* Subscribes once to specified event of UI Workflow.
+* @param {String} workflowId - Id of the workflow as returned by methods of OstWalletSdkUI
+* @param {String} eventName - Name of the event to subscribe to.
+* @param {Function} listener - The listener function.
+* @param {*} context - The context to invoke the listener with.
+* @returns {Boolean} - false if failed to subscribe.
+* @public
+*/
+OstWalletSdkUI.subscribeOnce(
+    workflowId,
+    eventName,
+    listener,
+    context
+)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unsubscribe"><a class="anchor" href="#unsubscribe"></a>Unsubscribe</h3>
+<div class="paragraph">
+<p>Unsubscribes the listener from the specified event of UI Workflow.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">/**
+* Unsubscribes the listener from the specified event of UI Workflow.
+* @param {String} workflowId - Id of the workflow as returned by methods of OstWalletSdkUI
+* @param {String} eventName - Name of the event to subscribe to.
+* @param {Function} listener - The listener function.
+* @param {*} context - The context to invoke the listener with.
+* @returns {Boolean} - false if failed to subscribe.
+* @public
+*/
+OstWalletSdkUI.unsubscribe(
+    workflowId,
+    eventName,
+    listener,
+    context
+)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="event_listeners"><a class="anchor" href="#event_listeners"></a>Event Listeners</h3>
+<div class="sect3">
+<h4 id="request_acknowledged_listener"><a class="anchor" href="#request_acknowledged_listener"></a>Request Acknowledged Listener</h4>
+<div class="paragraph">
+<p>Acknowledge application about the request which is going to made by SDK.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">/**
+   * Request acknowledged
+   * @param {Object} ostWorkflowContext - info about workflow type
+   * @param ostContextEntity - info about entity
+   * @override
+   */
+  requestAcknowledged(ostWorkflowContext, ostContextEntity ) =&gt; {
+    //ostWorkflowContext.WORKFLOW_ID gives the id of the workflow.
+    //ostWorkflowContext.WORKFLOW_TYPE gives the type of the workflow.
+  }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="flow_complete_listener"><a class="anchor" href="#flow_complete_listener"></a>Flow Complete Listener</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">/**
+   * Flow complete
+   * @param ostWorkflowContext - workflow type
+   * @param ostContextEntity -  status of the flow
+   * @override
+   */
+  flowComplete(ostWorkflowContext, ostContextEntity ) =&gt; {
+    //ostWorkflowContext.WORKFLOW_ID gives the id of the workflow.
+    //ostWorkflowContext.WORKFLOW_TYPE gives the type of the workflow.
+  }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="flow_interrupt_listener"><a class="anchor" href="#flow_interrupt_listener"></a>Flow Interrupt Listener</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">/**
+   * Flow interrupt
+   * @param ostWorkflowContext workflow type
+   * @param ostError reason of interruption
+   * @override
+   */
+  flowInterrupt(ostWorkflowContext, ostError) =&gt; {
+    //ostWorkflowContext.WORKFLOW_ID gives the id of the workflow.
+    //ostWorkflowContext.WORKFLOW_TYPE gives the type of the workflow.
+  }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© Ost.com 2020 </span>
+		<a class="terms" href="https://ost.com/privacy">Privacy</a>
+	</div>
+</footer>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>

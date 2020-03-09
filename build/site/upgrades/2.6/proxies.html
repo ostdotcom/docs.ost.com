@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/upgrades/2.6/proxies">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>Proxy Upgrade Pattern - OpenZeppelin Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85043059-1"></script>
+<script>function gtag(){dataLayer.push(arguments)};window.dataLayer=window.dataLayer||[];gtag('js',new Date());gtag('config','UA-85043059-1')</script>
+    <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="upgrades" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Upgrades</span>
+      <div class="component-version">
+        <button class="flex align-center shrink btn btn-version" onclick="this.focus()">
+          2.6
+        </button>
+        <div class="popover-container">
+          <div class="popover">
+            <p>Current version</p>
+            <ul>
+              <li>
+                  <a href="/upgrades/2.7/index.html">2.7</a>
+              </li>
+            </ul>
+            <p>Previous versions</p>
+            <ul>
+                  <li>
+                    <a href="/upgrades/2.6/index.html">2.6</a>
+                  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.6/index.html">
+    Overview
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.6/writing-upgradeable.html">
+    Writing Upgradeable Contracts
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.6/creating-upgradeable-from-solidity.html">
+    Creating Upgradeable Contracts From Solidity
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link nav-link-active" href="/upgrades/2.6/proxies.html">
+    Proxies
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/upgrades/2.6/api.html">
+    API Reference
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://docs.openzeppelin.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/OpenZeppelin">GitHub</a>
+        <a class="navbar-item" href="https://forum.openzeppelin.com">Forum</a>
+        <a class="navbar-item" href="https://blog.openzeppelin.com">Blog</a>
+        <a class="navbar-item" href="https://openzeppelin.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>Proxy Upgrade Pattern</h1>
+		<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This article describes the "unstructured storage" proxy pattern, the fundamental building block of OpenZeppelin Upgrades.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For a more in depth read, please see <a href="https://blog.zeppelinos.org/proxy-patterns/">our proxy-patterns blog post</a>, which discusses the need for proxies, goes into more technical detail on the subject, elaborates on other possible proxy patterns that were considered for OpenZeppelin Upgrades, and more.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="why-upgrade-a-contract"><a class="anchor" href="#why-upgrade-a-contract"></a>Why Upgrade a Contract?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By design, smart contracts are immutable. On the other hand, software quality heavily depends on the ability to upgrade and patch source code in order to produce iterative releases. Even though blockchain based software profits significantly from the technology&#8217;s immutability, still a certain degree of mutability is needed for bug fixing and potential product improvements. OpenZeppelin Upgrades solves this apparent contradiction by providing an easy to use, simple, robust, and opt-in upgrade mechanism for smart contracts that can be controlled by any type of governance, be it a multi-sig wallet, a simple address or a complex DAO.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrading-via-the-proxy-pattern"><a class="anchor" href="#upgrading-via-the-proxy-pattern"></a>Upgrading via the Proxy Pattern</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The basic idea is using a proxy for upgrades. The first contract is a simple wrapper or "proxy" which users interact with directly and is in charge of forwarding transactions to and from the second contract, which contains the logic. The key concept to understand is that the logic contract can be replaced while the proxy, or the access point is never changed. Both contracts are still immutable in the sense that their code cannot be changed, but the logic contract can simply be swapped by another contract. The wrapper can thus point to a different logic implementation and in doing so, the software is "upgraded".</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>User ---- tx ---&gt; Proxy ----------&gt; Implementation_v0
+                     |
+                      ------------&gt; Implementation_v1
+                     |
+                      ------------&gt; Implementation_v2</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="proxy-forwarding"><a class="anchor" href="#proxy-forwarding"></a>Proxy Forwarding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most immediate problem that proxies need to solve is how the proxy exposes the entire interface of the logic contract without requiring a one to one mapping of the entire logic contract&#8217;s interface. That would be difficult to maintain, prone to errors, and would make the interface itself not upgradeable. Hence, a dynamic forwarding mechanism is required. The basics of such a mechanism are presented in the code below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-solidity hljs" data-lang="solidity">assembly {
+  let ptr := mload(0x40)
+
+  // (1) copy incoming call data
+  calldatacopy(ptr, 0, calldatasize)
+
+  // (2) forward call to logic contract
+  let result := delegatecall(gas, _impl, ptr, calldatasize, 0, 0)
+  let size := returndatasize
+
+  // (3) retrieve return data
+  returndatacopy(ptr, 0, size)
+
+  // (4) forward return data back to caller
+  switch result
+  case 0 { revert(ptr, size) }
+  default { return(ptr, size) }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code can be put in the <a href="https://solidity.readthedocs.io/en/v0.5.15/contracts.html#fallback-function">fallback function</a> of a proxy, and will forward any call to any function with any set of parameters to the logic contract without it needing to know anything in particular of the logic contract&#8217;s interface. In essence, (1) the <code>calldata</code> is copied to memory, (2) the call is forwarded to the logic contract, (3) the return data from the call to the logic contract is retrieved, and (4) the returned data is forwarded back to the caller. The technique needs to be implemented using Yul because <a href="https://solidity.readthedocs.io/en/v0.5.15/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries">Solidity&#8217;s <code>delegatecall</code></a> returns a boolean instead of the callee&#8217;s return data.</p>
+</div>
+<div class="paragraph">
+<p>A very important thing to note is that the code makes use of the EVM&#8217;s <code>delegatecall</code> opcode which executes the callee&#8217;s code in the context of the caller&#8217;s state. That is, the logic contract controls the proxy&#8217;s state and the logic contract&#8217;s state is meaningless. Thus, the proxy doesn&#8217;t only forward transactions to and from the logic contract, but also represents the pair&#8217;s state. The state is in the proxy and the logic is in the particular implementation that the proxy points to.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unstructured-storage-proxies"><a class="anchor" href="#unstructured-storage-proxies"></a>Unstructured Storage Proxies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A problem that quickly comes up when using proxies has to do with the way in which variables are stored in the proxy contract. Suppose that the proxy stores the logic contract&#8217;s address in it&#8217;s only variable <code>address public _implementation;</code>. Now, suppose that the logic contract is a basic token whose first variable is <code>address public _owner</code>. Both variables are 32 byte in size, and as far as the EVM knows, occupy the first slot of the resulting execution flow of a proxied call. When the logic contract writes to <code>_owner</code>, it does so in the scope of the proxy&#8217;s state, and in reality writes to <code>_implementation</code>. This problem can be referred to as a "storage collision".</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Proxy                     |Implementation           |
+|--------------------------|-------------------------|
+|address _implementation   |address _owner           | &lt;=== Storage collision!
+|...                       |mapping _balances        |
+|                          |uint256 _supply          |
+|                          |...                      |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are many ways to overcome this problem, and the "unstructured storage" approach which OpenZeppelin Upgrades implements works as follows. Instead of storing the <code>_implementation</code> address at the proxy&#8217;s first storage slot, it chooses a pseudo random slot instead. This slot is sufficiently random, that the probability of a logic contract declaring a variable at the same slot is negligible. The same principle of randomizing slot positions in the proxy&#8217;s storage is used in any other variables the proxy may have, such as an admin address (that is allowed to update the value of <code>_implementation</code>), etc.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Proxy                     |Implementation           |
+|--------------------------|-------------------------|
+|...                       |address _owner           |
+|...                       |mapping _balances        |
+|...                       |uint256 _supply          |
+|...                       |...                      |
+|...                       |                         |
+|...                       |                         |
+|...                       |                         |
+|...                       |                         |
+|address _implementation   |                         | &lt;=== Randomized slot.
+|...                       |                         |
+|...                       |                         |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example of how the randomized storage is achieved, following <a href="http://eips.ethereum.org/EIPS/eip-1967">EIP 1967</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-solidity hljs" data-lang="solidity">bytes32 private constant implementationPosition = bytes32(uint256(
+  keccak256('eip1967.proxy.implementation')) - 1
+));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As a result, a logic contract doesn&#8217;t need to care about overwriting any of the proxy&#8217;s variables. Other proxy implementations that face this problem usually imply having the proxy know about the logic contract&#8217;s storage structure and adapt to it, or instead having the logic contract know about the proxy&#8217;s storage structure and adapt to it. This is why this approach is called "unstructured storage"; neither of the contracts needs to care about the structure of the other.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="storage-collisions-between-implementation-versions"><a class="anchor" href="#storage-collisions-between-implementation-versions"></a>Storage Collisions Between Implementation Versions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As discussed, the unstructured approach avoids storage collisions between the logic contract and the proxy. However, storage collisions between different versions of the logic contract can occur. In this case, imagine that the first implementation of the logic contract stores <code>address public _owner</code> at the first storage slot and an upgraded logic contract stores <code>address public _lastContributor</code> at the same first slot. When the updated logic contract attempts to write to the <code>_lastContributor</code> variable, it will be using the same storage position where the previous value for <code>_owner</code> was being stored, and overwrite it!</p>
+</div>
+<div class="paragraph">
+<p>Incorrect storage preservation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Implementation_v0   |Implementation_v1        |
+|--------------------|-------------------------|
+|address _owner      |address _lastContributor | &lt;=== Storage collision!
+|mapping _balances   |address _owner           |
+|uint256 _supply     |mapping _balances        |
+|...                 |uint256 _supply          |
+|                    |...                      |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Correct storage preservation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>|Implementation_v0   |Implementation_v1        |
+|--------------------|-------------------------|
+|address _owner      |address _owner           |
+|mapping _balances   |mapping _balances        |
+|uint256 _supply     |uint256 _supply          |
+|...                 |address _lastContributor | &lt;=== Storage extension.
+|                    |...                      |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The unstructured storage proxy mechanism doesn&#8217;t safeguard against this situation. It is up to the user to have new versions of a logic contract extend previous versions, or otherwise guarantee that the storage hierarchy is always appended to but not modified. However, OpenZeppelin Upgrades detects such collisions and warns the developer appropriately.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-constructor-caveat"><a class="anchor" href="#the-constructor-caveat"></a>The Constructor Caveat</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Solidity, code that is inside a constructor or part of a global variable declaration is not part of a deployed contract&#8217;s runtime bytecode. This code is executed only once, when the contract instance is deployed. As a consequence of this, the code within a logic contract&#8217;s constructor will never be executed in the context of the proxy&#8217;s state. To rephrase, proxies are completely oblivious to the existence of constructors. It&#8217;s simply as if they weren&#8217;t there for the proxy.</p>
+</div>
+<div class="paragraph">
+<p>The problem is easily solved though. Logic contracts should move the code within the constructor to a regular 'initializer' function, and have this function be called whenever the proxy links to this logic contract. Special care needs to be taken with this initializer function so that it can only be called once, which is one of the properties of constructors in general programming.</p>
+</div>
+<div class="paragraph">
+<p>This is why when the <a href="../../cli/2.7/index.html" class="page"><strong>OpenZeppelin CLI</strong></a> creates a proxy, it allows you to indicate an initializer function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ npx openzeppelin create MyLogicContract --init initialize --args arg1,arg2,arg3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command creates a proxy that wraps around <code>MyLogicContract</code>, uses <code>MyLogicContract</code> as the logic contract, and calls the logic contract&#8217;s <code>initialize</code> function.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that the <code>initialize</code> function can only be called once, a simple modifier is used. OpenZeppelin Upgrades provides this functionality via a contract that can be extended:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-solidity hljs" data-lang="solidity">// contracts/MyContract.sol
+pragma solidity ^0.5.0;
+
+import "@openzeppelin/upgrades/contracts/Initializable.sol";
+
+contract MyContract is Initializable {
+
+  function initialize(address arg1, uint256 arg2, bytes arg3)
+    initializer
+    public
+    payable
+  {
+    // "constructor" code...
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how the contract extends <code>Initializable</code> and implements the <code>initializer</code> provided by it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transparent-proxies-and-function-clashes"><a class="anchor" href="#transparent-proxies-and-function-clashes"></a>Transparent Proxies and Function Clashes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As described in the previous sections, upgradeable contract instances (or proxies) work by delegating all calls to a logic contract. However, the proxies need some functions of their own, such as <code>upgradeTo(address)</code> to upgrade to a new implementation. This begs the question of how to proceed if the logic contract also has a function named <code>upgradeTo(address)</code>: upon a call to that function, did the caller intend to call the proxy or the logic contract?</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Clashing can also happen among functions with different names. Every function that is part of a contract&#8217;s public ABI is identified, at the bytecode level, by a 4-byte identifier. This identifier depends on the name and arity of the function, but since it&#8217;s only 4 bytes, there is a possibility that two different functions with different names may end up having the same identifier. The Solidity compiler tracks when this happens within the same contract, but not when the collision happens across different ones, such as between a proxy and its logic contract. Read <a href="https://medium.com/nomic-labs-blog/malicious-backdoors-in-ethereum-proxies-62629adf3357">this article</a> for more info on this.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The way OpenZeppelin Upgrades deals with this problem is via the <em>transparent proxy</em> pattern. A transparent proxy will decide which calls are delegated to the underlying logic contract based on the caller address (ie the <code>msg.sender</code>):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the caller is the admin of the proxy (the address with rights to upgrade the proxy), then the proxy will <strong>not</strong> delegate any calls, and only answer any messages it understands.</p>
+</li>
+<li>
+<p>If the caller is any other address, the proxy will <strong>always</strong> delegate a call, no matter if it matches one of the proxy&#8217;s functions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Assuming a proxy with an <code>owner()</code> and an <code>upgradeTo()</code> function, that delegates calls to an ERC20 contract with an <code>owner()</code> and a <code>transfer()</code> function, the following table covers all scenarios:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">msg.sender</th>
+<th class="tableblock halign-left valign-top">owner()</th>
+<th class="tableblock halign-left valign-top">upgradeTo()</th>
+<th class="tableblock halign-left valign-top">transfer()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Owner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns proxy.owner()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns proxy.upgradeTo()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fails</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns erc20.owner()</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fails</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returns erc20.transfer()</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Fortunately, the OpenZeppelin CLI accounts for this situation, and creates an intermediary ProxyAdmin contract that is in charge of all the proxies you create via the cli. Even if you call the <code>create</code> command from your node&#8217;s default account, or using the <code>from</code> address specified when you started your <code>openzeppelin session</code>, the ProxyAdmin contract will be the actual admin of all your proxies. This means that you will be able to interact with the proxies from any of your node&#8217;s accounts, without having to worry about the nuances of the transparent proxy pattern. Only advanced users that use OpenZeppelin Upgrades programmatically via <code>@openzeppelin/upgrades</code> need to be aware of the transparent proxies pattern.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary"><a class="anchor" href="#summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Any developer using the OpenZeppelin CLI and upgradeable contracts should be familiar with proxies in the ways that are described in this article. In the end, the concept is very simple, and OpenZeppelin Upgrades is designed to encapsulate all the proxy mechanics in a way that the amount of things you need to keep in mind when developing projects are reduced to an absolute minimum. It all comes down to the following list:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Have a basic understanding of what a proxy is</p>
+</li>
+<li>
+<p>Always extend storage instead of modifying it</p>
+</li>
+<li>
+<p>Make sure your contracts use initializer functions instead of constructors</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Furthermore, the OpenZeppelin CLI will let you know when something goes wrong with one of the items in this list.</p>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                 	<div class="btn-previous"><a href="/upgrades/2.6/creating-upgradeable-from-solidity.html">&larr; Creating Upgradeable Contracts From Solidity</a></div>
+                	<div class="btn-next"><a href="/upgrades/2.6/api.html">API Reference &rarr;</a></div>
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© OpenZeppelin 2017-2019 </span>
+		<a class="terms" href="https://openzeppelin.com/privacy">Privacy</a>
+		<a class="terms" href="https://openzeppelin.com/tos">Terms of Use</a>
+	</div>
+</footer>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>

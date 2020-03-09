@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/learn/sending-gasless-transactions">
+    <link rel="stylesheet" href="../_/stylesheets/index.css">
+    <title>Sending Gasless Transactions - Ost Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+        <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="learn" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Learn</span>
+      <div class="component-version">
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/index.html">
+    Overview
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/ost-tech-stack.html">
+    Ost Tech Stack
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/smart-contracts.html">
+    Smart Contracts
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/self-custodial-user-wallets.html">
+    Self-Custodial User Wallet
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/session-keys.html">
+    Ephmeral Session Keys
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link nav-link-active" href="/learn/sending-gasless-transactions.html">
+    Sending Gasless Transactions
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/custom-rules.html">
+    Custom Rules Framework
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/end-user-experience.html">
+    End-User Experience Considerations
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/wallet-recovery-flows.html">
+    Wallet Recovery Flows
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/create-user-wallet.html">
+    Create User Wallet
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/create-session.html">
+    Create Session(s)
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/initiate-and-execute-transactions.html">
+    Initiate and Execute Transactions
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/ost-layer-2.html">
+    Ost Layer 2 Overview
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://dev.ost.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/ostdotcom">GitHub</a>
+        <a class="navbar-item" href="https://ost.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>Sending Gasless Transactions</h1>
+		<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Anyone who sends an Ethereum transaction needs to have Ether to pay for its gas fees. This forces new users to purchase Ether (which can be a daunting task) before they can start using a dapp. This is a major hurdle in user onboarding.</p>
+</div>
+<div class="paragraph">
+<p>In this guide, we will explore the concept of gasless (also called <em>meta</em>) transactions, where <strong>the user does not need to pay for their gas fees</strong>. We will also introduce the <a href="https://gasstation.network">Gas Station Network</a>, a decentralized solution to this problem, as well as the OpenZeppelin libraries that allow you to leverage it in your dapps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#what-is-a-meta-tx">Learn what meta-transactions are and why they matter</a></p>
+</li>
+<li>
+<p><a href="#gas-station-network">The Gas Station Network as a decentralized meta-transaction solution</a></p>
+</li>
+<li>
+<p><a href="#building-a-gsn-dapp">Build a GSN-powered DApp from scratch</a></p>
+</li>
+<li>
+<p><a href="#gsn-kit">Fast-forward with the GSN Starter Kit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-a-meta-tx"><a class="anchor" href="#what-is-a-meta-tx"></a>What is a Meta-transaction?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All Ethereum transactions use gas, and the sender of each transaction must have enough Ether to pay for the gas spent. Even though these gas costs are low for basic transactions (a couple of cents), getting Ether is no easy task: dApp users often need to go through Know Your Customer and Anti Money-Laundering processes (KYC &amp; AML), which not only takes time but often involves sending a selfie holding their passport over the Internet (!). On top of that, they also need to provide financial information to be able to purchase Ether through an exchange. Only the most hardcore users will put up with this hassle, and dApp adoption greatly suffers when Ether is required. We can do better.</p>
+</div>
+<div class="paragraph">
+<p><strong>Enter meta-transactions</strong>. This is a fancy name for a simple idea: a third-party (called a <em>relayer</em>) can send another user&#8217;s transactions and pay themselves for the gas cost. In this scheme, users sign messages (not transactions) containing information about a transaction they would like to execute. Relayers are then responsible for signing valid Ethereum transactions with this information and sending them to the network, paying for the gas cost. A <a href="#">contracts:api:GSN.adoc#GSNRecipient</a> preserves the identity of the user that originally requested the transaction. In this way, users can interact directly with smart contracts without needing to have a wallet or own Ether.</p>
+</div>
+<div class="paragraph">
+<p>This means that, in order to support meta transactions in your application, you need to keep a <em>relayer</em> process running - or leverage a decentralized relayer network.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gas-station-network"><a class="anchor" href="#gas-station-network"></a>The Gas Station Network</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="https://gasstation.network">Gas Station Network</a> (GSN) is a decentralized network of <em>relayers</em>. It allows you to build dapps where you pay for your users transactions, so they do not need to hold Ether to pay for gas, easing their onboarding process.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The GSN was originally conceived and designed by <a href="https://medium.com/tabookey/1-800-ethereum-gas-stations-network-for-toll-free-transactions-4bbfc03a0a56">TabooKey</a>, and it has grown to encompass many companies in the Ethereum space looking to work together to solve the problem of onboarding users to Ethereum applications.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>However, relayers in the GSN are not running a charity: they&#8217;re running a business. The reason why they&#8217;ll gladly pay for your users' gas costs is because they will in turn charge your contract, the <em>recipient</em>. That way relayers get their money back, plus a bit extra as a fee for their services.</p>
+</div>
+<div class="paragraph">
+<p>This may sound strange at first, but paying for user onboarding is a very common business practice. Lots of money is spent on advertising, free trials, new user discounts, etc., all with the <a href="https://en.wikipedia.org/wiki/Customer_acquisition_cost">goal of user acquisition</a>. Compared to those, the cost of a couple of Ethereum transactions is actually very small.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, you can leverage the GSN in scenarios where your users pay you off-chain in advance (e.g. via credit card), with each GSN-call deducting from their balance on your system. The possibilities are endless!</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, the GSN is set up in such a way where it’s in the relayers' best interest to serve your requests, and there are measures in place to penalize them if they misbehave. All of this happens automatically, so you can safely start using their services worry-free.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can learn more about how the GSN works in <a href="#">gsn-provider::interacting-with-relayhub.adoc</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="building-a-gsn-dapp"><a class="anchor" href="#building-a-gsn-dapp"></a>Building a GSN-powered DApp</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Time to build a dapp leveraging the GSN and push it to a testnet. In this section, we will use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>create-react-app</code> package to bootstrap a React application, along with <a href="#">network-js::index.adoc</a> to easily set up a web3 object with GSN support</p>
+</li>
+<li>
+<p><a href="#">gsn-helpers::index.adoc</a> to emulate the GSN in your local ganache instance</p>
+</li>
+<li>
+<p>The <a href="https://github.com/OpenZeppelin/openzeppelin-contracts-ethereum-package"><code>@openzeppelin/contracts-ethereum-package</code></a> smart contract library to get GSN</p>
+</li>
+<li>
+<p>The <a href="#">cli::index.adoc</a> to manage and deploy our contracts</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It might feel like there are many moving pieces here, but each component has a well-defined role in building this application. That said, if you are new to the OpenZeppelin platform, it may help to look into the <a href="#">contracts::gsn.adoc</a> and the <a href="#">building-a-dapp.adoc</a> tutorial before you continue reading.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>We will create a simple contract that just counts transactions sent to it, but will tie it into the GSN so that users will not have to pay for the gas when sending these transactions. Let&#8217;s get started!</p>
+</div>
+<div class="sect2">
+<h3 id="environment-set-up"><a class="anchor" href="#environment-set-up"></a>Setting up the Environment</h3>
+<div class="paragraph">
+<p>We will begin by creating a new npm project and installing all dependencies, including <a href="https://www.trufflesuite.com/ganache">Ganache</a> (which we&#8217;ll use to <a href="#">deploying-and-interacting.adoc#local-blockchain</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ mkdir gsn-dapp &amp;&amp; cd gsn-dapp
+$ npm init -y
+$ npm install @openzeppelin/network
+$ npm install --save-dev @openzeppelin/gsn-helpers @openzeppelin/contracts-ethereum-package @openzeppelin/upgrades @openzeppelin/cli ganache-cli</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the CLI to set up a new project and follow the prompts so we can write our first contract.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ npx oz init</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Check out <a href="#">deploying-and-interacting.adoc#getting-started-with-the-cli</a> if you&#8217;re unfamiliar with it.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-our-contract"><a class="anchor" href="#creating-our-contract"></a>Creating our Contract</h3>
+<div class="paragraph">
+<p>We will write our vanilla <code>Counter</code> contract in the newly created <code>contracts</code> folder.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-solidity hljs" data-lang="solidity">// contracts/Counter.sol
+pragma solidity ^0.5.0;
+
+contract Counter {
+    uint256 public value;
+
+    function increase() public {
+        value += 1;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is simple enough. Now, let&#8217;s modify it to add GSN support. This requires extending from the <code>GSNRecipient</code> contract and implementing the <code>acceptRelayedCall</code> method. This method must return whether we accept or reject to pay for a user transaction. For the sake of simplicity, we will be paying for all transactions sent to this contract.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For most (d)apps, it is probably not a good idea to have such a generous policy since any malicious user could easily drain your contract&#8217;s funds. Check out our <a href="#">contracts::gsn-strategies.adoc</a> for different approaches to this problem.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-solidity hljs" data-lang="solidity">// contracts/Counter.sol
+pragma solidity ^0.5.0;
+
+import "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol";
+
+contract Counter is GSNRecipient {
+    uint256 public value;
+
+    function increase() public {
+        value += 1;
+    }
+
+    function acceptRelayedCall(
+        address relay,
+        address from,
+        bytes calldata encodedFunction,
+        uint256 transactionFee,
+        uint256 gasPrice,
+        uint256 gasLimit,
+        uint256 nonce,
+        bytes calldata approvalData,
+        uint256 maxPossibleCharge
+    ) external view returns (uint256, bytes memory) {
+        return _approveRelayedCall();
+    }
+
+    // We won't do any pre or post processing, so leave _preRelayedCall and _postRelayedCall empty
+    function _preRelayedCall(bytes memory context) internal returns (bytes32) {
+    }
+
+    function _postRelayedCall(bytes memory context, bool, uint256 actualCharge, bytes32) internal {
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Start ganache on a separate terminal by running <code>npx ganache-cli</code>. Then, create an instance of our new contract using the OpenZeppelin CLI with <code>npx oz create</code> and follow the prompts, including choosing to call a function to initialize the instance.</p>
+</div>
+<div class="paragraph">
+<p>Be sure to take note of the address of your instance, which is returned at the end of this process!</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It is important that you remember to call the <code>initialize()</code> function when creating the contract, as this will get your contract ready to be used in the GSN.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ openzeppelin create
+✓ Compiled contracts with solc 0.5.9 (commit.e560f70d)
+? Pick a contract to instantiate Counter
+? Pick a network development
+All contracts are up to date
+? Call a function to initialize the instance after creating it? Yes
+? Select which function * initialize()
+✓ Instance created at 0x7F73086E24ce5834E62075dEAB2b8F10865FFF9B</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Great! Now, if we deployed this contract to mainnet or the rinkeby testnet, we would be almost ready to start sending gasless transactions to it, since the GSN is already set up on both of those networks. However, since we are on a local ganache, we&#8217;ll need to set it up ourselves.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploying-local-gsn"><a class="anchor" href="#deploying-local-gsn"></a>Deploying a Local GSN for Development</h3>
+<div class="paragraph">
+<p>The GSN is composed of a central <code>RelayHub</code> contract that coordinates all relayed transactions, as well as multiple decentralized relayers. The relayers are processes that receive requests to relay a transaction via an HTTP interface and send them to the network via the <code>RelayHub</code>.</p>
+</div>
+<div class="paragraph">
+<p>With ganache running, you can start a relayer in a new terminal using the following command from the <a href="#">gsn-helpers::api.adoc#command-line-interface</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ npx oz-gsn run-relayer
+Deploying singleton RelayHub instance
+RelayHub deployed at 0xd216153c06e857cd7f72665e0af1d7d82172f494
+Starting relayer
+ -Url http://localhost:8090
+...
+RelayHttpServer starting. version: 0.4.0
+...
+Relay funded. Balance: 4999305160000000000</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Under the hood, this command takes care of several steps to have a local relayer up and running. First, it will download a relayer binary for your platform and start it. It will then deploy the <code>RelayHub</code> contract to your local ganache, registering the relayer on the hub, and funding it so it can relay transactions. You can run these steps individually by using other <code>oz-gsn commands</code> or even <a href="#">:gsn-helpers:api#javascript-interface</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The last step will be to <em>fund</em> our <code>Counter</code> contract. GSN relayers require recipient contracts to have funds since they will then charge the cost of the relayed transaction (plus a fee!) to it. We will again use the <code>oz-gsn</code> set of commands to do this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ npx oz-gsn fund-recipient --recipient 0xCfEB869F69431e42cdB54A4F4f105C19C080A601</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Make sure to replace the recipient address with the address of your <code>Counter</code> contract instance!
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Cool! Now that we have our GSN-powered contract and a local GSN to try it out, let&#8217;s build a small (d)app.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-the-dapp"><a class="anchor" href="#creating-the-dapp"></a>Creating the Dapp</h3>
+<div class="paragraph">
+<p>We will create our (d)app using the <code>create-react-app</code> package, which bootstraps a simple client-side application using React.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ npx create-react-app client</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First, create a symlink so we can access our compiled contract <code>.json</code> files. From inside the <code>client/src</code> directory, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ ln -ns ../../build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will allow our front end to reach our contract artifacts.</p>
+</div>
+<div class="paragraph">
+<p>Then, replace <code>client/src/App.js</code> with the following code. This will use <a href="#">network-js::index.adoc</a> to create a new provider connected to the local network. It will use a key generated on the spot to sign all transactions on behalf of the user and will use the GSN to relay them to the network. This allows your users to start interacting with your (d)app right away, even if they do not have MetaMask installed, an Ethereum account, or any Ether at all.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-jsx hljs" data-lang="jsx">// client/src/App.js
+import React, { useState, useEffect, useCallback } from "react";
+import { useWeb3Network } from "@openzeppelin/network/react";
+
+const PROVIDER_URL = "http://127.0.0.1:8545";
+
+function App() {
+  // get GSN web3
+  const context = useWeb3Network(PROVIDER_URL, {
+    gsn: { dev: true }
+  });
+
+  const { accounts, lib } = context;
+
+  // load Counter json artifact
+  const counterJSON = require("./build/contracts/Counter.json");
+
+  // load Counter Instance
+  const [counterInstance, setCounterInstance] = useState(undefined);
+
+  if (
+    !counterInstance &amp;&amp;
+    context &amp;&amp;
+    context.networkId
+  ) {
+    const deployedNetwork = counterJSON.networks[context.networkId.toString()];
+    const instance = new context.lib.eth.Contract(counterJSON.abi, deployedNetwork.address);
+    setCounterInstance(instance);
+  }
+
+  const [count, setCount] = useState(0);
+
+  const getCount = useCallback(async () =&gt; {
+    if (counterInstance) {
+      // Get the value from the contract to prove it worked.
+      const response = await counterInstance.methods.value().call();
+      // Update state with the result.
+      setCount(response);
+    }
+  }, [counterInstance]);
+
+  useEffect(() =&gt; {
+    getCount();
+  }, [counterInstance, getCount]);
+
+  const increase = async () =&gt; {
+    await counterInstance.methods.increase().send({ from: accounts[0] });
+    getCount();
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;h3&gt; Counter counterInstance &lt;/h3&gt;
+      {lib &amp;&amp; !counterInstance &amp;&amp; (
+        &lt;React.Fragment&gt;
+          &lt;div&gt;Contract Instance or network not loaded.&lt;/div&gt;
+        &lt;/React.Fragment&gt;
+      )}
+      {lib &amp;&amp; counterInstance &amp;&amp; (
+        &lt;React.Fragment&gt;
+          &lt;div&gt;
+            &lt;div&gt;Counter Value:&lt;/div&gt;
+            &lt;div&gt;{count}&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt;Counter Actions&lt;/div&gt;
+            &lt;button onClick={() =&gt; increase()} size="small"&gt;
+              Increase Counter by 1
+            &lt;/button&gt;
+        &lt;/React.Fragment&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+
+export default App;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can pass a <code>dev: true</code> flag to the <code>gsn</code> options when setting up the provider. This will use the <a href="#">gsn-provider::index.adoc</a> instead of the regular GSN provider. This is a provider set up specifically for testing or development, and it <em>does not require a relayer to be running</em> to work. This can make development easier, but it will feel less like the actual GSN experience. If you want to use an actual relayer, you can run <code>npx oz-gsn run-relayer</code> locally (see the <a href="#">gsn-helpers::preparing-a-testing-environment.adoc</a> for more info).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Great! We can now fire up our application running <code>npm start</code> from within the <code>client</code> folder. Remember to keep both your ganache and relayer up and running. You should be able to send transactions to your <code>Counter</code> contract without having to use MetaMask or have any ETH at all!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="moving-to-testnet"><a class="anchor" href="#moving-to-testnet"></a>Moving to a Testnet</h3>
+<div class="paragraph">
+<p>It is not very impressive to send a local transaction in your ganache network, where you already have a bunch of fully-funded accounts. To witness the GSN at its full potential, let&#8217;s move our application to the Rinkeby testnet. If you later want to go onto mainnet, the instructions are the same.</p>
+</div>
+<div class="paragraph">
+<p>You will need to create a new entry in the <code>networks.js</code> file, with a Rinkeby account that has been funded. For detailed instructions on how to do this, check out <a href="#">connecting-to-public-test-networks.adoc</a>.</p>
+</div>
+<div class="paragraph">
+<p>We can now deploy our <code>Counter</code> contract to Rinkeby:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ openzeppelin create
+✓ Compiled contracts with solc 0.5.9 (commit.e560f70d)
+? Pick a contract to instantiate: Counter
+? Pick a network: rinkeby
+✓ Added contract Counter
+✓ Contract Counter deployed
+? Call a function to initialize the instance after creating it?: Yes
+? Select which function * initialize()
+✓ Setting everything up to create contract instances
+✓ Instance created at 0xCfEB869F69431e42cdB54A4F4f105C19C080A601</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next step will be to instruct our (d)app to connect to a Rinkeby node instead of the local network. Change the <code>PROVIDER_URL</code> in your <code>App.js</code> to, for example, an Infura Rinkeby endpoint.</p>
+</div>
+<div class="paragraph">
+<p>We will now be using a real GSN provider rather than our developer environment, so you may want to also provide a <a href="#">gsn-provider::api.adoc</a>, which will give you more control over things such as the gas price you are willing to pay. For production (d)apps, you will want to configure this to your requirements.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import { useWeb3Network, useEphemeralKey } from "@openzeppelin/network/react";
+
+// inside App.js#App()
+const context = useWeb3Network('https://rinkeby.infura.io/v3/' + INFURA_API_TOKEN, {
+  gsn: { signKey: useEphemeralKey() }
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We are almost there! If you try to use your (d)app now, you will notice that you are not able to send any transactions. This is because your <code>Counter</code> contract has not been funded on this network yet. Instead of using the <code>oz-gsn fund-recipient</code> command we used earlier, we will now use the <a href="https://gsn.openzeppelin.com">online gsn-tool</a> by pasting in the address of your instance. To do this, the web interface requires that you use MetaMask on the Rinkeby Network, which will allow you to deposit funds into your contract.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/GSNDappTool.png" alt="OpenZeppelin GSN Dapp Tool" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it! We can now start sending transactions to our <code>Counter</code> contract on the Rinkeby network from our browser without even having MetaMask installed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gsn-kit"><a class="anchor" href="#gsn-kit"></a>The GSN Starter Kit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#">starter-kits::index.adoc</a> are pre-configured project templates to bootstrap dapp development. One of them, the <a href="#">starter-kits::gsnkit.adoc</a>, is a ready-to-use dapp connected to the GSN, with a similar setup as the one we built from scratch in the previous section.</p>
+</div>
+<div class="paragraph">
+<p>If you are building a new dapp and want to include meta-transaction support, you can run <code>oz unpack gsn</code> to jumpstart your development and start with a GSN-enabled box!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next_steps"><a class="anchor" href="#next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To learn more about the GSN, head over to the following resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To learn how to use OpenZeppelin Contracts to <strong>build a GSN-capable contract</strong>, head to the <a href="#">contracts::gsn.adoc</a>.</p>
+</li>
+<li>
+<p>If you want to learn how to use OpenZeppelin Contracts' <strong>pre-made accept and charge strategies</strong>, go to the <a href="#">contracts::gsn-strategies.adoc</a>.</p>
+</li>
+<li>
+<p>If instead you wish to know more about how to <strong>use GSN from your application</strong>, head to the <a href="#">gsn-provider::index.adoc</a>.</p>
+</li>
+<li>
+<p>For information on how to <strong>test GSN-enabled contracts</strong>, go to the <a href="#">gsn-helpers::preparing-a-testing-environment.adoc</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                 	<div class="btn-previous"><a href="/learn/session-keys.html">&larr; Ephmeral Session Keys</a></div>
+                	<div class="btn-next"><a href="/learn/custom-rules.html">Custom Rules Framework &rarr;</a></div>
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© Ost.com 2020 </span>
+		<a class="terms" href="https://ost.com/privacy">Privacy</a>
+	</div>
+</footer>
+<script src="../_/scripts/site.js"></script>
+<script src="../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>
