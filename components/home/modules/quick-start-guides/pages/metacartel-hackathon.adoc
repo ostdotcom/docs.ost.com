@@ -1,24 +1,115 @@
 = Metacartel Hackathon (March-2020)
 
-For Metacartel Hackathon, Ost is interested in teams building with the Ost React Native Client (mobile wallet) SDK and / or the *new Ost Browswer wallet SDK.* In each case, a full server-side integration should be done.
+For the Metacartel Hackathon, Ost is looking for teams to build with either the Ost React Native Client (Mobile Wallet) SDK and/or the *new Ost Browswer wallet SDK.* In each case, a full server-side integration must be done using Ost Server SDKs. 
 
-To facilitate 'browser-first' projects, Ost is making available a starter wallet app that can be configured to work with your layer-2 token.
+[NOTE]
+.Users Service
+====
+Ost is designed for mainstream web2 applications and, as such, requires that you have a user service in place. Put another way, end-users must be able to sign-up & login to your application with web2 credentials. It is up to you to create and maintain this user service.
+====
 
-== Get Started
+To facilitate this hackathon, Ost is making available a starter React Native wallet app that can be configured to work with your layer-2 token and also integrated with your server.
+
+== Basic Steps to Get Started
 . Set-up token and do stake and mint
 . Retrieve API keys and implement authentication
-. Optional: Check-out the Ost demo server application
-. Set-up own app server and user auth service and integrate the Ost Server SDK
+. Set-up own app server and user service and integrate one of the Ost Server SDKs._Optional: Check-out the Ost demo server application_
 
-NOTE: At this point, you should be able to retrieve token details and rule addresses, create your end-users in Ost Platform, and create an (encrypted) salt for each user. 
+[NOTE]
+====
+At this point, you should be able to retrieve token details and rule addresses, create your end-users in Ost Platform, and create an (encrypted) salt for each user.
+====
 
-=== Mobile App Projects
-. Build your app product and integrate the Ost React Native Client SDK
-. Optional: Check-out the Ost React Native Wallet App
+. Clone the Ost React Native Wallet App and and configure it so that it works with your layer-2 token
+. Integrate your server (and user service) into the app
+. Build your browser app and integrate the Ost Browser wallet SDK
 
-=== Browser Projects
-. Clone the Ost React Native Wallet App and and configure
-. Build your web product and integrate the Ost Browser wallet SDK!
+== Hackathon Task Checklist
+
+[cols="1,2"]
+.Task Checklist
+|===
+|Ost Platform 
+|- Sign-up with Ost Platform
+
+- Setup your brand token
+
+- Stake and Mint your brand token
+
+|Your Application Server
+|Implement a Sign-up/Login mechanism for your user
+
+- Create API(s) that can be used by mobile application". On Signup - create a user on Ost Platform using https://github.com/ostdotcom/ost-sdk-js#users-module[Ost Server SDK]
+
+- Retrive API and secret key from https://platform.ost.com/testnet/developer[Ost Platform]
+
+- Associate Ost's user-id with your application's user-id on your server/database. Generate and store an encrypted version of the user's passphrase prefix (30 charecter or more). _Use secure methods such as secure random to generate the passphrase prefix._
+
+- Create an API that provides user's salt (passphrase prefix) to mobile application. The API must ensure user is logged-in. 
+
+- Create an API that will register (create device) a user's device with Ost Platform
+
+|Your Client/Mobile App
+|- Initialize Ost Client SDK on application launch
+
+- Integrate SignUp/Login with mobile application. On sign-up/login perform setup device workflow using Ost Client SDK.
+  
+  . Setup device workflow should be performed on every app launch
+  
+  . Need's logged-in user's Ost user id
+
+  . May ask the application to register user's device by calling `registerDevice` callback
+
+  . Integrate register device API call on `registerDevice` callback from SDK
+
+  . Call `deviceRegistered` method on API response.
+
+- Use Ost Client SDK to determine user's status
+
+  . If user's status is in 'Created', perform activate user workflow
+
+  . Use the SDKs built-in UI workflow
+
+  . SDK will invoke `getPassphrase` callback for user's passphrase prefix
+
+  . Application should fetch the salt from their application server
+
+- Mechanism to display user friendly error/success messages when Workflows are perfromed
+
+  . SDK provides developer friendly erros to the application
+  
+  . The application should display user friendly error
+  
+  . Developers may optionally choose to integrate Custom Loader
+
+- Integrate Wallet Settings
+
+  . SDK will invoke `getPassphrase` callback for user's passphrase prefix
+  
+  . Application should fetch the salt(passphrase prefix) from their application server
+  
+- Integrate transaction helper
+
+  . Setup session buckets for creating session
+
+  . SDK will invoke `getPassphrase` callback for user's passphrase prefix
+
+  . Application should fetch the salt (passphrase prefix) from their application server
+
+|Your Client/Browswer App
+|- Integrate Ost Browser SDK
+
+- Initialize SDK
+
+- Create session
+
+  . On request ack, show QR code generated from string `qr_data`
+  
+  . Scan QR code from application
+
+- Execute Transaction
+|===
+
 
 == We're here to help!
 Connect with Ost developers and the community at larger in the

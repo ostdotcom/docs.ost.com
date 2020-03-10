@@ -346,15 +346,30 @@
 		<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>For Metacartel Hackathon, Ost is interested in teams building with the Ost React Native Client (mobile wallet) SDK and / or the <strong>new Ost Browswer wallet SDK.</strong> In each case, a full server-side integration should be done.</p>
+<p>For the Metacartel Hackathon, Ost is looking for teams to build with either the Ost React Native Client (Mobile Wallet) SDK and/or the <strong>new Ost Browswer wallet SDK.</strong> In each case, a full server-side integration must be done using Ost Server SDKs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Users Service</div>
+<div class="paragraph">
+<p>Ost is designed for mainstream web2 applications and, as such, requires that you have a user service in place. Put another way, end-users must be able to sign-up &amp; login to your application with web2 credentials. It is up to you to create and maintain this user service.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>To facilitate 'browser-first' projects, Ost is making available a starter wallet app that can be configured to work with your layer-2 token.</p>
+<p>To facilitate this hackathon, Ost is making available a starter React Native wallet app that can be configured to work with your layer-2 token and also integrated with your server.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="get_started"><a class="anchor" href="#get_started"></a>Get Started</h2>
+<h2 id="basic_steps_to_get_started"><a class="anchor" href="#basic_steps_to_get_started"></a>Basic Steps to Get Started</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -365,10 +380,7 @@
 <p>Retrieve API keys and implement authentication</p>
 </li>
 <li>
-<p>Optional: Check-out the Ost demo server application</p>
-</li>
-<li>
-<p>Set-up own app server and user auth service and integrate the Ost Server SDK</p>
+<p>Set-up own app server and user service and integrate one of the Ost Server SDKs.<em>Optional: Check-out the Ost demo server application</em></p>
 </li>
 </ol>
 </div>
@@ -379,36 +391,25 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-At this point, you should be able to retrieve token details and rule addresses, create your end-users in Ost Platform, and create an (encrypted) salt for each user.
+<div class="paragraph">
+<p>At this point, you should be able to retrieve token details and rule addresses, create your end-users in Ost Platform, and create an (encrypted) salt for each user.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="mobile_app_projects"><a class="anchor" href="#mobile_app_projects"></a>Mobile App Projects</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Build your app product and integrate the Ost React Native Client SDK</p>
+<p>Clone the Ost React Native Wallet App and and configure it so that it works with your layer-2 token</p>
 </li>
 <li>
-<p>Optional: Check-out the Ost React Native Wallet App</p>
+<p>Integrate your server (and user service) into the app</p>
+</li>
+<li>
+<p>Build your web app and integrate the Ost Browser wallet SDK</p>
 </li>
 </ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="browser_projects"><a class="anchor" href="#browser_projects"></a>Browser Projects</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Clone the Ost React Native Wallet App and and configure</p>
-</li>
-<li>
-<p>Build your web product and integrate the Ost Browser wallet SDK!</p>
-</li>
-</ol>
-</div>
 </div>
 </div>
 </div>

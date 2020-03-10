@@ -460,6 +460,39 @@
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="set_up_steps_and_contracts_deployed"><a class="anchor" href="#set_up_steps_and_contracts_deployed"></a>Set-up Steps and Contracts Deployed</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Step</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ost writes and deploys the TokenRules contract for the Company and writes a PricerRule contract and registers the rule with the TokenRules contract on the auxiliary sidechain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When an end-user registers on a client app a TokenHolder contract and a DeviceManager (MultiSig) contract are created and deployed by the client via Ost Platform APIs/SDKs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Wallet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activating a user wallet involves the deployment and registration of the following contracts: TokenHolder, MultiSig, DelayedRecoveryModule</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute Transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Users can spend tokens by signing transactions using private keys on their registered mobile device.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
                 <div class="article-navigation">

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="/learn/smart-contracts">
     <link rel="stylesheet" href="../_/stylesheets/index.css">
-    <title>Smart Contracts - Ost Docs</title>
+    <title>Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../_/images/favicon-96x96.png"/>
@@ -66,8 +66,8 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/learn/session-keys.html">
-    Ephmeral Session Keys
+  <a class="link nav-link" href="#">
+    session-keys.adoc
   </a>
 </li>
 <li class="nav-li" >
@@ -90,8 +90,8 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/learn/wallet-recovery-flows.html">
-    Wallet Recovery Flows
+  <a class="link nav-link" href="#">
+    wallet-recovery-flows.adoc
   </a>
 </li>
 <li class="nav-li" >
@@ -384,86 +384,9 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1>Smart Contracts</h1>
-		<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="heading_2"><a class="anchor" href="#heading_2"></a>Heading 2</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abc</p>
-</div>
-<div class="sect2">
-<h3 id="heading_3_code_example"><a class="anchor" href="#heading_3_code_example"></a>Heading 3 Code Example</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">import React, { useCallback, useState, useEffect } from 'react';
-import { useWeb3 } from '@openzeppelin/network/react';
-
-function App() {
-  // Get web3 context via @openzeppelin/network/react hook
-  const web3Context = useWeb3(`wss://mainnet.infura.io/ws/v3/${PROJECT_ID}`);
-  const { lib: web3, networkId, accounts, providerName } = web3Context;
-
-  // Methods for requesting accounts access
-  const requestAuth = (web3Context) =&gt; web3Context.requestAuth();
-  const requestAccess = useCallback(() =&gt; requestAuth(web3Context), []);
-
-  // Querying account balance
-  const [balance, setBalance] = useState(0);
-  const getBalance = useCallback(async () =&gt; {
-    setBalance(
-      accounts &amp;&amp; accounts.length &gt; 0
-      ? (await web3.eth.getBalance(accounts[0]))
-      : 'Unknown')
-  }, [accounts, web3.eth, web3.utils]);
-  useEffect(() =&gt; {
-    getBalance();
-  }, [accounts, getBalance, networkId]);
-
-  // Show all information to the user
-  return (
-    &lt;div&gt;
-      &lt;div&gt;Network: {networkId || 'No connection'}&lt;/div&gt;
-      &lt;div&gt;Your address: {accounts ? accounts[0] : 'Unknown'}&lt;/div&gt;
-
-      {accounts &amp;&amp; accounts.length ? (
-        &lt;div&gt;Accounts access granted&lt;/div&gt;
-      ) : !!networkId &amp;&amp; providerName !== 'infura' ? (
-        &lt;button onClick={requestAccess}&gt;Request Access&lt;/button&gt;
-      ) : (
-        &lt;div&gt;No accounts access&lt;/div&gt;
-      )}
-    &lt;/div&gt;
-  );
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="next_steps"><a class="anchor" href="#next_steps"></a>Next Steps</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abc</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#"></a></p>
-</li>
-<li>
-<p><a href="#"></a></p>
-</li>
-</ul>
-</div>
-</div>
+		<h1></h1>
+		<div class="paragraph">
+<p>See the glossery for smart contract definitions</p>
 </div>
                 <div class="article-navigation">
                  	<div class="btn-previous"><a href="/learn/ost-tech-stack.html">&larr; Ost Tech Stack</a></div>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="/learn/ost-tech-stack">
+    <link rel="canonical" href="/learn/preparing-for-mainnet-oz">
     <link rel="stylesheet" href="../_/stylesheets/index.css">
-    <title>Ost Tech Stack &amp; Integration Components - Ost Docs</title>
+    <title>Go-Live Checklist - Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../_/images/favicon-96x96.png"/>
@@ -48,7 +48,7 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link nav-link-active" href="/learn/ost-tech-stack.html">
+  <a class="link nav-link" href="/learn/ost-tech-stack.html">
     Ost Tech Stack
   </a>
 </li>
@@ -384,30 +384,129 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1>Ost Tech Stack &amp; Integration Components</h1>
+		<h1>Go-Live Checklist</h1>
 		<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Work in progress</p>
+<p>This is a requirements checklist for Ost Platform clients to check the readiness of their application&#8217;s integration with Ost Platform SDKs. You will need to confirm that you have followed and implemented these requirements before being permitted to move to Production (mainnet).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="integration_components"><a class="anchor" href="#integration_components"></a>Integration Components</h2>
+<h2 id="server_sdk_checklist"><a class="anchor" href="#server_sdk_checklist"></a>Server SDK Checklist</h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Server SDK Checklist</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User credentials are secure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The list below is not exhaustive:</p>
+<p class="tableblock">- User passwords are encrypted and stored securely (e.g.
+using key management systems such as <a href="https://aws.amazon.com/kms/">AWS KMS</a>, <a href="https://cloud.google.com/kms/">Cloud KMS</a> to encrypt data, etc.)</p>
+<p class="tableblock">- There exists a password recovery process</p>
+<p class="tableblock">- Multi-factor authorization over password is a good practice</p>
+<p class="tableblock">- A unique secret is generated (recovery passphrase prefix) for each user: The secret is at least 30 characters long (e.g.
+<a href="https://www.npmjs.com/package/bip39">Bip-39</a>)</p>
+<p class="tableblock">- The secret is pseudorandom (e.g. NOT name and email)</p>
+<p class="tableblock">- Secrets are encrypted and stored securely</p>
+<p class="tableblock">- The secret is not shared anywhere or used for any other functionality/service (example: exception emails, logs, 3rd party services, etc.)</p>
+<p class="tableblock">- The random seed must be generated securely (e.g.
+<a href="https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback">crypto.randomBytes</a>)</p>
+<p class="tableblock">- The application uses TLS for network communication to its backend</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Restricted Access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Production backend servers, databases, and other resources have restricted access</p>
+<p class="tableblock">The SDK is implemented in your application such that it never accesses the user&#8217;s keys directly.
+(Ost client SDK should always be used for all interactions with keys.)</p>
+<p class="tableblock">This includes:</p>
+<p class="tableblock">- Private keys (Owner/MultiSig keys and Session Keys)</p>
+<p class="tableblock">- Mnemonic phrase</p>
+<p class="tableblock">- API key</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User PIN and Mnemonic phraser are explicitly wiped from App memory (specifically needed for Android) after its purpose and never stored/saved on device or server or any other medium in any form e.g.
+clear text or encrypted.
+Check <a href="https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md#checking-memory-for-sensitive-data">here</a> for more information.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitive information such as the user&#8217;s PIN, Mnemonic phrase, recovery passphrase prefix, private keys are not logged or sent to third-party applications in any form (e.g. text, image, screen-grab, crash-report, analytics, etc).</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recovery flows are supported in the app</p>
+<p class="tableblock">- The recovery UX indicates to the user that the recovery process will take 12 hours</p>
+<p class="tableblock">- The recovery UX informs the user that their previously authorized device will be revoked</p>
+<p class="tableblock">- Recovery via PIN is implemented (and PIN is not be saved/stored by the client.)</p>
+<p class="tableblock">- Other methods of adding devices (i.e. Mnemonics, QR code) are optional.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SDKs are implemented without any modifications</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your application does not initiate a transaction signed by the user&#8217;s keys without explicit action from the user within the application.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">App analytics systems do not capture screenshots of screens with sensitive information such as Mnemonics. Generally, application tracking and analytics systems should be configured to avoid capturing sensitive user information.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>The diagram below illustrates how Ost server SDK and Ost client SDK work together and interact with your tech stack.</p>
+<p>We strongly recommend that your application is reviewed by security assessors/auditors to evaluate the general security of the application and also an analysis of the security vulnerabilities caused by the usage of 3rd party libraries and other dependencies.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/integration-components.jpg" alt="integration-components">
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Please write to us at <a href="mailto:support@ost.com">support@ost.com</a> if you face any issues fulfilling these requirements.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
                 <div class="article-navigation">
-                 	<div class="btn-previous"><a href="/learn/index.html">&larr; Overview</a></div>
-                	<div class="btn-next"><a href="/learn/smart-contracts.html">Smart Contracts &rarr;</a></div>
                 </div>
 	</article>
 	<aside class="toc toc-sidebar">
