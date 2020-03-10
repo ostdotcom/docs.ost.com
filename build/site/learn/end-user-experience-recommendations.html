@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="/ost">
+    <link rel="canonical" href="/learn/end-user-experience-recommendations">
     <link rel="stylesheet" href="../_/stylesheets/index.css">
-    <title>Welcome - Ost Docs</title>
+    <title>User Experience Recommendations - Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../_/images/favicon-96x96.png"/>
@@ -25,7 +25,7 @@
   </head>
   <body class="flex col ">
     <div class="root">
-	<nav id="sidr" class="nav" data-component="ost" data-is-home=""
+	<nav id="sidr" class="nav" data-component="learn" data-is-home=""
   data-is-site-aspect="" data-version="" role="navigation">
   <span class="close-menu-btn"></span>
   <div class="flex align-center search">
@@ -35,45 +35,87 @@
   <div class="nav-component-active">
     <a class="btn-back" href="/">Home</a>
     <div class="flex justify-justified nav-heading">
-      <span class="">Ost Docs</span>
+      <span class="">Learn</span>
       <div class="component-version">
       </div>
     </div>
     <ol class="nav-list">
     <li class="nav-li" >
   
-  <a class="link nav-link nav-link-active" href="/ost/index.html">
-    Welcome
-  </a>
-</li>
-<li class="nav-li" >
-  
   <a class="link nav-link" href="/learn/index.html">
-    Learn
+    Overview
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/ost/quick-start-guides/index.html">
-    Quick Start Guides
+  <a class="link nav-link" href="/learn/ost-tech-stack.html">
+    Ost Tech Stack
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/ost/server-sdks/index.html">
-    Server SDKs
+  <a class="link nav-link" href="/learn/smart-contracts.html">
+    Smart Contracts
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/ost/client-sdks/index.html">
-    Client SDKs
+  <a class="link nav-link" href="/learn/self-custodial-user-wallets.html">
+    Self-Custodial User Wallet
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/ost/browser-sdks/index.html">
-    Browser SDKs
+  <a class="link nav-link" href="/learn/session-keys.html">
+    Ephmeral Session Keys
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/sending-gasless-transactions.html">
+    Sending Gasless Transactions
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/custom-rules.html">
+    Custom Rules Framework
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/end-user-experience.html">
+    End-User Experience Considerations
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/wallet-recovery-flows.html">
+    Wallet Recovery Flows
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/create-user-wallet.html">
+    Create User Wallet
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/create-session.html">
+    Create Session(s)
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/initiate-and-execute-transactions.html">
+    Initiate and Execute Transactions
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/learn/ost-layer-2.html">
+    Ost Layer 2 Overview
   </a>
 </li>
     </ol>
@@ -342,216 +384,492 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1>Welcome</h1>
+		<h1>User Experience Recommendations</h1>
 		<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Abc</p>
+<p>Developing mobile apps</p>
+</div>
+<div class="paragraph">
+<p>Many of the Wallet SDK workflows require contracs to be written or updated on-chain and/or for transactions to take place on-chain.
+On-chain here refers to the Ost side-chains which has a 3 sec block time.
+Note: Ost waits for 6 blocks to consider a transaction complete / confirmed.
+So a single transaction on-chain takes 6 x 3 secs = 18 secs.</p>
+</div>
+<div class="paragraph">
+<p>In this article, we recommend various user interface tips and tricks to prevent holding-up the user experience whilst waiting for on-chain activies to complete.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="why_ost"><a class="anchor" href="#why_ost"></a>Why Ost?</h2>
+<h2 id="workflow_dependencies_on_device_status"><a class="anchor" href="#workflow_dependencies_on_device_status"></a>Workflow dependencies on Device Status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Abc</p>
+<p>Before delving into recommendations for each workflow, please note the following dependencies on device status.
+Users should be prevented from taking certain actions depending on whether a device is in <strong>REGISTERED</strong>, <strong>AUTHORIZED</strong>, or <strong>REVOKING</strong> status.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>note Device Statuses REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING :::</p>
+</dd>
+</dl>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Allowable / Possible Workflows</th>
+<th class="tableblock halign-left valign-top">Device Status</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set-up Device + <code>setupDevice</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>N/A</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To be done on every app launch after app has determined the current user&#8217;s ost-user-id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate User + <code>activateUser</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>N/A</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To be done when user&#8217;s status is <code>Created</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authorize Current Device with Mnemonics + <code>authorizeCurrentDeviceWithMnemonics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REGISTERED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiate Recovery + <code>initiateDeviceRecovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REGISTERED</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only if NO pending recovery exists.
+Use Get Pending Recovery API [1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abort Device Recovery + <code>abortDeviceRecovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At least <strong>REGISTERED</strong>;
+could also be <strong>AUTHORIZED</strong> or <strong>REVOKING</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only if at-least 1 pending recovery exists.
+Use Get Pending Recovery API [1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add or Create Session + <code>addSession</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update Biometric Preference + <code>updateBiometricPreference</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Revoke Device + <code>revokeDevice</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perform QR Action + <code>performQRAction</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get Device Mnemonics + <code>getDeviceMnemonics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset PIN + <code>resetPin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logout All Session + <code>logoutAllSessions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Execute Transaction + <code>executeTransaction</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AUTHORIZED</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use 'Get Active Sessions' to check for sessions [2]</p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="notes" class="discrete">Notes</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstJsonApi.md#get-pending-recovery">Get Pending Recovery API</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletSdkGetMethods.md#get-active-sessions">Get Active Sessions</a></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tools"><a class="anchor" href="#tools"></a>Tools</h2>
+<h2 id="recommendation_for_each_sdk_workflow"><a class="anchor" href="#recommendation_for_each_sdk_workflow"></a>Recommendation For Each SDK Workflow</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>All the open source tools built and maintained by the Ost team:</p>
-</div>
-<div class="openblock card card-primary card-starter-kits">
-<div class="content">
-<div class="paragraph">
-<p><a href="quick-start-guides/index.html" class="page"><span class="card-title">Quick Start Guides</span> <span class="card-body">Quick Start Guides For Developers!</span> <span class="card-cta">Get Started &gt;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-primary card-sdk">
-<div class="content">
-<div class="paragraph">
-<p><a href="server-sdks/index.html" class="page"><span class="card-title">Server SDKs</span> <span class="card-body">A guide to Ost Server SDKs</span> <span class="card-cta">Get started &gt;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-primary card-sdk">
-<div class="content">
-<div class="paragraph">
-<p><a href="client-sdks/index.html" class="page"><span class="card-title">Client SDKs</span> <span class="card-body">A guide to Ost Client SDKs</span> <span class="card-cta">Get started &gt;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-primary card-sdk">
-<div class="content">
-<div class="paragraph">
-<p><a href="browser-sdks/index.html" class="page"><span class="card-title">Browser SDKs</span> <span class="card-body">A guide to Ost Browser SDKs</span> <span class="card-cta">Get started &gt;</span></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="learn"><a class="anchor" href="#learn"></a>Learn</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Comprehensive guides to Ost.</p>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/ost-tech-stack.html" class="page"><span class="card-title">Ost Tech Stack</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/smart-contracts.html" class="page"><span class="card-title">Smart Contracts</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/self-custodial-user-wallets.html" class="page"><span class="card-title">Self-Custodial User Wallets</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/session-keys.html" class="page"><span class="card-title">Ephemeral Session Keys</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/sending-gasless-transactions.html" class="page"><span class="card-title">Sending Gasless Transactions</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/custom-rules.html" class="page"><span class="card-title">Custom Rules Framework</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/end-user-experience-recommendations.html" class="page"><span class="card-title">End-User Experience Recommendations</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/wallet-recovery-flows.html" class="page"><span class="card-title">Wallet Recovery Flows</span> <span class="card-body">..</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/create-user-wallet.html" class="page"><span class="card-title">Create User Wallet</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/create-session.html" class="page"><span class="card-title">Create Session</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/initiate-and-execute-transactions.html" class="page"><span class="card-title">Initiate and Execute Transactions</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/ost-layer-2.html" class="page"><span class="card-title">Ost Layer-2 Overview</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
 <div class="sect2">
-<h3 id="additional_topics_to_be_included"><a class="anchor" href="#additional_topics_to_be_included"></a>Additional topics to be included</h3>
+<h3 id="set_up_device"><a class="anchor" href="#set_up_device"></a>Set-up Device</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Sandbox environment</p>
+<p><strong>Approximate duration:</strong> Max 5 secs</p>
 </li>
 <li>
-<p>User interface (UI) components</p>
+<p><strong>Number of transactions on side-chains:</strong> 0</p>
 </li>
 <li>
-<p>Custom Rules Framework</p>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>&#8220;Syncing&#8230;&#8203;&#8221; must be completed before user can proceed to wallet or wallet settings</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>APIs</p>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>First-time: BIP-32 key is generated on device.
+Private key and 12 words (mnemonic phrase) are stored on device.</p>
 </li>
 <li>
-<p>Webhooks</p>
+<p><code>Set-up Device</code> is performed every time a user launches the app or logs-in/signs-up.
+This ensures that the current device is registered before communicating with Ost Platform server.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="activate_user"><a class="anchor" href="#activate_user"></a>Activate User</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> ~50-60 secs</p>
 </li>
 <li>
-<p>Block Explorer</p>
+<p><strong>Number of transactions on side-chains:</strong> 2 x 6 block confirmation</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Show user that &#8220;Wallet is activating&#8221;</p>
+</li>
+<li>
+<p>Thereafter, no need to stall the UX.
+User can continue to explore other areas of the app.</p>
+</li>
+<li>
+<p>Once the user is ACTIVATED, send push notification to inform user that wallet setup is complete.
+(This is optional.
+Note that this wasn&#8217;t required in the Pepo app given the placement of the user&#8217;s wallet balance and "Wallet is activating" message.)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>PIN key is created on device - this takes about 15 secs and is an input to recovery module contract</p>
+</li>
+<li>
+<p>Session keys are created on device (can have multiple with same spend limit and duration) - this takes &lt;1 sec</p>
+</li>
+<li>
+<p>Transaction #1: This deploys the token holder contract, multisig contract, and recovery module contract.
+These contract addresses are obtained in the events which are emitted in the transaction.
+<em>Ost waits for 6 blocks and then fetches the event details and saves the respective addresses.</em></p>
+</li>
+<li>
+<p>Transaction #2: This marks the users token holder address as an internal address, i.e.
+whitelisting.
+This enables the token holder address to hold a token balance.
+<em>Ost waits for 6 blocks after this transaction.
+After this, the user is set to ACTIVATED status.</em></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create_session"><a class="anchor" href="#create_session"></a>Create Session</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> ~18 secs</p>
+</li>
+<li>
+<p><strong>Number of transactions on side-chains:</strong> 1 x 6 block confirmation</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>On action press (i.e.
+initiate user transaction), check available sessions.
+If none available, the call create session workflow.
+<em>This assumes that the create session workflow is incorporated into user actions&#8230;&#8203;</em></p>
+</li>
+<li>
+<p>Here, it is recommended to stall the UI until the session is created.
+E.g.
+"Creating new session&#8230;&#8203;" with a loader.
+Then show success of failure message.</p>
+</li>
+<li>
+<p>Once the session is created, perform the transaction.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Session keys are generated on device</p>
+</li>
+<li>
+<p>Multisig transaction: Session key public address is added to the users token holder contract</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reset_pin"><a class="anchor" href="#reset_pin"></a>Reset PIN</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> 50 secs</p>
+</li>
+<li>
+<p><strong>Number of transactions on side-chains:</strong> 1 x 6 confirmation</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reset PIN takes a long time!
+Our recommendation here is to to block or disable wallet actions until the reset is complete (wait for flowcomplete callback from Ost).
+This could be achieved by showing a loader then success message</p>
+</li>
+<li>
+<p>If 50 secs is too long to show a loader, then we recommend disabling wallet actions and sending the user an alert/notification once the reset is complete.</p>
+</li>
+<li>
+<p>If you don&#8217;t block or disable, there is a risk the user will get confused and try to use new PIN before the transaction is completed.
+<em>Wait for flowcomplete callback from Ost to ensure transaction is complete before enabling user transactions.</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Two PIN keys are created on device (old and new) - this takes about 30 secs, 15 secs for each PIN</p>
+</li>
+<li>
+<p>Transaction to update PIN in recovery module</p>
+</li>
+<li>
+<p>Once the above on-chain transaction is complete, Ost updates the recovery key address in the user object (i.e.
+flowcomplete).
+Once this is done, the user can use the new PIN.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="recover_wallet_via_pin"><a class="anchor" href="#recover_wallet_via_pin"></a>Recover Wallet via PIN</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> ~12 hours (delayed recovery module)</p>
+</li>
+<li>
+<p><strong>Number of transactions on side-chains:</strong> 2 x 6 block confirmations</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Inform the user, before and after the transaction is initiated, that the process will take approx 12 hrs to complete</p>
+</li>
+<li>
+<p>Send a push notification to the user when complete</p>
+</li>
+<li>
+<p>Disable or hide actions that depend on the device being AUTHORISED (see table above)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Transaction to initiate recovery</p>
+</li>
+<li>
+<p>Ost Platform transaction to allow recovery to complete</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authorise_new_device"><a class="anchor" href="#authorise_new_device"></a>Authorise New Device</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> ~18 sec</p>
+</li>
+<li>
+<p><strong>Number of transactions on side-chains:</strong> 1 x 6 block confirmation</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>On the device being authorised, block the UI</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Multisig transaction to add new device to users token holder contract</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="send_tokens"><a class="anchor" href="#send_tokens"></a>Send Tokens</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> 0 sec from senders perspective (pessimistic debit), 18 secs from receivers perspective</p>
+</li>
+<li>
+<p><strong>Number of transactions on side-chains:</strong> 1 x 6 block confirmation</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>From the receiver&#8217;s perspective, use transaction webhooks to keep the user informed</p>
+<div class="ulist">
+<ul>
+<li>
+<p>transactions/initiate</p>
+</li>
+<li>
+<p>transactions/success</p>
+</li>
+<li>
+<p>transactions/failure</p>
+</li>
+<li>
+<p>transactions/mine</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ost Platform updates senders balance and ledger as soon as it receives a transaction request.
+If transaction fails, actions are reversed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revoke_device_logout_all_active_sessions_irrespective_of_device"><a class="anchor" href="#revoke_device_logout_all_active_sessions_irrespective_of_device"></a>Revoke Device, Logout All Active Sessions (irrespective of device)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Approximate duration:</strong> ~18 secs</p>
+</li>
+<li>
+<p><strong>Number of transactions on side-chains:</strong> 1 x 6 block confirmation</p>
+</li>
+<li>
+<p><strong>UI recommendations:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stall UI</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Description of what happens under the hood:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Multisig transaction to remove all active sessions from users token holder contract</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="more_from_ost"><a class="anchor" href="#more_from_ost"></a>More from Ost</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="audits"><a class="anchor" href="#audits"></a>Audits</h3>
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="careers"><a class="anchor" href="#careers"></a>Careers</h3>
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="social"><a class="anchor" href="#social"></a>Social</h3>
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="questions"><a class="anchor" href="#questions"></a>Questions?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="share_the_love"><a class="anchor" href="#share_the_love"></a>Share the Love!</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-</div>
                 <div class="article-navigation">
-                	<div class="btn-next"><a href="/learn/index.html">Learn &rarr;</a></div>
                 </div>
 	</article>
 	<aside class="toc toc-sidebar">

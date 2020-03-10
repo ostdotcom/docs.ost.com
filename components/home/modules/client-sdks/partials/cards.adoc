@@ -12,3 +12,13 @@ xref:client-sdk-ios::index.adoc[[.card-title]#iOS# [.card-body]#.....#]
 --
 xref:client-sdk-react-native::index.adoc[[.card-title]#React Natve# [.card-body]#.....#]
 --
+
+[.card.card-learn]
+--
+xref:ui-components.adoc[[.card-title]#User Interface Components in Client SDKs# [.card-body]#.....#]
+--
+
+[.card.card-learn]
+--
+xref:comparison.adoc[[.card-title]#Comparison of Client SDKs# [.card-body]#.....#]
+--

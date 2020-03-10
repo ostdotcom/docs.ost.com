@@ -1,0 +1,47 @@
+= Device and User Statuses
+
+[cols="1,4", options="header"]
+.Device Statuses
+|===
+|Status
+|Definition
+
+|REGISTERED
+|Status when client company registers device with Ost
+
+|AUTHORIZING
+|Status when device address is being authorized in user's device manager contract
+
+|AUTHORIZED
+|Status when the authorization is complete
+
+|REVOKING
+|Status when device is being revoked from user's device manager contract
+
+|REVOKED
+|Status when revocation of the device address is complete
+
+|RECOVERING
+|Status when device address is being revoked and a replacement address is being authorized in user's device manager contract (recovery)
+
+|ABORTING
+|Status when recovery is being aborted
+|===
+
+
+[cols="1,4", options="header"]
+.User Statuses
+|===
+|Status
+|Definition
+
+|CREATED
+|This will be the default status when a user is created. At this stage there are no smart contracts deployed on blockchain.
+
+|ACTIVATING
+|This will be the user's status when smart contracts for the user are being deployed.
+
+|ACTIVATED
+|This will be the user's status when all the smart contracts for the user are deployed.
+User can now perform wallet actions.
+|===

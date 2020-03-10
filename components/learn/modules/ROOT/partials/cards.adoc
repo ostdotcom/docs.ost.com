@@ -30,7 +30,7 @@ xref:learn::custom-rules.adoc[[.card-title]#Custom Rules Framework# [.card-body]
 
 [.card.card-learn]
 --
-xref:learn::end-user-experience.adoc[[.card-title]#End-User Experience Considerations# [.card-body]#...#]
+xref:learn::end-user-experience-recommendations.adoc[[.card-title]#End-User Experience Recommendations# [.card-body]#...#]
 --
 
 [.card.card-learn]

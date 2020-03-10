@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="/ost/quick-start-guides/understanding-ost-sdks">
     <link rel="stylesheet" href="../../_/stylesheets/index.css">
-    <title>Ost Server SDKs - Ost Docs</title>
+    <title>High-Level Understanding of Ost SDKs - Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
@@ -342,67 +342,14 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1>Ost Server SDKs</h1>
+		<h1>High-Level Understanding of Ost SDKs</h1>
 		<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ost server SDKs provide various methods that can be used to design and manage token economies. In addition to our SDKs, Ost RESTful APIs can be used.</p>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="metacartel-hackathon.html" class="page"><span class="card-title">Metacartel Hackathon (March 2020)</span> <span class="card-body">Specific guide for Metacartel Hackathon projects using Ost layer-2 tools.</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="authentication.html" class="page"><span class="card-title">Authentication</span> <span class="card-body">Specific guide to authentication API request to Ost Platform.</span></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="advantages"><a class="anchor" href="#advantages"></a>Advantages</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Advantage</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simplicity and end-user experience</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The SDKs reduce the complexity of integration by handling multiple authentication scenarios automatically, allowing for a more seamless user experience.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Performance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Caching, key management and nonce management ensure that the end-user overall experience is smooth.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Higest Security	Standards</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Within an app with Ost client SDK where client reqeusts the user to authenticate before authorizing sessions or new devices.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="high_level_understanding_of_ost_server_sdks"><a class="anchor" href="#high_level_understanding_of_ost_server_sdks"></a>High Level Understanding of Ost Server SDKs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To integrate with OST Platform you must integrate both our Server Side SDK (SS-SDK) and Mobile Wallet SDK (MW-SDK) into your application.</p>
+<p>To integrate with Ost Platform you must integrate both Ost server SDK and Ost client (mobile wallet) SDK into your application(s).</p>
 </div>
 <div class="paragraph">
-<p>This page describes, at a high-level, the actions that can be performed and how you would go about retrieving your token details, registering your users, and setting-up users with a wallet so that they can hold and interact with your tokens (sign, send, receieve).</p>
+<p>This page describes the actions that can be performed and how you would go about retrieving your token details, registering users, and setting-up users with a wallet so that they can hold and interact with tokens (sign, send, receieve).</p>
 </div>
 </div>
 </div>
@@ -410,7 +357,7 @@
 <h2 id="actions_enabled_through_sdks"><a class="anchor" href="#actions_enabled_through_sdks"></a>Actions Enabled Through SDKs</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="server_side_sdk_ss_sdk"><a class="anchor" href="#server_side_sdk_ss_sdk"></a>Server Side SDK (SS-SDK)</h3>
+<h3 id="server_sdk"><a class="anchor" href="#server_sdk"></a>Server SDK</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -424,7 +371,7 @@
 </div>
 </li>
 <li>
-<p>Register user: OST Platform will respond with user entity</p>
+<p>Register user: Ost Platform will respond with user entity. Once users is registered, generate <code>passphrasePrefix</code> for the user. This will be used during the client SDK <code>activateUser</code> workflow.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -434,30 +381,30 @@
 </div>
 </li>
 <li>
-<p>When activate user is called (via MW-SDK), then register device if not already registered</p>
+<p>When activate user is called (via client SDK), then register device if not already registered</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Once called, your mobile app must send device details to your server</p>
 </li>
 <li>
-<p>Your server then creates device on OST Platform for user</p>
+<p>Your server then creates device on Ost Platform for user</p>
 <div class="ulist">
 <ul>
 <li>
-<p>OST Platform returns device entity to your server</p>
+<p>Ost Platform returns device entity to your server</p>
 </li>
 <li>
 <p>Your server returns device entity to your mobile app</p>
 </li>
 <li>
-<p>Your mobile app calls deviceRegistered callback (with device entity)</p>
+<p>Your mobile app calls <code>deviceRegistered</code> callback (with device entity)</p>
 </li>
 <li>
-<p>Wallet SDK syncs user details with OST Platform</p>
+<p>Client SDK syncs user details with Ost Platform</p>
 </li>
 <li>
-<p>Wallet SDK calls flowComplete callback</p>
+<p>Client SDK calls <code>flowComplete</code> callback</p>
 </li>
 </ul>
 </div>
@@ -466,152 +413,49 @@
 </div>
 </li>
 </ol>
-</div>
-<div class="sect3">
-<h4 id="device_statuses_registered_authorizing_authorized_revoking_revoked_recovering_aborting"><a class="anchor" href="#device_statuses_registered_authorizing_authorized_revoking_revoked_recovering_aborting"></a>Device Statuses: REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING</h4>
-<div class="paragraph">
-<p>| Status | Definition | |&#8201;&#8212;&#8201;|&#8201;&#8212;&#8201;| | REGISTERED | Status when client company registers device with OST | | AUTHORIZING Status when device address is being authorized in user&#8217;s <strong>device manager Contract | | AUTHORIZED | Status when the authorization is complete | | REVOKING | Status when device is being revoked from user&#8217;s </strong>device manager Contract | | REVOKED | Status when revocation of the device address is complete | | RECOVERING | Status when device address is being revoked and a replacement address is being authorized in user&#8217;s **device manager Contract (recovery) | | ABORTING | Status when recovery is being aborted |</p>
-</div>
-<div class="paragraph">
-<p>:::note As soon as user is registerd</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Generate passphrasePrefix for the user.
-It will be used during the activateUser workflow (MW-SDK).</p>
-</li>
-<li>
-<p>Send user entity to your mobile app :::</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="token_object"><a class="anchor" href="#token_object"></a>Token Object</h4>
-<div class="paragraph">
-<p>{   "success":true,   "data":{     "result_type":"token",     "token":{       "id":1085,       "name":"OSTD",       "symbol":"OSTD",       "conversion_factor":1,       "total_supply":"20000000000000000000000",       "decimals":18,       "origin_chain":{         "chain_id":3,         "branded_token":"0xd31756555d3a28c990c39fb85087e41afc09ff7a",         "organization":{           "contract":"0x0a886e74747f5fed2db45c53df5e0c7b2bacc3d7",           "owner":"0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"         },         "stakers":[           "0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"         ]       },       "auxiliary_chains":[         {           "chain_id":199,           "utility_branded_token":"0xdd7df6a4ec6a0c2edd051da875ab9a32e9567869",           "company_token_holders":[             "0xa9632350057c2226c5a10418b1c3bc9acdf7e2ee"           ],           "organization":{             "contract":"0x5e0c62d0f3f286461ef70e1a01e26bc766107912",             "owner":"0xaa541c16d8bd7f61c2c0ec31f30b481d435bd5c1"           }         }       ],       "updated_timestamp":1551870482     }   } }</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="user"><a class="anchor" href="#user"></a>User</h4>
-<div class="listingblock">
-<div class="content">
-<pre>{
-    "success": true,
-    "data": {
-        "result_type": "user",
-        "user": {
-            "id": "7303bd10-5114-423e-9206-04cafafb1708",
-            "token_id": 1085,
-            "token_holder_address": null,
-            "device_manager_address": null,
-            "recovery_address": null,
-            "recovery_owner_address": null,
-            "type": "user",
-            "status": "CREATED",
-            "updated_timestamp": 1552365651
-        }
-    }
-}</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="user_statuses_created_activating_activated"><a class="anchor" href="#user_statuses_created_activating_activated"></a>User Statuses: CREATED / ACTIVATING / ACTIVATED</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CREATED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This will be the default status when a user is created.
-At this stage there are no smart contracts deployed on blockchain.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVATING</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This will be the user&#8217;s status when smart contracts for the user are being deployed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVATED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This will be the user&#8217;s status when all the smart contracts for the user are deployed.
-User can now perform wallet actions.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>MW-SDK</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mobile_wallet_sdk_mw_sdk"><a class="anchor" href="#mobile_wallet_sdk_mw_sdk"></a>Mobile Wallet SDK (MW-SDK)</h3>
+<h3 id="client_sdk"><a class="anchor" href="#client_sdk"></a>Client SDK</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Call setupDevice workflow</p>
+<p>Call <code>setupDevice</code> workflow</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Calls registerDevice (SS-SDK) if device key is not registerd with OST Platform, else flowComplete</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Device Statuses: REGISTERED / AUTHORIZING / AUTHORIZED / REVOKING / REVOKED / RECOVERING / ABORTING</p>
-</li>
-</ul>
-</div>
+<p>Calls <code>registerDevice</code> (sever SDK) if device key is not registerd with Ost Platform, else flowComplete</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Call activateUser workflow</p>
+<p>Call <code>activateUser</code> workflow</p>
 <div class="ulist">
 <ul>
 <li>
-<p>First, ask user to set wallet PIN and retrieve passphrasePrefix for user from your server</p>
+<p>First, ask user to set wallet PIN and retrieve <code>passphrasePrefix</code> for user from your server</p>
 </li>
 <li>
-<p>Wallet SDK creates session keys and recovery owner key</p>
+<p>Client SDK creates session keys and recovery owner key</p>
 </li>
 <li>
-<p>Your app calls activateUser with (PIN, passphrasePrefix, sessionKey details)</p>
+<p>Your app calls <code>activateUser</code> with (PIN, passphrasePrefix, sessionKey details)</p>
 </li>
 <li>
-<p>Wallet SDK sends device key, session key, recovery owner key to OST Platform</p>
+<p>Client SDK sends device key, session key, recovery owner key to Ost Platform</p>
 </li>
 <li>
-<p>OST Platform deploys smart contracts for user: tokenHolder, deviceManager (multisig) and activates the user</p>
-<div class="ulist">
-<ul>
-<li>
-<p>User statuses: CREATED, ACTIVATING, ACTIVATED</p>
-</li>
-</ul>
-</div>
+<p>Ost Platform deploys smart contracts for user: tokenHolder, deviceManager (multisig) and activates the user</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Create sessionKeys</p>
+<p>Create <code>sessionKeys</code></p>
 </li>
 <li>
-<p>Create recoveryOwnerKey</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">:::note activateUser can be called on any action A user only needs to be activated when they opt to participate with their token wallet </dt>
-</dl>
-</div>
+<p>Create <code>recoveryOwnerKey</code></p>
 </li>
 </ol>
 </div>

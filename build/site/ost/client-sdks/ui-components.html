@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="/ost">
-    <link rel="stylesheet" href="../_/stylesheets/index.css">
-    <title>Welcome - Ost Docs</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="../_/images/favicon-16x16.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="../_/images/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="../_/images/favicon-96x96.png"/>
-    <link rel="icon" type="image/png" sizes="192x192"  href="../_/images/favicon-192x192.png"/>
+    <link rel="canonical" href="/ost/client-sdks/ui-components">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>User Interface Components Available in Mobile Wallet SDKs - Ost Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
       rel="stylesheet">
@@ -42,7 +42,7 @@
     <ol class="nav-list">
     <li class="nav-li" >
   
-  <a class="link nav-link nav-link-active" href="/ost/index.html">
+  <a class="link nav-link" href="/ost/index.html">
     Welcome
   </a>
 </li>
@@ -342,216 +342,463 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1>Welcome</h1>
+		<h1>User Interface Components Available in Mobile Wallet SDKs</h1>
 		<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Abc</p>
+<p>In version 2.3.1 (relased 28-Aug-2019) of our Mobile Wallet SDKs, we introduced user-interface (UI) components or views to expedite the development process and make it easier for developers to integrate with OST Platform.</p>
+</div>
+<div class="paragraph">
+<p>This pages introduces the core features and points to detailed documentation on GitHub.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="why_ost"><a class="anchor" href="#why_ost"></a>Why Ost?</h2>
+<h2 id="watch_a_detailed_video_on_how_to_initialize_the_wallet_sdk_and_make_use_of_the_user_interface_components"><a class="anchor" href="#watch_a_detailed_video_on_how_to_initialize_the_wallet_sdk_and_make_use_of_the_user_interface_components"></a>Watch a detailed video on how to initialize the Wallet SDK and make use of the User Interface Components</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Abc</p>
+<p><strong>Topics covered</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>How initialise the Wallet SDK</p>
+</li>
+<li>
+<p>How to set-up a user device</p>
+</li>
+<li>
+<p>Getter methods and how to call them</p>
+</li>
+<li>
+<p>How to activate a user</p>
+</li>
+<li>
+<p>How to configure the UI components<div align="center"><iframe width="680" height="384" src="https://www.youtube.com/embed/CCykqAsatUs?rel=0"></iframe></div></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tools"><a class="anchor" href="#tools"></a>Tools</h2>
+<h2 id="workflows_w_ui_components_views"><a class="anchor" href="#workflows_w_ui_components_views"></a>Workflows w/ UI Components (Views)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>All the open source tools built and maintained by the Ost team:</p>
+<p>There are 12 supported workflows.
+Each workflow has one or more UI views.
+Views are re-used and both the content (text) and theme (design) are configurable for each workflow.</p>
 </div>
-<div class="openblock card card-primary card-starter-kits">
-<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Supported Workflows</th>
+<th class="tableblock halign-left valign-top">Views</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.
+Activate User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create PIN, Confirm PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.
+Add Session</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.
+Get Mnemonic Phrase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter PIN, Show Mnemonics</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.
+Reset a User&#8217;s PIN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter PIN, Set New PIN, Confirm New PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.
+Initiate Recovery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device List, Action Button, Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.
+Abort Device Recovery</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device List, Action Button, Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.
+Revoke Device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device List, Action Button, Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.
+Update Biometric Preference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.
+Authorize Current Device With Mnemonics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter Mnemonics, Action Button, Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.
+Get Current Device QR-Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show QR</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11.
+Scan QR-Code to Authorize Device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scan QR, Accept Button, Reject Button, Enter PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12.
+Scan QR-Code to Execute Transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scan QR, Accept Button, Reject Button, Enter PIN</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="loaders"><a class="anchor" href="#loaders"></a>Loaders</h3>
 <div class="paragraph">
-<p><a href="quick-start-guides/index.html" class="page"><span class="card-title">Quick Start Guides</span> <span class="card-body">Quick Start Guides For Developers!</span> <span class="card-cta">Get Started &gt;</span></a></p>
+<p>In every workflow we support two loaders with text configuration:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>initial_loader</code>: Loader shown before workflow request construct</p>
+</li>
+<li>
+<p><code>loader</code>: Loader shown after workflow request construct</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>note Custom Loaders In November 2019, we introduced support for <strong>Custom Loaders</strong> for OstWalletUI.</p>
+</dd>
+</dl>
 </div>
+</li>
+<li>
+<p>Android: Version 2.3.6</p>
+</li>
+<li>
+<p>iOS: Version 2.3.5</p>
+</li>
+<li>
+<p>React Native: Version 2.3.10&#8201;&#8212;&#8201;<em>To use the Custom Loader in React Native, you must update the downstream Android and/or iOS SDKs.</em></p>
+</li>
+</ul>
 </div>
-<div class="openblock card card-primary card-sdk">
-<div class="content">
 <div class="paragraph">
-<p><a href="server-sdks/index.html" class="page"><span class="card-title">Server SDKs</span> <span class="card-body">A guide to Ost Server SDKs</span> <span class="card-cta">Get started &gt;</span></a></p>
+<p>For more information, see the <a href="../custom-loaders">Custom Loaders</a> section below.</p>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"></dt>
+<dd>
+<p>== List of Views</p>
+</dd>
+</dl>
 </div>
-</div>
-<div class="openblock card card-primary card-sdk">
-<div class="content">
-<div class="paragraph">
-<p><a href="client-sdks/index.html" class="page"><span class="card-title">Client SDKs</span> <span class="card-body">A guide to Ost Client SDKs</span> <span class="card-cta">Get started &gt;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-primary card-sdk">
-<div class="content">
-<div class="paragraph">
-<p><a href="browser-sdks/index.html" class="page"><span class="card-title">Browser SDKs</span> <span class="card-body">A guide to Ost Browser SDKs</span> <span class="card-cta">Get started &gt;</span></a></p>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">View Configuration Keys</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create_pin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User sets PIN for first time</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">confirm_pin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User confirms PIN again</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get_pin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User provides PIN for authentication</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set_new_pin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User sets new PIN</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">confirm_new_pin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User confirms new PIN again</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show_mnemnonics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows 12 word mnemonic phrase of device</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provide_mnemonics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get 12 word mnemonic phrase from user</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show_qr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show QR code of device</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scan_qr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scan QR code of another (registered) device or scan QR code of a transaction</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verify_device</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dispays device data to be verified / authorized</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verify_transaction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays transaction data to be verified / authorized</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">device_list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows list of authorized devices for user to choose from</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="learn"><a class="anchor" href="#learn"></a>Learn</h2>
+<h2 id="github_documentation"><a class="anchor" href="#github_documentation"></a>GitHub Documentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Comprehensive guides to Ost.</p>
+<p>Detailed documentation is being maintained on GitHub</p>
 </div>
-<div class="openblock card card-learn">
-<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/OstWalletUI.md">Android</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/OstWalletUI.md">iOS</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletUI.md">React Native</a></p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p><a href="../learn/ost-tech-stack.html" class="page"><span class="card-title">Ost Tech Stack</span> <span class="card-body">&#8230;&#8203;</span></a></p>
+<p>App developers can configure the content (text) and theme (design) of each of the UI components available.
+To configure either, the SDK needs to be provided with JSON.
+The default configurations can be found below.</p>
 </div>
 </div>
 </div>
-<div class="openblock card card-learn">
+<div class="sect1">
+<h2 id="content_config"><a class="anchor" href="#content_config"></a>Content Config</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md">Android</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ContentConfig.md">iOS</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ContentConfig.md">React Native</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="pin_view_e_g_create_pin"><a class="anchor" href="#pin_view_e_g_create_pin"></a>PIN View (e.g. Create PIN)</h3>
+<div class="imageblock">
 <div class="content">
-<div class="paragraph">
-<p><a href="../learn/smart-contracts.html" class="page"><span class="card-title">Smart Contracts</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/self-custodial-user-wallets.html" class="page"><span class="card-title">Self-Custodial User Wallets</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/session-keys.html" class="page"><span class="card-title">Ephemeral Session Keys</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/sending-gasless-transactions.html" class="page"><span class="card-title">Sending Gasless Transactions</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/custom-rules.html" class="page"><span class="card-title">Custom Rules Framework</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/end-user-experience-recommendations.html" class="page"><span class="card-title">End-User Experience Recommendations</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/wallet-recovery-flows.html" class="page"><span class="card-title">Wallet Recovery Flows</span> <span class="card-body">..</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/create-user-wallet.html" class="page"><span class="card-title">Create User Wallet</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/create-session.html" class="page"><span class="card-title">Create Session</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/initiate-and-execute-transactions.html" class="page"><span class="card-title">Initiate and Execute Transactions</span> <span class="card-body">&#8230;&#8203;</span></a></p>
-</div>
-</div>
-</div>
-<div class="openblock card card-learn">
-<div class="content">
-<div class="paragraph">
-<p><a href="../learn/ost-layer-2.html" class="page"><span class="card-title">Ost Layer-2 Overview</span> <span class="card-body">&#8230;&#8203;</span></a></p>
+<img src="/platform/docs/assets/ui-thru-sdk/PinViewLabelTypes.png" alt="PinViewLabelTypes" width="90%">
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="additional_topics_to_be_included"><a class="anchor" href="#additional_topics_to_be_included"></a>Additional topics to be included</h3>
+<h3 id="show_device_list_view"><a class="anchor" href="#show_device_list_view"></a>Show Device List View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/DeviceListLabelTypes.png" alt="DeviceListLabelTypes" width="90%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show_mnemonics_view"><a class="anchor" href="#show_mnemonics_view"></a>Show Mnemonics View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/ViewMnemonicsLabelTypes.png" alt="ViewMnemonicsLabelTypes" width="90%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enter_mnemonics_view"><a class="anchor" href="#enter_mnemonics_view"></a>Enter Mnemonics View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/ProvideMnemonics.png" alt="ProvideMnemonics" width="90%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="show_qr_code_to_authorize_device_view"><a class="anchor" href="#show_qr_code_to_authorize_device_view"></a>Show QR Code To Authorize Device View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/ShowQR.png" alt="ShowQR" width="90%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="scan_qr_code_view"><a class="anchor" href="#scan_qr_code_view"></a>Scan QR Code View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/ScanQR.png" alt="ScanQR" width="90%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authorize_new_device_view"><a class="anchor" href="#authorize_new_device_view"></a>Authorize New Device View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/VerifyDevice.png" alt="VerifyDevice" width="90%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="confirm_transaction_view"><a class="anchor" href="#confirm_transaction_view"></a>Confirm Transaction View</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/VerifyTX.png" alt="VerifyTX" width="90%">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="theming_theme_config"><a class="anchor" href="#theming_theme_config"></a>Theming: Theme Config</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Sandbox environment</p>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md">Android</a></p>
 </li>
 <li>
-<p>User interface (UI) components</p>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ThemeConfig.md">iOS</a></p>
 </li>
 <li>
-<p>Custom Rules Framework</p>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/documentation/ThemeConfig.md">React Native</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="navigation_bar"><a class="anchor" href="#navigation_bar"></a>Navigation Bar</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/NavBar.png" alt="NavBar" width="80%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sample_screen_create_pin"><a class="anchor" href="#sample_screen_create_pin"></a>Sample Screen (Create PIN)</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/PinView.png" alt="PinView" width="80%">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sample_card_device"><a class="anchor" href="#sample_card_device"></a>Sample Card (Device)</h3>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/assets/ui-thru-sdk/Card.png" alt="Card" width="70%">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom_loaders"><a class="anchor" href="#custom_loaders"></a>Custom Loaders</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the Custom Loader feature, it&#8217;s possible to select or choose your own:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Loader gif</p>
 </li>
 <li>
-<p>APIs</p>
+<p>Success and failure icons</p>
 </li>
 <li>
-<p>Webhooks</p>
+<p>Success message</p>
 </li>
 <li>
-<p>Block Explorer</p>
+<p>Loading-text message</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For instructions on how to do this, see our GitHub documentation here: <a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/develop/Samples/customloader/OstCustomLoader.md">Android Custom Loader Usage</a> <a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/Samples/CustomLoader/OstMockCustomLoader.md">iOS Custom Loader Usage</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ui_events_and_listeners"><a class="anchor" href="#ui_events_and_listeners"></a>UI Events and Listeners</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Developers can subscribe to specific event of each UI workflow.
+Supported events are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>requestAcknowledged</p>
+</li>
+<li>
+<p>flowComplete</p>
+</li>
+<li>
+<p>flowInterrupt</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="more_from_ost"><a class="anchor" href="#more_from_ost"></a>More from Ost</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="audits"><a class="anchor" href="#audits"></a>Audits</h3>
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="careers"><a class="anchor" href="#careers"></a>Careers</h3>
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="social"><a class="anchor" href="#social"></a>Social</h3>
-<div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="questions"><a class="anchor" href="#questions"></a>Questions?</h2>
+<h2 id="to_learn_more_or_ask_questions_join_us_on_slack"><a class="anchor" href="#to_learn_more_or_ask_questions_join_us_on_slack"></a>To Learn More Or Ask Questions Join us on Slack</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Abc</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="share_the_love"><a class="anchor" href="#share_the_love"></a>Share the Love!</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Abc</p>
+<p>:::note Join our Public Slack space!
+We would love to hear your feedback!
+Join our public slack space and let&#8217;s chat.
+Click <a href="https://join.slack.com/t/tryost/shared_invite/enQtNjk5MTI4NDY5MjIyLTFlZWYyODNhMjA0YmNmM2ZmMTJkZDM4MDU0NGJlNDc3ZWEwMjY5ZWNiNjNiZDcyOTIyZTljNGFmN2E2NzY2MDk">here</a>.
+:::</p>
 </div>
 </div>
 </div>
                 <div class="article-navigation">
-                	<div class="btn-next"><a href="/learn/index.html">Learn &rarr;</a></div>
                 </div>
 	</article>
 	<aside class="toc toc-sidebar">
@@ -564,8 +811,8 @@
 		<a class="terms" href="https://ost.com/privacy">Privacy</a>
 	</div>
 </footer>
-<script src="../_/scripts/site.js"></script>
-<script src="../_/scripts/highlight.js"></script>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
 	</main>
 </div>
   </body>

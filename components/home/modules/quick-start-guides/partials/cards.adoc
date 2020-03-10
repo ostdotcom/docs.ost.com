@@ -5,5 +5,15 @@ xref:metacartel-hackathon.adoc[[.card-title]#Metacartel Hackathon (March 2020)# 
 
 [.card.card-learn]
 --
-xref:authentication.adoc[[.card-title]#Authentication# [.card-body]#Specific guide to authentication API request to Ost Platform.#]
+xref:authentication.adoc[[.card-title]#Authentication Methods# [.card-body]#Specific guide to authentication API request to Ost Platform.#]
+--
+
+[.card.card-learn]
+--
+xref:understanding-ost-sdks.adoc[[.card-title]#Understanding Ost SDKs# [.card-body]#...#]
+--
+
+[.card.card-learn]
+--
+xref:statuses.adoc[[.card-title]#Device and User Statuses# [.card-body]#...#]
 --

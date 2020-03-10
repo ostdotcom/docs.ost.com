@@ -5,11 +5,3 @@ Ost client (Mobile Wallet) SDKs enable end-users to interact with tokens within 
 include::partial$cards.adoc[]
 
 //Include demo app(s)
-
-
-[NOTE]
-====
-User own their own Tokens The Mobile Wallet SDK provides for users to +++<u>+++own+++</u>+++ their Tokens without requiring them to directly manage their private crypto keys.
-
-This essentially means providing private key management, authorization and recovery services in addition to authentication.
-====

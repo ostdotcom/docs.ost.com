@@ -1,6 +1,6 @@
-= User Interface/Experience Recommendations
-:id: ui-recommendations
-:sidebar_label: UI Recommendations
+= User Experience Recommendations
+
+Developing mobile apps
 
 Many of the Wallet SDK workflows require contracs to be written or updated on-chain and/or for transactions to take place on-chain.
 On-chain here refers to the Ost side-chains which has a 3 sec block time.
