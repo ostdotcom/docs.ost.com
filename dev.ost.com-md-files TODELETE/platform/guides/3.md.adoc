@@ -1,3 +1,0 @@
-= Introduction to Technical Guides
-:id: introduction
-:sidebar_label: Introduction

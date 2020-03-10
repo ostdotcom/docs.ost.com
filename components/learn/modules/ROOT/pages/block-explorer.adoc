@@ -1,0 +1,11 @@
+= Introduction to OST VIEW
+
+https://view.ost.com[OST VIEW] is the Ost block explorer for viewing token transactions and contracts on OST sidechains. You can toggle between Sandbox (testnet) and Production (mainnet) views.
+
+* A multi-chain explorer, a search engine and a browser
+* Gives a view into human-readable block, transaction, and account information on OST sidechains
+* Provides individual and aggregate historical data, including statistics and charts, on Token transfers in, and across OST-powered Token economies
+
+In addition to OST VIEW, you can check-out https://ostwatch.com[OST Watch].
+This has been built by one of our community members.
+_It is not an OST Platform product._

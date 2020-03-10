@@ -1,5 +1,0 @@
-= Abc
-:id: pop
-:sidebar_label: Popcorn
-
-*Coming Soon!*

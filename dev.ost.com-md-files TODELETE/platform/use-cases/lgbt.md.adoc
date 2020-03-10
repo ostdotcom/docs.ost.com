@@ -1,5 +1,0 @@
-= Abc
-:id: lgbt
-:sidebar_label: Hornet LGBT
-
-*Coming Soon!*

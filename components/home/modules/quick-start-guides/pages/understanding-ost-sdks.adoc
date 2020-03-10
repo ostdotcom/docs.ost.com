@@ -34,3 +34,24 @@ This page describes the actions that can be performed and how you would go about
  ** Ost Platform deploys smart contracts for user: tokenHolder, deviceManager (multisig) and activates the user
 . Create `sessionKeys`
 . Create `recoveryOwnerKey`
+
+
+=== Set-up Steps and Contracts Deployed
+
+[cols="1,4", options="header"]
+|===
+|Step
+|Description
+
+|Token
+|Ost writes and deploys the TokenRules contract for the Company and writes a PricerRule contract and registers the rule with the TokenRules contract on the auxiliary sidechain.
+
+|User
+|When an end-user registers on a client app a TokenHolder contract and a DeviceManager (MultiSig) contract are created and deployed by the client via Ost Platform APIs/SDKs.
+
+|User Wallet
+|Activating a user wallet involves the deployment and registration of the following contracts: TokenHolder, MultiSig, DelayedRecoveryModule
+
+|Execute Transaction
+|Users can spend tokens by signing transactions using private keys on their registered mobile device.
+|===

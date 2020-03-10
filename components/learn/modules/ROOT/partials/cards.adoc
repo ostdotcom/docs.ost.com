@@ -57,3 +57,8 @@ xref:learn::initiate-and-execute-transactions.adoc[[.card-title]#Initiate and Ex
 --
 xref:learn::ost-layer-2.adoc[[.card-title]#Ost Layer-2 Overview# [.card-body]#...#]
 --
+
+[.card.card-learn]
+--
+xref:learn::block-explorer.adoc[[.card-title]#Ost Block Explorer# [.card-body]#...#]
+--

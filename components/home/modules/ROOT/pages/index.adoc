@@ -1,10 +1,30 @@
 = Welcome
 
-Abc
+Ost Platform is built on https://openst.org/[OpenST Protocol] and OpenST Mosaic. Together, these allow for the creation of value-backed tokens on scalable side-chains on Etheruem, and finalizing thousands of transactions per second asynchronously to Ethereum at low cost.
 
-== Why Ost?
 
-Abc
+
+The *Server Side APIs and SDKs* provide various endpoints/methods that can be used by developers to design and manage their Token Economies.
+The *OST Wallet SDKs* enable end-users to safely interact with Tokens.
+
+
+== What Can I do with Ost Platform?
+
+* Launch your own token
+* Run hundreds of thousands of transactions on Ost scalable side-chains
+* Embed a self-custodial Ethereum wallet into your application(s)
+* Attach value to user actions -- be it an upvote, a like, a store visit, a contribution, or a 5-star review
+* Process microtransactions: high volume, low value transfers at near-zero cost
+
+== Why Ost Platform?
+
+. Designed to provide everything you need to deploy tokens to drive engagement.
+
+. Designed with mainstream users in mind. Your users won't even know it's crypto.
+
+. Designed for internet-grade transaction volumes and speeds at near-zero cost
+
+. Developer friendly: Ost SDKs enable a fast and painless integration into your applcation(s) without requiring in-house blockchain expertise -- so you can focus on your business and leave the blockchain bits to us.
 
 == Tools
 

@@ -1,0 +1,97 @@
+= Go-Live Checklist
+
+This is a requirements checklist for Ost Platform clients to check the readiness of their application's integration with Ost Platform SDKs. You will need to confirm that you have followed and implemented these requirements before being permitted to move to Production (mainnet).
+
+== Server SDK Checklist
+
+[cols="1,4,1", options="header"]
+.Server SDK Checklist
+|===
+|Item 
+|Description
+|Status
+
+|User credentials are secure
+|The list below is not exhaustive:
+
+- User passwords are encrypted and stored securely (e.g.
+using key management systems such as https://aws.amazon.com/kms/[AWS KMS], https://cloud.google.com/kms/[Cloud KMS] to encrypt data, etc.)
+
+- There exists a password recovery process
+
+- Multi-factor authorization over password is a good practice
+
+- A unique secret is generated (recovery passphrase prefix) for each user: The secret is at least 30 characters long (e.g.
+https://www.npmjs.com/package/bip39[Bip-39])
+
+- The secret is pseudorandom (e.g. NOT name and email)
+
+- Secrets are encrypted and stored securely
+
+- The secret is not shared anywhere or used for any other functionality/service (example: exception emails, logs, 3rd party services, etc.)
+
+- The random seed must be generated securely (e.g.
+https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback[crypto.randomBytes])
+
+- The application uses TLS for network communication to its backend
+|
+
+|Restricted Access
+|Production backend servers, databases, and other resources have restricted access
+
+The SDK is implemented in your application such that it never accesses the user's keys directly.
+(Ost client SDK should always be used for all interactions with keys.) 
+
+This includes: 
+
+- Private keys (Owner/MultiSig keys and Session Keys)
+
+- Mnemonic phrase
+
+- API key
+|
+
+|
+|User PIN and Mnemonic phraser are explicitly wiped from App memory (specifically needed for Android) after its purpose and never stored/saved on device or server or any other medium in any form e.g.
+clear text or encrypted.
+Check https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md#checking-memory-for-sensitive-data[here] for more information.
+|
+
+|
+|Sensitive information such as the user's PIN, Mnemonic phrase, recovery passphrase prefix, private keys are not logged or sent to third-party applications in any form (e.g. text, image, screen-grab, crash-report, analytics, etc).
+|
+
+|
+|Recovery flows are supported in the app
+
+- The recovery UX indicates to the user that the recovery process will take 12 hours
+
+- The recovery UX informs the user that their previously authorized device will be revoked
+
+- Recovery via PIN is implemented (and PIN is not be saved/stored by the client.)
+
+- Other methods of adding devices (i.e. Mnemonics, QR code) are optional. 
+|
+
+|
+|The SDKs are implemented without any modifications
+|
+
+|
+|Your application does not initiate a transaction signed by the user's keys without explicit action from the user within the application.
+|
+
+|
+|App analytics systems do not capture screenshots of screens with sensitive information such as Mnemonics. Generally, application tracking and analytics systems should be configured to avoid capturing sensitive user information.
+| 
+|===
+
+[WARNING]
+====
+We strongly recommend that your application is reviewed by security assessors/auditors to evaluate the general security of the application and also an analysis of the security vulnerabilities caused by the usage of 3rd party libraries and other dependencies.
+====
+
+[NOTE]
+====
+Please write to us at support@ost.com if you face any issues fulfilling these requirements.
+====
