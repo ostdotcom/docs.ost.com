@@ -43,9 +43,9 @@ content:
       branches: antora-docs
       start_path: docs
 
-    - url: https://github.com/ostdotcom/ost-wallet-sdk-browser
-      branches: antora-docs
-      start_path: docs
+    # - url: https://github.com/ostdotcom/ost-wallet-sdk-browser
+    #   branches: antora-docs
+    #   start_path: docs
 
     - url: https://github.com/ostdotcom/demo-server
       branches: antora-docs
@@ -55,9 +55,9 @@ content:
       branches: antora-docs
       start_path: docs
 
-    - url: https://github.com/ostdotcom/ost-react-native-starter-app
-      branches: antora-docs
-      start_path: docs
+    # - url: https://github.com/ostdotcom/ost-react-native-starter-app
+    #   branches: antora-docs
+    #   start_path: docs
 
 ui:
   bundle:
