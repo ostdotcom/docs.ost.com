@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="/client-sdk-react-native/1.0">
     <link rel="stylesheet" href="../../_/stylesheets/index.css">
-    <title>Ost Wallet SDK React Native - Ost Docs</title>
+    <title>Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
@@ -48,20 +48,26 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/android-setup.html">
-    Android Setup
+  <a class="link nav-link" href="#">
+    android-setup.adoc
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/ios-setup.html">
-    iOS Setup
+  <a class="link nav-link" href="#">
+    ios-setup.adoc
   </a>
 </li>
 <li class="nav-li" >
   
   <a class="link nav-link" href="/client-sdk-react-native/1.0/OstCoreWorkflows.html">
     Ost Core Workflows
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="#">
+    OstWalletUI.adoc
   </a>
 </li>
 <li class="nav-li" >
@@ -78,8 +84,14 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletUI.html">
-    Ost Wallet UI
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstRedemptionFlow.html">
+    Ost Redemption Flow
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstRedemptionConfig.html">
+    Ost Redemption Config
   </a>
 </li>
 <li class="nav-li" >
@@ -372,9 +384,141 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1>Ost Wallet SDK React Native</h1>
-		<div class="sect1">
+		<h1></h1>
+		<div class="paragraph">
+<p>===dev.ost.com Overview===</p>
+</div>
+<h1 id="react_native_wallet_sdk_setup" class="sect0"><a class="anchor" href="#react_native_wallet_sdk_setup"></a>React Native Wallet SDK Setup</h1>
+<div class="paragraph">
+<p>Please refer to our GitHub documentation for detailed information.
+The following page gives an overview of how to get started with the React Native Wallet SDK.</p>
+</div>
+<div class="sect1">
+<h2 id="github_links"><a class="anchor" href="#github_links"></a>GitHub Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/README.md">GitHub Readme</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/README.md#sdk-methods">SDK Methods</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/README.md#sdk-workflow-callbacks">SDK Workflow Callbacks</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/tree/develop/documentation">Additional GitHub documentation</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletSdkGetMethods.md">OST Wallet SDK Getter Methods</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstJsonApi.md">OST JSON API</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletUI.md">OST Wallet UI (User Interface Components)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/android_setup.md">Android</a> and <a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/ios_setup.md">iOS</a> set-up steps</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OST React Native Wallet SDK is the official Wallet SDK for the React Native platform.
+OST React Native Wallet SDK is a mobile application development SDK that enables developers to integrate the functionality of a non-custodial crypto-wallet into consumer applications.</p>
+</div>
+<div class="paragraph">
+<p><strong>OST React Native Wallet SDK&#8230;&#8203;</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Safely generates and stores keys on the user&#8217;s mobile device</p>
+</li>
+<li>
+<p>Signs ethereum transactions and data as defined by contracts using EIP-1077</p>
+</li>
+<li>
+<p>Enables users to recover access to their tokens in case the user loses their authorized device</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing_react_native_sdk"><a class="anchor" href="#installing_react_native_sdk"></a>Installing React Native SDK</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install React Native and create a react-native project</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Follow the <a href="https://facebook.github.io/react-native/docs/0.59/getting-started">official React Native getting started guide</a> to install React Native and create a react-native project</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install the OST React Native SDK in your project Run following command in your react-native project root</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> npm install @ostdotcom/ost-wallet-sdk-react-native</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Linking the OST React native SDk with your project</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> react-native link @ostdotcom/ost-wallet-sdk-react-native</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set_up_steps_for_android_and_ios"><a class="anchor" href="#set_up_steps_for_android_and_ios"></a>Set-up Steps for Android and iOS</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/android_setup.md">Android Set-up</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/ios_setup.md">iOS Set-up</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>===GitHub README===</p>
+</div>
+</div>
+</div>
+<h1 id="ost_wallet_sdk_react_native" class="sect0"><a class="anchor" href="#ost_wallet_sdk_react_native"></a>Ost Wallet SDK React Native</h1>
+<div class="sect1">
+<h2 id="introduction_2"><a class="anchor" href="#introduction_2"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ost React Native Wallet SDK is the official Ost Wallet SDK for react-native platform.
@@ -478,6 +622,16 @@ The SDK is a mobile application development SDK that enables developers to integ
 </div>
 </li>
 <li>
+<p><a href="#redemption-flow-ui-component">Redemption flow UI Component</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#implementation-3">Implementation</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p><a href="#osttransactionhelper---transaction-and-session-integrated-workflow">OstTransactionHelper - Transaction and Session Integrated Workflow</a></p>
 <div class="ulist">
 <ul>
@@ -514,7 +668,7 @@ The SDK is a mobile application development SDK that enables developers to integ
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing_react_native_sdk"><a class="anchor" href="#installing_react_native_sdk"></a>Installing React-native SDK</h2>
+<h2 id="installing_react_native_sdk_2"><a class="anchor" href="#installing_react_native_sdk_2"></a>Installing React-native SDK</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -920,6 +1074,9 @@ All device manager operations shall be performed using this key.</p>
 <div class="paragraph">
 <p>Please refer to <a href="./documentation/OstWalletUI.md#activate-user">Activate User UI Workflow Documentation</a> for implementation details.</p>
 </div>
+<div class="paragraph">
+<p><a id="wallet-settings-ui-component"></a></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -941,17 +1098,42 @@ It is a wallet settings page that can be used by end-users to perfrom 12 differe
 <div class="paragraph">
 <p>Please refer to <a href="#">./documentation/OstWalletSettings.adoc</a> for implementation details.</p>
 </div>
+<div class="paragraph">
+<p><a id="redemption-flow-ui-component"></a></p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="4_ostvtransaction_helper_transaction_and_add_session_integrated_workflow"><a class="anchor" href="#4_ostvtransaction_helper_transaction_and_add_session_integrated_workflow"></a>4. OstvTransaction Helper - Transaction and Add Session Integrated Workflow</h3>
+<h3 id="4_redemption_flow_ui_component"><a class="anchor" href="#4_redemption_flow_ui_component"></a>4. Redemption Flow UI Component</h3>
+<hr>
+<div class="paragraph">
+<p>OstRedemption component is a pre-built UI component available exclusively in <code>ost-wallet-sdk-react-native</code> SDK.
+It consist two pages - one displaying redeemable product list and another displaying product details and redemption options.
+It can be used by end-users to integrate redemption flow into their app.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>IMPORTANT:</strong> This feature requires application to use <a href="https://reactnavigation.org/docs/en/getting-started.html">React Navigation</a> package.</p>
+</div>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="implementation_4"><a class="anchor" href="#implementation_4"></a>Implementation</h4>
+<div class="paragraph">
+<p>Please reder to <a href="#">./documentation/OstRedemptionFlow.adoc</a> for implementation details.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="5_osttransaction_helper_transaction_and_add_session_integrated_workflow"><a class="anchor" href="#5_osttransaction_helper_transaction_and_add_session_integrated_workflow"></a>5. OstTransaction Helper - Transaction and Add Session Integrated Workflow</h3>
 <hr>
 <div class="paragraph">
 <p><code>OstTransactionHelper</code> is a transaction helper provided by the SDK that creates session keys before performing a transaction if needed.
 App developers can configure the session creation parameters (session buckets) as per application&#8217;s need.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation_4"><a class="anchor" href="#implementation_4"></a>Implementation</h4>
+<h4 id="implementation_5"><a class="anchor" href="#implementation_5"></a>Implementation</h4>
 <div class="paragraph">
 <p>Please refer to <a href="#">./documentation/OstTransactionHelper.adoc</a> for implementation details.</p>
 </div>
@@ -1005,7 +1187,7 @@ We request you to kindly test your application on actual iOS-13 device while we 
 </div>
 </div>
                 <div class="article-navigation">
-                	<div class="btn-next"><a href="/client-sdk-react-native/1.0/android-setup.html">Android Setup &rarr;</a></div>
+                	<div class="btn-next"><a href="/client-sdk-react-native/1.0/OstCoreWorkflows.html">Ost Core Workflows &rarr;</a></div>
                 </div>
 	</article>
 	<aside class="toc toc-sidebar">

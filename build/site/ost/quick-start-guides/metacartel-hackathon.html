@@ -407,10 +407,74 @@
 <p>Integrate your server (and user service) into the app</p>
 </li>
 <li>
-<p>Build your web app and integrate the Ost Browser wallet SDK</p>
+<p>Build your browser app and integrate the Ost Browser wallet SDK</p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hackathon_task_checklist"><a class="anchor" href="#hackathon_task_checklist"></a>Hackathon Task Checklist</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Task Checklist</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ost Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Sign-up with Ost Platform</p>
+<p class="tableblock">- Setup your brand token</p>
+<p class="tableblock">- Stake and Mint your brand token</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your Application Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implement a Sign-up/Login mechanism for your user</p>
+<p class="tableblock">- Create API(s) that can be used by mobile application". On Signup - create a user on Ost Platform using <a href="https://github.com/ostdotcom/ost-sdk-js#users-module">Ost Server SDK</a></p>
+<p class="tableblock">- Retrive API and secret key from <a href="https://platform.ost.com/testnet/developer">Ost Platform</a></p>
+<p class="tableblock">- Associate Ost&#8217;s user-id with your application&#8217;s user-id on your server/database. Generate and store an encrypted version of the user&#8217;s passphrase prefix (30 charecter or more). <em>Use secure methods such as secure random to generate the passphrase prefix.</em></p>
+<p class="tableblock">- Create an API that provides user&#8217;s salt (passphrase prefix) to mobile application. The API must ensure user is logged-in.</p>
+<p class="tableblock">- Create an API that will register (create device) a user&#8217;s device with Ost Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your Client/Mobile App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Initialize Ost Client SDK on application launch</p>
+<p class="tableblock">- Integrate SignUp/Login with mobile application. On sign-up/login perform setup device workflow using Ost Client SDK.</p>
+<p class="tableblock">  . Setup device workflow should be performed on every app launch</p>
+<p class="tableblock">  . Need&#8217;s logged-in user&#8217;s Ost user id</p>
+<p class="tableblock">  . May ask the application to register user&#8217;s device by calling <code>registerDevice</code> callback</p>
+<p class="tableblock">  . Integrate register device API call on <code>registerDevice</code> callback from SDK</p>
+<p class="tableblock">  . Call <code>deviceRegistered</code> method on API response.</p>
+<p class="tableblock">- Use Ost Client SDK to determine user&#8217;s status</p>
+<p class="tableblock">  . If user&#8217;s status is in 'Created', perform activate user workflow</p>
+<p class="tableblock">  . Use the SDKs built-in UI workflow</p>
+<p class="tableblock">  . SDK will invoke <code>getPassphrase</code> callback for user&#8217;s passphrase prefix</p>
+<p class="tableblock">  . Application should fetch the salt from their application server</p>
+<p class="tableblock">- Mechanism to display user friendly error/success messages when Workflows are perfromed</p>
+<p class="tableblock">  . SDK provides developer friendly erros to the application</p>
+<p class="tableblock">  . The application should display user friendly error</p>
+<p class="tableblock">  . Developers may optionally choose to integrate Custom Loader</p>
+<p class="tableblock">- Integrate Wallet Settings</p>
+<p class="tableblock">  . SDK will invoke <code>getPassphrase</code> callback for user&#8217;s passphrase prefix</p>
+<p class="tableblock">  . Application should fetch the salt(passphrase prefix) from their application server</p>
+<p class="tableblock">- Integrate transaction helper</p>
+<p class="tableblock">  . Setup session buckets for creating session</p>
+<p class="tableblock">  . SDK will invoke <code>getPassphrase</code> callback for user&#8217;s passphrase prefix</p>
+<p class="tableblock">  . Application should fetch the salt (passphrase prefix) from their application server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your Client/Browswer App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Integrate Ost Browser SDK</p>
+<p class="tableblock">- Initialize SDK</p>
+<p class="tableblock">- Create session</p>
+<p class="tableblock">  . On request ack, show QR code generated from string <code>qr_data</code></p>
+<p class="tableblock">  . Scan QR code from application</p>
+<p class="tableblock">- Execute Transaction</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

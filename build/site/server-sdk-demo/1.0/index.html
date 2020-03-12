@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="/server-sdk-demo/1.0">
     <link rel="stylesheet" href="../../_/stylesheets/index.css">
-    <title>Ost Docs</title>
+    <title>OST Demo Mappy Server - Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
@@ -312,12 +312,107 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1></h1>
-		<div class="paragraph">
-<p>This is the index.adoc page for DEMO-SERVER</p>
+		<h1>OST Demo Mappy Server</h1>
+		<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>OST demo application server is a sample implementation of a backend-server for OST wallet built using OST Wallet SDK.</p>
 </div>
 <div class="paragraph">
-<p>This is a test :)</p>
+<p>For more details please visit <a href="https://dev.ost.com">dev.ost.com</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="1_prerequisites"><a class="anchor" href="#1_prerequisites"></a>1. Prerequisites</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>RVM : install using <a href="https://rvm.io/rvm/install">rvm</a></p>
+</li>
+<li>
+<p>Ruby : using rvm above install Ruby with version &gt;= 2.5.3</p>
+</li>
+<li>
+<p>Mysql : run local instance or use <a href="https://aws.amazon.com/rds/">AWS RDS</a></p>
+</li>
+<li>
+<p>Memcache : run local instance using <a href="https://memcached.org/">Memcached</a> or use <a href="https://aws.amazon.com/elasticache/memcached/">AWS ElastiCache for Memcached</a></p>
+</li>
+<li>
+<p>Key Management Services : use <a href="https://aws.amazon.com/kms/">AWS KMS</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2_create_configuration_file"><a class="anchor" href="#2_create_configuration_file"></a>2. Create configuration file</h3>
+<div class="paragraph">
+<p>Refer to <a href="env.sh.example">env.sh.example</a> to create a new configuration file (env.sh).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3_populate_env_variables"><a class="anchor" href="#3_populate_env_variables"></a>3. Populate ENV Variables</h3>
+<div class="paragraph">
+<p>From the configuration file created above, populate ENV variables for the processes below to access.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">source env.sh</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4_run_database_migrations"><a class="anchor" href="#4_run_database_migrations"></a>4. Run Database Migrations</h3>
+<div class="sect3">
+<h4 id="a_drop_existing_tables_and_databases_if_any_caution"><a class="anchor" href="#a_drop_existing_tables_and_databases_if_any_caution"></a>a. Drop existing tables and databases if any. CAUTION.</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rake db:drop:all RAILS_ENV=$RAILS_ENV</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="b_create_all_the_databases"><a class="anchor" href="#b_create_all_the_databases"></a>b. Create all the databases.</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rake db:create:all RAILS_ENV=$RAILS_ENV</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="c_run_all_the_migrations"><a class="anchor" href="#c_run_all_the_migrations"></a>c. Run all the migrations.</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rake db:migrate RAILS_ENV=$RAILS_ENV</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="5_start_rails_server"><a class="anchor" href="#5_start_rails_server"></a>5. Start Rails Server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">bin/rails server -e $RAILS_ENV -p 4000</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For Staging / Production environments we would recommend using <a href="https://www.phusionpassenger.com/library/config/nginx/intro.html">Nginx + Passenger</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div>
                 <div class="article-navigation">
                 </div>

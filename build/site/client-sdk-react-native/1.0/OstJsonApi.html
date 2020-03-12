@@ -48,20 +48,26 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/android-setup.html">
-    Android Setup
+  <a class="link nav-link" href="#">
+    android-setup.adoc
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/ios-setup.html">
-    iOS Setup
+  <a class="link nav-link" href="#">
+    ios-setup.adoc
   </a>
 </li>
 <li class="nav-li" >
   
   <a class="link nav-link" href="/client-sdk-react-native/1.0/OstCoreWorkflows.html">
     Ost Core Workflows
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="#">
+    OstWalletUI.adoc
   </a>
 </li>
 <li class="nav-li" >
@@ -78,8 +84,14 @@
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletUI.html">
-    Ost Wallet UI
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstRedemptionFlow.html">
+    Ost Redemption Flow
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstRedemptionConfig.html">
+    Ost Redemption Config
   </a>
 </li>
 <li class="nav-li" >
@@ -466,6 +478,19 @@
 </ul>
 </div>
 </li>
+<li>
+<p><a href="#get-redeemable-sku-details">Get Redeemable Sku Details</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#usage-8">Usage</a></p>
+</li>
+<li>
+<p><a href="#sample-response-8">Sample Response</a></p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </li>
@@ -495,6 +520,19 @@
 </li>
 <li>
 <p><a href="#sample-response-6">Sample Response</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#get-redeemable-skus">Get Redeemable Skus</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#usage-7">Usage</a></p>
+</li>
+<li>
+<p><a href="#sample-response-7">Sample Response</a></p>
 </li>
 </ul>
 </div>
@@ -953,6 +991,152 @@ OstJsonApi.getPendingRecoveryForUserId(
 </div>
 </div>
 <div class="paragraph">
+<p><a id="get-redeemable-sku-details"></a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get_redeemable_sku_details"><a class="anchor" href="#get_redeemable_sku_details"></a>Get Redeemable Sku Details</h3>
+<div class="paragraph">
+<p>API to get redeemable sku details.</p>
+</div>
+<div class="paragraph">
+<p><a id="usage-8"></a></p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">/*
+  Please update userId as per your needs.
+  Since this userId does not belong to your economy, you will get an error if you do not change it.
+*/
+let userId = "71c59448-ff77-484c-99d8-abea8a419836";
+let skuDetailId = "2";
+let extraParams = {};
+
+/**
+   * Api to get redeemable skus
+   * @param {String} userId - Ost User id
+   * @param {String} skuDetailId - Sku detail id got from list of Redeemable skus
+   * @param {Object} extraParams (@nullable).
+   * @param {function} Success callback with success data
+   * @param {function} Failure callback with error and failure response
+   * @public
+ */
+
+
+OstJsonApi.getRedeemableSkuDetails(userId, skuDetailId ,extraParams, (response) =&gt; {
+    console.log(response);
+  }, (error)=&gt; {
+    console.log("An error has occurred while fetching redeemable sku details.");
+    console.log( error );
+  });</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a id="sample-response-8"></a></p>
+</div>
+<div class="listingblock">
+<div class="title">Sample Response</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "result_type":"redemption_product",
+   "redemption_product":{
+      "status":"active",
+      "images":{
+         "detail":{
+            "original":{
+               "size":90821,
+               "url":"https://dxwfxs8b4lg24.cloudfront.net/ost-platform/rskus/stag-starbucks-d-original.png",
+               "width":150,
+               "height":150
+            }
+         },
+         "cover":{
+            "original":{
+               "size":193141,
+               "url":"https://dxwfxs8b4lg24.cloudfront.net/ost-platform/rskus/stag-starbucks-c-original.png",
+               "width":320,
+               "height":320
+            }
+         }
+      },
+      "availability":[
+         {
+            "country_iso_code":"USA",
+            "country":"USA",
+            "currency_iso_code":"USD",
+            "denominations":[
+               {
+                  "amount_in_wei":"49938358",
+                  "amount_in_fiat":5
+               },
+               {
+                  "amount_in_wei":"99876717",
+                  "amount_in_fiat":10
+               },
+               ...
+            ]
+         },
+         {
+            "country_iso_code":"CAN",
+            "country":"Canada",
+            "currency_iso_code":"CAD",
+            "denominations":[
+               {
+                  "amount_in_wei":"37547638",
+                  "amount_in_fiat":5
+               },
+               {
+                  "amount_in_wei":"75095276",
+                  "amount_in_fiat":10
+               },
+               ...
+            ]
+         },
+         {
+            "country_iso_code":"GBR",
+            "country":"United Kingdom",
+            "currency_iso_code":"GBP",
+            "denominations":[
+               {
+                  "amount_in_wei":"64855011",
+                  "amount_in_fiat":5
+               },
+               {
+                  "amount_in_wei":"129710022",
+                  "amount_in_fiat":10
+               },
+               ...
+            ]
+         },
+         {
+            "country_iso_code":"IND",
+            "country":"India",
+            "currency_iso_code":"INR",
+            "denominations":[
+               {
+                  "amount_in_wei":"1396",
+                  "amount_in_fiat":0.01
+               },
+               {
+                  "amount_in_wei":"139609",
+                  "amount_in_fiat":1
+               },
+               ...
+            ]
+         }
+      ],
+      "id":"2",
+      "updated_timestamp":1582024811,
+      "description":{
+         "text":null
+      },
+      "name":"Starbucks"
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p><a id="list-api"></a></p>
 </div>
 </div>
@@ -1185,6 +1369,102 @@ OstJsonApi.getDeviceListForUserId(userId, nextPagePayload,
     }
   ],
   "result_type": "devices"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a id="get-redeemable-skus"></a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get_redeemable_skus"><a class="anchor" href="#get_redeemable_skus"></a>Get Redeemable Skus</h3>
+<div class="paragraph">
+<p>API to get redeemable skus.</p>
+</div>
+<div class="paragraph">
+<p><a id="usage-7"></a></p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">/*
+  Please update userId as per your needs.
+  Since this userId does not belong to your economy, you will get an error if you do not change it.
+*/
+let userId = "71c59448-ff77-484c-99d8-abea8a419836";
+let nextPagePayload = null;
+
+/**
+   * Api to get redeemable skus
+   * @param {String} userId - Ost User id
+   * @param {Object} nextPagePayload (@nullable). Pass null to get first page.
+   * @param {function} Success callback with success data
+   * @param {function} Failure callback with error and failure response
+   * @public
+ */
+
+
+OstJsonApi.getRedeemableSkus(userId, nextPagePayload , (respones) =&gt; {
+    console.log(response);
+    // Let's check if more pages of data is available.
+    if ( response.meta ) {
+      let nextPagePayloadFromResponse = response.meta.next_page_payload || {};
+      if ( Object.keys(nextPagePayloadFromResponse).length &gt; 0 ) {
+        // Next page is available.
+        // Update nextPagePayload
+        nextPagePayload = nextPagePayloadFromResponse;
+        // To fetch the next page, pass the updated nextPagePayload.
+      }
+    }
+  }, (error)=&gt; {
+    console.log("An error has occurred while fetching redeemable skus.");
+    console.log( error );
+  });</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a id="sample-response-7"></a></p>
+</div>
+<div class="listingblock">
+<div class="title">Sample Response</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "meta":{
+      "next_page_payload":{
+      }
+   },
+   "result_type":"redemption_products",
+   "redemption_products":[
+      {
+         "status":"active",
+         "updated_timestamp":1582024811,
+         "id":"2",
+         "description":{
+            "text":null
+         },
+         "images":{
+            "detail":{
+               "original":{
+                  "size":90821,
+                  "url":"https://dxwfxs8b4lg24.cloudfront.net/ost-platform/rskus/stag-starbucks-d-original.png",
+                  "width":150,
+                  "height":150
+               }
+            },
+            "cover":{
+               "original":{
+                  "size":193141,
+                  "url":"https://dxwfxs8b4lg24.cloudfront.net/ost-platform/rskus/stag-starbucks-c-original.png",
+            "width":320,
+                  "height":320
+               }
+            }
+         },
+         "name":"Starbucks"
+      },
+      ...
+      ...
+   ]
 }</code></pre>
 </div>
 </div>

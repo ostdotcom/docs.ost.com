@@ -1,0 +1,65 @@
+= Reference links
+
+- https://antora.org/[Antora]
+- https://docs.antora.org/antora/2.2/[Antora Content docs]
+- https://docs.antora.org/antora-ui-default/[Antora User Interface docs]
+- https://gitter.im/antora/users[Gitter Channel For Users]
+- https://gitter.im/antora/dev[Gitter Channel For Devs]
+
+== Build site
+
+Navigate to your site folder and run
+
+`antora playbook.yml --fetch`
+
+This will generate the site with the default Antora site generator. From there, open the path to the index.html file in your browser. (You can find this in the public folder.)
+
+=== To run a local server
+
+. Install the serve package globally using npm: `npm i -g serve@6.5.8`
+. Launch web server `serve build/site`
+
+== To update the UI
+
+Navigate to your site folder UI folder and run
+
+$ gulp preview:build
+
+$ gulp preview
+
+=== Build Once
+To build the UI once for preview, then stop, execute the following command:
+
+`$ gulp preview:build`
+
+=== Build Continuously
+To avoid the need to run the preview:build task over and over while developing, you can use the preview command instead to have it run continuously. This task also launches a local HTTP server so updates get synchronized with the browser (i.e., “live reload”).
+
+To launch the preview server, execute the following command:
+
+`$ gulp preview`
+
+=== Package for Previewing
+If you need to bundle the UI in order to preview the UI on the real site in local development, run the following command:
+
+`$ gulp bundle:pack`
+
+=== Tasks for ~/ost/docs.ost.com/ui/gulpfile.js
+
+├─┬ preview:build        Process and stage the UI assets and generate pages for the preview
+│ └─┬ <series>
+│   ├── build
+│   └── preview:build-pages
+├─┬ preview              Generate a preview site and launch a server to view it
+│ └─┬ <series>
+│   ├─┬ <series>
+│   │ ├── build
+│   │ └── preview:build-pages
+│   └── preview:serve
+├── preview:serve
+├── build                Build and stage the UI assets for bundling
+├── preview:build-pages
+└─┬ bundle               Bundle UI Theme into a ZIP file
+  └─┬ <series>
+    ├── build
+    └── pack

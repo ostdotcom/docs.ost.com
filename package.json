@@ -16,6 +16,7 @@
   "dependencies": {
     "@antora/cli": "^2.0.0",
     "glob": "^7.1.4",
+    "gulp": "^4.0.2",
     "js-yaml": "^3.13.1",
     "multimatch": "^4.0.0",
     "yarn": "^1.19.1"

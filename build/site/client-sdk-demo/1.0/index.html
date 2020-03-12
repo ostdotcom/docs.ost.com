@@ -314,10 +314,136 @@
 	<article class="article doc">
 		<h1></h1>
 		<div class="paragraph">
-<p>This is the index.adoc page for REACT-NATIVE-DEMO-APP</p>
+<p>===needs to be formatted to adoc===</p>
+</div>
+<h1 id="ost_wallet_react_native_sample_app" class="sect0"><a class="anchor" href="#ost_wallet_react_native_sample_app"></a>OST Wallet React Native Sample App</h1>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="add_demo_server_configuration"><a class="anchor" href="#add_demo_server_configuration"></a>Add demo server configuration</h3>
+<div class="paragraph">
+<p>To use your own sandbox economy, scan the QR code of your sandbox economy and update the <code>demo-server-config.json</code> file. The QR contains json configuration.</p>
 </div>
 <div class="paragraph">
-<p>This is a test :)</p>
+<p>Path of <code>demo-server-config.json</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>react-native-demo-app/src/constants/demo-server-config.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To get started right away, developers can use the config of popcorn economy.
+Popcorn economy is hosted by OST platform on Sandbox environment.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{"token_id":1400,"token_name":"Popcorn","token_symbol":"POP","url_id":"55c0c94b98ef6362e7d2d10fe60572819d7d31e54f8017aaba95eb225cc1bff7","mappy_api_endpoint":"https://demo-mappy.ost.com/demo/","saas_api_endpoint":"https://api.ost.com/testnet/v2/","view_api_endpoint":"https://view.ost.com/testnet/"}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To avoid pushing config into github use the below command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>git update-index --skip-worktree ./src/constants/demo-server-config.json</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install_npm_modules"><a class="anchor" href="#install_npm_modules"></a>Install npm modules</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>npm install</code></pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="ios_setup" class="sect0"><a class="anchor" href="#ios_setup"></a>iOS Setup</h1>
+<div class="sect1">
+<h2 id="go_to_ios_folder"><a class="anchor" href="#go_to_ios_folder"></a>Go to <code>ios</code> folder</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>cd ios</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installupdate_dependencies_using_carthagehttpsgithub_comcarthagecarthage"><a class="anchor" href="#installupdate_dependencies_using_carthagehttpsgithub_comcarthagecarthage"></a>Install/Update dependencies using [Carthage](<a href="https://github.com/Carthage/Carthage" class="bare">https://github.com/Carthage/Carthage</a>).</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>ost-wallet-sdk-ios</code> and other downstream dependencies of <code>ost-wallet-sdk-ios</code> are installed using [Carthage](<a href="https://github.com/Carthage/Carthage" class="bare">https://github.com/Carthage/Carthage</a>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>carthage update --platform ios</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installupdate_dependencies_using_cocoapodshttpsguides_cocoapods_orgusinggetting_started_html"><a class="anchor" href="#installupdate_dependencies_using_cocoapodshttpsguides_cocoapods_orgusinggetting_started_html"></a>Install/Update dependencies using [CocoaPods](<a href="https://guides.cocoapods.org/using/getting-started.html" class="bare">https://guides.cocoapods.org/using/getting-started.html</a>).</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>react-native</code> and other react-native-community dependencies are  installed using [CocoaPods](<a href="https://guides.cocoapods.org/using/getting-started.html" class="bare">https://guides.cocoapods.org/using/getting-started.html</a>) .</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>pod install</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="open_and_run_the_application_using_xcode"><a class="anchor" href="#open_and_run_the_application_using_xcode"></a>Open and run the application using xcode.</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Open the <code>ostWalletRNApp.xcworkspace</code> in xcode.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>open ostWalletRNApp.xcworkspace</code></pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="android_setup" class="sect0"><a class="anchor" href="#android_setup"></a>Android Setup</h1>
+<div class="paragraph">
+<p>No additional steps are required for setting up Android.
+To run the application, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>react-native run-android</code></pre>
+</div>
+</div>
+<h1 id="ost_wallet_sdk_configs" class="sect0"><a class="anchor" href="#ost_wallet_sdk_configs"></a>OST Wallet Sdk Configs</h1>
+<div class="paragraph">
+<p>The OST Wallet Sdk Configs are located inside the <code>theme/ostsdk</code> folder. The full path is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>react-native-demo-app/src/theme/ostsdk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>| File Name | Description |
+| --------- | ----------- |
+| ost-wallet-sdk-config.js | Please refer to [Ost Wallet Sdk Config](<a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native#initializing-sdk-with-config" class="bare">https://github.com/ostdotcom/ost-wallet-sdk-react-native#initializing-sdk-with-config</a>) documentation. |
+| ost-sdk-theme-config.js | Please refer to [Theme Config Android](<a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.3/documentation/ThemeConfig.md)/">Theme Config iOS</a>(<a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/documentation/ThemeConfig.md" class="bare">https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/documentation/ThemeConfig.md</a>) documentation. |
+| ost-sdk-content-config.js | Please refer to [Content Config Android](<a href="https://github.com/ostdotcom/ost-wallet-sdk-android/blob/release-2.3/documentation/ContentConfig.md)/">Content Config iOS</a>(<a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/documentation/ContentConfig.md" class="bare">https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/release-2.3/documentation/ContentConfig.md</a>) documentation. |
+| ost-sdk-settings-config.js | Please refer to [OstWallet Settings Configuration](<a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletSettings.md" class="bare">https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstWalletSettings.md</a>) documentation. |
+| ost-sdk-transaction-config.js | Please refer to [OstTransactionHelper](<a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstTransactionHelper.md" class="bare">https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstTransactionHelper.md</a>) and [OstTransactionConfig](<a href="https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstTransactionConfig.md" class="bare">https://github.com/ostdotcom/ost-wallet-sdk-react-native/blob/develop/documentation/OstTransactionConfig.md</a>) documentation. |</p>
 </div>
                 <div class="article-navigation">
                 </div>

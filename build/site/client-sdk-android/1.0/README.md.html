@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/client-sdk-android/1.0/README.md">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>OST Wallet SDK Android - Ost Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+        <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="client-sdk-android" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Ost Client (Mobile Wallet) SDK Android</span>
+      <div class="component-version">
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-android/1.0/index.html">
+    Overview
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://dev.ost.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/ostdotcom">GitHub</a>
+        <a class="navbar-item" href="https://ost.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>OST Wallet SDK Android</h1>
+		<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OST Android Wallet SDK is a mobile application development SDK that enables developers to integrate the functionality of a non-custodial crypto-wallet into consumer applications.</p>
+</div>
+<div class="paragraph">
+<p>OST Android Wallet SDK&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Safely generates and stores keys on the user&#8217;s mobile device</p>
+</li>
+<li>
+<p>Signs data as defined by contracts using EIP-1077 and EIP-712</p>
+</li>
+<li>
+<p>Enables users to recover access to their Brand Tokens in case the user loses their authorized device</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="support"><a class="anchor" href="#support"></a>Support</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Java Compile version: 1.7</p>
+</li>
+<li>
+<p>Android version support: 22 and above</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="table_of_contents"><a class="anchor" href="#table_of_contents"></a>Table of Contents</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#setup">Setup</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">a&.adoc#8212;&#8203;setting-minsdkversion-to-22</a></p>
+</li>
+<li>
+<p><a href="#">b&.adoc#8212;&#8203;adding-compile-options</a></p>
+</li>
+<li>
+<p><a href="#">c&.adoc#8212;&#8203;adding-android-wallet-sdk-package-in-dependencies</a></p>
+</li>
+<li>
+<p><a href="#add-mobile-sdk-config-file">Add mobile SDK config file</a></p>
+</li>
+<li>
+<p><a href="#initialize-the-wallet-sdk">Initialize the Wallet SDK</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-sdk-methods">OST SDK Methods</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#types-of-methods">Types of Methods</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#workflows">Workflows</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#setupdevice">setupDevice</a></p>
+</li>
+<li>
+<p><a href="#activateuser">activateUser</a></p>
+</li>
+<li>
+<p><a href="#addsession">addSession</a></p>
+</li>
+<li>
+<p><a href="#performqraction">performQRAction</a></p>
+</li>
+<li>
+<p><a href="#getdevicemnemonics">getDeviceMnemonics</a></p>
+</li>
+<li>
+<p><a href="#executetransaction">executeTransaction</a></p>
+</li>
+<li>
+<p><a href="#authorizecurrentdevicewithmnemonics">authorizeCurrentDeviceWithMnemonics</a></p>
+</li>
+<li>
+<p><a href="#resetpin">resetPin</a></p>
+</li>
+<li>
+<p><a href="#initiatedevicerecovery">initiateDeviceRecovery</a></p>
+</li>
+<li>
+<p><a href="#abortdevicerecovery">abortDeviceRecovery</a></p>
+</li>
+<li>
+<p><a href="#logoutallsessions">logoutAllSessions</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#getters">Getters</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#getadddeviceqrcode">getAddDeviceQRCode</a></p>
+</li>
+<li>
+<p><a href="#getuser">getUser</a></p>
+</li>
+<li>
+<p><a href="#getcurrentdeviceforuserid">getCurrentDeviceForUserId</a></p>
+</li>
+<li>
+<p><a href="#gettoken">getToken</a></p>
+</li>
+<li>
+<p><a href="#isbiometricenabled">isBiometricEnabled</a></p>
+</li>
+<li>
+<p><a href="#getactivesessionsforuserid">getActiveSessionsForUserId</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-json-apis">OST JSON APIs</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#getbalance">getBalance</a></p>
+</li>
+<li>
+<p><a href="#getpricepoints">getPricePoints</a></p>
+</li>
+<li>
+<p><a href="#getbalancewithpricepoints">getBalanceWithPricePoints</a></p>
+</li>
+<li>
+<p><a href="#gettransactions">getTransactions</a></p>
+</li>
+<li>
+<p><a href="#getpendingrecovery">getPendingRecovery</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#json-api-response-callback">JSON API Response Callback</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#onostjsonapisuccess">onOstJsonApiSuccess</a></p>
+</li>
+<li>
+<p><a href="#onostjsonapierror">onOstJsonApiError</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-workflow-callback-interface">OST Workflow Callback Interface</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#importing-the-interface">Importing the interface</a></p>
+</li>
+<li>
+<p><a href="#interface-functions">Interface Functions</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#flowcomplete">flowComplete</a></p>
+</li>
+<li>
+<p><a href="#flowinterrupt">flowInterrupt</a></p>
+</li>
+<li>
+<p><a href="#requestacknowledged">requestAcknowledged</a></p>
+</li>
+<li>
+<p><a href="#getpin">getPin</a></p>
+</li>
+<li>
+<p><a href="#pinvalidated">pinValidated</a></p>
+</li>
+<li>
+<p><a href="#invalidpin">invalidPin</a></p>
+</li>
+<li>
+<p><a href="#registerdevice">registerDevice</a></p>
+</li>
+<li>
+<p><a href="#verifydata">verifyData</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#application-development-supporting-documentation">Application development supporting documentation</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#entities-status-on-user-activities">Entities status on User Activities</a></p>
+</li>
+<li>
+<p><a href="#get-entity-status-updates">Get Entity Status Updates</a></p>
+</li>
+<li>
+<p><a href="#wallet-check-on-app-launch">Wallet Check on App Launch</a></p>
+</li>
+<li>
+<p><a href="#balance-calculation">Balance Calculation</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#classes">Classes</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#osterror">OstError</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">i&.adoc#8212;&#8203;methods</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ostcontextentity">OstContextEntity</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">i&.adoc#8212;&#8203;methods-1</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ostworkflowcontext">OstWorkflowContext</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">i&.adoc#8212;&#8203;methods-2</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#steps-to-use-android-mobile-sdk-through-aar-lib">Steps to use Android mobile SDK through AAR lib</a></p>
+</li>
+<li>
+<p><a href="#ost-wallet-ui">OST Wallet UI</a></p>
+</li>
+<li>
+<p><a href="#certificate-public-key-pinning">Public Key Pinning Using TrustKit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
+<div class="sectionbody">
+<h4 id="a_setting_minsdkversion_to_22" class="discrete">a). Setting minSdkVersion to 22</h4>
+<div class="listingblock">
+<div class="content">
+<pre>android {
+    defaultConfig {
+        minSdkVersion 22
+        ...
+        ...
+        ...
+    }
+
+}</pre>
+</div>
+</div>
+<h4 id="b_adding_compile_options" class="discrete">b). Adding compile options</h4>
+<div class="paragraph">
+<p>Add following code in your <code>build.gradle</code> file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+    }</pre>
+</div>
+</div>
+<h4 id="c_adding_android_wallet_sdk_package_in_dependencies" class="discrete">c). Adding Android Wallet SDK package in dependencies</h4>
+<div class="listingblock">
+<div class="content">
+<pre>dependencies {
+    implementation 'com.ost:ost-wallet-sdk-android:2.4.1'
+    ...
+    ...
+    ...
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then sync your dependencies through gradle + <strong>Note</strong>: Gradle sync might fail for the first time due to build time.
+Please retry if this happens.</p>
+</div>
+<div class="sect2">
+<h3 id="add_mobile_sdk_config_file"><a class="anchor" href="#add_mobile_sdk_config_file"></a>Add mobile SDK config file</h3>
+<div class="paragraph">
+<p>A config file is needed for application-specific configuration of OST SDK.&lt;/br&gt;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create file "ost-mobilesdk.json" with application specific configurations using the JSON below as an example</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">  {
+        "BLOCK_GENERATION_TIME": 3,
+        "PIN_MAX_RETRY_COUNT": 3,
+        "REQUEST_TIMEOUT_DURATION": 60,
+        "SESSION_BUFFER_TIME": 3600,
+        "PRICE_POINT_CURRENCY_SYMBOL": "USD",
+        "PRICE_POINT_TOKEN_SYMBOL": "OST",
+        "USE_SEED_PASSWORD": false,
+        "NO_OF_SESSIONS_ON_ACTIVATE_USER": 1
+  }</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>BLOCK_GENERATION_TIME: The time in seconds it takes to mine a block on auxiliary chain.</p>
+</li>
+<li>
+<p>PRICE_POINT_CURRENCY_SYMBOL: It is the symbol of quote currency used in price conversion.</p>
+</li>
+<li>
+<p>REQUEST_TIMEOUT_DURATION: Request timeout in seconds for https calls made by ostWalletSdk.</p>
+</li>
+<li>
+<p>PIN_MAX_RETRY_COUNT: Maximum retry count to get the wallet Pin from user.</p>
+</li>
+<li>
+<p>SESSION_BUFFER_TIME: Buffer expiration time for session keys in seconds.
+Default value is 3600 seconds.</p>
+</li>
+<li>
+<p>USE_SEED_PASSWORD: The seed password is salt to PBKDF2 used to generate seed from the mnemonic.
+When <code>UseSeedPassword</code> set to true, different deterministic salts are used for different keys.</p>
+</li>
+<li>
+<p>PRICE_POINT_TOKEN_SYMBOL: This is the symbol of base currency.
+So its value will be <code>OST</code>.</p>
+</li>
+<li>
+<p>NO_OF_SESSIONS_ON_ACTIVATE_USER: No of session keys to be created and whitelisted while activating user.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Place the file under main directory&#8217;s assets folder<br></p>
+<div class="paragraph">
+<p>File path example: app -&gt; src -&gt; main -&gt; assets -&gt; ost-mobilesdk.json&lt;/br&gt; <strong>NOTE: These configurations are MANDATORY for successful operation.
+Failing to set them will significantly impact usage.</strong></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="initialize_the_wallet_sdk"><a class="anchor" href="#initialize_the_wallet_sdk"></a>Initialize the Wallet SDK</h3>
+<div class="paragraph">
+<p>SDK initialization should happen before calling any other <code>workflow</code>.
+To initialize the SDK, you need to call <code>initialize</code> method of Wallet SDK.</p>
+</div>
+<div class="paragraph">
+<p><strong>Recommended location to call init() is in Application sub-class.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import android.app.Application;
+
+import com.ost.mobilesdk.OstWalletSdk;
+
+public class App extends Application {
+
+    public static final String OST_PLATFORM_API_BASE_URL = "https://api.ost.com/testnet/v2";
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        OstWalletSdk.initialize(getApplicationContext(), OST_PLATFORM_API_BASE_URL);
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  void initialize(context, baseUrl)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>context</strong> + <strong>ApplicationContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application context can be retrieved by calling <strong>getApplicationContext()</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>baseUrl</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OST Platform API endpoints: + 1.
+Sandbox Environment: <code>https://api.ost.com/testnet/v2/</code> + 2.
+Production Environment: <code>https://api.ost.com/mainnet/v2/</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_sdk_methods"><a class="anchor" href="#ost_sdk_methods"></a>OST SDK Methods</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="types_of_methods"><a class="anchor" href="#types_of_methods"></a>Types of Methods</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Workflows</code>: Workflows are the core functions provided by wallet SDK to do wallet related actions.
+Workflows can be called directly by importing the SDK.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Application must confirm to <code>OstWorkFlowCallback</code> interface.
+The <code>OstWorkFlowCallback</code> interface defines methods that allow applications to interact with Android Wallet SDK.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Getters</code>: The SDK provides getter methods that applications can use for various purposes.
+These methods provide the application with data as available in the device&#8217;s database.
+These functions are synchronous and will return the value when requested.</p>
+</li>
+<li>
+<p><code>JSON APIs</code>: Allows application to access OST Platform APIs</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workflows"><a class="anchor" href="#workflows"></a>Workflows</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="setupdevice"><a class="anchor" href="#setupdevice"></a>setupDevice</h3>
+<div class="paragraph">
+<p>This workflow needs <code>userId</code> and <code>tokenId</code> so <code>setupDevice</code> should be called after your app login or signup is successful.
+Using the mapping between userId in OST Platform and your app user, you have access to <code>userId</code> and <code>tokenId</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>If the user is logged in, then <code>setupDevice</code> should be called every time the app launches, this ensures that the current device is registered before communicating with OST Platform server.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void setupDevice( String userId,
+                  String tokenId,
+                  OstWorkFlowCallback workFlowCallback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the token economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.
++ This should implement <code>registerDevice</code> function.
+<code>registerDevice</code> will be called during the execution of this workflow.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="activateuser"><a class="anchor" href="#activateuser"></a>activateUser</h3>
+<div class="paragraph">
+<p>It <code>authorizes</code> the registered device and activates the user.
+User activation deploys the TokenHolder and Device manager  contracts on blockchain.
+Session keys are also created and authorized during <code>activateUser</code> workflow.
+So after <code>user activation</code>, users can perform wallet actions like executing transactions and reset PIN.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void activateUser(UserPassphrase passphrase,
+                  long expiresAfterInSecs,
+                  String spendingLimit,
+                  OstWorkFlowCallback callback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userPassPhrase</strong> + <strong>UserPassphrase</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A simple struct to hold and transfer pin information via app and SDK.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expiresAfterInSecs</strong> + <strong>long</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expire time of session key in seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>spendingLimit</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spending limit of session key in <a href="https://dev.ost.com/platform/docs/guides/execute-transactions/">atto BT</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="addsession"><a class="anchor" href="#addsession"></a>addSession</h3>
+<div class="paragraph">
+<p>This workflow will create and authorize the session key that is needed to do the transactions.
+This flow should be called if the session key is expired or not present.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> void addSession( String userId,
+                  long expireAfterInSecs,
+                  String spendingLimit,
+                  OstWorkFlowCallback workFlowCallback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expiresAfterInSecs</strong> + <strong>long</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expire time of session key in seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>spendingLimit</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spending limit of session key in <a href="https://dev.ost.com/platform/docs/guides/execute-transactions/">atto BT</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="performqraction"><a class="anchor" href="#performqraction"></a>performQRAction</h3>
+<div class="paragraph">
+<p>This workflow will perform operations after reading data from a QRCode.
+This workflow can used to add a new device and to execute transactions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  void performQRAction(String userId,
+                  String data,
+                  OstWorkFlowCallback workFlowCallback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON object string scanned from QR code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getdevicemnemonics"><a class="anchor" href="#getdevicemnemonics"></a>getDeviceMnemonics</h3>
+<div class="paragraph">
+<p>To get the 12 words recovery phrase of the current device key.
+Users will use it to prove that it is their wallet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> void getPaperWallet( String userId,
+                      OstWorkFlowCallback workFlowCallback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="executetransaction"><a class="anchor" href="#executetransaction"></a>executeTransaction</h3>
+<div class="paragraph">
+<p>To do <code>user-to-company</code> and <code>user-to-user</code> transactions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void executeTransaction(String userId,
+                        String tokenId,
+                        List tokenHolderAddresses,
+                        List amounts,
+                        String ruleName,
+                        Map&lt;String,String&gt; meta,
+                        Map&lt;String,String&gt; options,
+                        OstWorkFlowCallback workFlowCallback)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the token economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenHolderAddresses</strong> + <strong>List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TokenHolder</strong>  addresses of amount receiver</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>amounts</strong> + <strong>List</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amount to be transferred in atto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ruleName</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule name to be executed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meta</strong> + <strong>Map&lt;String,String&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction Meta properties.
++ Example: + {"name": "transaction name", + "type": "user-to-user" (it can take one of the following values: <code>user_to_user</code>, <code>user_to_company</code> and <code>company_to_user</code>), + "details": "like"}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>options</strong> + <strong>Map&lt;String,String&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional settings parameters.
+You can set following values: + 1.
+<code>currency_code</code>: Currency code for the pay currency.
++ Example: <code>{"currency_code": "USD"}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="authorizecurrentdevicewithmnemonics"><a class="anchor" href="#authorizecurrentdevicewithmnemonics"></a>authorizeCurrentDeviceWithMnemonics</h3>
+<div class="paragraph">
+<p>To add a new device using 12 words recovery phrase.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void addDeviceUsingMnemonics( String userId,
+                              byte[] mnemonics,
+                              OstWorkFlowCallback ostWorkFlowCallback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mnemonics</strong> + <strong>byte[]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byte array of 12 words.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="resetpin"><a class="anchor" href="#resetpin"></a>resetPin</h3>
+<div class="paragraph">
+<p>To change the PIN.</p>
+</div>
+<div class="paragraph">
+<p><strong>User will have to provide the current PIN in order to change it.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  void resetPin(String userId,
+                String appSalt,
+                String currentPin,
+                String newPin,
+                OstWorkFlowCallback workFlowCallback)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>appSalt</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>currentPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>newPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="initiatedevicerecovery"><a class="anchor" href="#initiatedevicerecovery"></a>initiateDeviceRecovery</h3>
+<div class="paragraph">
+<p>A user can control their tokens using their authorized device(s).
+If a user loses their authorized device, the user can recover access to her tokens by authorizing a new device by initiating the recovery process.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void initiateDeviceRecovery(String userId,
+                            UserPassphrase passphrase,
+                            String deviceAddressToRecover,
+                            OstWorkFlowCallback workFlowCallback)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>passphrase</strong> + <strong>UserPassphrase</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A simple struct to hold and transfer pin information via app and SDK.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>deviceAddressToRecover</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address of device to recover</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="abortdevicerecovery"><a class="anchor" href="#abortdevicerecovery"></a>abortDeviceRecovery</h3>
+<div class="paragraph">
+<p>To abort the initiated device recovery.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void abortDeviceRecovery(String userId,
+                        UserPassphrase passphrase,
+                        OstWorkFlowCallback workFlowCallback)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>passphrase</strong> + <strong>UserPassphrase</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A simple struct to hold and transfer pin information via app and SDK.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="logoutallsessions"><a class="anchor" href="#logoutallsessions"></a>logoutAllSessions</h3>
+<div class="paragraph">
+<p>To revoke all the sessions associated with provided userId.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">void logoutAllSessions(String userId,
+                       OstWorkFlowCallback workFlowCallback)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workFlowCallback</strong> + <strong>OstWorkFlowCallback</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An object that implements the callback functions available in <code>OstWorkFlowCallback</code> interface.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowcallback-interface">OstWorkFlowCallback interface reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getters"><a class="anchor" href="#getters"></a>Getters</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="getadddeviceqrcode"><a class="anchor" href="#getadddeviceqrcode"></a>getAddDeviceQRCode</h3>
+<div class="paragraph">
+<p>This getter function will return the QRCode Bitmap that can be used to show on screen.
+This QRCode can then be scanned to add the new device.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Bitmap getAddDeviceQRCode(String userId)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getuser"><a class="anchor" href="#getuser"></a>getUser</h3>
+<div class="paragraph">
+<p>This returns the loggedin User entity.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstUser getUser(userId)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getcurrentdeviceforuserid"><a class="anchor" href="#getcurrentdeviceforuserid"></a>getCurrentDeviceForUserId</h3>
+<div class="paragraph">
+<p>Method to get user&#8217;s current device by Id.&lt;/br&gt; This is a synchronous method and must be used only after calling <code>setupDevice</code> workflow.&lt;/br&gt; This method returns OstToken only if available with SDK.
+Returns <code>null</code> otherwise.&lt;/br&gt; It does NOT make any server side calls.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstDevice getCurrentDeviceForUserId(String userId)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="gettoken"><a class="anchor" href="#gettoken"></a>getToken</h3>
+<div class="paragraph">
+<p>This returns the token entity.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstToken getToken(tokenId)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of token economy in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="isbiometricenabled"><a class="anchor" href="#isbiometricenabled"></a>isBiometricEnabled</h3>
+<div class="paragraph">
+<p>To get the biometric preferneces call this function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">boolean isBiometricEnabled(userId)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getactivesessionsforuserid"><a class="anchor" href="#getactivesessionsforuserid"></a>getActiveSessionsForUserId</h3>
+<div class="paragraph">
+<p>Method to get user&#8217;s active sessions available in current device that can execute transactions of given spending limit.&lt;/br&gt; This is a synchronous method and must be used only after calling <code>setupDevice</code> workflow.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">List&lt;OstSession&gt; getActiveSessionsForUserId(@NonNull String userId, @Nullable String minimumSpendingLimitInWei)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>minimumSpendingLimitInWei</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum spending limit of the sessions</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This can also be initialized without <code>minimumSpendingLimitInWei</code><br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">List&lt;OstSession&gt; getActiveSessionsForUserId(@NonNull String userId)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_json_apis"><a class="anchor" href="#ost_json_apis"></a>OST JSON APIs</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="getbalance"><a class="anchor" href="#getbalance"></a>getBalance</h3>
+<div class="paragraph">
+<p>Api to get user balance.
+Balance of only current logged-in user can be fetched.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong> + &nbsp;
+parameter userId: User Id of the current logged-in user.
++ &nbsp;
+parameter callback: callback where to receive data/error.
++ &nbsp;
+<strong>getBalance(userId, callback)</strong><br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstJsonApi.getBalance(userId, new OstJsonApiCallback() {
+        @Override
+        public void onOstJsonApiSuccess(@Nullable JSONObject data) { }
+
+        @Override
+        public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject response) { }
+    }
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getpricepoints"><a class="anchor" href="#getpricepoints"></a>getPricePoints</h3>
+<div class="paragraph">
+<p>Api to get Price Points.
+It will provide latest conversion rates of base token to fiat currency.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong> + &nbsp;
+parameter userId: User Id of the current logged-in user.
++ &nbsp;
+parameter callback: callback where to receive data/error.
++ &nbsp;
+<strong>getPricePoints(userId, callback)</strong><br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstJsonApi.getPricePoints(userId, new OstJsonApiCallback() {
+        @Override
+        public void onOstJsonApiSuccess(@Nullable JSONObject data) { }
+
+        @Override
+        public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject response) { }
+    }
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getbalancewithpricepoints"><a class="anchor" href="#getbalancewithpricepoints"></a>getBalanceWithPricePoints</h3>
+<div class="paragraph">
+<p>Api to get user balance and Price Points.
+Balance of only current logged-in user can be fetched.
+It will also provide latest conversion rates of base token to fiat currency.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong> + &nbsp;
+parameter userId: User Id of the current logged-in user.
++ &nbsp;
+parameter callback: callback where to receive data/error.
++ &nbsp;
+<strong>getBalanceWithPricePoints(userId, callback)</strong><br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstJsonApi.getBalanceWithPricePoints(userId, new OstJsonApiCallback() {
+        @Override
+        public void onOstJsonApiSuccess(@Nullable JSONObject data) { }
+
+        @Override
+        public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject response) { }
+    }
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="gettransactions"><a class="anchor" href="#gettransactions"></a>getTransactions</h3>
+<div class="paragraph">
+<p>Api to get user transactions.
+Transactions of only current logged-in user can be fetched.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong> + &nbsp;
+parameter userId: User Id of the current logged-in user.
++ &nbsp;
+parameter requestPayload: request payload.
+Such as next-page payload, filters etc.
+&nbsp;
+parameter callback: callback where to receive data/error.
++ &nbsp;
+<strong>getTransactions(userId, requestPayload, callback)</strong><br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstJsonApi.getTransactions(userId, requestPayload, new OstJsonApiCallback() {
+        @Override
+        public void onOstJsonApiSuccess(@Nullable JSONObject data) { }
+
+        @Override
+        public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject response) { }
+    }
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getpendingrecovery"><a class="anchor" href="#getpendingrecovery"></a>getPendingRecovery</h3>
+<div class="paragraph">
+<p>Api to get status of pending ongoing recovery.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong> + &nbsp;
+parameter userId: User Id of the current logged-in user.
++ &nbsp;
+parameter callback: callback where to receive data/error.
++ &nbsp;
+<strong>getPendingRecovery(userId, callback)</strong><br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">OstJsonApi.getPendingRecovery(userId, new OstJsonApiCallback() {
+        @Override
+        public void onOstJsonApiSuccess(@Nullable JSONObject data) { }
+
+        @Override
+        public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject response) { }
+    }
+);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="json_api_response_callback"><a class="anchor" href="#json_api_response_callback"></a>JSON API Response Callback</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&nbsp;
+Callbacks to be implemented by application before calling any of the above OstJsonApis.</p>
+</div>
+<div class="sect2">
+<h3 id="onostjsonapisuccess"><a class="anchor" href="#onostjsonapisuccess"></a>onOstJsonApiSuccess</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   /**
+     * Inform SDK user about Success of OstJsonApi
+     * @param data Response data
+     */
+    public void onOstJsonApiSuccess(@Nullable JSONObject data) { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>| Argument | Description | |--|--| | <strong>data</strong> + <strong>JSONObject</strong>	|	Api Response data	|</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="onostjsonapierror"><a class="anchor" href="#onostjsonapierror"></a>onOstJsonApiError</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   /**
+     * Inform SDK user about Failure of OstJsonApi
+     * @param err      OstError object containing error details
+     * @param response Api response
+     */
+    public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject response) { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>| Argument | Description | |--|--| | <strong>err</strong> + <strong>OstError</strong>	|	OstError object containing error details	| | <strong>response</strong> + <strong>JSONObject</strong>	|	Api Response	|</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_workflow_callback_interface"><a class="anchor" href="#ost_workflow_callback_interface"></a>OST Workflow Callback Interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Android SDK provides an interface to be implemented by the Java class calling the <code>workflows</code>.</p>
+</div>
+<div class="paragraph">
+<p>The interface name is <code>OstWorkFlowCallback</code></p>
+</div>
+<div class="sect2">
+<h3 id="importing_the_interface"><a class="anchor" href="#importing_the_interface"></a>Importing the interface</h3>
+<div class="listingblock">
+<div class="content">
+<pre>import com.ost.mobilesdk.workflows.interfaces.OstWorkFlowCallback;</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://dev.ost.com/platform/docs/sdk/assets/wallet-sdk-communication.png" alt="walletSDKCommunication">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="interface_functions"><a class="anchor" href="#interface_functions"></a>Interface Functions</h3>
+<div class="sect3">
+<h4 id="flowcomplete"><a class="anchor" href="#flowcomplete"></a>flowComplete</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK when a workflow is completed.
+The details of workflow and the entity that was updated during the workflow will be available in arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void flowComplete(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the workflow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostContextEntity</strong> + <strong>OstContextEntity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the entity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="flowinterrupt"><a class="anchor" href="#flowinterrupt"></a>flowInterrupt</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK when a workflow is cancelled.
+The workflow details and error details will be available in arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void flowInterrupt(OstWorkflowContext ostWorkflowContext, OstError ostError)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the workflow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostError</strong> + <strong>OstError</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ostError object will have details about the error that interrupted the flow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="requestacknowledged"><a class="anchor" href="#requestacknowledged"></a>requestAcknowledged</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK when the core API request was successful which happens during the execution of workflows.
+At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete.
++ Once the workflow is complete the <code>app</code> will receive the details in <code>flowComplete</code> (described below) function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void requestAcknowledged(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the workflow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostContextEntity</strong> + <strong>OstContextEntity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the entity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="getpin"><a class="anchor" href="#getpin"></a>getPin</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK when it needs to get the PIN from the <code>app</code> user to authenticate any authorised action.</p>
+</div>
+<div class="paragraph">
+<p> + <strong>Expected Function Definition:</strong> Developers of client company are expected to launch their user interface to get the PIN from the user and pass back this PIN to SDK by calling <strong>ostPinAcceptInterface.pinEntered()</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void getPin(String userId, OstPinAcceptInterface ostPinAcceptInterface)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostPinAcceptInterface</strong> + <strong>OstPinAcceptInterface</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostPinAcceptInterface.pinEntered()</strong> should be called to pass the PIN back to SDK.
++ For some reason if the developer wants to cancel the current workflow they can do it by calling <strong>ostPinAcceptInterface.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="pinvalidated"><a class="anchor" href="#pinvalidated"></a>pinValidated</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK when the last entered PIN is validated.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void pinValidated(String userId)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="invalidpin"><a class="anchor" href="#invalidpin"></a>invalidPin</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK when the last entered PIN was wrong and <code>app</code> user has to provide the PIN again.
+Developers are expected to repeat the <code>getPin</code> method here and pass back the PIN again back to the SDK by calling <strong>ostPinAcceptInterface.pinEntered()</strong> .</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void invalidPin(String userId, OstPinAcceptInterface ostPinAcceptInterface)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostPinAcceptInterface</strong> + <strong>OstPinAcceptInterface</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostPinAcceptInterface.pinEntered()</strong> should be called to again pass the PIN back to SDK.
++ For some reason if the developer wants to cancel the current workflow they can do it by calling <strong>ostPinAcceptInterface.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="registerdevice"><a class="anchor" href="#registerdevice"></a>registerDevice</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK to register the device.
++ <strong>Expected Function Definition:</strong> Developers of client company are expected to register the device by communicating with client company&#8217;s server.
+On client company&#8217;s server they can use <code>Server SDK</code> to register this device in OST Platform.
+Once the device is registered on OST Platform client company&#8217;s server will receive the newly created <code>device</code> entity.
+This device entity should be passed back to the <code>app</code>.
++ Finally they should pass back this newly created device entity back to the wallet SDK by calling <strong>OstDeviceRegisteredInterface.deviceRegistered(JSONObject newDeviceEntity )</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void registerDevice(JSONObject apiParams, OstDeviceRegisteredInterface ostDeviceRegisteredInterface)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiParams</strong> + <strong>JSONObject</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device information for registration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostDeviceRegisteredInterface</strong> + <strong>OstDeviceRegisteredInterface</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OstDeviceRegisteredInterface.deviceRegistered(JSONObject newDeviceEntity )</strong> should be called to pass the newly created device entity back to SDK.
++ In case data is not verified the current workflow should be canceled by developer by calling <strong>OstDeviceRegisteredInterface.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="verifydata"><a class="anchor" href="#verifydata"></a>verifyData</h4>
+<div class="paragraph">
+<p>This function will be called by wallet SDK to verify data during <code>performQRAction</code> workflow.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>void verifyData(OstWorkflowContext ostWorkflowContext, OstContextEntity ostContextEntity, OstVerifyDataInterface ostVerifyDataInterface)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the current workflow during which this callback will be called</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostContextEntity</strong> + <strong>OstContextEntity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostVerifyDataInterface</strong> + <strong>OstVerifyDataInterface</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostVerifyDataInterface.dataVerified()</strong> should be called if the data is verified successfully.
++ In case data is not verified the current workflow should be canceled by developer by calling <strong>ostVerifyDataInterface.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="application_development_supporting_documentation"><a class="anchor" href="#application_development_supporting_documentation"></a>Application development supporting documentation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="entities_status_on_user_activities"><a class="anchor" href="#entities_status_on_user_activities"></a>Entities status on User Activities</h3>
+<div class="paragraph">
+<p>|User Activity |App State|User Status|Device Status|Session status| |&#8201;&#8212;&#8201;|&#8201;&#8212;&#8201;| :--: | :--: | :--: | |Installs app for the first time|Not Login|CREATED|UNREGISTED| <code>NA</code>| |Login in the app for the first time|Log In|CREATED|REGISTERED| <code>NA</code>| |Initiate Activate Wallet by entering pin|Activating Wallet|ACTIVATING|AUTHORIZING|INITIALIZING| |Activates Wallet after waiting|Activated Wallet|ACTIVATED|AUTHORIZED|AUTHORISED| |Performs transactions|Activated Wallet|ACTIVATED|AUTHORIZED|AUTHORISED| |Session get expired|Activated Wallet|ACTIVATED|AUTHORIZED|EXPIRED| |Logout all Sessions|Activated Wallet|ACTIVATED|AUTHORIZED|REVOKING -&gt; REVOKED| |Add Session|Activated Wallet|ACTIVATED|AUTHORIZED|INITIALIZING -&gt; AUTHORISED| |Log out from app|Not Login|ACTIVATED|AUTHORIZED|AUTHORISED| |Log in back to App|Activated Wallet|ACTIVATED|AUTHORIZED|AUTHORISED| |Reinstall the App|No Login|CREATED|UNREGISTED| <code>NA</code>| |Login in the app|Log In|ACTIVATED|REGISTERED| <code>NA</code>| |Recover Wallet Or Add Wallet|Activating Wallet|ACTIVATED|AUTHORIZING -&gt; AUTHORISED| <code>NA</code>| |Revoked Device from other device|Activated Wallet|ACTIVATED|REVOKING -&gt; REVOKED| <code>NA</code>|</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="get_entity_status_updates"><a class="anchor" href="#get_entity_status_updates"></a>Get Entity Status Updates</h3>
+<div class="paragraph">
+<p>To get real time updates of entities like ongoing activation Or transactions, server side SDK&#8217;s <a href="https://dev.ost.com/platform/docs/api/#webhooks">WebHooks</a> services can be used.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="wallet_check_on_app_launch"><a class="anchor" href="#wallet_check_on_app_launch"></a>Wallet Check on App Launch</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Check whether User need Activation.</p>
+</li>
+<li>
+<p>Check whether Wallet need Device Addition Or Recovery.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For device addition, the current Device which is to be Authorized should used <strong>OstSdk.getAddDeviceQRCode</strong> to generate QR code And <strong>OstSdk.performQRAction()</strong> method should be used to process that QR from AUTHORIZED deivce.</p>
+</li>
+<li>
+<p>Device can also be added through <strong>OstSdk.authorizeCurrentDeviceWithMnemonics()</strong> by passing AUTHORIZED device mnemonics.</p>
+</li>
+<li>
+<p>Or Device can be recovered through <strong>OstSdk.initiateDeviceRecovery()</strong> by passing Device address of the Device to be recovered from.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">if (!(ostUser.isActivated() || ostUser.isActivating())) {
+    //TODO:: Wallet need Activation
+} else if (ostUser.isActivated() &amp;&amp; ostUser.getCurrentDevice().canBeAuthorized()) {
+    //TODO:: Ask user whether he wants to Add device through QR or Mnemonics Or want to recover device.
+} else {
+    //TODO:: App Dashboard
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>=== Balance Calculation</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>TokenHolder Balance can be shown in Token currency or in Fiat currency.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Token currency conversion, the fetched balance is in Wei unit, which needs to be converted to Base unit.</p>
+</li>
+<li>
+<p>For Fiat currency conversion, the fetched balance first need to be converted to fiat equivalent using current converion rate from price points and then to its Base unit.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java OstJsonApi.getBalanceWithPricePoints(userId hljs" data-lang="java OstJsonApi.getBalanceWithPricePoints(userId">JSONObject pricePoint = null;
+try{                     JSONObject balanceData = jsonObject.getJSONObject(jsonObject.getString("result_type"));
+balance = balanceData.getString("available_balance");
+pricePoint = jsonObject.optJSONObject("price_point");
+} catch(Exception e){                  }                 //To user balance in token currency with two decimals.
+convertWeiToTokenCurrency(balance);
++
+....
+            //To user balance in fiat(Dollar) with two decimals.
+            convertBTWeiToFiat(balance, pricePoint)
+        } else {
+                //Todo:: Show fetch error
+        }
+    }
+
+    @Override
+    public void onOstJsonApiError(@NonNull OstError err, @Nullable JSONObject data) {
+        //Todo:: Show fetch error
+    }
+});
+....
+
+public static String convertWeiToTokenCurrency(String balance) {         if (null == balance) return "0";
+
+     OstToken token = OstSdk.getToken(AppProvider.getTokenId());
+     Integer decimals = Integer.parseInt(token.getBtDecimals());
+     BigDecimal btWeiMultiplier = new BigDecimal(10).pow(decimals);
+     BigDecimal balance = new BigDecimal(balance).divide(btWeiMultiplier);
+     return balance.setScale(2, RoundingMode.HALF_UP).toString();
+ }
+
+public static String convertBTWeiToFiat(String balance, JSONObject pricePointObject) {         if (null == balance || null == pricePointObject) return null;
+
+....
+    try{
+        OstToken token = OstSdk.getToken(AppProvider.getTokenId());
+        double pricePointOSTtoUSD = pricePointObject.getJSONObject(token.getBaseToken()).getDouble("USD");
+        int fiatDecimalExponent = pricePointObject.getJSONObject(token.getBaseToken()).getInt("decimals");
+        BigDecimal fiatToEthConversionFactor = new BigDecimal("10").pow(fiatDecimalExponent);
+
+        BigDecimal tokenToFiatMultiplier = calTokenToFiatMultiplier(pricePointOSTtoUSD, fiatDecimalExponent, token.getConversionFactor(), Integer.parseInt(token.getBtDecimals()));
+
+        BigDecimal fiatBalance = new BigDecimal(balance).multiply(tokenToFiatMultiplier);
+
+        return fiatBalance.divide(fiatToEthConversionFactor, 2, RoundingMode.DOWN).toString();
+
+    } catch (Exception e){
+        return null;
+    }
+} ```
+....
+
+== Classes
+
+. OstError
+. OstContextEntity
+. OstWorkflowContext
+
+=== OstError
+
+This class is used to provide error details in &lt;&lt;ostworkflowcallback-interface#2-flowinterrupt,flowInterrupt&gt;&gt; callback function.
+
+You can call the following methods on this object to get more details about the error.
+
+==== i). Methods
+
+. `public OstErrors.ErrorCode getErrorCode()`
+. `public String getInternalErrorCode()`
+. `public boolean isApiError()`
+
+=== OstContextEntity
+
+This class provides context about the `entity` that is being changed during a &lt;&lt;workflows,workflow&gt;&gt;.
+Callback functions that needs to know about the `entity` will receive an object of this class as an argument.
+
+You can call the following methods on this object to get more details about the entity.
+
+==== i). Methods
+
+. `public OstContextEntity(String message, Object entity, String entityType)`
+. `public OstContextEntity(Object entity, String entityType)`
+. `public String getMessage()`
+. `public Object getEntity()`
+. `public String getEntityType()`
+
+=== OstWorkflowContext
+
+This class provides context about the current &lt;&lt;workflows,workflow&gt;&gt;.
+Callback function that needs to know about the current &lt;&lt;workflows,workflow&gt;&gt; will get the object of this class as an argument.
+
+You can call the following methods on this object to get more details about the current &lt;&lt;workflows,workflow&gt;&gt;.
+
+The `getWorkflow_type()` methods will return one of the strings from this enum.
+
+[source,java]
+----
+public enum WORKFLOW_TYPE {
+        UNKNOWN,
+        SETUP_DEVICE,
+        ACTIVATE_USER,
+        ADD_SESSION,
+        GET_DEVICE_MNEMONICS,
+        PERFORM_QR_ACTION,
+        EXECUTE_TRANSACTION,
+        AUTHORIZE_DEVICE_WITH_QR_CODE,
+        AUTHORIZE_DEVICE_WITH_MNEMONICS,
+        INITIATE_DEVICE_RECOVERY,
+        ABORT_DEVICE_RECOVERY,
+        REVOKE_DEVICE_WITH_QR_CODE,
+        RESET_PIN,
+        LOGOUT_ALL_SESSIONS
+    }
+----
+
+==== i). Methods
+
+. `public OstWorkflowContext(WORKFLOW_TYPE workflow_type)`
+. `public OstWorkflowContext()`
+. `public WORKFLOW_TYPE getWorkflow_type()`
+
+== Steps to use Android mobile SDK through AAR lib
+
+* Download AAR file from S3 https://sdk.stagingost.com.s3.amazonaws.com/Android/release/ostsdk-release.aar[Download link]
+* Create libs folder under app directory in your application project.
+* In libs folder add your downloaded aar file.
+* Add aar lib dependency to your build.gradle file
++
+----
+ implementation files('libs/ostsdk-release.aar')
+----
+
+* Also add dependencies of ostsdk in you build.gradle
+
+[source,groovy]
+----
+dependencies {
+
+    // your app dependencies
+
+    //--- Section to Copy  ----
+
+    // Room components
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    implementation 'com.madgag.spongycastle:core:1.56.0.0'
+    implementation 'org.web3j:core:4.1.0-android'
+    // Lifecycle components
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation 'com.google.guava:guava:18.0'
+    // Zxing barcode dependency
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+
+    //---Section to Copy  ----
+
+}
+----
+
+* Clean and then Build your Android project.
+
+== OST Wallet UI
+
+For quick and easy integration with SDK, developers can use built-in user interface components which are configurable and support content and theme customization.
+All OstWalletSdkUI workflows return workflow-id.
+The application can subscribe to the events of the workflow using the workflow-id.
+Please refer xref:./documentation/OstWalletUI.adoc[OstWalletUI].
+
+== Public Key Pinning Using TrustKit
+
+If your Application is using TrustKit, Please refer xref:./documentation/TrustKitPublickeyPinning.adoc[TrustKit Public Key Pinning]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© Ost.com 2020 </span>
+		<a class="terms" href="https://ost.com/privacy">Privacy</a>
+	</div>
+</footer>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>

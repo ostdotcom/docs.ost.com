@@ -46,6 +46,48 @@
     Overview
   </a>
 </li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/OstJsonApi.html">
+    Ost JSON API
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/OstWalletUI.html">
+    Ost Wallet UI
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/ContentConfig.html">
+    UI Content Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/ThemeConfig.html">
+    UI Theme Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/OstCustomLoader.html">
+    Ost Custom Loader
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/OstMockCustomLoader.html">
+    Ost Mock Custom Loader
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-ios/1.0/CHANGELOG.html">
+    Change Log
+  </a>
+</li>
     </ol>
   </div>
 
@@ -314,12 +356,2528 @@
 	<article class="article doc">
 		<h1></h1>
 		<div class="paragraph">
-<p>This is the index.adoc page for OST-WALLET-SDK-IOS</p>
+<p>===dev.ost.com Overview===</p>
+</div>
+<h1 id="ios_sdk_setup" class="sect0"><a class="anchor" href="#ios_sdk_setup"></a>iOS SDK Setup</h1>
+<div class="paragraph">
+<p>Please refer to our GitHub documentation for detailed information.
+The following page gives an overview of how to get started with the iOS Wallet SDK.</p>
+</div>
+<div class="sect1">
+<h2 id="github_links"><a class="anchor" href="#github_links"></a>GitHub Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md">GitHub Readme</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#types-of-methods">SDK Types of Methods</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#workflows">SDK Workflows</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#getters">SDK Getters</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/README.md#ostworkflowdelegate-protocol">SDK Workflow Delegate Protocol</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/tree/develop/documentation">Additional GitHub documentation</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/OstJsonApi.md">OST JSON API</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/OstWalletUI.md">OST Wallet UI (User Interface Components)</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ContentConfig.md">Content Config</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ostdotcom/ost-wallet-sdk-ios/blob/develop/documentation/ThemeConfig.md">Theming: Theme Config</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="1_prerequisite"><a class="anchor" href="#1_prerequisite"></a>1. Prerequisite</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install and complete integration with one of our Server Side SDKs</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/platform/docs/sdk/server-side-sdks/php/">PHP</a></p>
+</li>
+<li>
+<p><a href="/platform/docs/sdk/server-side-sdks/ruby/">Ruby</a></p>
+</li>
+<li>
+<p><a href="/platform/docs/sdk/server-side-sdks/nodejs/">Node.js</a></p>
+</li>
+<li>
+<p><a href="/platform/docs/sdk/server-side-sdks/java/">Java</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="2_requirements"><a class="anchor" href="#2_requirements"></a>2. Requirements</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Item</th>
+<th class="tableblock halign-right valign-top">Supported Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iOS</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9.0 and above.
+Recommended version: 10.3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Swift</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4.2</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>iOS Wallet SDK <a href="/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/methods/">Methods</a>, <a href="/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/protocols/">Protocol</a> and <a href="/platform/docs/sdk/mobile-wallet-sdks/iOS/latest/classes/">Classes</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="3_install_ios_wallet_sdk"><a class="anchor" href="#3_install_ios_wallet_sdk"></a>3. Install iOS Wallet SDK</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="a_installing_ios_wallet_sdk_using_carthage"><a class="anchor" href="#a_installing_ios_wallet_sdk_using_carthage"></a>A). Installing iOS Wallet SDK using <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
+<div class="sect3">
+<h4 id="i_installing_carthage"><a class="anchor" href="#i_installing_carthage"></a>i). Installing <a href="https://github.com/Carthage/Carthage">Carthage</a></h4>
+<div class="paragraph">
+<p>Get <a href="https://github.com/Carthage/Carthage">Carthage</a> by running the following command on terminal</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>brew install carthage</p>
+</div>
+</blockquote>
 </div>
 <div class="paragraph">
-<p>This is a test :)</p>
+<p>You can also choose <a href="https://github.com/Carthage/Carthage/#installing-carthage">other methods</a> to install <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ii_downloading_wallet_sdk_using_carthage"><a class="anchor" href="#ii_downloading_wallet_sdk_using_carthage"></a>ii). Downloading Wallet SDK using Carthage</h4>
+<div class="paragraph">
+<p>Carthage looks at a file called <code>Cartfile</code> to determine which libraries to install.
+Create a file in the same directory as your Xcode project called <code>Cartfile</code> and enter the following to tell Carthage which dependencies we want:</p>
+</div>
+<div class="paragraph">
+<p>Add following entry in your <code>Cartfile</code></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>github "ostdotcom/ost-wallet-sdk-ios"</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Now to actually install everything run the following in your terminal:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>carthage update --platform iOS</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A <code>Cartfile.resolved</code> file and a <code>Carthage</code> directory will appear in the same directory where your <code>.xcodeproj</code> or <code>.xcworkspace</code> is.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="iii_copying_the_ostwalletsdk_framework_file_in_your_xcode_project"><a class="anchor" href="#iii_copying_the_ostwalletsdk_framework_file_in_your_xcode_project"></a>iii). Copying the <code>OstWalletSdk.framework</code> file in your Xcode project</h4>
+<div class="paragraph">
+<p>Open your project in Xcode, click on the project file in the left section of the screen and scroll down to the <code>Linked Frameworks and Libraries</code> section in Xcode.</p>
+</div>
+<div class="paragraph">
+<p><code>Carthage</code> folder will have the <code>.framework</code> files that we will add in Xcode project.</p>
+</div>
+<div class="paragraph">
+<p>Now open the <code>Carthage/Build/iOS</code> folder in Finder:</p>
+</div>
+<div class="paragraph">
+<p>Run this command</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>open Carthage/Build/iOS</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Open application target, under General tab, drag the built <code>OstWalletSdk.framework</code> binary from <code>Carthage/Build/iOS</code> folder into Linked Frameworks and Libraries section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/sdk/assets/copy-framework-file.png" alt="copy-framework-file">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="iv_adding_the_ostwalletsdk_dependencies_in_your_xcode_project"><a class="anchor" href="#iv_adding_the_ostwalletsdk_dependencies_in_your_xcode_project"></a>iv). Adding the <code>OstWalletSdk</code> dependencies in your Xcode project</h4>
+<div class="paragraph">
+<p>We need to add the <code>.framework</code> files of dependencies present inside <code>Carthage/Build/iOS</code>.</p>
+</div>
+<div class="paragraph">
+<p>Open <code>application targets</code> in Xcode.
+Under <code>Build Phases</code> click <code>+</code> icon and choose <code>New Run Script Phase</code>.
+Add the following command.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>/usr/local/bin/carthage copy-frameworks</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Click the <code>+</code> under <code>Input Files</code> and add the following entry framework:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
+$(SRCROOT)/Carthage/Build/iOS/BigInt.framework
+$(SRCROOT)/Carthage/Build/iOS/CryptoEthereumSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/EthereumKit.framework
+$(SRCROOT)/Carthage/Build/iOS/FMDB.framework
+$(SRCROOT)/Carthage/Build/iOS/SipHash.framework
+$(SRCROOT)/Carthage/Build/iOS/TrustKit.framework
+$(SRCROOT)/Carthage/Build/iOS/OstWalletSdk.framework</pre>
+</div>
+</div>
+<div class="paragraph">
+<p> + <span class="image"><img src="/platform/docs/sdk/assets/add-dependency-framework-files.png" alt="copy-framework-file"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="v_adding_sdk_configuration_file"><a class="anchor" href="#v_adding_sdk_configuration_file"></a>v). Adding SDK configuration file</h4>
+<div class="paragraph">
+<p>Create <code>OstWalletSdk.plist</code> file.
+This file has configuration attributes used by OstWalletSdk.
+You should copy paste the configuration values from below snippet.</p>
+</div>
+<div class="paragraph">
+<p>Copy paste this configuration file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+ &lt;plist version="1.0"&gt;
+ &lt;dict&gt;
+    &lt;key&gt;BlockGenerationTime&lt;/key&gt;
+    &lt;integer&gt;3&lt;/integer&gt;
+    &lt;key&gt;PricePointTokenSymbol&lt;/key&gt;
+    &lt;string&gt;OST&lt;/string&gt;
+    &lt;key&gt;PricePointCurrencySymbol&lt;/key&gt;
+    &lt;string&gt;USD&lt;/string&gt;
+    &lt;key&gt;RequestTimeoutDuration&lt;/key&gt;
+    &lt;integer&gt;30&lt;/integer&gt;
+    &lt;key&gt;PinMaxRetryCount&lt;/key&gt;
+    &lt;integer&gt;3&lt;/integer&gt;
+    &lt;key&gt;SessionBufferTime&lt;/key&gt;
+    &lt;integer&gt;3600&lt;/integer&gt;
+    &lt;key&gt;UseSeedPassword&lt;/key&gt;
+	&lt;false/&gt;
+ &lt;/dict&gt;
+ &lt;/plist&gt;</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlockGenerationTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time in seconds it takes to mine a block on auxiliary chain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PricePointTokenSymbol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the symbol of base currency.
+So its value will be OST.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PricePointCurrencySymbol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is the symbol of quote currency used in price conversion.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RequestTimeoutDuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request timeout in seconds for https calls made by ostWalletSdk.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PinMaxRetryCount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum retry count to get the wallet Pin from user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SessionBufferTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Buffer expiration time for session keys in seconds.
+Default value is 3600 seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UseSeedPassword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The seed password is salt to PBKDF2 used to generate seed from the mnemonic.
+When UseSeedPassword set to true, different deterministic salts are used for different keys.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>:::warning These configurations are MANDATORY for successful operation.
+Failing to set them will significantly impact usage.
+:::</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="vi_add_nsfaceidusagedescription_description_in_info_plist"><a class="anchor" href="#vi_add_nsfaceidusagedescription_description_in_info_plist"></a>vi). Add <code>NSFaceIDUsageDescription</code> description in <code>info.plist</code></h4>
+<div class="paragraph">
+<p>The iOS Wallet SDK can use FaceID in lieu of fingerprint if the hardware supports it.
+To support faceID, please include  <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription">NSFaceIDUsageDescription</a> key in your application&#8217;s <code>info.plist</code> file and describe its usage.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note: <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription">NSFaceIDUsageDescription</a> key is supported in iOS 11 and later.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="4_initialize_the_wallet_sdk"><a class="anchor" href="#4_initialize_the_wallet_sdk"></a>4. Initialize the Wallet SDK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>SDK initialization should happen before calling any other <code>workflow</code>.
+To initialize the SDK, we need to call <code>init</code> workflow of Wallet SDK.
+It initializes all the required instances and run db migrations.</p>
+</div>
+<div class="paragraph">
+<p>Recommended location to call <strong>OstWalletSdk.initialize()</strong> is in <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application">application</a> method of <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">UIApplicationDelegate</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">func application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    do {
+        try OstWalletSdk.init(apiEndPoint: &lt;OST_PLATFORM_API_ENDPOINT&gt;)
+     } catch let ostError {
+           // Handle error here
+     }
+     return true
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>OST_PLATFORM_API_ENDPOINT</strong>: This will be the base API URL we need to provide to SDK while initializing.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sandbox environment endpoint</strong>: "api.ost.com/testnet/v2"</p>
+</div>
+<div class="paragraph">
+<p><strong>Production endpoint</strong>: "api.ost.com/mainnet/v2"</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="5_setting_up_communication_between_app_and_wallet_sdk"><a class="anchor" href="#5_setting_up_communication_between_app_and_wallet_sdk"></a>5. Setting up communication between app and Wallet SDK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>iOS Wallet SDK provides <code>workflows</code> that can be called by any controller class to perform wallet related actions.
+Communication between app and Wallet SDK happens through callback functions.
+We need to pass the callback functions in <code>workflows</code> provided by SDK.
+The group of callback functions for communication between app and Wallet SDK is provided in <code>OstWorkflowDelegate</code> protocol.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/platform/docs/sdk/assets/communication-ios-sdk.png" alt="walletSDKCommunication">
+</div>
+</div>
+<div class="sect2">
+<h3 id="a_implementing_the_ostworkflowdelegate_protocol"><a class="anchor" href="#a_implementing_the_ostworkflowdelegate_protocol"></a>a). Implementing the <code>OstWorkflowDelegate</code> protocol</h3>
+<div class="paragraph">
+<p>There are different ways to implement <code>OstWorkflowDelegate</code> and pass them while calling workflows.
+We will create a dedicated class with name <code>OstWalletSdkInteract</code>.
+This class will implement the <code>OstWorkflowDelegate</code> protocol.
+We will use this class to create object that can be passed in SDK workflows as callback.</p>
+</div>
+<div class="paragraph">
+<p>Sample Implementation of <a href="https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/OstSdkInteract/OstSdkInteract.swift">OstWalletSdkInteract class</a> is available as a part of <a href="https://github.com/ostdotcom/ios-demo-app/tree/develop">OST Wallet app</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">import Foundation
+import OstWalletSdk
+import MaterialComponents
+
+class OstWalletSdkInteract: BaseModel, OstWorkFlowCallbackProtocol {
+
+    extension OstWalletSdkInteract {
+
+        func flowComplete(workflowContext: OstWorkflowContext, ostContextEntity: OstContextEntity) {
+
+            var eventData:[String: Any] = [:];
+            eventData["eventType"] = WorkflowEventType.flowComplete;
+            eventData["workflowContext"] = workflowContext;
+            eventData["ostContextEntity"] = ostContextEntity;
+            self.fireEvent(eventData: eventData);
+        }
+
+        func flowInterrupted(workflowContext: OstWorkflowContext, error: OstError) {
+
+            var eventData:[String: Any] = [:];
+            eventData["eventType"] = WorkflowEventType.flowInterrupt;
+            eventData["workflow"] = workflowContext.workflowType;
+            eventData["workflowContext"] = workflowContext;
+            eventData["ostError"] = error;
+            self.fireEvent(eventData: eventData);
+        }
+
+        // more functions here
+        .....
+
+        .....
+
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="b_using_ostwalletsdkinteract_class"><a class="anchor" href="#b_using_ostwalletsdkinteract_class"></a>b). Using <code>OstWalletSdkInteract</code> class</h3>
+<div class="paragraph">
+<p><code>OstWalletSdkInteract</code> can be used to create object that can be passed as callback in workflows.</p>
+</div>
+<div class="paragraph">
+<p>Example</p>
+</div>
+<div class="paragraph">
+<p>In the example below, we are calling <code>OstWalletSdk.addSession</code> workflow and passing object of <code>OstWalletSdkInteract</code> class</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> var sdkInteract: OstWalletSdkInteract = {
+    let interact = OstWalletSdkInteract();
+    return interact;
+  }()
+
+   OstWalletSdk.addSession(
+                    userId: currentUser.ostUserId!,
+                    spendingLimit: self.spendingLimitTestField.text!,
+                    expireAfter: Double(expireAfter),
+                    delegate: self.sdkInteract)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/ostdotcom/ios-demo-app/blob/develop/TestDemoApp/Views/Wallet/AddSessionView.swift">Sample code</a> showing above example in detail is available on github.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_wallet_app"><a class="anchor" href="#ost_wallet_app"></a>OST Wallet App</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To provide developers with sample integration of Wallet SDK, an <a href="https://github.com/ostdotcom/ios-demo-app/tree/develop">OST Wallet iOS app</a> is available on GitHub.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next_steps"><a class="anchor" href="#next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="/platform/docs/1-create">Create Wallet Guide</a></p>
+</li>
+<li>
+<p><a href="/platform/docs/guides/execute-transactions/">Execute Transaction Guide</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>===GitHub Readme===
+= OST Wallet SDK iOS</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OST iOS Wallet SDK is a mobile application development SDK that enables developers to integrate the functionality of a non-custodial crypto-wallet into consumer applications.</p>
+</div>
+<div class="paragraph">
+<p>The iOS Wallet SDK&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Safely generates and stores keys on the user&#8217;s mobile device</p>
+</li>
+<li>
+<p>Signs data as defined by contracts using EIP-1077 and EIP-712</p>
+</li>
+<li>
+<p>Enables users to recover access to their Brand Tokens in case the user loses their authorized device&lt;/br&gt;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Starting version <code>2.3.0</code> the SDK also provides built-in user interface components which are configurable and support content and theme customization.
+Please refer to <a href="#">./documentation/OstWalletUI.adoc</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="support"><a class="anchor" href="#support"></a>Support</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>iOS version : 9.0 and above (<strong>recommended version 10.3</strong> )</p>
+</li>
+<li>
+<p>Swift version: 4.2</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependencies"><a class="anchor" href="#dependencies"></a>Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use open-source code from the projects listed below.
+The <code>Set-up</code> section below provides instructions on adding the packages to your code.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/Alamofire/Alamofire">Alamofire</a></p>
+</li>
+<li>
+<p><a href="https://github.com/krzyzanowskim/CryptoSwift">CryptoSwift</a></p>
+</li>
+<li>
+<p><a href="https://github.com/D-Technologies/EthereumKit">EthereumKit</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ccgus/fmdb">FMDB</a></p>
+</li>
+<li>
+<p><a href="https://github.com/attaswift/BigInt">BigInt</a></p>
+</li>
+<li>
+<p><a href="https://github.com/datatheorem/TrustKit">TrustKit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="table_of_contents"><a class="anchor" href="#table_of_contents"></a>Table of Contents</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#set-up">Set-up</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">a&.adoc#8212;&#8203;installing-ios-wallet-sdk-using&#8212;&#8203;carthage&#8212;&#8203;https---githubcom-carthage-carthage-</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">i&.adoc#8212;&#8203;installing&#8212;&#8203;carthage&#8212;&#8203;https---githubcom-carthage-carthage-</a></p>
+</li>
+<li>
+<p><a href="#">ii&.adoc#8212;&#8203;installing-wallet-sdk-using-carthage</a></p>
+</li>
+<li>
+<p><a href="#">iii&.adoc#8212;&#8203;copying-the&#8212;&#8203;ostwalletsdkframework&#8212;&#8203;file-in-your-xcode-project</a></p>
+</li>
+<li>
+<p><a href="#">iv&.adoc#8212;&#8203;adding-the&#8212;&#8203;ostwalletsdk&#8212;&#8203;dependencies-in-your-xcode-project</a></p>
+</li>
+<li>
+<p><a href="#">v&.adoc#8212;&#8203;adding-sdk-configuration-file</a></p>
+</li>
+<li>
+<p><a href="#">vi&.adoc#8212;&#8203;add&#8212;&#8203;nsfaceidusagedescription&#8212;&#8203;description-in&#8212;&#8203;infoplist-</a></p>
+</li>
+<li>
+<p><a href="#">vii&.adoc#8212;&#8203;initialize-the-wallet-sdk</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-wallet-sdk-apis">OST Wallet SDK APIs</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#types-of-methods">Types of Methods</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#workflows">Workflows</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#setupdevice">setupDevice</a></p>
+</li>
+<li>
+<p><a href="#activateuser">activateUser</a></p>
+</li>
+<li>
+<p><a href="#addsession">addSession</a></p>
+</li>
+<li>
+<p><a href="#performqraction">performQRAction</a></p>
+</li>
+<li>
+<p><a href="#getdevicemnemonics">getDeviceMnemonics</a></p>
+</li>
+<li>
+<p><a href="#executetransaction">executeTransaction</a></p>
+</li>
+<li>
+<p><a href="#authorizecurrentdevicewithmnemonics">authorizeCurrentDeviceWithMnemonics</a></p>
+</li>
+<li>
+<p><a href="#resetpin">resetPin</a></p>
+</li>
+<li>
+<p><a href="#initiatedevicerecovery">initiateDeviceRecovery</a></p>
+</li>
+<li>
+<p><a href="#abortdevicerecovery">abortDeviceRecovery</a></p>
+</li>
+<li>
+<p><a href="#logoutallsessions">logoutAllSessions</a></p>
+</li>
+<li>
+<p><a href="#revokedevice">revokeDevice</a></p>
+</li>
+<li>
+<p><a href="#updatebiometricpreference">updateBiometricPreference</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#getters">Getters</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#getadddeviceqrcode">getAddDeviceQRCode</a></p>
+</li>
+<li>
+<p><a href="#getuser">getUser</a></p>
+</li>
+<li>
+<p><a href="#gettoken">getToken</a></p>
+</li>
+<li>
+<p><a href="#usergetcurrentdevice">user.getCurrentDevice</a></p>
+</li>
+<li>
+<p><a href="#isbiometricenabled">isBiometricEnabled</a></p>
+</li>
+<li>
+<p><a href="#getactivesessions">getActiveSessions</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-workflow-delegate-protocol">OST Workflow Delegate Protocol</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#flowcomplete">flowComplete</a></p>
+</li>
+<li>
+<p><a href="#flowinterrupt">flowInterrupt</a></p>
+</li>
+<li>
+<p><a href="#requestacknowledged">requestAcknowledged</a></p>
+</li>
+<li>
+<p><a href="#getpin">getPin</a></p>
+</li>
+<li>
+<p><a href="#pinvalidated">pinValidated</a></p>
+</li>
+<li>
+<p><a href="#invalidpin">invalidPin</a></p>
+</li>
+<li>
+<p><a href="#registerdevice">registerDevice</a></p>
+</li>
+<li>
+<p><a href="#verifydata">verifyData</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-json-apis">OST JSON APIs</a></p>
+</li>
+<li>
+<p><a href="#classes">Classes</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ostapierror">OstApiError</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">a&.adoc#8212;&#8203;methods</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#osterror">OstError</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">a&.adoc#8212;&#8203;properties</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ostcontextentity">OstContextEntity</a></p>
+</li>
+<li>
+<p><a href="#">i&.adoc#8212;&#8203;properties</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#ost-workflow-context">OST Workflow Context</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">i&.adoc#8212;&#8203;properties-1</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#">a&.adoc#8212;&#8203;workflowtype</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set_up"><a class="anchor" href="#set_up"></a>Set-up</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="a_installing_ios_wallet_sdk_using_carthage_2"><a class="anchor" href="#a_installing_ios_wallet_sdk_using_carthage_2"></a>A). Installing iOS Wallet SDK using <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
+<div class="sect3">
+<h4 id="i_installing_carthage_2"><a class="anchor" href="#i_installing_carthage_2"></a>i). Installing <a href="https://github.com/Carthage/Carthage">Carthage</a></h4>
+<div class="paragraph">
+<p>Get <a href="https://github.com/Carthage/Carthage">Carthage</a> by running the following command on terminal</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">brew install carthage</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also choose <a href="https://github.com/Carthage/Carthage/#installing-carthage">other methods</a> to install <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ii_installing_wallet_sdk_using_carthage"><a class="anchor" href="#ii_installing_wallet_sdk_using_carthage"></a>ii). Installing wallet SDK using Carthage</h4>
+<div class="paragraph">
+<p>Carthage looks at a file called <code>Cartfile</code> to determine which libraries to install.
+Create a file in the same directory as your Xcode project called <code>Cartfile</code> and enter the following to tell Carthage which dependencies we want:</p>
+</div>
+<div class="paragraph">
+<p>Add following entry in your <code>Cartfile</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">github "ostdotcom/ost-wallet-sdk-ios"  == 2.4.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now to actually install everything run the following in your terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">carthage update --platform iOS</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>Cartfile.resolved</code> file and a <code>Carthage</code> directory will appear in the same directory where your <code>.xcodeproj</code> or <code>.xcworkspace</code> is.</p>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="iii_copying_the_ostwalletsdk_framework_file_in_your_xcode_project_2"><a class="anchor" href="#iii_copying_the_ostwalletsdk_framework_file_in_your_xcode_project_2"></a>iii). Copying the <code>OstWalletSdk.framework</code> file in your Xcode project</h4>
+<div class="paragraph">
+<p>Open your project in Xcode, click on the project file in the left section of the screen and scroll down to the <code>Linked Frameworks and Libraries</code> section in Xcode.</p>
+</div>
+<div class="paragraph">
+<p><code>Carthage</code> folder will have the <code>.framework</code> files that we will add in Xcode project.</p>
+</div>
+<div class="paragraph">
+<p>Now open the <code>Carthage/Build/iOS</code> folder in Finder:</p>
+</div>
+<div class="paragraph">
+<p>Run this command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">open Carthage/Build/iOS</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Open application target, under General tab, drag the built <code>OstWalletSdk.framework</code> binary from <code>Carthage/Build/iOS</code> folder into Linked Frameworks and Libraries section.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://dev.ost.com/platform/docs/sdk/assets/copy-framework-file.png" alt="copy-framework-file">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="iv_adding_the_ostwalletsdk_dependencies_in_your_xcode_project_2"><a class="anchor" href="#iv_adding_the_ostwalletsdk_dependencies_in_your_xcode_project_2"></a>iv). Adding the <code>OstWalletSdk</code> dependencies in your Xcode project</h4>
+<div class="paragraph">
+<p>We need to add the <code>.framework</code> files of dependencies present inside <code>Carthage/Build/iOS</code>.</p>
+</div>
+<div class="paragraph">
+<p>Open <code>application targets</code> in Xcode.
+Under <code>Build Phases</code> click <code>+</code> icon and choose <code>New Run Script Phase</code>.
+Add the following command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">/usr/local/bin/carthage copy-frameworks</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Click the <code>+</code> under <code>Input Files</code> and add the following framework entires:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
+$(SRCROOT)/Carthage/Build/iOS/BigInt.framework
+$(SRCROOT)/Carthage/Build/iOS/CryptoEthereumSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework
+$(SRCROOT)/Carthage/Build/iOS/EthereumKit.framework
+$(SRCROOT)/Carthage/Build/iOS/FMDB.framework
+$(SRCROOT)/Carthage/Build/iOS/SipHash.framework
+$(SRCROOT)/Carthage/Build/iOS/TrustKit.framework
+$(SRCROOT)/Carthage/Build/iOS/OstWalletSdk.framework</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://dev.ost.com/platform/docs/sdk/assets/add-dependency-framework-files.png" alt="copy-framework-file">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="v_adding_sdk_configuration_file_2"><a class="anchor" href="#v_adding_sdk_configuration_file_2"></a>v). Adding SDK configuration file</h4>
+<div class="paragraph">
+<p>Create <code>OstWalletSdk.plist</code> file.
+This file has configuration attributes used by OstWalletSdk.
+You should copy paste the configuration values from below snippet.</p>
+</div>
+<div class="paragraph">
+<p>Copy paste this configuration file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+ &lt;plist version="1.0"&gt;
+ &lt;dict&gt;
+    &lt;key&gt;BlockGenerationTime&lt;/key&gt;
+    &lt;integer&gt;3&lt;/integer&gt;
+    &lt;key&gt;PricePointTokenSymbol&lt;/key&gt;
+    &lt;string&gt;OST&lt;/string&gt;
+    &lt;key&gt;PricePointCurrencySymbol&lt;/key&gt;
+    &lt;string&gt;USD&lt;/string&gt;
+    &lt;key&gt;RequestTimeoutDuration&lt;/key&gt;
+    &lt;integer&gt;30&lt;/integer&gt;
+    &lt;key&gt;PinMaxRetryCount&lt;/key&gt;
+    &lt;integer&gt;3&lt;/integer&gt;
+    &lt;key&gt;SessionBufferTime&lt;/key&gt;
+    &lt;integer&gt;3600&lt;/integer&gt;
+    &lt;key&gt;UseSeedPassword&lt;/key&gt;
+	&lt;false/&gt;
+    &lt;key&gt;EnableIOSDeviceRestore&lt;/key&gt;
+	&lt;false/&gt;
+ &lt;/dict&gt;
+ &lt;/plist&gt;</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>BlockGenerationTime: The time in seconds it takes to mine a block on auxiliary chain.</p>
+</li>
+<li>
+<p>PricePointTokenSymbol: This is the symbol of base currency.
+So its value will be <code>OST</code>.</p>
+</li>
+<li>
+<p>PricePointCurrencySymbol: It is the symbol of quote currency used in price conversion.</p>
+</li>
+<li>
+<p>RequestTimeoutDuration: Request timeout in seconds for https calls made by ostWalletSdk.</p>
+</li>
+<li>
+<p>PinMaxRetryCount: Maximum retry count to get the wallet Pin from user.</p>
+</li>
+<li>
+<p>SessionBufferTime: Buffer expiration time for session keys in seconds.
+Default value is 3600 seconds.</p>
+</li>
+<li>
+<p>UseSeedPassword: The seed password is salt to PBKDF2 used to generate seed from the mnemonic.
+When <code>UseSeedPassword</code> set to true, different deterministic salts are used for different keys.</p>
+</li>
+<li>
+<p>EnableIOSDeviceRestore: When <code>EnableIOSDeviceRestore</code> set to true, After reinstallation, SDK check for available device key in Keychain for given <code>user id</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>These configurations are MANDATORY for successful operation.
+Failing to set them will significantly impact usage.</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="vi_add_nsfaceidusagedescription_description_in_info_plist_2"><a class="anchor" href="#vi_add_nsfaceidusagedescription_description_in_info_plist_2"></a>vi). Add <code>NSFaceIDUsageDescription</code> description in <code>info.plist</code></h4>
+<div class="paragraph">
+<p>The iOS Wallet SDK can use FaceID in lieu of fingerprint if the hardware supports it.
+To support faceID, please include <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription">NSFaceIDUsageDescription</a> key in your application&#8217;s <code>info.plist</code> file and describe its usage.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note: <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsfaceidusagedescription">NSFaceIDUsageDescription</a> key is supported in iOS 11 and later.</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="vii_initialize_the_wallet_sdk"><a class="anchor" href="#vii_initialize_the_wallet_sdk"></a>vii). Initialize the Wallet SDK</h4>
+<div class="paragraph">
+<p>SDK initialization should happen before calling any other <code>workflow</code>.
+To initialize the SDK, we need to call <code>init</code> workflow of Wallet SDK.
+It initializes all the required instances and run db migrations.</p>
+</div>
+<div class="paragraph">
+<p>Recommended location to call <strong>OstWalletSdk.initialize()</strong> is in <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application">application</a> method of <a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate">UIApplicationDelegate</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">func application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    do {
+        try OstWalletSdk.init(apiEndPoint: &lt;OST_PLATFORM_API_ENDPOINT&gt;)
+     } catch let ostError {
+           // Handle error here
+     }
+     return true
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.initialize(apiEndPoint: String)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiEndPoint</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OST PLATFORM API ENDPOINT: + 1.
+Sandbox Environment: <code>https://api.ost.com/testnet/v2/</code> + 2.
+Production Environment: <code>https://api.ost.com/mainnet/v2/</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_wallet_sdk_apis"><a class="anchor" href="#ost_wallet_sdk_apis"></a>OST Wallet SDK APIs</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="types_of_methods"><a class="anchor" href="#types_of_methods"></a>Types of Methods</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Workflows</code>: Workflows are the core functions provided by wallet SDK to do wallet related actions.
+Workflows can be called directly by importing the SDK.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Callbacks must confirm to <code>OstWorkflowDelegate</code> protocol.
+The <code>OstWorkflowDelegate</code> protocol defines methods that allow application to interact with <code>OstWalletSdk</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Getters</code>: The SDK provides getter methods that applications can use for various purposes.
+These methods provide the application with data as available in the device&#8217;s database.
+These functions are synchronous and will return the value when requested.</p>
+</li>
+<li>
+<p><code>JSON APIs</code>: Allows application to access OST Platform APIs.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workflows"><a class="anchor" href="#workflows"></a>Workflows</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="setupdevice"><a class="anchor" href="#setupdevice"></a>setupDevice</h3>
+<div class="paragraph">
+<p>This workflow needs <code>userId</code> and <code>tokenId</code> so <code>setupDevice</code> should be called when the application has determined that the user is logged in state.
+Using the mapping between userId in OST Platform and your app user, you have access to <code>userId</code> and <code>tokenId</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>If the user is logged in, then <code>setupDevice</code> should be called every time the app launches, this ensures that the current device is registered before communicating with OST Platform server.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.setupDevice(
+    userId: String,
+    tokenId: String,
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the token economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.
++ This object should implement <code>registerDevice</code> callback function.
+<code>registerDevice</code> will be called during the execution of this workflow.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="activateuser"><a class="anchor" href="#activateuser"></a>activateUser</h3>
+<div class="paragraph">
+<p>It <code>authorizes</code> the registered device and activates the user.
+User activation deploys TokenHolder and Device manager contracts on blockchain.
+Session keys are also created and authorized during <code>activateUser</code> workflow.
+So after <code>user activation</code>, users can perform wallet actions like executing transactions and reset pin.
+<code>activateUser</code> needs to be executed once for a user in an economy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.activateUser(
+    userId: String,
+    userPin: String,
+    passphrasePrefix: String,
+    spendingLimit: String,
+    expireAfterInSecs: TimeInterval,
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User&#8217;s PIN created during wallet setup.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>passphrasePrefix</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A constant unique identifier for your user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>spendingLimit</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spending limit of session key in <a href="https://dev.ost.com/platform/docs/guides/execute-transactions/">atto BT</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expireAfterInSec</strong> + <strong>TimeInterval</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expire time of session key in seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="addsession"><a class="anchor" href="#addsession"></a>addSession</h3>
+<div class="paragraph">
+<p>This workflow will create and authorize the session key that is needed to do the transactions.
+This flow should be called if the session key is expired or not present.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.addSession(
+    userId: String,
+    spendingLimit: String,
+    expireAfterInSecs: TimeInterval,
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>spendingLimit</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spending limit of session key in <a href="https://dev.ost.com/platform/docs/guides/execute-transactions/">atto BT</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expireAfterInSecs</strong> + <strong>long</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expire time of session key in seconds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="performqraction"><a class="anchor" href="#performqraction"></a>performQRAction</h3>
+<div class="paragraph">
+<p>This workflow will perform operations after reading data from a QR-Code.
+This workflow can be used to add a new device and to execute transactions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.performQRAction(
+    userId: String,
+    payload: String,
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>data</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON object string scanned from QR code.
++ <a href="https://dev.ost.com/platform/docs/guides/execute-transactions/#generating-qrcode-with-transaction-data">Sample QRCode JSON</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getdevicemnemonics"><a class="anchor" href="#getdevicemnemonics"></a>getDeviceMnemonics</h3>
+<div class="paragraph">
+<p>To get the 12 words recovery phrase of the current device key.
+Users will use it to prove that it is their wallet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.getDeviceMnemonics(
+    userId: String,
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="executetransaction"><a class="anchor" href="#executetransaction"></a>executeTransaction</h3>
+<div class="paragraph">
+<p>Workflow should be used when user wants to transfer tokens.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.executeTransaction(
+    userId: String,
+    tokenHolderAddresses: [String],
+    amounts: [String],
+    transactionType: OstExecuteTransactionType,
+    meta: [String: String],
+    options: [String: Any],
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenHolderAddresses</strong> + <strong>[String]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TokenHolder</strong>  addresses of beneficiary users.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>amounts</strong> + <strong>[String]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array of Amount to be transferred in atto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>transactionType</strong> + <strong>OstExecuteTransactionType</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaction type can take one of the two values: + 1.
+<code>DirectTransfer</code>:  In this type of transaction, the amount of brand token will be transferred directly to the receiver user.
++ 2.
+<code>Pay</code>: In this type of transaction the amount of fiat passed will first be converted into brand token and after this conversion the transfer will happen in converted brand token amount.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>meta</strong> + <strong>[String: String]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dictionary object having extra information that a developer can pass about the transfer.
+This dictionary object can have 3 properties.
++  + Example meta:  + [ + &nbsp;
+&nbsp;"name":"Thanks for like", + &nbsp;
+&nbsp;"type": "user_to_user" (it can take one of the following values: <code>user_to_user</code>, <code>user_to_company</code> and <code>company_to_user</code>), + &nbsp;
+&nbsp;
+"details": "like" + ]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>options</strong> + <strong>[String: Any]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional settings parameters.
+You can set following values: + 1.
+<code>currency_code</code>: Currency code for the pay currency.
++ Example: <code>{"currency_code": "USD"}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="authorizecurrentdevicewithmnemonics"><a class="anchor" href="#authorizecurrentdevicewithmnemonics"></a>authorizeCurrentDeviceWithMnemonics</h3>
+<div class="paragraph">
+<p>To add a new device using 12 words recovery phrase.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.authorizeCurrentDeviceWithMnemonics(
+    userId: String,
+    mnemonics: [String],
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mnemonics</strong> + <strong>[String]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array of String having 12 words</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="resetpin"><a class="anchor" href="#resetpin"></a>resetPin</h3>
+<div class="paragraph">
+<p>To change the PIN.</p>
+</div>
+<div class="paragraph">
+<p><strong>User will have to provide the current PIN in order to change it.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OstWalletSdk.resetPin(
+    userId: String,
+    passPhrasePrefix: String,
+    oldUserPin: String,
+    newUserPin: String,
+    delegate: OstWorkflowDelegate
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>passPhrasePrefix</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A constant unique identifier for a your user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oldUserPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current wallet PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>newUserPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New wallet PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="initiatedevicerecovery"><a class="anchor" href="#initiatedevicerecovery"></a>initiateDeviceRecovery</h3>
+<div class="paragraph">
+<p>A user can control their tokens using their authorized device(s).
+If a user loses their authorized device, the user can recover access to her tokens by authorizing a new device by initiating the recovery process.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">OstWalletSdk.initiateDeviceRecovery(
+    userId: String,
+    recoverDeviceAddress: String,
+    userPin: String,
+    passphrasePrefix: String,
+    delegate: OstWorkflowDelegate
+    )</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>recoverDeviceAddress</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User&#8217;s Wallet PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>passPhrasePrefix</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A constant unique identifier for a your user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="abortdevicerecovery"><a class="anchor" href="#abortdevicerecovery"></a>abortDeviceRecovery</h3>
+<div class="paragraph">
+<p>To abort the initiated device recovery.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">OstWalletSdk.abortDeviceRecovery(
+    userId: String,
+    userPin: String,
+    passphrasePrefix: String,
+    delegate: OstWorkflowDelegate)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userPin</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User&#8217;s Wallet PIN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>passPhrasePrefix</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A constant unique identifier for a your user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="logoutallsessions"><a class="anchor" href="#logoutallsessions"></a>logoutAllSessions</h3>
+<div class="paragraph">
+<p>To revoke all sessions associated with the provided userId.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">OstWalletSdk.logoutAllSessions(
+    userId: String,
+    delegate: OstWorkflowDelegate)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="revokedevice"><a class="anchor" href="#revokedevice"></a>revokeDevice</h3>
+<div class="paragraph">
+<p>To revoke device access.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.revokeDevice(
+    userId: String,
+    deviceAddressToRevoke: String,
+    delegate: OstWorkflowDelegate)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>deviceAddressToRevoke</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wallet address of the device to revoke.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="updatebiometricpreference"><a class="anchor" href="#updatebiometricpreference"></a>updateBiometricPreference</h3>
+<div class="paragraph">
+<p>To enable or disable the biometric.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.updateBiometricPreference(
+    userId: String,
+    enable: Bool,
+    delegate: OstWorkflowDelegate)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier for the user of economy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>enable</strong> + <strong>Bool</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preference to use the biometric.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstWorkflowDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of a class that implements the callback function available in <code>OstWorkflowDelegate</code> protocol.
+These callback functions are needed for communication between app and wallet SDK.
+Implement <code>flowComplete</code> and <code>flowInterrupt</code> callback functions to get the workflow status.
+Details about other callback function can be found in <a href="#ostworkflowdelegate-protocol">OstWorkflowDelegate protocol reference</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getters"><a class="anchor" href="#getters"></a>Getters</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="getadddeviceqrcode"><a class="anchor" href="#getadddeviceqrcode"></a>getAddDeviceQRCode</h3>
+<div class="paragraph">
+<p>This workflow will return the QRCode in the form of <a href="https://developer.apple.com/documentation/coreimage/ciimage">CIImage object</a> that can be used to show on screen.
+This QRCode can then be scanned to add the new device.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.getAddDeviceQRCode(
+    userId: String
+) throws -&gt; CIImage?</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Returns</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CIImage</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QRCode <a href="https://developer.apple.com/documentation/coreimage/ciimage">CIImage</a> object.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getuser"><a class="anchor" href="#getuser"></a>getUser</h3>
+<div class="paragraph">
+<p>Get user entity for given userId.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.getUser(userId: String)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Returns</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The user object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="gettoken"><a class="anchor" href="#gettoken"></a>getToken</h3>
+<div class="paragraph">
+<p>Get token entity for given tokenId.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.getToken(tokenId: String)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tokenId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the token</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Returns</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The token object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="user_getcurrentdevice"><a class="anchor" href="#user_getcurrentdevice"></a>user.getCurrentDevice</h3>
+<div class="paragraph">
+<p>Get current device of user.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">let user: OstUser = OstWalletSdk.getUser(userId: String)
+let device: OstCurrentDevice = user.getCurrentDevice()</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Returns</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>device</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The device object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="isbiometricenabled"><a class="anchor" href="#isbiometricenabled"></a>isBiometricEnabled</h3>
+<div class="paragraph">
+<p>Get biometric preference of the user.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.isBiometricEnabled(userId: String)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Returns</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preference</strong> + <strong>Bool</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> if user has enabled biometric verfication.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getactivesessions"><a class="anchor" href="#getactivesessions"></a>getActiveSessions</h3>
+<div class="paragraph">
+<p>Get active sessions for given spending limit.
+If  passed spending limit is nil, return all active sessions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Swift hljs" data-lang="Swift">OstWalletSdk.getActiveSessions(
+    userId: String,
+    spendingLimit: String?
+) -&gt; [OstSession]</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user stored in OST Platform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>spendingLimit</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transction amount</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Returns</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OstSession</strong> + <strong>Array</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of active sessions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_workflow_delegate_protocol"><a class="anchor" href="#ost_workflow_delegate_protocol"></a>OST Workflow Delegate Protocol</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="flowcomplete"><a class="anchor" href="#flowcomplete"></a>flowComplete</h3>
+<div class="paragraph">
+<p>This function will be called by SDK when a workflow is completed.
+The details of workflow and the entity that was updated during the workflow will be available in the arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func flowComplete(
+        workflowContext: OstWorkflowContext,
+        ostContextEntity: OstContextEntity
+        )</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the workflow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostContextEntity</strong> + <strong>OstContextEntity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the entity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="flowinterrupt"><a class="anchor" href="#flowinterrupt"></a>flowInterrupt</h3>
+<div class="paragraph">
+<p>This function will be called by SDK when a workflow fails or cancelled.
+The workflow details and error details will be available in the arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func flowInterrupted(
+        workflowContext: OstWorkflowContext,
+        error: OstError
+)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the workflow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostError</strong> + <strong>OstError</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ostError object will have details about the error that interrupted the flow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="requestacknowledged"><a class="anchor" href="#requestacknowledged"></a>requestAcknowledged</h3>
+<div class="paragraph">
+<p>This function will be called by SDK when the core API request was successful which happens during the execution of workflows.
+At this stage the workflow is not completed but it shows that the main communication between the wallet SDK and OST Platform server is complete.
++ Once the workflow is complete, the <code>app</code> will receive the details in <code>flowComplete</code> function and if the workflow fails then app will receive the details in <code>flowInterrupt</code> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func requestAcknowledged(
+        workflowContext: OstWorkflowContext,
+        ostContextEntity: OstContextEntity
+        )</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostWorkflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the workflow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostContextEntity</strong> + <strong>OstContextEntity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the entity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getpin"><a class="anchor" href="#getpin"></a>getPin</h3>
+<div class="paragraph">
+<p>This function will be called by SDK when it needs to get the PIN from the <code>app</code> user to authenticate any authorized action.</p>
+</div>
+<div class="paragraph">
+<p> + <strong>Expected Function Definition:</strong> Developers of client company are expected to launch their UI to get the PIN from the user and pass back this PIN to SDK by calling <strong>delegate.pinEntered(_ userPin: String, passphrasePrefix: String)</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func getPin(
+        _ userId: String,
+        delegate: OstPinAcceptDelegate
+        )</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstPinAcceptDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate.pinEntered(_ userPin: String, passphrasePrefix: String)</strong> should be called to pass the PIN back to SDK.
++ For some reason if the developer wants to cancel the current workflow they can do it by calling <strong>delegate.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="pinvalidated"><a class="anchor" href="#pinvalidated"></a>pinValidated</h3>
+<div class="paragraph">
+<p>This function will be called by SDK when PIN is validated.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func pinValidated(_ userId: String)</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="invalidpin"><a class="anchor" href="#invalidpin"></a>invalidPin</h3>
+<div class="paragraph">
+<p>This function will be called by SDK when the entered PIN is incorrect and <code>app</code> user has to provide the PIN again.
+Developers are expected to get the PIN from user again and pass back the PIN back to the SDK by calling  <strong>delegate.pinEntered(_ userPin: String, passphrasePrefix: String)</strong> .</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func invalidPin(
+        _ userId: String,
+        delegate: OstPinAcceptDelegate
+        )</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>userId</strong> + <strong>String</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstPinAcceptDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate.pinEntered(_ userPin: String, passphrasePrefix: String)</strong> should be called to again pass the PIN back to SDK.
++ For some reason if the developer wants to cancel the current workflow they can do it by calling <strong>delegate.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="registerdevice"><a class="anchor" href="#registerdevice"></a>registerDevice</h3>
+<div class="paragraph">
+<p>This function will be called by SDK to register the device.
++ <strong>Expected Function Definition:</strong> Developers of client company are expected to register the device by communicating with their company&#8217;s server.
+On client company&#8217;s server they can use <code>Server SDK</code> to register this device in OST Platform.
+Once device is registered on OST client company&#8217;s server will receive the newly created <code>device</code> entity.
+This device entity should be passed back to the <code>app</code>.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="paragraph">
+<p>Finally they should pass back this newly created device entity back to the wallet SDK by calling <strong>delegate.deviceRegistered(_ apiResponse: [String: Any])</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func registerDevice(
+        _ apiParams: [String: Any],
+        delegate: OstDeviceRegisteredDelegate
+        )</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiParams</strong> + <strong>[String: Any]</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Device information for registration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstDeviceRegisteredDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate.deviceRegistered(_ apiResponse: [String: Any] )</strong> should be called to pass the newly created device entity back to SDK.
++ In case data if there is some issue while registering the device then the current workflow should be canceled  by calling <strong>delegate.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="verifydata"><a class="anchor" href="#verifydata"></a>verifyData</h3>
+<div class="paragraph">
+<p>This function will be called by SDK to verify the data during <code>performQRAction</code> workflow.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func verifyData(
+        workflowContext: OstWorkflowContext,
+        ostContextEntity: OstContextEntity,
+        delegate: OstValidateDataDelegate
+        )</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>workflowContext</strong> + <strong>OstWorkflowContext</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the current workflow during which this callback will be called</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ostContextEntity</strong> + <strong>OstContextEntity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information about the entity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate</strong> + <strong>OstValidateDataDelegate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>delegate.dataVerified()</strong> should be called if the data is verified successfully.
++ In case data is not verified the current workflow should be canceled by calling <strong>delegate.cancelFlow()</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_json_apis"><a class="anchor" href="#ost_json_apis"></a>OST JSON APIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While the getter methods provide application with data stored in device&#8217;s database, the JSON API methods make API calls to OST Platform servers.
+Please refer to <a href="#">/documentation/OstJsonApi.adoc</a> for documentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="classes"><a class="anchor" href="#classes"></a>Classes</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>OstApiError</p>
+</li>
+<li>
+<p>OstError</p>
+</li>
+<li>
+<p>OstContextEntity</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="ostapierror"><a class="anchor" href="#ostapierror"></a>OstApiError</h3>
+<div class="paragraph">
+<p>This class is used to provide API related error details in <a href="#2-flowinterrupt">flowInterrupt</a> callback function.</p>
+</div>
+<div class="paragraph">
+<p>You can call following methods on the object of this class to get more details about the error.</p>
+</div>
+<div class="sect3">
+<h4 id="a_methods"><a class="anchor" href="#a_methods"></a>A). Methods</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>public func getApiErrorCode() -&gt; String?</code></p>
+</li>
+<li>
+<p><code>public func getApiErrorMessage() -&gt; String?</code></p>
+</li>
+<li>
+<p><code>public func getApiInternalId() -&gt; String?</code></p>
+</li>
+<li>
+<p><code>public func isBadRequest() -&gt; Bool</code></p>
+</li>
+<li>
+<p><code>public func isDeviceTimeOutOfSync() -&gt; Bool</code></p>
+</li>
+<li>
+<p><code>public func isApiSignerUnauthorized() -&gt; Bool</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="osterror"><a class="anchor" href="#osterror"></a>OstError</h3>
+<div class="paragraph">
+<p>This class is used to provide error details in <a href="#2-flowinterrupt">flowInterrupt</a> callback function.</p>
+</div>
+<div class="paragraph">
+<p>You can read following properties on the object of this class to get more details about the error.</p>
+</div>
+<div class="sect3">
+<h4 id="a_properties"><a class="anchor" href="#a_properties"></a>A). Properties</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>public internal(set) var isApiError = false</p>
+</li>
+<li>
+<p>public let internalCode:String</p>
+</li>
+<li>
+<p>public let errorMessage:String</p>
+</li>
+<li>
+<p>public let messageTextCode:OstErrorText;</p>
+</li>
+<li>
+<p>public var errorInfo: [String: Any]?
+= nil</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ostcontextentity"><a class="anchor" href="#ostcontextentity"></a>OstContextEntity</h3>
+<div class="paragraph">
+<p>This class provides context about the <code>entity</code> that is being changed during a <a href="#workflows">workflow</a>.
+Callback functions that needs to know about the <code>entity</code> will receive an object of this class as an argument.</p>
+</div>
+<div class="paragraph">
+<p><code>entityType</code> property will return one of the values from this enum.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">public enum OstEntityType {
+    case device,
+    user,
+    array,
+    session,
+    transaction,
+    recoveryOwner,
+    string,
+    dictionary,
+    tokenHolder
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can read the following properties to get more details about the entity.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="i_properties"><a class="anchor" href="#i_properties"></a>i) Properties</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">public private(set) var entity: Any?
+public private(set) var entityType: OstEntityType</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ost_workflow_context"><a class="anchor" href="#ost_workflow_context"></a>OST Workflow Context</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This class provides context about the current <a href="#workflows">workflow</a>.
+Callback function that needs to know about the current <a href="#workflows">workflow</a> will get the object of this class as an argument.</p>
+</div>
+<div class="paragraph">
+<p><code>workflowType</code> property will take one of the values from this enum.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">public enum OstWorkflowType {
+    case setupDevice,
+    activateUser,
+    addSession,
+    getDeviceMnemonics,
+    performQRAction,
+    executeTransaction,
+    authorizeDeviceWithQRCode,
+    authorizeDeviceWithMnemonics,
+    initiateDeviceRecovery,
+    abortDeviceRecovery,
+    revokeDeviceWithQRCode,
+    resetPin,
+    logoutAllSessions
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can read the following properties to get more details about the current <a href="#workflows">workflow</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="i_properties_2"><a class="anchor" href="#i_properties_2"></a>i) Properties</h3>
+<div class="sect3">
+<h4 id="a_workflowtype"><a class="anchor" href="#a_workflowtype"></a>a) workflowType</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-swift hljs" data-lang="swift">public let workflowType: OstWorkflowType</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
                 <div class="article-navigation">
+                	<div class="btn-next"><a href="/client-sdk-ios/1.0/OstJsonApi.html">Ost JSON API &rarr;</a></div>
                 </div>
 	</article>
 	<aside class="toc toc-sidebar">

@@ -43,13 +43,79 @@
     <li class="nav-li" >
   
   <a class="link nav-link" href="/client-sdk-react-native/1.0/index.html">
-    OverviewX
+    Overview
   </a>
 </li>
 <li class="nav-li" >
   
-  <a class="link nav-link" href="/client-sdk-react-native/1.0/android_setup.md.html">
-    Android Setup
+  <a class="link nav-link" href="#">
+    android-setup.adoc
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="#">
+    ios-setup.adoc
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstCoreWorkflows.html">
+    Ost Core Workflows
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="#">
+    OstWalletUI.adoc
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletSettings.html">
+    Ost Wallet Settings
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletSettingsConfig.html">
+    Ost Wallet Settings Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstRedemptionFlow.html">
+    Ost Redemption Flow
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstRedemptionConfig.html">
+    Ost Redemption Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstTransactionHelper.html">
+    Ost Transaction Helper
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstTransactionConfig.html">
+    Ost Transaction Config
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/client-sdk-react-native/1.0/OstWalletSdkGetMethods.html">
+    Ost Wallet SDK Get Methods
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="#">
+    OstJsonAPI.adoc
   </a>
 </li>
     </ol>
@@ -568,7 +634,7 @@ export default UserPassphrasePrefixDelegate;</code></pre>
 <div class="paragraph">
 <p>OstWallet Settings is a pre-built UI Component available exclusively available in <code>ost-wallet-sdk-react-native</code> Sdk.
 It is a wallet settings page that can be used by end-users to perfrom different wallet operations(Ost Wallet UI Workflows).
-For details <a href="#">./OstWalletSettings.adoc</a></p>
+For details <a href="OstWalletSettings.html" class="page">check here</a></p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -628,6 +694,13 @@ OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWo
 <p>A session is a period of time during which a sessionKey is authorized to sign transactions under a pre-set limit per transaction on behalf of the user.
 The device manager, which controls the tokens, authorizes sessions.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>By Calling function</strong><br></p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let uiCallback = new UserPassphrasePrefixDelegate()
@@ -644,6 +717,92 @@ let workflowId = OstWalletSdkUI.addSession(
     userId,
     expiresAfterInSecs,
     spendingLimit,
+    uiCallback
+)
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+  // Session is being added.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // Session has been added.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow. The Session has NOT been added.
+});</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><b>By scanning QR-Code </b><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>QR Code Sample</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>as|2.0.0|2a421359d02132e8161cda9518aeaa62647b648e|5369b4d7e0e53e1159d6379b989a8429a7b2dd59|1|1583308559|4d40c46a7302974134a67ce77bdfae0e1f78ee518e87b6cda861ffc5847dfaca11a653651c6cdfadf0224574f6f07e1a78aabacdfed66d8c78e1fb2c9bc750161c</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let uiCallback = new UserPassphrasePrefixDelegate()
+
+/**
+   * Add user session
+   * @param {String} userId - Ost User id
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @public
+   */
+let workflowId = OstWalletSdkUI.scanQRCodeToAuthorizeSession(
+    userId,
+    uiCallback
+)
+
+// Subscribe to events
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+  // Session is being added.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+  // Show success message to user.
+  // Session has been added.
+});
+
+OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+  // Show error to user.
+  // An error occoured during the workflow. The Session has NOT been added.
+});</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><b>With QR Code Payload </b><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let uiCallback = new UserPassphrasePrefixDelegate()
+let payload = "as|2.0.0|2a421359d02132e8161cda9518aeaa62647b648e|5369b4d7e0e53e1159d6379b989a8429a7b2dd59|1|1583308559|4d40c46a7302974134a67ce77bdfae0e1f78ee518e87b6cda861ffc5847dfaca11a653651c6cdfadf0224574f6f07e1a78aabacdfed66d8c78e1fb2c9bc750161c"
+/**
+   * Authorize browser session with QR code payload
+   * @param {String} userId - Ost User id
+   * @param {String} qrPayload - QR-Code payload
+   * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+   * @return {*|number}
+   */
+let workflowId = OstWalletSdkUI.authorizeSessionWithQRPayload(
+    userId,
+    payload,
     uiCallback
 )
 
@@ -998,6 +1157,13 @@ OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWo
 }</code></pre>
 </div>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><b>By scanning QR-Code </b><br></p>
+</li>
+</ul>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
@@ -1009,6 +1175,43 @@ OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWo
    * @public
    */
    let workflowId = OstWalletSdkUI.scanQRCodeToAuthorizeDevice(userId, uiCallback);
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Device is being authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Device has been authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><b>with QR Code payload </b> + Developer can pass QR code payload to authorize device.
+QR code scanner view won&#8217;t open if developer pass payload.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+  let payload = "{\"dd\":\"AD\",\"ddv\":\"1.1.0\",\"d\":{\"da\":\"0x7701af46018fc57c443b63e839eb24872755a2f8\"}}"
+  /**
+    * Authorize device with QR code payload
+    * @param {String} userId - Ost User id
+    * @param {String} qrPayload - QR-Code payload
+    * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+    * @return {*|number}
+    */
+   let workflowId = OstWalletSdkUI.authorizeDeviceWithQRPayload(userId, payload, uiCallback);
 
   // Subscribe to events
   OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
@@ -1100,8 +1303,45 @@ OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWo
 <div class="ulist">
 <ul>
 <li>
+<p><b>with QR Code payload </b> + Developer can pass QR code payload to execute transaction.
+QR code scanner view won&#8217;t appear if developer pass payload.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  let uiCallback = new UserPassphrasePrefixDelegate();
+  let payload = &lt;TRANSACTON_QR_CODE_PAYLAOD_STRING&gt;
+  /**
+    * Execute transaction with QR code payload
+    * @param {String} userId - Ost User id
+    * @param {String} qrPayload - QR-Code payload
+    * @param {OstWalletUIWorkflowCallback} uiCallback - callback implementation instances for application communication
+    * @return {*|number}
+    */
+   let workflowId = OstWalletSdkUI.executeTransactionWithQRPayload(userId, payload, uiCallback);
+
+  // Subscribe to events
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.requestAcknowledged, () =&gt; {
+    // Device is being authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowComplete, (ostWorkflowContext , ostContextEntity) =&gt; {
+    // Show success message to user.
+    // Device has been authorized.
+  });
+
+  OstWalletSdkUI.subscribe(workflowId, OstWalletSdkUI.EVENTS.flowInterrupt, (ostWorkflowContext , ostError) =&gt; {
+    // Show error to user.
+    // An error occoured during the workflow.
+  });</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p><strong>By Calling function</strong> + Helper method creates session if active sessoin for transction amount is not available.
-To execute transaction via helper method, <a href="#">./OstTransactionHelper.adoc</a></p>
+To execute transaction via helper method, <a href="OstTransactionHelper.html" class="page">ref here</a></p>
 </li>
 </ul>
 </div>

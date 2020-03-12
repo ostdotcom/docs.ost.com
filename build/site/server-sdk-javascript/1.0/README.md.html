@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/server-sdk-javascript/1.0/README.md">
+    <link rel="stylesheet" href="../../_/stylesheets/index.css">
+    <title>OST Server-Side JavaScript SDK - Ost Docs</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../_/images/favicon-192x192.png"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap"
+      rel="stylesheet">
+        <script>
+
+  window.intercomSettings = {
+    app_id: "pyq90xus"
+  };
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pyq90xus';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <body class="flex col ">
+    <div class="root">
+	<nav id="sidr" class="nav" data-component="server-sdk-javascript" data-is-home=""
+  data-is-site-aspect="" data-version="" role="navigation">
+  <span class="close-menu-btn"></span>
+  <div class="flex align-center search">
+    <input class="input" placeholder="Search" type="search">
+  </div>
+
+  <div class="nav-component-active">
+    <a class="btn-back" href="/">Home</a>
+    <div class="flex justify-justified nav-heading">
+      <span class="">Ost Server SDK JavaScript</span>
+      <div class="component-version">
+      </div>
+    </div>
+    <ol class="nav-list">
+    <li class="nav-li" >
+  
+  <a class="link nav-link" href="/server-sdk-javascript/1.0/index.html">
+    Overview
+  </a>
+</li>
+    </ol>
+  </div>
+
+
+</nav>
+	<main role="main" class="main">
+		<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <button class="navbar-burger sidr-toggle" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <a href="https://dev.ost.com" class="navbar__logo">
+        <svg width="209px" height="24px" viewBox="0 0 209 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="home-[TBD]" transform="translate(-360.000000, -26.000000)">
+              <g id="navbar" transform="translate(299.000000, 0.000000)">
+                <g id="Group-5" transform="translate(61.000000, 26.000000)">
+                  <g id="Group-7-Copy-4" transform="translate(-0.000000,
+                    -0.000000)">
+                    <path d="M21.4663663,23.9300128 L21.4663663,17.7061037
+                      L14.7279539,17.7061037 C12.895474,17.7061037
+                      11.1980311,18.6736822 10.2594904,20.2533582
+                      L8.07492852,23.9300128 L21.4663663,23.9300128 Z" id="Stroke-1" fill="#63D2F9"></path>
+                    <polygon id="Stroke-3" fill="#4E5EE4" points="0.019867965
+                      0.0199524162 0.019867965 6.24386149 17.7682654 6.24386149
+                      21.4663782 0.0199524162"></polygon>
+                    <path d="M8.51406302,9.74697276 L0.0394099651,23.9300247
+                      L7.2596145,23.9300247 L17.3937872,6.96201283
+                      L13.4067581,6.96201283 C11.401318,6.96201283
+                      9.54339693,8.01955871 8.51406302,9.74697276 Z" id="Stroke-5" fill="#63B0F9"></path>
+                  </g>
+                  <path d="M172.76828,17.9512764 C170.154155,17.9512764
+                    168.343063,16.0160804 168.343063,13.2931055
+                    C168.343063,10.553005 170.154155,8.60068342
+                    172.665765,8.60068342 C174.528115,8.60068342
+                    175.51909,9.79947739 175.792463,10.2618693
+                    L175.894978,10.2618693 L175.894978,4.88442211
+                    L177.244754,4.88442211 L177.244754,17.7286432
+                    L175.946235,17.7286432 L175.946235,16.3243417
+                    L175.84372,16.3243417 C175.621605,16.6497286
+                    174.698973,17.9512764 172.76828,17.9512764 Z
+                    M172.853709,16.7353568 C174.784402,16.7353568
+                    175.946235,15.159799 175.946235,13.2931055
+                    C175.946235,11.1010251 174.579372,9.83372864
+                    172.819537,9.83372864 C170.991359,9.83372864
+                    169.727011,11.2722814 169.727011,13.2931055
+                    C169.727011,15.3824322 170.991359,16.7353568
+                    172.853709,16.7353568 Z M184.412555,17.9512764
+                    C181.747174,17.9512764 179.782309,15.9818291
+                    179.782309,13.2759799 C179.782309,10.5872563
+                    181.781345,8.60068342 184.429641,8.60068342
+                    C187.112109,8.60068342 189.059888,10.6043819
+                    189.059888,13.2759799 C189.059888,15.9475779
+                    187.077937,17.9512764 184.412555,17.9512764 Z
+                    M184.412555,16.7182312 C186.326163,16.7182312
+                    187.675939,15.2625528 187.675939,13.2759799
+                    C187.675939,11.3065327 186.326163,9.83372864
+                    184.412555,9.83372864 C182.498948,9.83372864
+                    181.166257,11.3236583 181.166257,13.2759799
+                    C181.166257,15.2796784 182.516034,16.7182312
+                    184.412555,16.7182312 Z M195.646772,17.9512764
+                    C192.964305,17.9512764 191.084869,15.9133266
+                    191.084869,13.2759799 C191.084869,10.6386332
+                    193.015562,8.60068342 195.629686,8.60068342
+                    C197.56038,8.60068342 199.354386,9.76522613
+                    199.832788,11.751799 L198.431754,11.751799
+                    C198.072953,10.5872563 196.945292,9.83372864
+                    195.663858,9.83372864 C193.767336,9.83372864
+                    192.485903,11.3407839 192.485903,13.2759799
+                    C192.485903,15.2796784 193.83568,16.7182312
+                    195.69803,16.7182312 C196.979463,16.7182312
+                    198.12421,15.9647035 198.465926,14.8001608
+                    L199.849874,14.8001608 C199.388558,16.7867337
+                    197.577465,17.9512764 195.646772,17.9512764 Z
+                    M205.497041,17.9512764 C203.39549,17.9512764
+                    202.199485,16.8038593 202.045713,15.1426734
+                    L203.361318,15.1426734 C203.51509,16.2044623
+                    204.266865,16.769608 205.565384,16.769608
+                    C206.898075,16.769608 207.632763,16.1188342
+                    207.632763,15.2111759 C207.632763,12.7108342
+                    202.319086,14.6117789 202.319086,11.0838995
+                    C202.319086,9.57684422 203.668862,8.60068342
+                    205.531212,8.60068342 C207.171447,8.60068342
+                    208.53831,9.55971859 208.674996,11.1695276
+                    L207.376477,11.1695276 C207.256876,10.3303719
+                    206.624702,9.76522613 205.445784,9.76522613
+                    C204.335208,9.76522613 203.617605,10.3132462
+                    203.617605,11.0838995 C203.617605,13.3444824
+                    208.948368,11.4606633 208.948368,15.1426734
+                    C208.948368,16.8209849 207.56442,17.9512764
+                    205.497041,17.9512764 Z" id="docs" fill="#282846" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M36.8275779,17.9512764 C33.1969447,17.9512764
+                    30.5253467,15.296804 30.5253467,11.7346734
+                    C30.5253467,8.20679397 33.2140704,5.51807035
+                    36.8447035,5.51807035 C40.4753367,5.51807035
+                    43.1640603,8.24104523 43.1640603,11.7346734
+                    C43.1640603,15.2625528 40.4582111,17.9512764
+                    36.8275779,17.9512764 Z M36.8447035,15.7763216
+                    C39.1395377,15.7763216 40.783598,14.0637588
+                    40.783598,11.7346734 C40.783598,9.4398392
+                    39.1395377,7.69302513 36.8447035,7.69302513
+                    C34.5327437,7.69302513 32.8886834,9.4398392
+                    32.8886834,11.7346734 C32.8886834,14.0637588
+                    34.5327437,15.7763216 36.8447035,15.7763216 Z
+                    M45.5952668,21.6675377 L45.5952668,8.72056281
+                    L47.7873472,8.72056281 L47.7873472,9.8679799
+                    L47.9072266,9.8679799 C48.1469854,9.49121608
+                    48.9690156,8.49792965 50.6130759,8.49792965
+                    C53.1305432,8.49792965 54.8602316,10.3817487
+                    54.8602316,13.1903518 C54.8602316,15.9989548
+                    53.1476688,17.9512764 50.6815784,17.9512764
+                    C49.088895,17.9512764 48.2326136,17.0607437
+                    47.9414779,16.5641005 L47.8215985,16.5641005
+                    L47.8215985,21.6675377 L45.5952668,21.6675377 Z
+                    M50.1849352,15.9304523 C51.6234879,15.9304523
+                    52.5996487,14.8172864 52.5996487,13.224603
+                    C52.5996487,11.5805427 51.6234879,10.5187538
+                    50.1678095,10.5187538 C48.6950055,10.5187538
+                    47.7702216,11.7004221 47.7702216,13.224603
+                    C47.7702216,14.9029146 48.7977593,15.9304523
+                    50.1849352,15.9304523 Z M61.2303326,17.9512764
+                    C58.5758603,17.9512764 56.6920412,15.9647035
+                    56.6920412,13.2759799 C56.6920412,10.4331256
+                    58.5929859,8.49792965 61.2303326,8.49792965
+                    C64.1245638,8.49792965 65.7001216,10.6386332
+                    65.7001216,13.1732261 L65.7001216,13.8753769
+                    L58.8498703,13.8753769 C58.9183728,15.2454271
+                    59.8602824,16.1702111 61.2988351,16.1702111
+                    C62.3948753,16.1702111 63.2340311,15.6564422
+                    63.5422924,14.9200402 L65.6144934,14.9200402
+                    C65.1692271,16.7524824 63.5594181,17.9512764
+                    61.2303326,17.9512764 Z M58.8841216,12.2998191
+                    L63.5765437,12.2998191 C63.4737899,11.0838995
+                    62.5318804,10.278995 61.2303326,10.278995
+                    C59.9801618,10.278995 59.0211266,11.1695276
+                    58.8841216,12.2998191 Z M68.0970768,17.7286432
+                    L68.0970768,8.72056281 L70.2206547,8.72056281
+                    L70.2206547,9.81660302 L70.3405341,9.81660302
+                    C70.7001723,9.14870352 71.590705,8.49792965
+                    72.8751271,8.49792965 C74.8959512,8.49792965
+                    76.1289964,9.91935678 76.1289964,11.8374271
+                    L76.1289964,17.7286432 L73.9026648,17.7286432
+                    L73.9026648,12.4196985 C73.9026648,11.3236583
+                    73.200514,10.5872563 72.1729763,10.5872563
+                    C71.0940618,10.5872563 70.3234085,11.4435377
+                    70.3234085,12.5738291 L70.3234085,17.7286432
+                    L68.0970768,17.7286432 Z M78.3375698,17.7286432
+                    L78.3375698,15.6906935 L84.5712984,7.83003015
+                    L84.5712984,7.71015075 L78.5602029,7.71015075
+                    L78.5602029,5.74070352 L87.4141527,5.74070352
+                    L87.4141527,7.76152764 L81.1804241,15.622191
+                    L81.1804241,15.759196 L87.448404,15.759196
+                    L87.448404,17.7286432 L78.3375698,17.7286432 Z
+                    M93.4759924,17.9512764 C90.82152,17.9512764
+                    88.9377009,15.9647035 88.9377009,13.2759799
+                    C88.9377009,10.4331256 90.8386456,8.49792965
+                    93.4759924,8.49792965 C96.3702235,8.49792965
+                    97.9457813,10.6386332 97.9457813,13.1732261
+                    L97.9457813,13.8753769 L91.0955301,13.8753769
+                    C91.1640326,15.2454271 92.1059421,16.1702111
+                    93.5444949,16.1702111 C94.6405351,16.1702111
+                    95.4796909,15.6564422 95.7879522,14.9200402
+                    L97.8601532,14.9200402 C97.4148869,16.7524824
+                    95.8050778,17.9512764 93.4759924,17.9512764 Z
+                    M91.1297813,12.2998191 L95.8222034,12.2998191
+                    C95.7194497,11.0838995 94.7775401,10.278995
+                    93.4759924,10.278995 C92.2258215,10.278995
+                    91.2667863,11.1695276 91.1297813,12.2998191 Z
+                    M100.342737,21.6675377 L100.342737,8.72056281
+                    L102.534817,8.72056281 L102.534817,9.8679799
+                    L102.654696,9.8679799 C102.894455,9.49121608
+                    103.716485,8.49792965 105.360546,8.49792965
+                    C107.878013,8.49792965 109.607701,10.3817487
+                    109.607701,13.1903518 C109.607701,15.9989548
+                    107.895139,17.9512764 105.429048,17.9512764
+                    C103.836365,17.9512764 102.980083,17.0607437
+                    102.688948,16.5641005 L102.569068,16.5641005
+                    L102.569068,21.6675377 L100.342737,21.6675377 Z
+                    M104.932405,15.9304523 C106.370958,15.9304523
+                    107.347118,14.8172864 107.347118,13.224603
+                    C107.347118,11.5805427 106.370958,10.5187538
+                    104.915279,10.5187538 C103.442475,10.5187538
+                    102.517691,11.7004221 102.517691,13.224603
+                    C102.517691,14.9029146 103.545229,15.9304523
+                    104.932405,15.9304523 Z M112.004657,21.6675377
+                    L112.004657,8.72056281 L114.196737,8.72056281
+                    L114.196737,9.8679799 L114.316616,9.8679799
+                    C114.556375,9.49121608 115.378405,8.49792965
+                    117.022466,8.49792965 C119.539933,8.49792965
+                    121.269621,10.3817487 121.269621,13.1903518
+                    C121.269621,15.9989548 119.557059,17.9512764
+                    117.090968,17.9512764 C115.498285,17.9512764
+                    114.642003,17.0607437 114.350868,16.5641005
+                    L114.230988,16.5641005 L114.230988,21.6675377
+                    L112.004657,21.6675377 Z M116.594325,15.9304523
+                    C118.032878,15.9304523 119.009039,14.8172864
+                    119.009039,13.224603 C119.009039,11.5805427
+                    118.032878,10.5187538 116.577199,10.5187538
+                    C115.104395,10.5187538 114.179611,11.7004221
+                    114.179611,13.224603 C114.179611,14.9029146
+                    115.207149,15.9304523 116.594325,15.9304523 Z
+                    M127.639722,17.9512764 C124.98525,17.9512764
+                    123.101431,15.9647035 123.101431,13.2759799
+                    C123.101431,10.4331256 125.002376,8.49792965
+                    127.639722,8.49792965 C130.533954,8.49792965
+                    132.109511,10.6386332 132.109511,13.1732261
+                    L132.109511,13.8753769 L125.25926,13.8753769
+                    C125.327763,15.2454271 126.269672,16.1702111
+                    127.708225,16.1702111 C128.804265,16.1702111
+                    129.643421,15.6564422 129.951682,14.9200402
+                    L132.023883,14.9200402 C131.578617,16.7524824
+                    129.968808,17.9512764 127.639722,17.9512764 Z
+                    M125.293511,12.2998191 L129.985934,12.2998191
+                    C129.88318,11.0838995 128.94127,10.278995
+                    127.639722,10.278995 C126.389552,10.278995
+                    125.430516,11.1695276 125.293511,12.2998191 Z
+                    M136.698547,17.7286432 C135.122989,17.7286432
+                    134.232457,16.7867337 134.232457,15.1940503
+                    L134.232457,4.88442211 L136.458788,4.88442211
+                    L136.458788,14.9885427 C136.458788,15.5023116
+                    136.715673,15.7763216 137.178065,15.7763216
+                    L137.537703,15.7763216 L137.537703,17.7286432
+                    L136.698547,17.7286432 Z M140.79094,7.52176884
+                    C139.986035,7.52176884 139.420889,7.02512563
+                    139.420889,6.22022111 C139.420889,5.44956784
+                    139.986035,4.93579899 140.79094,4.93579899
+                    C141.595844,4.93579899 142.16099,5.44956784
+                    142.16099,6.22022111 C142.16099,7.02512563
+                    141.595844,7.52176884 140.79094,7.52176884 Z
+                    M139.677774,17.7286432 L139.677774,8.72056281
+                    L141.904105,8.72056281 L141.904105,17.7286432
+                    L139.677774,17.7286432 Z M144.609322,17.7286432
+                    L144.609322,8.72056281 L146.7329,8.72056281
+                    L146.7329,9.81660302 L146.852779,9.81660302
+                    C147.212417,9.14870352 148.10295,8.49792965
+                    149.387372,8.49792965 C151.408196,8.49792965
+                    152.641242,9.91935678 152.641242,11.8374271
+                    L152.641242,17.7286432 L150.41491,17.7286432
+                    L150.41491,12.4196985 C150.41491,11.3236583
+                    149.712759,10.5872563 148.685221,10.5872563
+                    C147.606307,10.5872563 146.835654,11.4435377
+                    146.835654,12.5738291 L146.835654,17.7286432
+                    L144.609322,17.7286432 Z" id="OpenZeppelin" fill="#282846" fill-rule="nonzero"></path>
+                  <polygon id="|-copy-5" fill="#282846" fill-rule="nonzero" opacity="0.9" points="161.433483 18.0904523 160.27506
+                    18.0904523 160.27506 5.7127744 161.433483 5.7127744"></polygon>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/ostdotcom">GitHub</a>
+        <a class="navbar-item" href="https://ost.com">Website</a>
+      </div>
+    </div>
+  </nav>
+</header>
+		<div class="article-wrapper">
+	<article class="article doc">
+		<h1>OST Server-Side JavaScript SDK</h1>
+		<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://travis-ci.org/ostdotcom/ost-sdk-js"><img src="https://travis-ci.org/ostdotcom/ost-sdk-js.svg?branch=develop" alt="Build Status"></a>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://dev.ost.com/">OST</a> Platform SDK for JavaScript.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OST is a complete technology solution enabling mainstream businesses  to easily launch blockchain based economies without requiring blockchain development.</p>
+</div>
+<div class="paragraph">
+<p>Brand Tokens (BTs) are white-label cryptocurrency tokens with utility representations  running on highly-scalable Ethereum-based utility blockchains,  backed by value token (such as OST, USDC) staked on Ethereum mainnet.
+Within a business`s  token economy, BTs can only be transferred to whitelisted user addresses.
+This ensures that they stay within the token economy.</p>
+</div>
+<div class="paragraph">
+<p>The OST technology stack is designed to give businesses everything they need  to integrate, test, and deploy BTs.
+Within the OST suite of products, developers  can use OST Platform to create, test, and launch Brand Tokens.</p>
+</div>
+<div class="paragraph">
+<p>OST APIs and server-side SDKs make it simple and easy for developers to  integrate blockchain tokens into their apps.</p>
+</div>
+<div class="paragraph">
+<p>For documentation, visit <a href="https://dev.ost.com/" class="bare">https://dev.ost.com/</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting_started"><a class="anchor" href="#getting_started"></a>Getting Started</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="setup_brand_token"><a class="anchor" href="#setup_brand_token"></a>Setup Brand Token</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sign-up on <a href="https://platform.ost.com">OST Platform</a> and setup your Brand Token.</p>
+</li>
+<li>
+<p>Obtain your API Key and API Secret from <a href="https://platform.ost.com/mainnet/developer">developers page</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation"><a class="anchor" href="#installation"></a>Installation</h3>
+<div class="paragraph">
+<p>The preferred way to install the OST JavaScript SDK is to use the npm package manager for Node.js.
+Simply type the following into a terminal window:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> npm install @ostdotcom/ost-sdk-js</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Require the OST JavaScript SDK.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const OSTSDK = require('@ostdotcom/ost-sdk-js');</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Initialize the SDK object.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Declare connection parameters.
+
+  // Mandatory API parameters
+  let apiKey = '__abc'; // OBTAINED FROM DEVELOPER PAGE
+
+  let apiSecret = '_xyz';  // OBTAINED FROM DEVELOPER PAGE
+
+  /*
+    The valid API endpoints are:
+    1. Mainnet: "https://api.ost.com/mainnet/v2/"
+    2. Testnet: "https://api.ost.com/testnet/v2/"
+  */
+  let apiEndpoint = 'https://api.ost.com/testnet/v2/';
+
+  // Optional API parameters
+
+  // This is the timeout in seconds for which the socket connection will remain open.
+  let timeoutInSeconds = '60';
+  let options = { timeout: timeoutInSeconds };
+
+  // OST server side sdk object.
+  const ostObj = new OSTSDK({apiKey: apiKey, apiSecret: apiSecret, apiEndpoint: apiEndpoint,config: options});</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="users_module"><a class="anchor" href="#users_module"></a>Users Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Users service object to perform user specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const usersService = ostObj.services.users;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create User.
+This creates a unique identifier for each user.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  usersService.create({})
+     .then(function(res) { console.log(JSON.stringify(res)); })
+     .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Detail using the userId obtained in user create.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom user details needs to be fetched.
+  let userId = 'c2c__';
+
+  usersService.get({ user_id: userId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Users List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+  // No mandatory parameters.
+
+  // Optional API parameters
+
+  // Array of userIds for which data needs to be fetched.
+  let userIdsArray = ["c2c__", "d2c__"];
+
+  // Pagination identifier from the previous API call response. Not needed for page one.
+  let paginationIdentifier = 'e77y___';
+
+  // Limit.
+  let limit = 10;
+
+  usersService.getList({ ids: userIdsArray, limit: limit, pagination_identifier: paginationIdentifier })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="devices_module"><a class="anchor" href="#devices_module"></a>Devices Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Devices service object to perform device specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const devicesService = ostObj.services.devices;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a Device for User.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom device needs to be created.
+  let userId = 'c2c___';
+
+  // Device address of user's device.
+  let deviceAddress = '0x1Ea___';
+
+  // Device API signer address.
+  let apiSignerAddress = '0x5F8___';
+
+  devicesService.create({
+      user_id: userId,
+      address: deviceAddress,
+      api_signer_address: apiSignerAddress
+  }).then(function(res) { console.log(JSON.stringify(res)); })
+    .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Device Detail using userId and deviceAddress.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom device details needs to be fetched.
+  let userId = 'c2c___';
+
+  // Device address of user's device.
+  let deviceAddress = '0x1E___';
+
+  devicesService.get({
+      user_id: userId,
+      device_address: deviceAddress
+  }).then(function(res) { console.log(JSON.stringify(res)); })
+    .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Devices List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom device details needs to be fetched.
+  let userId = 'c2c6___';
+
+  // Optional API parameters
+
+  // Pagination identifier from the previous API call response. Not needed for page one.
+  let paginationIdentifier = 'eyJ___';
+
+  // Array of device addresses of end user.
+  let deviceAddressesArray = ['0x59___','0xab___'];
+
+  // Limit.
+  let limit = 10;
+
+  devicesService.getList({
+      user_id: userId,
+      addresses: deviceAddressesArray,
+      pagination_identifier: paginationIdentifier,
+      limit: limit
+  }).then(function(res) { console.log(JSON.stringify(res)); })
+    .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="device_managers_module"><a class="anchor" href="#device_managers_module"></a>Device Managers Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Device Manager service object to perform device manager specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const deviceManagersService = ostObj.services.device_managers;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Device Manager Detail using userId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom device manager details needs to be fetched.
+  let userId = 'c2c___';
+
+  deviceManagersService.get({ user_id: userId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sessions_module"><a class="anchor" href="#sessions_module"></a>Sessions Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Sessions service object to perform session specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const sessionsService = ostObj.services.sessions;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Session Detail using userId and session address.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom session details needs to be fetched.
+  let userId = 'c2c___';
+
+  // Session address of user for which details needs to be fetched.
+  let sessionAddress = '0x1Ea___';
+
+  sessionsService.get({
+      user_id: userId,
+      session_address: sessionAddress
+  }).then(function(res) { console.log(JSON.stringify(res)); })
+    .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Sessions List using userId.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom session details needs to be fetched.
+  let userId = 'c2c___';
+
+  // Optional API parameters
+
+  // Pagination identifier from the previous API call response. Not needed for page one.
+  let paginationIdentifier = 'eyJs___';
+
+  // Array of session addresses of end user.
+  let sessionAddressesArray = ["0x59___","0xab___"];
+
+  // Limit.
+  let limit = 10;
+
+  sessionsService.getList({
+      user_id: userId,
+      addresses: sessionAddressesArray,
+      pagination_identifier: paginationIdentifier,
+      limit: limit
+  }).then(function(res) { console.log(JSON.stringify(res)); })
+    .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="executing_transactions"><a class="anchor" href="#executing_transactions"></a>Executing Transactions</h3>
+<div class="paragraph">
+<p>For executing transactions, you need to understand the 4 modules described below.</p>
+</div>
+<div class="sect3">
+<h4 id="rules_module"><a class="anchor" href="#rules_module"></a>Rules Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Rules service object to perform rules specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const rulesService = ostObj.services.rules;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>List Rules.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  rulesService.getList({})
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="price_points_module"><a class="anchor" href="#price_points_module"></a>Price Points Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Price Points service object to perform price points specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const pricePoints = ostObj.services.price_points;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Price Points Detail.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // ChainId of your brand token economy.
+  let chainId = 2000;
+
+  pricePoints.get({ chain_id: chainId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="transactions_module"><a class="anchor" href="#transactions_module"></a>Transactions Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Transactions service object to perform transaction specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const transactionsService = ostObj.services.transactions;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>DIRECT-TRANSFERS execute transaction should be used to transfer BTs to your end-users.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // Token holder address of receiver.
+  let transferToAddress = '0xa3___';
+
+  // Amount of tokens to be transferred.
+  let transferAmount = '1';
+
+  // Parameters required for rule execution.
+  let rawCalldata = JSON.stringify({
+      method: 'directTransfers',  // Rule name which needs to be passed as-is.
+      parameters: [[transferToAddress],[transferAmount]]
+  });
+
+  // Company userId.
+  let companyUserId = 'ee89___';
+
+  // Address of DirectTransfer rule. Use list rules API of Rules module to get the address of rules.
+  // In the rules array which you will get in response, use the address having name "Direct Transfer".
+  let directTransferRuleAddress = '0xe379___';
+
+  // Optional API parameters
+
+  // Name of the transaction. Eg. 'like', 'download', etc.
+  // NOTE: Max length 25 characters (Allowed characters: [A-Za-z0-9_/s])
+  let transactionName = 'like';
+
+  // Transaction type. Possible values: 'company_to_user', 'user_to_user', 'user_to_company'.
+  let transactionType = 'company_to_user';
+
+  // Some extra information about transaction.
+  // NOTE: Max length 125 characters (Allowed characters: [A-Za-z0-9_/s])
+  let details = 'lorem_ipsum';
+
+  // Additional transaction information. There is no dependency between any of the metaProperty keys.
+  // However, if a key is present, its value cannot be null or undefined.
+  let metaProperty = {
+      "name": transactionName,
+      "type": transactionType,
+      "details" : details
+  };
+
+  transactionsService.execute({
+      user_id: companyUserId,
+      to: directTransferRuleAddress,
+      raw_calldata: rawCalldata,
+      meta_property: metaProperty
+  })
+  .then(function(res) { console.log(JSON.stringify(res)); })
+  .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>PAY Execute Transaction should be used when transactions of BTs equivalent to some fiat amount need to be executed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // Token holder address of receiver.
+  let transferToAddress = '0xa31__';
+
+  // Company token holder address.
+  let companyTokenHolderAddress = '0xa963___';
+
+  // Pay currency code. Supported currency codes are 'USD', 'EUR' and 'GBP'.
+  let payCurrencyCode = 'USD';
+
+  // In pay transaction, the transfer amounts are in pay currency (fiat currency like USD) which then are converted
+  // into tokens. Use get price point detail API of Price Points module to get this value.
+  let pricePoint = 0.020606673;
+
+  // Price point needs to be passed in atto. Multiply the price point with 10^18. Also, this value should be a string.
+  let intendedPricePointInAtto = String(pricePoint * 10**18);
+
+  // Amount of Fiat to be transferred.
+  let transferAmountInFiat = 0.1;
+
+  // Transfer amount in wei needs to be passed in atto. Multiply the fiat transfer amount with 10^18. Also, this value should be a string.
+  let fiatTransferAmountInAtto = String(transferAmountInFiat * 10**18);
+
+  // Parameters required for rule execution.
+  let rawCalldata = JSON.stringify({
+      method: 'pay',  // Rule name which needs to be passed as-is.
+      parameters: [companyTokenHolderAddress, [transferToAddress],[fiatTransferAmountInAtto], payCurrencyCode, intendedPricePointInAtto]
+  });
+
+  // Company userId.
+  let companyUserId = 'ee8___';
+
+  // Address of Pay rule. Use list rules API to get the address of rules.
+  // In the rules array which you will get in response, use the address having name "Pricer".
+  let payRuleAddress = '0xe37___';
+
+  // Optional API parameters
+
+  // Name of the transaction. Eg. 'like', 'download', etc.
+  // NOTE: Max length 25 characters (Allowed characters: [A-Za-z0-9_/s])
+  let transactionName = 'like';
+
+  // Transaction type. Possible values: 'company_to_user', 'user_to_user', 'user_to_company'.
+  let transactionType = 'company_to_user';
+
+  // Some extra information about transaction.
+  // NOTE: Max length 125 characters (Allowed characters: [A-Za-z0-9_/s])
+  let details = 'lorem_ipsum';
+
+  // Additional transaction information. There is no dependency between any of the metaProperty keys.
+  // However, if a key is present, its value cannot be null or undefined.
+  let metaProperty = {
+      "name": transactionName,
+      "type": transactionType,
+      "details" : details
+  };
+
+  transactionsService.execute({
+      user_id: companyUserId,
+      to: payRuleAddress,
+      raw_calldata: rawCalldata,
+      meta_property: metaProperty
+    }).then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Transaction Detail using userId and transactionId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of end-user.
+  let userId = 'ee8___';
+
+  // Unique identifier of the transaction to be retrieved.
+  let transactionId = 'f1d___';
+
+  transactionsService.get({ user_id: userId, transaction_id: transactionId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Transactions using userId.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of end-user.
+  let userId = 'ee89___';
+
+  // Optional API parameters
+
+  // Array of status values.
+  let statusesArray = ['CREATED', 'SUBMITTED', 'SUCCESS', 'FAILED'];
+
+  // To get transactions between a specific time interval, add start timestamp and end timestamp.
+  let startTime = 1563260786;
+  let endTime = 1563280786;
+
+  // Name of the transaction. Eg. 'like', 'download', etc.
+  // NOTE: Max length 25 characters (Allowed characters: [A-Za-z0-9_/s])
+  let transactionName = 'like';
+
+  // Transaction type. Possible values: 'company_to_user', 'user_to_user', 'user_to_company'.
+  let transactionType = 'company_to_user';
+
+  // NOTE: Max length 125 characters (Allowed characters: [A-Za-z0-9_/s])
+  let details = 'lorem_ipsum';
+
+  // Additional transaction information. There is no dependency between any of the metaProperty keys.
+  // However, if a key is present, its value cannot be null or undefined.
+  let metaPropertiesArray =  JSON.stringify([
+      {
+          "name":  transactionName,
+          "type":  transactionType,
+          "details" : details
+      }
+  ]);
+
+  // Limit.
+  let limit = 10;
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  let paginationIdentifier = 'eyJsY___';
+
+  transactionsService.getList({
+      user_id: userId,
+      start_time: startTime,
+      end_time: endTime,
+      statuses: statusesArray,
+      meta_properties: metaPropertiesArray,
+      limit: limit,
+      pagination_identifier: paginationIdentifier
+   }).then(function(res) { console.log(JSON.stringify(res)); })
+     .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="balances_module"><a class="anchor" href="#balances_module"></a>Balances Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Balances service object to perform balances specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const balancesService = ostObj.services.balance;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Balance using userId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId for whom balance needs to be fetched.
+  let userId = 'c2c6___';
+
+  balancesService.get({ user_id: userId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="recovery_owners_module"><a class="anchor" href="#recovery_owners_module"></a>Recovery Owners Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Recovery Owners service object to perform recovery owners specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const recoveryOwnersService = ostObj.services.recovery_owners;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Recovery Owner Detail using userId and recovery owner address.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId for whom recovery details needs to be fetched.
+  let userId = 'c2c___';
+
+  // Recovery address of user.
+  let recoveryOwnerAddress = '0xe37___';
+
+  recoveryOwnersService.get({
+      user_id: userId,
+      recovery_owner_address: recoveryOwnerAddress
+  }).then(function(res) { console.log(JSON.stringify(res)); })
+    .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tokens_module"><a class="anchor" href="#tokens_module"></a>Tokens Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Tokens service object to perform tokens specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const tokensService = ostObj.services.tokens;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Token Detail.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  tokensService.get({})
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="chains_module"><a class="anchor" href="#chains_module"></a>Chains Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Chains service object to perform chains specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const chainsService = ostObj.services.chains;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Chain Detail using chainId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // ChainId for which details needs to be fetched. Only origin chainId and OST-specific auxiliary chainIds are allowed.
+  let chainId = '2000';
+
+  chainsService.get({ chain_id: chainId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="base_tokens_module"><a class="anchor" href="#base_tokens_module"></a>Base Tokens Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Base Tokens service object to perform base tokens specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const baseTokensService = ostObj.services.base_tokens;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Base Tokens Detail.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  baseTokensService.get({})
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="webhooks_module"><a class="anchor" href="#webhooks_module"></a>Webhooks Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Webhooks service object to perform webhooks specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const webhooksService = ostObj.services.webhooks;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create Webhook using the topics and the subscription url.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // Array of topics.
+  let topicParams = ['transactions/initiate','transactions/success'];
+
+  // URL where you want to receive the event notifications.
+  let url = 'https://www.testingWebhooks.com';
+
+  // Optional API parameters
+
+  // Status of a webhook. Possible values are 'active' and 'inactive'.
+  let status = 'active';
+
+  webhooksService.create({ topics: topicParams , url: url, status: status})
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update existing Webhook using a webhookId and an array of topics.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // Array of topics.
+  let topicParams = ['transactions/initiate','transactions/success'];
+
+  // Unique identifier for a webhook.
+  let webhookId = 'a743___';
+
+  // Optional API parameters
+
+  // Status of a webhook. Possible values are 'active' and 'inactive'.
+  let status = 'active';
+
+  webhooksService.update({ webhook_id: webhookId, topics: topicParams, status: status })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Webhook using webhookId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  let webhookId = 'a743___';
+  // Unique identifier for a webhook.
+
+  webhooksService.get({ webhook_id: webhookId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Webhook List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+  // No mandatory parameters.
+
+  // Optional API parameters
+
+  // Limit.
+  let limit = 10;
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  let paginationIdentifier = 'eyJwY___';
+
+  webhooksService.getList({ limit: limit, pagination_identifier: paginationIdentifier })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete Webhook using webhookId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // Unique identifier for a webhook.
+  let webhookId = 'a743___';
+
+  webhooksService.deleteWebhook({ webhook_id: webhookId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify webhook request signature.
+This can be used to validate if the webhook received at your end from OST platform is correctly signed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Webhook data obtained.
+  webhookEventData = JSON.stringify({"id":"54e3cd1c-afd7-4dcf-9c78-137c56a53582","topic":"transactions/success","created_at":1560838772,"webhook_id":"0823a4ea-5d87-44cf-8ca8-1e5a31bf8e46","version":"v2","data":{"result_type":"transaction","transaction":{"id":"ddebe817-b94f-4b51-9227-f543fae4715a","transaction_hash":"0x7ee737db22b58dc4da3f4ea4830ca709b388d84f31e77106cb79ee09fc6448f9","from":"0x69a581096dbddf6d1e0fff7ebc1254bb7a2647c6","to":"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47","nonce":3,"value":"0","gas_price":"1000000000","gas_used":120558,"transaction_fee":"120558000000000","block_confirmation":24,"status":"SUCCESS","updated_timestamp":1560838699,"block_timestamp":1560838698,"block_number":1554246,"rule_name":"Pricer","meta_property":{},"transfers":[{"from":"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47","from_user_id":"acfdea7d-278e-4ffc-aacb-4a21398a280c","to":"0x0a754aaab96d634337aac6556312de396a0ca46a","to_user_id":"7bc8e0bd-6761-4604-8f8e-e33f86f81309","amount":"112325386","kind":"transfer"}]}}});
+
+  // Get webhoook version from webhook events data.
+  version = "v2";
+
+  // Get ost-timestamp from the response received in event.
+  requestTimestamp = '1559902637';
+
+  // Get signature from the response received in event.
+  signature = '2c56c143550c603a6ff47054803f03ee4755c9c707986ae27f7ca1dd1c92a824';
+
+  stringifiedData = webhookEventData;
+  webhookSecret = 'mySecret';
+  let resp = webhooksService.verifySignature(version, stringifiedData,requestTimestamp, signature, webhookSecret);
+  console.log(resp);</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redemption_modules"><a class="anchor" href="#redemption_modules"></a>Redemption Modules</h3>
+<div class="paragraph">
+<p>Two modules of redemption, "Redeemable SKUs" and "User Redemptions", are described below.</p>
+</div>
+<div class="sect3">
+<h4 id="redeemable_skus_module"><a class="anchor" href="#redeemable_skus_module"></a>Redeemable SKUs Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Redeemable SKUs service object to perform redeemable skus specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const redeemableSkusService = ostObj.services.redeemable_skus;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Redeemable SKU detail using the redeemable sku id.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // Fetch details of following redeemable sku.
+  let redeemableSkuId = 'c2c__';
+
+  redeemableSkusService.get({ redeemable_sku_id: redeemableSkuId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Redeemable SKUs List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+  // NOTE: No mandatory parameters.
+
+  // Optional API parameters
+
+  // Limit.
+  let limit = 10;
+
+  // Array of redeemable SKU ids.
+  let redeemableSkuIds = ['1001', '1002'];
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  let paginationIdentifier = 'e77y___';
+
+  redeemableSkusService.getList({limit: limit, pagination_identifier: paginationIdentifier, redeemable_sku_ids: redeemableSkuIds })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="user_redemptions_module"><a class="anchor" href="#user_redemptions_module"></a>User Redemptions Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Redemptions service object to perform user redemption specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  const redemptionsService = ostObj.services.redemptions;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User redemption details using the userId and redemptionId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+
+  // UserId of user for whom redemption details needs to be fetched.
+  let userId = 'c2c__';
+
+  // Unique identifier of the redemption of user.
+  let redemptionId = 'c2c__';
+
+  redemptionsService.get({ user_id: userId, redemption_id: redemptionId })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Redemptions List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">  // Mandatory API parameters
+  let userId = 'c2c__';
+
+  // Optional API parameters
+
+  // Limit.
+  let limit = 10;
+
+  // Array of user redemption uuids.
+  let redemptionIds = ['a743___', 'a743___'];
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  let paginationIdentifier = 'e77y___';
+
+  redemptionsService.getList({ user_id: userId, limit: limit, pagination_identifier: paginationIdentifier, redemption_ids: redemptionIds })
+      .then(function(res) { console.log(JSON.stringify(res)); })
+      .catch(function(err) { console.log(JSON.stringify(err)); });</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+                <div class="article-navigation">
+                </div>
+	</article>
+	<aside class="toc toc-sidebar">
+	<nav class="toc-menu"></nav>
+</aside>
+</div>
+		<footer class="footer">
+	<div class="rights">
+		<span>© Ost.com 2020 </span>
+		<a class="terms" href="https://ost.com/privacy">Privacy</a>
+	</div>
+</footer>
+<script src="../../_/scripts/site.js"></script>
+<script src="../../_/scripts/highlight.js"></script>
+	</main>
+</div>
+  </body>
+</html>

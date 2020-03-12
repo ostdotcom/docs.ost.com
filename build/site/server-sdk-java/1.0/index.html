@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="/server-sdk-java/1.0">
     <link rel="stylesheet" href="../../_/stylesheets/index.css">
-    <title>Ost Docs</title>
+    <title>OST Server-Side Java SDK - Ost Docs</title>
     <link rel="icon" type="image/png" sizes="16x16" href="../../_/images/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="../../_/images/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="96x96" href="../../_/images/favicon-96x96.png"/>
@@ -44,6 +44,12 @@
   
   <a class="link nav-link nav-link-active" href="/server-sdk-java/1.0/index.html">
     Overview
+  </a>
+</li>
+<li class="nav-li" >
+  
+  <a class="link nav-link" href="/server-sdk-java/1.0/CHANGELOG.html">
+    Change Log
   </a>
 </li>
     </ol>
@@ -312,14 +318,1197 @@
 </header>
 		<div class="article-wrapper">
 	<article class="article doc">
-		<h1></h1>
-		<div class="paragraph">
-<p>This is the index.adoc page for OST-SDK-JAVA</p>
+		<h1>OST Server-Side Java SDK</h1>
+		<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://travis-ci.org/ostdotcom/ost-sdk-java"><img src="https://travis-ci.org/ostdotcom/ost-sdk-java.svg?branch=develop" alt="Build Status"></a>
+</div>
 </div>
 <div class="paragraph">
-<p>This is a test :)</p>
+<p><a href="https://dev.ost.com/">OST</a> Platform SDK for Java.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OST is a complete technology solution enabling mainstream businesses  to easily launch blockchain based economies without requiring blockchain development.</p>
+</div>
+<div class="paragraph">
+<p>Brand Tokens (BTs) are white-label cryptocurrency tokens with utility representations  running on highly-scalable Ethereum-based utility blockchains,  backed by value token (such as OST, USDC) staked on Ethereum mainnet.
+Within a business`s  token economy, BTs can only be transferred to whitelisted user addresses.
+This ensures that they stay within the token economy.</p>
+</div>
+<div class="paragraph">
+<p>The OST technology stack is designed to give businesses everything they need  to integrate, test, and deploy BTs.
+Within the OST suite of products, developers  can use OST Platform to create, test, and launch Brand Tokens.</p>
+</div>
+<div class="paragraph">
+<p>OST APIs and server-side SDKs make it simple and easy for developers to  integrate blockchain tokens into their apps.</p>
+</div>
+<div class="paragraph">
+<p>For documentation, visit <a href="https://dev.ost.com/" class="bare">https://dev.ost.com/</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting_started"><a class="anchor" href="#getting_started"></a>Getting Started</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="setup_brand_token"><a class="anchor" href="#setup_brand_token"></a>Setup Brand Token</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sign-up on <a href="https://platform.ost.com">OST Platform</a> and setup your Brand Token.</p>
+</li>
+<li>
+<p>Obtain your API Key and API Secret from <a href="https://platform.ost.com/mainnet/developer">developers page</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation"><a class="anchor" href="#installation"></a>Installation</h3>
+<div class="sect3">
+<h4 id="maven_users"><a class="anchor" href="#maven_users"></a>Maven users</h4>
+<div class="paragraph">
+<p>Add this dependency to your project&#8217;s POM</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;com.ost&lt;/groupId&gt;
+  &lt;artifactId&gt;ost-sdk-java&lt;/artifactId&gt;
+  &lt;version&gt;2.2.1&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="building_from_source_using_maven"><a class="anchor" href="#building_from_source_using_maven"></a>Building from source using Maven</h4>
+<div class="paragraph">
+<p>Clone the repository:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/ostdotcom/ost-sdk-java.git
+cd ost-sdk-java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Package using MVN (without dependencies):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean package -DskipTests</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Package using MVN (with dependencies):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn clean compile assembly:single -DskipTests</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The jar file can be found in the target folder.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize the SDK object:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Declare connection parameters.
+
+  // Mandatory API parameters
+
+  String apiKey = "__abc"; // OBTAINED FROM DEVELOPER PAGE
+  String apiSecret = "_xyz";  // OBTAINED FROM DEVELOPER PAGE
+
+  /*
+    The valid API endpoints are:
+    1. Mainnet: "https://api.ost.com/mainnet/v2/"
+    2. Testnet: "https://api.ost.com/testnet/v2/"
+  */
+
+  String apiEndPoint = "https://api.ost.com/testnet/v2/";
+
+  HashMap &lt;String,Object&gt; sdkConfig = new HashMap&lt;String,Object&gt;();
+  sdkConfig.put("apiEndpoint", apiEndPoint);
+  sdkConfig.put("apiKey", apiKey);
+  sdkConfig.put("apiSecret", apiSecret);
+
+  // Optional API parameters
+
+  // This is the timeout in seconds for which the socket connection will remain open.
+  long timeoutInSeconds = 60; // The value of timeout will always be of type long.
+
+  HashMap &lt;String,Object&gt; nestedparam = new HashMap&lt;String,Object&gt;();
+
+  nestedparam.put("timeout", timeoutInSeconds);
+  sdkConfig.put("config", nestedparam);
+
+  // OST server side sdk object.
+  OSTSDK ostObj = new OSTSDK(sdkConfig);
+  com.ost.services.Manifest services = (com.ost.services.Manifest) ostObj.services;</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="users_module"><a class="anchor" href="#users_module"></a>Users Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Users service object to perform user specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Users usersService = services.users;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create User.
+This creates a unique identifier for each user.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  JsonObject response = usersService.create( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Detail using the userId obtained in user create.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom user details needs to be fetched.
+  String userId = "c2c__";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  JsonObject response = usersService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Users List.
+Pagination is supported in this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+  // No mandatory parameters.
+
+  // Optional API parameters
+
+  // Array of userIds for which data needs to be fetched.
+  ArrayList&lt;Object&gt; userIdsArray = new ArrayList&lt;Object&gt;();
+  userIdsArray.add("c2c__");
+  userIdsArray.add("d2c__");
+
+  // Pagination identifier from the previous API call response. Not needed for page one.
+  String paginationIdentifier = "e77y___";
+
+  // Limit.
+  long limit = 10;
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("ids", userIdsArray);
+  params.put("limit", limit);
+  params.put("pagination_identifier", paginationIdentifier);
+
+  JsonObject response = usersService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="devices_module"><a class="anchor" href="#devices_module"></a>Devices Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Devices service object to perform device specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Devices devicesService = services.devices;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a Device for User.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom device needs to be created.
+  String userId = "c2c___";
+
+  // Device address of user's device.
+  String deviceAddress = "0x1Ea___";
+
+  // Device API signer address.
+  String apiSignerAddress = "0x5F8___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("address", deviceAddress);
+  params.put("api_signer_address", apiSignerAddress);
+
+  JsonObject response = devicesService.create( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Device Detail using userId and deviceAddress.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom device details needs to be fetched.
+  String userId = "c2c___";
+
+  // Device address of user's device.
+  String deviceAddress = "0x1E___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("device_address", deviceAddress);
+
+  JsonObject response = devicesService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Devices List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom device details needs to be fetched.
+  String userId = "c2c6___";
+
+  // Optional API parameters
+
+  // Pagination identifier from the previous API call response. Not needed for page one.
+  String paginationIdentifier = "eyJ___";
+
+  // Array of device addresses of end user.
+  ArrayList&lt;Object&gt; deviceAddressesArray = new ArrayList&lt;Object&gt;();
+  deviceAddressesArray.add("0x59___");
+  deviceAddressesArray.add("0xab___");
+
+  // Limit.
+  long limit = 10;
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("addresses", deviceAddressesArray);
+  params.put("pagination_identifier", paginationIdentifier);
+  params.put("limit", limit);
+
+  JsonObject response = devicesService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="device_managers_module"><a class="anchor" href="#device_managers_module"></a>Device Managers Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Device Manager service object to perform device manager specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.DeviceManagers deviceManagersService = services.deviceManagers;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Device Manager Detail using userId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom device manager details needs to be fetched.
+  String userId = "c2c___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+
+  JsonObject response = deviceManagersService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sessions_module"><a class="anchor" href="#sessions_module"></a>Sessions Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Sessions service object to perform session specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Sessions sessionsService = services.sessions;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Session Detail using userId and session address.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom session details needs to be fetched.
+  String userId = "c2c___";
+
+  // Session address of user for which details needs to be fetched.
+  String sessionAddress = "0x1Ea___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("session_address", sessionAddress);
+
+  JsonObject response = sessionsService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Sessions List using userId.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom session details needs to be fetched.
+  String userId = "c2c___";
+
+  // Optional API parameters:
+
+  // Pagination identifier from the previous API call response. Not needed for page one.
+  String paginationIdentifier = "eyJs___";
+
+  // Array of session addresses of end user.
+  ArrayList&lt;Object&gt; sessionAddressesArray = new ArrayList&lt;Object&gt;();
+  sessionAddressesArray.add("0x59___");
+  sessionAddressesArray.add("0xab___");
+
+  // Limit.
+  long limit = 10;
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("pagination_identifier", paginationIdentifier);
+  params.put("addresses", sessionAddressesArray);
+  params.put("limit", limit);
+
+  JsonObject response = sessionsService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="executing_transactions"><a class="anchor" href="#executing_transactions"></a>Executing Transactions</h3>
+<div class="paragraph">
+<p>For executing transactions, you need to understand the 4 modules described below.</p>
+</div>
+<div class="sect3">
+<h4 id="rules_module"><a class="anchor" href="#rules_module"></a>Rules Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Rules service object to perform rules specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Rules rulesService = services.rules;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>List Rules.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  JsonObject response = rulesService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="price_points_module"><a class="anchor" href="#price_points_module"></a>Price Points Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Price Points service object to perform price points specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.PricePoints pricePointsService = services.pricePoints;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Price Points Detail.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // ChainId of your brand token economy.
+  long chainId = 2000;
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("chain_id", chainId);
+
+  JsonObject response = pricePointsService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="transactions_module"><a class="anchor" href="#transactions_module"></a>Transactions Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Transactions service object to perform transaction specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Transactions transactionsService = services.transactions;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>DIRECT-TRANSFERS execute transaction should be used to transfer BTs to your end-users.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Token holder address of receiver.
+  String transferToAddress = "0xa3___";
+
+  // Amount of tokens to be transferred.
+  String transferAmount = "1";
+
+  // Company userId.
+  String companyUserId = "ee89___";
+
+  // Address of DirectTransfer rule. Use list rules API of Rules module to get the address of rules.
+  // In the rules array which you will get in response, use the address having name "Direct Transfer".
+  String directTransferRuleAddress = "0xe379___";
+
+  // Parameters required for rule execution.
+  ArrayList&lt;Object&gt; arrayListForReceiverTokenHolderAddress = new ArrayList&lt;Object&gt;();
+  arrayListForReceiverTokenHolderAddress.add(transferToAddress);
+
+  ArrayList&lt;Object&gt; arrayListAmount = new ArrayList&lt;Object&gt;();
+  arrayListAmount.add(transferAmount);
+
+  ArrayList&lt;ArrayList&gt; nestedArraylist = new ArrayList&lt;ArrayList&gt;();
+  nestedArraylist.add(arrayListForReceiverTokenHolderAddress);
+  nestedArraylist.add(arrayListAmount);
+
+  // Parameters required for rule execution.
+  HashMap &lt;String,Object&gt; nestedparams = new HashMap&lt;String,Object&gt;();
+  nestedparams.put("method", "directTransfers");  // Rule name which needs to be passed as-is.
+  nestedparams.put("parameters", nestedArraylist);
+
+  Gson gsonObj = new Gson();
+  String jsonStr = gsonObj.toJson(nestedparams);
+
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+
+  params.put("user_id", companyUserId);
+  params.put("to", directTransferRuleAddress);
+  params.put("raw_calldata", jsonStr);
+
+  // Optional API parameters
+
+  // Name of the transaction. Eg. "like", "download", etc.
+  // NOTE: Max length 25 characters (Allowed characters: [A-Za-z0-9_/s])
+  String transactionName = "like";
+
+  // Transaction type. Possible values: "company_to_user", "user_to_user", "user_to_company".
+  String transactionType = "company_to_user";
+
+  // Some extra information about transaction.
+  // NOTE: Max length 125 characters (Allowed characters: [A-Za-z0-9_/s])
+  String details = "lorem_ipsum";
+
+  // Additional transaction information. There is no dependency between any of the metaProperty keys.
+  // However, if a key is present, its value cannot be null or undefined.
+  HashMap &lt;String,Object&gt; metaProperty = new HashMap&lt;String,Object&gt;();
+  metaProperty.put("name", transactionName);
+  metaProperty.put("type", transactionType);
+  metaProperty.put("details", details);
+
+  params.put("meta_property", metaProperty);
+
+  JsonObject response = transactionsService.execute( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>PAY Execute Transaction should be used when transactions of BTs equivalent to some fiat amount need to be executed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Token holder address of receiver.
+  String transferToAddress = "0xa31__";
+
+  // Company token holder address.
+  String companyTokenHolderAddress = "0xa963___";
+
+
+  // Pay currency code. Supported currency codes are "USD", "EUR" and "GBP".
+  String payCurrencyCode = "USD";
+
+  // In pay transaction, the transfer amounts are in pay currency (fiat currency like USD) which then are converted
+  // into tokens. Use get price point detail API of Price Points module to get this value.
+  double pricePoint = 0.020606673;
+
+  // Price point needs to be passed in atto. Multiply the price point with 10^18. Also, this value should be a string.
+  BigDecimal intendedPricePointBD = new BigDecimal(pricePoint).multiply((new BigDecimal(10)).pow(18));
+  String intendedPricePointInAtto = intendedPricePointBD.toString().split("\\.")[0];
+
+  // Amount of Fiat to be transferred.
+  double transferAmountInFiat = 0.1;
+
+  // Transfer amount in wei needs to be passed in atto. Multiply the fiat transfer amount with 10^18. Also, this value should be a string.
+  BigDecimal fiatTransferAmountInWeiBD = new BigDecimal(transferAmountInFiat).multiply((new BigDecimal(10)).pow(18));
+  String fiatTransferAmountInAtto = fiatTransferAmountInWeiBD.toString().split("\\.")[0];
+
+  // Parameters required for rule execution.
+  ArrayList&lt;Object&gt; arrayListForReceiverTokenHolderAddress = new ArrayList&lt;Object&gt;();
+  arrayListForReceiverTokenHolderAddress.add(transferToAddress);
+
+  ArrayList&lt;Object&gt; arrayListAmount = new ArrayList&lt;Object&gt;();
+  arrayListAmount.add(fiatTransferAmountInAtto);
+  Gson gsonObj = new Gson();
+
+  ArrayList&lt;Object&gt; nestedArraylist = new ArrayList&lt;Object&gt;();
+  nestedArraylist.add(companyTokenHolderAddress);
+  nestedArraylist.add(arrayListForReceiverTokenHolderAddress);
+  nestedArraylist.add(arrayListAmount);
+  nestedArraylist.add(payCurrencyCode);
+  nestedArraylist.add(intendedPricePointInAtto);
+
+  HashMap &lt;String,Object&gt; nestedparams = new HashMap&lt;String,Object&gt;();
+  nestedparams.put("method", "pay");  // Rule name which needs to be passed as-is.
+  nestedparams.put("parameters", nestedArraylist);
+
+  String jsonRawCallData = gsonObj.toJson(nestedparams);
+
+  // Company userId.
+  String companyUserId = "ee8___";
+
+  // Address of Pay rule. Use list rules API to get the address of rules.
+  // In the rules array which you will get in response, use the address having name "Pricer".
+  String payRuleAddress = "0xe37___";
+
+  /* Optional API parameters: */
+
+  // Name of the transaction. Eg. "like", "download", etc.
+  // NOTE: Max length 25 characters (Allowed characters: [A-Za-z0-9_/s])
+  String transactionName = "like";
+
+  // Transaction type. Possible values: "company_to_user", "user_to_user", "user_to_company".
+  String transactionType = "company_to_user";
+
+  // Some extra information about transaction.
+  // NOTE: Max length 125 characters (Allowed characters: [A-Za-z0-9_/s])
+  String details = "lorem_ipsum";
+
+  HashMap &lt;String,Object&gt; metaProperty = new HashMap&lt;String,Object&gt;();
+  metaProperty.put("name", transactionName);
+  metaProperty.put("type", transactionType);
+  metaProperty.put("details", details);
+
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", companyUserId);
+  params.put("to", payRuleAddress);
+
+  params.put("meta_property", metaProperty);
+  params.put("raw_calldata", jsonRawCallData);
+
+  JsonObject response = transactionsService.execute( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Transaction Detail using userId and transactionId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of end-user.
+  String userId = "ee8___";
+
+  // Unique identifier of the transaction to be retrieved.
+  String transactionId = "f1d___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("transaction_id", transactionId);
+
+  JsonObject response = transactionsService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Transactions using userId.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of end-user.
+  String userId = "ee89___";
+
+  // Optional API parameters
+
+  // Array of status values.
+  ArrayList&lt;Object&gt; statusesArray = new ArrayList&lt;Object&gt;();
+  statusesArray.add("CREATED");
+  statusesArray.add("SUBMITTED");
+  statusesArray.add("SUCCESS");
+  statusesArray.add("FAILED");
+
+  // To get transactions between a specific time interval, add start timestamp and end timestamp.
+  long startTime = 1563260786;
+  long endTime = 1563280786;
+
+  // Name of the transaction. Eg. "like", "download", etc.
+  // NOTE: Max length 25 characters (Allowed characters: [A-Za-z0-9_/s])
+  String transactionName = "like";
+
+  // Transaction type. Possible values: "company_to_user", "user_to_user", "user_to_company".
+  String transactionType = "company_to_user";
+
+  // NOTE: Max length 125 characters (Allowed characters: [A-Za-z0-9_/s])
+  String details = "lorem_ipsum";
+
+  // Additional transaction information. There is no dependency between any of the metaProperty keys.
+  // However, if a key is present, its value cannot be null or undefined.
+  ArrayList&lt;HashMap&lt;String, Object&gt;&gt; metaPropertyArray = new ArrayList&lt;HashMap&lt;String, Object&gt;&gt;();
+  HashMap &lt;String,Object&gt; metaPropertyArrayParams = new HashMap&lt;String,Object&gt;();
+  metaPropertyArrayParams.put("name", transactionName);
+  metaPropertyArrayParams.put("type", transactionType);
+  metaPropertyArrayParams.put("details", details);
+  metaPropertyArray.add(metaPropertyArrayParams);
+
+  Gson gsonObj = new Gson();
+  String metaPropertyArrayJsonStr = gsonObj.toJson(metaPropertyArray);
+
+  // Limit.
+  long limit = 10;
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  String paginationIdentifier = "eyJsY___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("start_time", startTime);
+  params.put("end_time", endTime);
+  params.put("statuses", statusesArray);
+  params.put("meta_properties", metaPropertyArrayJsonStr);
+  params.put("limit", limit);
+  params.put("pagination_identifier", paginationIdentifier);
+
+  JsonObject response = transactionsService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="balances_module"><a class="anchor" href="#balances_module"></a>Balances Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Balances service object to perform balances specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Balance balancesService = services.balance;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Balance using userId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId for whom balance needs to be fetched.
+  String userId = "c2c6___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+
+  JsonObject response = balancesService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="recovery_owners_module"><a class="anchor" href="#recovery_owners_module"></a>Recovery Owners Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Recovery Owners service object to perform recovery owners specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.RecoveryOwners recoveryOwnersService = services.recoveryOwners;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Recovery Owner Detail using userId and recovery owner address.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId for whom recovery details needs to be fetched.
+  String userId = "c2c___";
+
+  // Recovery address of user.
+  String recoveryOwnerAddress = "0xe37___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("recovery_owner_address", recoveryOwnerAddress);
+
+  JsonObject response = recoveryOwnersService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tokens_module"><a class="anchor" href="#tokens_module"></a>Tokens Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Tokens service object to perform tokens specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Tokens tokensService = services.tokens;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Token Detail.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  JsonObject response = tokensService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="chains_module"><a class="anchor" href="#chains_module"></a>Chains Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Chains service object to perform chains specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Chains chainsService = services.chains;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Chain Detail using chainId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // ChainId for which details needs to be fetched. Only origin chainId and OST-specific auxiliary chainIds are allowed.
+  String chainId = "2000";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("chain_id", chainId);
+
+  JsonObject response = chainsService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="base_tokens_module"><a class="anchor" href="#base_tokens_module"></a>Base Tokens Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Base Tokens service object to perform base tokens specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.BaseTokens baseTokensService = services.baseTokens;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Base Tokens Detail.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  JsonObject response = baseTokensService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="webhooks_module"><a class="anchor" href="#webhooks_module"></a>Webhooks Module</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Webhooks service object to perform webhooks specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Webhooks webhooksService = services.webhooks;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create Webhook using the topics and the subscription url.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Array of topics.
+  ArrayList&lt;String&gt; topicParams = new ArrayList&lt;String&gt;();
+  topicParams.add("transactions/initiate");
+  topicParams.add("transactions/success");
+
+  // URL where you want to receive the event notifications.
+  String url = "https://www.testingWebhooks.com";
+
+  // Optional API parameters
+
+  // Status of a webhook. Possible values are "active" and "inactive".
+  String status = "active";
+
+  HashMap&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("url", url);
+  params.put("status", status);
+  params.put("topics", topicParams);
+
+  JsonObject response = webhooksService.create( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Update existing Webhook using a webhookId and an array of topics.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Array of topics.
+  ArrayList&lt;String&gt; topicParams = new ArrayList&lt;String&gt;();
+  topicParams.add("transactions/initiate");
+  topicParams.add("transactions/success");
+
+  // Unique identifier for a webhook.
+  String webhookId = "a743___";
+
+  // Optional API parameters
+
+  // Status of a webhook. Possible values are "active" and "inactive".
+  String status = "active";
+
+  HashMap&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("webhook_id", webhookId);
+  params.put("status", status);
+  params.put("topics", topicParams);
+
+  JsonObject response = webhooksService.update( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Webhook using webhookId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Unique identifier for a webhook.
+  String webhookId = "a743___";
+
+
+  HashMap&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("webhook_id", webhookId);
+
+  JsonObject response = webhooksService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Webhook List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+  // No mandatory parameters.
+
+  // Optional API parameters
+
+  // Limit.
+  long limit = 10;
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  String paginationIdentifier = "eyJwY___";
+
+  HashMap&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("limit", limit);
+  params.put("pagination_identifier", paginationIdentifier);
+
+  JsonObject response = webhooksService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete Webhook using webhookId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Unique identifier for a webhook.
+  String webhookId = "a743___";
+
+  HashMap&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("webhook_id", webhookId);
+
+  JsonObject response = webhooksService.deleteWebhook( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Verify webhook request signature.
+This can be used to validate if the webhook received at your end from OST platform is correctly signed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Webhook data obtained.
+  String webhookEventData = "{\"id\":\"54e3cd1c-afd7-4dcf-9c78-137c56a53582\",\"topic\":\"transactions/success\",\"created_at\":1560838772,\"webhook_id\":\"0823a4ea-5d87-44cf-8ca8-1e5a31bf8e46\",\"version\":\"v2\",\"data\":{\"result_type\":\"transaction\",\"transaction\":{\"id\":\"ddebe817-b94f-4b51-9227-f543fae4715a\",\"transaction_hash\":\"0x7ee737db22b58dc4da3f4ea4830ca709b388d84f31e77106cb79ee09fc6448f9\",\"from\":\"0x69a581096dbddf6d1e0fff7ebc1254bb7a2647c6\",\"to\":\"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47\",\"nonce\":3,\"value\":\"0\",\"gas_price\":\"1000000000\",\"gas_used\":120558,\"transaction_fee\":\"120558000000000\",\"block_confirmation\":24,\"status\":\"SUCCESS\",\"updated_timestamp\":1560838699,\"block_timestamp\":1560838698,\"block_number\":1554246,\"rule_name\":\"Pricer\",\"meta_property\":{},\"transfers\":[{\"from\":\"0xc2f0dde92f6f3a3cb13bfff43e2bd136f7dcfe47\",\"from_user_id\":\"acfdea7d-278e-4ffc-aacb-4a21398a280c\",\"to\":\"0x0a754aaab96d634337aac6556312de396a0ca46a\",\"to_user_id\":\"7bc8e0bd-6761-4604-8f8e-e33f86f81309\",\"amount\":\"112325386\",\"kind\":\"transfer\"}]}}}";
+
+  // Get webhoook version from webhook events data.
+  String version = "v2";
+
+  // Get ost-timestamp from the response received in event.
+  String requestTimestamp = "1559902637";
+
+  // Get signature from the response received in event.
+  String signature = "2c56c143550c603a6ff47054803f03ee4755c9c707986ae27f7ca1dd1c92a824";
+
+  String webhookSecret = "mySecret";
+  String stringifiedData = webhookEventData;
+
+  Boolean response = webhooksService.verifySignature( version, stringifiedData, requestTimestamp, signature, webhookSecret );
+  System.out.println("response: " + response );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redemption_modules"><a class="anchor" href="#redemption_modules"></a>Redemption Modules</h3>
+<div class="paragraph">
+<p>Two modules of redemption, "Redeemable SKUs" and "User Redemptions", are described below.</p>
+</div>
+<div class="sect3">
+<h4 id="redeemable_skus_module"><a class="anchor" href="#redeemable_skus_module"></a>Redeemable SKUs Module</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Redeemable SKUs service object to perform redeemable skus specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.RedeemableSkus redeemableSkusService = services.redeemableSkus;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Redeemable SKU detail using the redeemable sku id.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // Fetch details of following redeemable sku.
+  String redeemableSkuId = 'c2c__';
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("redeemable_sku_id", redeemableSkuId);
+
+  JsonObject response = redeemableSkusService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get Redeemable SKUs List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+  // NOTE: No mandatory parameters.
+
+  // Optional API parameters
+
+  // Limit.
+  long limit = 10;
+
+  // Array of redeemable SKU ids.
+  ArrayList&lt;Object&gt; redemptionSkuIdsArray = new ArrayList&lt;Object&gt;();
+  redemptionSkuIdsArray.add("1001");
+  redemptionSkuIdsArray.add("1002");
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  String paginationIdentifier = "eyJ___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("redemption_ids", redemptionSkuIdsArray);
+  params.put("pagination_identifier", paginationIdentifier);
+  params.put("limit", limit);
+
+  JsonObject response = redeemableSkusService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>==== User Redemptions Module</p>
+</div>
+</li>
+<li>
+<p>Initialize Redemptions service object to perform user redemption specific actions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  com.ost.services.Redemptions redemptionsService = services.redemptions;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User redemption details using the userId and redemptionId.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+
+  // UserId of user for whom redemption details needs to be fetched.
+  String userId = "c2c6___";
+
+  // Unique identifier of the redemption of user.
+  String redemptionId = "c2c___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("redemption_id", redemptionId);
+
+  JsonObject response = redemptionsService.get( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get User Redemptions List.
+Pagination is supported by this API.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  // Mandatory API parameters
+  String userId = "c2c6___";
+
+  // Optional API parameters
+
+  // Limit.
+  long limit = 10;
+
+  // Array of user redemption uuids.
+  ArrayList&lt;Object&gt; redemptionIdsArray = new ArrayList&lt;Object&gt;();
+  redemptionIdsArray.add("eyJ___");
+  redemptionIdsArray.add("eyJ___");
+
+  // Pagination identifier from the previous API call response.  Not needed for page one.
+  String paginationIdentifier = "eyJ___";
+
+  HashMap &lt;String,Object&gt; params = new HashMap&lt;String,Object&gt;();
+  params.put("user_id", userId);
+  params.put("redemption_ids", redemptionIdsArray);
+  params.put("pagination_identifier", paginationIdentifier);
+  params.put("limit", limit);
+
+  JsonObject response = redemptionsService.getList( params );
+  System.out.println("response: " + response.toString() );</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
                 <div class="article-navigation">
+                	<div class="btn-next"><a href="/server-sdk-java/1.0/CHANGELOG.html">Change Log &rarr;</a></div>
                 </div>
 	</article>
 	<aside class="toc toc-sidebar">
