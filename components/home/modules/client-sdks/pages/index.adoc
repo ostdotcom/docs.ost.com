@@ -1,6 +1,11 @@
-= Client SDKs
+= Client SDKs (Mobile Wallet)
 
-Ost client (Mobile Wallet) SDKs enable end-users to interact with tokens within existing mobile applications
+Ost Client SDKs enable developers to integrate a secure, non-custodial layer-2 Ethereum wallet into consumer applications. The SDKs enable end-users to hold & transfer tokens within your application.
+
+The SDKs
+. Generate and store keys on the user's mobile device
+. Sign Ethereum transactions and data as defined by contracts using EIP-1077
+. Enable end-users to recover access to their wallet in case they lose their authorized device
 
 include::partial$cards.adoc[]
 
